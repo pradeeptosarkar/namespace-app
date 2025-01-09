@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-<h1 align="center"> The nameSpace Community WEBSITE </h1>
+<h1 align="center"> The NAMESPACE Community WEBSITE </h1>
 
 <!-- ---------------------------------------------------------------------------------------------------------------------- -->
 
@@ -26,7 +26,7 @@
 <!-- ---------------------------------------------------------------------------------------------------------------------- -->
 
 <p align="center">
- <strong> The official website of The nameSpace Community and Organization </strong>
+ <strong> The official website of The NAMESPACE	Community and Organization </strong>
    <br>
   <br />
     <strong> <a href="https://www.namespacecomm.in/">Visit the Official Website » </strong></a> 
