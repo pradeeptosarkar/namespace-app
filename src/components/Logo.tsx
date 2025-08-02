@@ -35,13 +35,12 @@ const Logo = () => {
   const logoColor = isWhiteBackground ? 'text-namespace-purple' : 'text-namespace-white';
 
   return (
-    <div className={`fixed top-6 right-6 z-40 ${logoColor} transition-colors duration-300`}>
-      <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 bg-gradient-purple rounded-full flex items-center justify-center">
-          <div className="w-3 h-3 border-2 border-namespace-white rounded-full animate-orbital-float" />
-        </div>
-        <span className="font-sora font-bold text-2xl">NAMESPACE</span>
-      </div>
+    <div className="fixed top-6 right-6 z-40 transition-opacity duration-300">
+      <img 
+        src={isWhiteBackground ? "/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png" : "/lovable-uploads/27940758-e8d3-4460-b88e-21b8102f741f.png"}
+        alt="NAMESPACE Logo"
+        className="w-12 h-12 transition-opacity duration-300"
+      />
     </div>
   );
 };

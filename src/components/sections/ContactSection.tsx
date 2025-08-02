@@ -128,11 +128,12 @@ const ContactSection = () => {
           
           {/* Footer */}
           <div className="border-t border-namespace-white/10 mt-16 pt-8 text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-purple rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 border-2 border-namespace-white rounded-full animate-orbital-float" />
-              </div>
-              <span className="font-sora font-bold text-2xl text-namespace-white">NAMESPACE</span>
+            <div className="flex items-center justify-center mb-4">
+              <img 
+                src="/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png"
+                alt="NAMESPACE"
+                className="h-8"
+              />
             </div>
             <p className="text-gray-400">
               © 2025 NAMESPACE. Building the future of tech ecosystems.
