@@ -39,7 +39,7 @@ const Logo = () => {
       <img 
         src={isWhiteBackground ? "/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png" : "/lovable-uploads/27940758-e8d3-4460-b88e-21b8102f741f.png"}
         alt="NAMESPACE Logo"
-        className="w-12 h-12 transition-opacity duration-300"
+        className="w-16 h-16 transition-opacity duration-300"
       />
     </div>
   );
