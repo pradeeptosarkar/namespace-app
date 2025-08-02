@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Progress } from "@/components/ui/progress";
+import Logo from "@/components/Logo";
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import SecondHeroSection from "@/components/sections/SecondHeroSection";
@@ -67,6 +68,9 @@ const Index = () => {
           className="h-1 rounded-none bg-transparent"
         />
       </div>
+
+      {/* Logo */}
+      <Logo />
       
       <div 
         ref={scrollContainerRef}
