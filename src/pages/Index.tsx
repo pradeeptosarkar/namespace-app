@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import SecondHeroSection from "@/components/sections/SecondHeroSection";
@@ -33,24 +32,19 @@ const Index = () => {
   }, []);
 
   return (
-    <>
-      <Navbar />
-      
-      {/* Horizontal Scroll Container */}
-      <div 
-        ref={scrollContainerRef}
-        className="horizontal-scroll"
-      >
-        <HeroSection />
-        <ProblemSection />
-        <SecondHeroSection />
-        <WhoWeServeSection />
-        <HackHazardsSection />
-        <ProgramsSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </div>
-    </>
+    <div 
+      ref={scrollContainerRef}
+      className="horizontal-scroll"
+    >
+      <HeroSection />
+      <ProblemSection />
+      <SecondHeroSection />
+      <WhoWeServeSection />
+      <HackHazardsSection />
+      <ProgramsSection />
+      <TestimonialsSection />
+      <ContactSection />
+    </div>
   );
 };
 

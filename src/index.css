@@ -83,6 +83,9 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   /* Mobile responsive - vertical stacking */
@@ -97,6 +100,7 @@
     .scroll-section {
       min-width: 100%;
       min-height: 100vh;
+      height: 100vh;
       width: 100%;
     }
   }
