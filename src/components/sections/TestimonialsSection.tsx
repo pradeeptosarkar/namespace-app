@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
           </div>
           
           {/* Testimonials Carousel */}
-          <div className="mb-12 lg:mb-16 px-4">
+          <div className="mb-6 px-4">
             <Carousel
               opts={{
                 align: "start",
@@ -95,23 +95,16 @@ const TestimonialsSection = () => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="group bg-namespace-white border border-border rounded-xl p-3 sm:p-4 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-full">
-                      <div className="mb-4">
-                        <Quote className="w-6 h-6 text-namespace-purple-glow mb-3" />
-                        <p className="text-sm leading-relaxed text-namespace-black mb-4">
+                    <div className="group bg-namespace-white border border-border rounded-xl p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-24">
+                      <div className="mb-2">
+                        <Quote className="w-4 h-4 text-namespace-purple-glow mb-1" />
+                        <p className="text-xs leading-relaxed text-namespace-black mb-2 line-clamp-2">
                           "{testimonial.content}"
                         </p>
-                        
-                        {/* Star Rating */}
-                        <div className="flex space-x-1 mb-3">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
                       </div>
                       
                       <div>
-                        <div className="font-sora font-bold text-sm text-namespace-black group-hover:text-namespace-purple transition-colors">
+                        <div className="font-sora font-bold text-xs text-namespace-black group-hover:text-namespace-purple transition-colors">
                           {testimonial.name}
                         </div>
                         <div className="text-muted-foreground text-xs">

@@ -90,7 +90,9 @@ const ProgramsSection = () => {
           
           {/* Programs Carousel */}
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll-programs gap-6">
+            <div className="flex animate-scroll-programs gap-6 hover:animation-play-state-paused" style={{ animationPlayState: 'running' }} 
+                 onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
+                 onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}>
               {/* First set of programs */}
               {programs.map((program, index) => (
                 <div 
