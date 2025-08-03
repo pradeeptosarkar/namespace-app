@@ -100,22 +100,22 @@ const SecondHeroSection = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group relative h-24 sm:h-28 lg:h-32 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-500 animate-scale-in overflow-hidden"
+                className="group relative h-20 sm:h-24 lg:h-28 rounded-2xl border border-border bg-gradient-to-br from-namespace-white to-gray-50 hover:border-namespace-purple/50 hover:shadow-elegant transition-all duration-500 animate-scale-in overflow-hidden cursor-pointer"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {/* Title (always visible) */}
-                <div className="absolute inset-0 w-full h-full rounded-2xl bg-namespace-white border border-border flex flex-col items-center justify-center p-4 z-10">
-                  <div className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-namespace-purple-light text-namespace-purple rounded-full mb-2">
+                {/* Default state - Icon only */}
+                <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:scale-75 group-hover:opacity-0">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-namespace-purple-light text-namespace-purple rounded-full">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xs sm:text-sm lg:text-base font-sora font-semibold text-center text-namespace-black">
-                    {feature.title}
-                  </h3>
                 </div>
 
-                {/* Description (slides up on hover) */}
-                <div className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-br from-namespace-purple to-namespace-purple-glow flex items-center justify-center p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <p className="text-namespace-white text-xs sm:text-sm text-center leading-relaxed">
+                {/* Hover state - Title and description */}
+                <div className="absolute inset-0 bg-namespace-purple rounded-2xl p-3 sm:p-4 flex flex-col justify-center transform scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
+                  <h3 className="text-xs sm:text-sm font-sora font-bold text-center text-namespace-white mb-1 sm:mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-namespace-white/90 text-xs text-center leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

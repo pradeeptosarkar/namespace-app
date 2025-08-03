@@ -128,7 +128,7 @@ const TestimonialsSection = () => {
             
             {/* Continuous scrolling logos - Larger */}
             <div className="relative overflow-hidden">
-              <div className="flex animate-scroll">
+              <div className="flex animate-scroll-fast">
                 {/* First set of logos */}
                 {partners.map((partner, index) => (
                   <div 

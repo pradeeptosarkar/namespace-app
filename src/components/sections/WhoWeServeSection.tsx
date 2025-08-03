@@ -94,7 +94,7 @@ const WhoWeServeSection = () => {
                 </div>
 
                 {/* Back content - visible on hover */}
-                <div className={`absolute inset-0 p-4 sm:p-6 flex items-center justify-center bg-gradient-to-br ${audience.color} opacity-0 group-hover:opacity-100 transition-all duration-300`}>
+                <div className="absolute inset-0 p-4 sm:p-6 flex items-center justify-center bg-gradient-to-br from-namespace-purple to-namespace-purple-glow opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div className="text-center">
                     <h3 className="text-lg sm:text-xl font-sora font-bold text-white mb-3">
                       {audience.title}

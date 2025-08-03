@@ -186,6 +186,20 @@ const ContactSection = () => {
                 className="h-8"
               />
             </div>
+            
+            {/* Legal Links */}
+            <div className="flex flex-wrap justify-center gap-6 mb-4">
+              <a href="#" className="text-gray-400 hover:text-namespace-purple-glow text-sm transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-namespace-purple-glow text-sm transition-colors">
+                Corporate Information
+              </a>
+              <a href="#" className="text-gray-400 hover:text-namespace-purple-glow text-sm transition-colors">
+                Brand Guidelines
+              </a>
+            </div>
+            
             <p className="text-gray-400">
               © 2025 NAMESPACE. Building the future of tech ecosystems.
             </p>

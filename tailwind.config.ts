@@ -109,6 +109,7 @@ export default {
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out',
 				'scroll': 'scroll 30s linear infinite',
+				'scroll-fast': 'scroll 20s linear infinite',
 				'scroll-programs': 'scroll-programs 80s linear infinite'
 			},
 			transitionProperty: {
