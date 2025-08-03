@@ -1,109 +1,116 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const ProblemSection = () => {
-  const problems = [
-  {
-    title: "Tech Isn’t Built for Humans",
-    description:
-      "Most platforms and ecosystems prioritize products, not people. The human experience of learning, building, and connecting often takes a back seat."
-  },
-  {
-    title: "Talent Is Everywhere, Support Is Not",
-    description:
-      "Brilliant minds exist across small towns, tier-2/3 cities, and underrepresented groups — but lack access to real opportunities and support systems."
-  },
-  {
-    title: "Communities Operate in Silos",
-    description:
-      "Tech communities, startups, students, and professionals work in isolation — missing out on the network effects of a connected ecosystem."
-  },
-  {
-    title: "Events Are One-Off, Not Transformational",
-    description:
-      "Hackathons and programs often end in a weekend with no long-term impact, mentorship, or continuity for teams and ideas."
-  },
-  {
-    title: "Gatekeeping Limits Growth",
-    description:
-      "Tech ecosystems are full of invisible walls — from closed networks to inaccessible hiring pipelines — making it hard for outsiders to break in."
-  },
-  {
-    title: "What You Learn ≠ What You Need",
-    description:
-      "There’s still a major gap between academic learning and the dynamic, real-world skills needed in modern tech."
-  }
-];
+  const [expandedProblem, setExpandedProblem] = useState(null);
 
+  const problems = [
+    {
+      title: "Tech Isn't Built for Humans",
+      description:
+        "Most platforms and ecosystems prioritize products, not people. The human experience of learning, building, and connecting often takes a back seat."
+    },
+    {
+      title: "Talent Is Everywhere, Support Is Not",
+      description:
+        "Brilliant minds exist across small towns, tier-2/3 cities, and underrepresented groups — but lack access to real opportunities and support systems."
+    },
+    {
+      title: "Communities Operate in Silos",
+      description:
+        "Tech communities, startups, students, and professionals work in isolation — missing out on the network effects of a connected ecosystem."
+    },
+    {
+      title: "Events Are One-Off, Not Transformational",
+      description:
+        "Hackathons and programs often end in a weekend with no long-term impact, mentorship, or continuity for teams and ideas."
+    },
+    {
+      title: "Gatekeeping Limits Growth",
+      description:
+        "Tech ecosystems are full of invisible walls — from closed networks to inaccessible hiring pipelines — making it hard for outsiders to break in."
+    },
+    {
+      title: "What You Learn ≠ What You Need",
+      description:
+        "There's still a major gap between academic learning and the dynamic, real-world skills needed in modern tech."
+    }
+  ];
+
+  const toggleProblem = (index) => {
+    setExpandedProblem(expandedProblem === index ? null : index);
+  };
 
   return (
-    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
+    <section className="scroll-section bg-black text-white relative overflow-hidden min-h-screen py-20">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-32 h-32 border border-namespace-purple-glow rounded-full animate-orbital-float opacity-20" />
-        <div className="absolute bottom-1/4 right-10 w-24 h-24 border border-namespace-purple-glow rounded-full animate-orbital-float opacity-30" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-10 w-32 h-32 border border-purple-500/30 rounded-full animate-pulse opacity-20" />
+        <div className="absolute bottom-1/4 right-10 w-24 h-24 border border-purple-500/30 rounded-full animate-pulse opacity-30" style={{ animationDelay: '2s' }} />
         
         {/* Additional geometric patterns */}
-        <div className="absolute top-10 right-1/4 w-16 h-16 border-2 border-namespace-purple-glow/20 rotate-45 animate-pulse" />
-        <div className="absolute bottom-20 left-1/4 w-20 h-20 border border-namespace-purple-glow/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 right-20 w-12 h-12 bg-namespace-purple-glow/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-1/3 left-16 w-8 h-8 border-2 border-namespace-purple-glow/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-10 right-1/4 w-16 h-16 border-2 border-purple-500/20 rotate-45 animate-pulse" />
+        <div className="absolute bottom-20 left-1/4 w-20 h-20 border border-purple-500/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 right-20 w-12 h-12 bg-purple-500/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-1/3 left-16 w-8 h-8 border-2 border-purple-500/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
         
         {/* Hexagon patterns */}
-        <div className="absolute top-16 left-1/3 w-14 h-14 border border-namespace-purple-glow/25 rotate-30" style={{
+        <div className="absolute top-16 left-1/3 w-14 h-14 border border-purple-500/25 rotate-30" style={{
           clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-          animation: 'float 6s ease-in-out infinite'
+          animation: 'pulse 6s ease-in-out infinite'
         }} />
-        <div className="absolute bottom-32 right-1/3 w-10 h-10 border border-namespace-purple-glow/20 rotate-60" style={{
+        <div className="absolute bottom-32 right-1/3 w-10 h-10 border border-purple-500/20 rotate-60" style={{
           clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-          animation: 'float 4s ease-in-out infinite reverse'
+          animation: 'pulse 4s ease-in-out infinite reverse'
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
-        <div className="w-full">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in-up">
-              <h2 className="text-5xl md:text-7xl font-sora font-bold mb-6">
-                The <span className="text-namespace-purple-glow">Current</span> Reality
-              </h2>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                The tech ecosystem is broken. Talent is wasted, opportunities are missed, and innovation is stifled by outdated systems.
-              </p>
-            </div>
-            
-            <div className="max-w-4xl mx-auto">
-              <Accordion type="single" collapsible className="space-y-6">
-                {problems.map((problem, index) => (
-                  <AccordionItem 
-                    key={index}
-                    value={`problem-${index}`}
-                    className="bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl overflow-hidden hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-300 animate-scale-in"
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  >
-                    <AccordionTrigger className="px-8 py-6 hover:no-underline group">
-                      <div className="flex items-center space-x-4 w-full">
-                        <div className="flex-shrink-0 w-12 h-12 bg-namespace-purple-glow/20 rounded-full flex items-center justify-center group-hover:bg-namespace-purple-glow/30 transition-colors">
-                          <div className="w-6 h-6 bg-namespace-purple-glow rounded-full" />
-                        </div>
-                        <div className="flex-1 text-left">
-                          <h3 className="text-xl md:text-2xl font-sora font-semibold text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
-                            {problem.title}
-                          </h3>
-                        </div>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-8 pb-6">
-                      <div className="ml-16 pt-2">
-                        <p className="text-gray-300 text-lg leading-relaxed">
-                          {problem.description}
-                        </p>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              The <span className="text-purple-400">Current</span> Reality
+            </h2>
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto">
+              The tech ecosystem is broken. Talent is wasted, opportunities are missed, and innovation is stifled by outdated systems.
+            </p>
+          </div>
+          
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            {problems.map((problem, index) => (
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-purple-400/50 transition-all duration-300 cursor-pointer"
+                onClick={() => toggleProblem(index)}
+              >
+                <div className="p-6">
+                  <div className="flex items-start space-x-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
+                      <div className="w-6 h-6 bg-purple-400 rounded-full" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg md:text-xl font-semibold text-white hover:text-purple-400 transition-colors leading-tight">
+                        {problem.title}
+                      </h3>
+                    </div>
+                    <ChevronDown 
+                      className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${
+                        expandedProblem === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </div>
+                  
+                  <div className={`transition-all duration-300 overflow-hidden ${
+                    expandedProblem === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed pl-16">
+                      {problem.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
