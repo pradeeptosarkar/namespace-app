@@ -100,24 +100,23 @@ const SecondHeroSection = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group relative h-32 sm:h-36 lg:h-40 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-500 animate-scale-in perspective-1000"
+                className="group relative h-24 sm:h-28 lg:h-32 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-500 animate-scale-in perspective-1000"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {/* Front side */}
-                <div className="absolute inset-0 w-full h-full transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180">
+                {/* Card inner container */}
+                <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+                  {/* Front side */}
                   <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-namespace-white border border-border flex flex-col items-center justify-center p-4">
-                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-namespace-purple-light rounded-full mb-3 group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
+                    <div className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-namespace-purple-light text-namespace-purple rounded-full mb-2">
                       {feature.icon}
                     </div>
-                    <h3 className="text-sm sm:text-base lg:text-lg font-sora font-semibold text-center text-namespace-black">
+                    <h3 className="text-xs sm:text-sm lg:text-base font-sora font-semibold text-center text-namespace-black">
                       {feature.title}
                     </h3>
                   </div>
-                </div>
 
-                {/* Back side */}
-                <div className="absolute inset-0 w-full h-full transition-transform duration-500 transform-style-preserve-3d rotate-y-180 group-hover:rotate-y-0">
-                  <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-namespace-purple to-namespace-purple-glow flex items-center justify-center p-4">
+                  {/* Back side */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-namespace-purple to-namespace-purple-glow flex items-center justify-center p-4">
                     <p className="text-namespace-white text-xs sm:text-sm text-center leading-relaxed">
                       {feature.description}
                     </p>
