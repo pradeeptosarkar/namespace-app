@@ -91,7 +91,7 @@ const HeroSection = () => {
         <div className="flex w-full">
           {/* Left side content */}
           <div className="flex-1 max-w-4xl">
-            <div className="space-y-6 animate-fade-in-up">
+            <div className="space-y-8 animate-fade-in-up">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 bg-namespace-purple-light px-4 py-2 rounded-full">
                   <div className="w-2 h-2 bg-namespace-purple rounded-full animate-pulse" />
@@ -100,33 +100,33 @@ const HeroSection = () => {
                   </span>
                 </div>
                 
-                <h1 className="text-4xl md:text-6xl font-sora font-bold leading-tight">
+                <h1 className="text-6xl md:text-8xl font-sora font-bold leading-tight">
                   Welcome to
                   <br />
                   <span className="bg-gradient-purple bg-clip-text text-transparent inline-flex items-center">
                     {typedText}
-                    <span className={`ml-1 w-1 h-12 md:h-14 bg-namespace-purple ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`} />
+                    <span className={`ml-1 w-1 h-16 md:h-20 bg-namespace-purple ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`} />
                   </span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl font-inter">
+                <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-inter">
                   Where human potential meets technological innovation. We're building the infrastructure for tomorrow's tech leaders.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-6 py-4 text-base font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300"
+                  className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300"
                 >
                   Explore Our Ecosystem
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-6 py-4 text-base font-semibold transition-all duration-300"
+                  className="border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-8 py-6 text-lg font-semibold transition-all duration-300"
                 >
                   Watch Our Story
                 </Button>
@@ -138,14 +138,14 @@ const HeroSection = () => {
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="relative">
               {/* Geometric frame around logo */}
-              <div className="absolute inset-0 w-60 h-60 border border-namespace-purple/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
-              <div className="absolute inset-3 w-54 h-54 border-2 border-namespace-purple/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+              <div className="absolute inset-0 w-80 h-80 border border-namespace-purple/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
+              <div className="absolute inset-4 w-72 h-72 border-2 border-namespace-purple/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
               
               {/* Main logo */}
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-48 h-48 animate-pulse hover:scale-110 transition-transform duration-500 relative z-10"
+                className="w-64 h-64 animate-pulse hover:scale-110 transition-transform duration-500 relative z-10"
               />
               
               {/* Floating particles around logo */}
