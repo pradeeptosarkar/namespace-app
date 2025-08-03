@@ -6,44 +6,34 @@ const ProblemSection = () => {
 
   const problems = [
     {
-      title: "Borderless Ecosystem",
+      title: "Tech Isn't Built for Humans",
       description:
-        "Break silos and collaborate across geographies and backgrounds."
+        "Most platforms and ecosystems prioritize products, not people. The human experience of learning, building, and connecting often takes a back seat."
     },
     {
-      title: "Purposeful Collaboration",
+      title: "Talent Is Everywhere, Support Is Not",
       description:
-        "From hackathons to programs, every interaction creates real-world value."
+        "Brilliant minds exist across small towns, tier-2/3 cities, and underrepresented groups — but lack access to real opportunities and support systems."
     },
     {
-      title: "Momentum for Builders",
+      title: "Communities Operate in Silos",
       description:
-        "Fuel your growth with access, exposure, and opportunities that compound."
+        "Tech communities, startups, students, and professionals work in isolation — missing out on the network effects of a connected ecosystem."
     },
     {
-      title: "Precision GTM",
+      title: "Events Are One-Off, Not Transformational",
       description:
-        "Launch and scale tech products with active developer communities."
+        "Hackathons and programs often end in a weekend with no long-term impact, mentorship, or continuity for teams and ideas."
     },
     {
-      title: "Talent Discovery",
+      title: "Gatekeeping Limits Growth",
       description:
-        "Find exceptional builders through performance-driven programs."
+        "Tech ecosystems are full of invisible walls — from closed networks to inaccessible hiring pipelines — making it hard for outsiders to break in."
     },
     {
-      title: "Authentic Engagement",
+      title: "What You Learn ≠ What You Need",
       description:
-        "Run campaigns and hackathons that resonate deeply with tech audiences."
-    },
-    {
-      title: "Infra for Tech Communities",
-      description:
-        "Support and supercharge your local or campus tech groups."
-    },
-    {
-      title: "Modern Academia Connect",
-      description:
-        "Bridge universities with the global tech world via pipelines and programs."
+        "There's still a major gap between academic learning and the dynamic, real-world skills needed in modern tech."
     }
   ];
 
@@ -79,10 +69,10 @@ const ProblemSection = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-10 px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold mb-3 sm:mb-4">
-              Our <span className="text-purple-400">Features</span>
+              The <span className="text-purple-400">Current</span> Reality
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover the core features that make NAMESPACE the ultimate platform for tech builders and innovators.
+              The tech ecosystem is broken. Talent is wasted, opportunities are missed, and innovation is stifled by outdated systems.
             </p>
           </div>
           
