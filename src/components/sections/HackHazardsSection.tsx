@@ -1,12 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, Trophy, Users, Zap } from "lucide-react";
+import { Calendar, Trophy, Users, Zap, Globe, Building, Target, Eye, MapPin, School } from "lucide-react";
 
 const HackHazardsSection = () => {
   const stats = [
-    { icon: <Users className="w-8 h-8" />, number: "5,000+", label: "Participants" },
-    { icon: <Trophy className="w-8 h-8" />, number: "48", label: "Hours" },
-    { icon: <Zap className="w-8 h-8" />, number: "$50K", label: "Prizes" },
-    { icon: <Calendar className="w-8 h-8" />, number: "2025", label: "Next Event" }
+    { icon: <Users className="w-8 h-8" />, number: "17,000+", label: "Hackers" },
+    { icon: <Target className="w-8 h-8" />, number: "3,000+", label: "Proposals" },
+    { icon: <Building className="w-8 h-8" />, number: "780+", label: "Builds" },
+    { icon: <Globe className="w-8 h-8" />, number: "6", label: "Global Partners" },
+    { icon: <MapPin className="w-8 h-8" />, number: "25+", label: "Countries" },
+    { icon: <Calendar className="w-8 h-8" />, number: "500+", label: "Indian Cities" },
+    { icon: <School className="w-8 h-8" />, number: "1500+", label: "Institutions" },
+    { icon: <Eye className="w-8 h-8" />, number: "2mn+", label: "Social Impressions" },
+    { icon: <Users className="w-8 h-8" />, number: "35%", label: "Women" },
+    { icon: <Trophy className="w-8 h-8" />, number: "35%", label: "First-timers" },
+    { icon: <Zap className="w-8 h-8" />, number: "25%", label: "Rural Areas" }
   ];
 
   return (
@@ -42,7 +49,7 @@ const HackHazardsSection = () => {
               <div className="space-y-6">
                 <div className="inline-flex items-center space-x-3 bg-gradient-purple px-6 py-3 rounded-full">
                   <Zap className="w-5 h-5 text-namespace-white" />
-                  <span className="font-bold text-namespace-white text-lg">FLAGSHIP EVENT</span>
+                  <span className="font-bold text-namespace-white text-lg">World's largest independent community-run hackathon</span>
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold leading-tight">
@@ -61,7 +68,7 @@ const HackHazardsSection = () => {
                   size="lg"
                   className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold shadow-elegant hover:shadow-orbital transition-all duration-300"
                 >
-                  Register Now
+                  Visit website
                 </Button>
                 
                 <Button 
@@ -69,13 +76,13 @@ const HackHazardsSection = () => {
                   size="lg"
                   className="border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-8 py-6 text-lg font-semibold transition-all duration-300"
                 >
-                  View Past Events
+                  View projects
                 </Button>
               </div>
             </div>
             
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 order-1 lg:order-2">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 order-1 lg:order-2">
               {stats.map((stat, index) => (
                 <div 
                   key={index}
