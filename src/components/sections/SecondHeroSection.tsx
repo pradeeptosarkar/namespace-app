@@ -44,21 +44,21 @@ const SecondHeroSection = () => {
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 h-full flex items-center lg:px-[clamp(2rem,4vw,6rem)]">
-        <div className="w-full max-w-6xl mx-auto lg:max-w-[clamp(60rem,80vw,90rem)]">
+      <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
+        <div className="w-full max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
             <div className="inline-flex items-center space-x-2 bg-namespace-purple-light px-6 py-3 rounded-full mb-8">
               <div className="w-3 h-3 bg-namespace-purple rounded-full animate-pulse" />
               <span className="font-semibold text-namespace-purple">Our Solution</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[clamp(3rem,4.5vw,5.5rem)] xl:text-[clamp(4rem,5.5vw,7rem)] font-sora font-bold mb-6 sm:mb-8 lg:mb-[clamp(2rem,3vw,4rem)] leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8 leading-tight">
               Building Tomorrow's
               <br />
               <span className="bg-gradient-purple bg-clip-text text-transparent">Tech Ecosystem</span>
             </h2>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-[clamp(1.25rem,1.5vw,2rem)] xl:text-[clamp(1.5rem,1.8vw,2.5rem)] text-muted-foreground max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-[clamp(2rem,3vw,4rem)] px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
               NAMESPACE is where ambitious technologists converge to learn, build, and scale. 
               We're creating the infrastructure that empowers the next generation of tech leaders.
             </p>
@@ -71,22 +71,20 @@ const SecondHeroSection = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-[clamp(1.5rem,2.5vw,3rem)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group text-center p-4 sm:p-6 lg:p-[clamp(1.5rem,2.5vw,3rem)] rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                className="group text-center p-4 sm:p-6 lg:p-8 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-300 animate-scale-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-[clamp(3rem,4vw,5rem)] lg:h-[clamp(3rem,4vw,5rem)] bg-namespace-purple-light rounded-full mb-4 sm:mb-6 lg:mb-[clamp(1rem,1.5vw,2rem)] group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
-                  <div className="lg:[&>svg]:w-[clamp(1.5rem,2vw,2.5rem)] lg:[&>svg]:h-[clamp(1.5rem,2vw,2.5rem)]">
-                    {feature.icon}
-                  </div>
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-namespace-purple-light rounded-full mb-4 sm:mb-6 group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
+                  {feature.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-[clamp(1.25rem,1.5vw,2rem)] font-sora font-semibold mb-2 sm:mb-4 lg:mb-[clamp(0.75rem,1vw,1.5rem)] text-namespace-black">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-sora font-semibold mb-2 sm:mb-4 text-namespace-black">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-sm sm:text-base lg:text-[clamp(0.875rem,1vw,1.25rem)]">
+                <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                   {feature.description}
                 </p>
               </div>

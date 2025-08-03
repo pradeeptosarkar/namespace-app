@@ -77,22 +77,22 @@ const ProgramsSection = () => {
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 h-full flex items-center lg:px-[clamp(2rem,4vw,6rem)]">
-        <div className="w-full max-w-7xl mx-auto lg:max-w-[clamp(60rem,85vw,95rem)]">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-[clamp(3rem,5vw,6rem)] animate-fade-in-up px-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[clamp(3rem,4.5vw,5.5rem)] xl:text-[clamp(4rem,5.5vw,7rem)] font-sora font-bold mb-6 sm:mb-8 lg:mb-[clamp(1.5rem,2.5vw,3rem)]">
+      <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8">
               Flagship <span className="text-namespace-purple-glow">Programs</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-[clamp(1.125rem,1.3vw,1.75rem)] xl:text-[clamp(1.25rem,1.5vw,2rem)] text-gray-300 max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto">
               Comprehensive learning experiences designed to accelerate your growth in the ever-evolving tech landscape.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-[clamp(1.5rem,2.5vw,3rem)] px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-4">
             {programs.map((program, index) => (
               <div 
                 key={index}
-                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 lg:p-[clamp(1.5rem,2.5vw,3rem)] hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer animate-scale-in"
+                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Gradient overlay */}
