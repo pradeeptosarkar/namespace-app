@@ -1,22 +1,37 @@
 const ProblemSection = () => {
   const problems = [
-    {
-      title: "Fragmented Learning",
-      description: "Tech education is scattered across disconnected platforms, making it hard to build comprehensive skills."
-    },
-    {
-      title: "Limited Opportunities",
-      description: "Students and professionals struggle to find meaningful projects and networking opportunities."
-    },
-    {
-      title: "Industry Gap",
-      description: "There's a massive disconnect between what's taught and what the industry actually needs."
-    },
-    {
-      title: "Community Isolation",
-      description: "Talented individuals work in silos, missing out on collaboration and collective growth."
-    }
-  ];
+  {
+    title: "Tech Isn’t Built for Humans",
+    description:
+      "Most platforms and ecosystems prioritize products, not people. The human experience of learning, building, and connecting often takes a back seat."
+  },
+  {
+    title: "Talent Is Everywhere, Support Is Not",
+    description:
+      "Brilliant minds exist across small towns, tier-2/3 cities, and underrepresented groups — but lack access to real opportunities and support systems."
+  },
+  {
+    title: "Communities Operate in Silos",
+    description:
+      "Tech communities, startups, students, and professionals work in isolation — missing out on the network effects of a connected ecosystem."
+  },
+  {
+    title: "Events Are One-Off, Not Transformational",
+    description:
+      "Hackathons and programs often end in a weekend with no long-term impact, mentorship, or continuity for teams and ideas."
+  },
+  {
+    title: "Gatekeeping Limits Growth",
+    description:
+      "Tech ecosystems are full of invisible walls — from closed networks to inaccessible hiring pipelines — making it hard for outsiders to break in."
+  },
+  {
+    title: "What You Learn ≠ What You Need",
+    description:
+      "There’s still a major gap between academic learning and the dynamic, real-world skills needed in modern tech."
+  }
+];
+
 
   return (
     <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
