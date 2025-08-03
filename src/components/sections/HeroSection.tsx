@@ -100,16 +100,16 @@ const HeroSection = () => {
                   </span>
                 </div>
                 
-                <h1 className="text-6xl md:text-8xl font-sora font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-sora font-bold leading-tight">
                   Welcome to
                   <br />
                   <span className="bg-gradient-purple bg-clip-text text-transparent inline-flex items-center">
                     {typedText}
-                    <span className={`ml-1 w-1 h-16 md:h-20 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
+                    <span className={`ml-1 w-1 h-8 sm:h-12 md:h-16 lg:h-20 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
                   </span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-inter">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl font-inter">
                   Where human potential meets technological innovation. We're building the infrastructure for tomorrow's tech leaders.
                 </p>
               </div>
@@ -138,20 +138,20 @@ const HeroSection = () => {
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="relative">
               {/* Subtle geometric frame around logo */}
-              <div className="absolute inset-0 w-96 h-96 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
-              <div className="absolute inset-8 w-80 h-80 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
+              <div className="absolute inset-0 w-64 h-64 xl:w-80 xl:h-80 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
+              <div className="absolute inset-4 w-56 h-56 xl:w-72 xl:h-72 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
               {/* Main logo with subtle breathing animation */}
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-80 h-80 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
+                className="w-56 h-56 xl:w-72 xl:h-72 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
               />
               
               {/* Subtle floating elements */}
-              <div className="absolute top-16 right-16 w-2 h-2 bg-namespace-purple/40 rounded-full animate-[float_6s_ease-in-out_infinite]" />
-              <div className="absolute bottom-24 left-12 w-1.5 h-1.5 bg-namespace-purple/30 rounded-full animate-[float_8s_ease-in-out_infinite]" style={{ animationDelay: '2s' }} />
-              <div className="absolute top-40 left-16 w-1 h-1 bg-namespace-purple/25 rounded-full animate-[float_7s_ease-in-out_infinite]" style={{ animationDelay: '4s' }} />
+              <div className="absolute top-12 right-12 w-2 h-2 bg-namespace-purple/40 rounded-full animate-[float_6s_ease-in-out_infinite]" />
+              <div className="absolute bottom-16 left-8 w-1.5 h-1.5 bg-namespace-purple/30 rounded-full animate-[float_8s_ease-in-out_infinite]" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-28 left-12 w-1 h-1 bg-namespace-purple/25 rounded-full animate-[float_7s_ease-in-out_infinite]" style={{ animationDelay: '4s' }} />
             </div>
           </div>
         </div>

@@ -52,21 +52,21 @@ const TestimonialsSection = () => {
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-7xl font-sora font-bold mb-8">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8">
               Success <span className="bg-gradient-purple bg-clip-text text-transparent">Stories</span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto">
               Hear from our community members who are building the future of technology.
             </p>
           </div>
           
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 lg:mb-16 px-4">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="group bg-namespace-white border-2 border-border rounded-2xl p-8 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                className="group bg-namespace-white border-2 border-border rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="mb-6">
@@ -101,11 +101,11 @@ const TestimonialsSection = () => {
               Trusted by teams at leading companies
             </h3>
             
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8 opacity-60 px-4">
               {partners.map((partner, index) => (
                 <div 
                   key={index}
-                  className="text-2xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {partner}

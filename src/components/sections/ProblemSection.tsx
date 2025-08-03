@@ -67,35 +67,35 @@ const ProblemSection = () => {
       
       <div className="relative z-10 container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
               The <span className="text-purple-400">Current</span> Reality
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl mx-auto">
               The tech ecosystem is broken. Talent is wasted, opportunities are missed, and innovation is stifled by outdated systems.
             </p>
           </div>
           
           {/* Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4">
             {problems.map((problem, index) => (
               <div
                 key={index}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-purple-400/50 transition-all duration-300 cursor-pointer"
                 onClick={() => toggleProblem(index)}
               >
-                <div className="p-6">
-                  <div className="flex items-start space-x-4 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
-                      <div className="w-6 h-6 bg-purple-400 rounded-full" />
+                <div className="p-4 sm:p-6">
+                  <div className="flex items-start space-x-3 sm:space-x-4 mb-4">
+                    <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-purple-500/20 rounded-full flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
+                      <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-purple-400 rounded-full" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-semibold text-white hover:text-purple-400 transition-colors leading-tight">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white hover:text-purple-400 transition-colors leading-tight">
                         {problem.title}
                       </h3>
                     </div>
                     <ChevronDown 
-                      className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${
+                      className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
                         expandedProblem === index ? 'rotate-180' : ''
                       }`}
                     />
@@ -104,7 +104,7 @@ const ProblemSection = () => {
                   <div className={`transition-all duration-300 overflow-hidden ${
                     expandedProblem === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}>
-                    <p className="text-gray-300 text-sm md:text-base leading-relaxed pl-16">
+                    <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed pl-8 sm:pl-12 lg:pl-16">
                       {problem.description}
                     </p>
                   </div>

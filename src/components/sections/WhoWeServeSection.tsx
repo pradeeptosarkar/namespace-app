@@ -58,39 +58,39 @@ const WhoWeServeSection = () => {
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl md:text-7xl font-sora font-bold mb-8">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8">
               Who We <span className="text-namespace-purple-glow">Serve</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto">
               NAMESPACE is designed for everyone in the tech ecosystem — from curious beginners to seasoned leaders driving innovation.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4">
             {audiences.map((audience, index) => (
               <div 
                 key={index}
-                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-8 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 animate-scale-in"
+                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 animate-scale-in"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${audience.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 
                 <div className="relative z-10">
-                  <div className="flex justify-center mb-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-namespace-white/10 rounded-full group-hover:bg-namespace-purple-glow/20 transition-all duration-300">
-                      <div className="text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
+                  <div className="flex justify-center mb-4 sm:mb-6">
+                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-namespace-white/10 rounded-full group-hover:bg-namespace-purple-glow/20 transition-all duration-300">
+                      <div className="text-namespace-white group-hover:text-namespace-purple-glow transition-colors [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8 lg:[&>svg]:w-12 lg:[&>svg]:h-12">
                         {audience.icon}
                       </div>
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl font-sora font-bold mb-4 text-center text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-sora font-bold mb-2 sm:mb-4 text-center text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
                     {audience.title}
                   </h3>
                   
-                  <p className="text-gray-300 text-center leading-relaxed">
+                  <p className="text-gray-300 text-center leading-relaxed text-sm sm:text-base">
                     {audience.description}
                   </p>
                 </div>

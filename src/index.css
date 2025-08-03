@@ -79,13 +79,14 @@
   
   .scroll-section {
     min-width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem 0;
   }
   
   /* Mobile responsive - vertical stacking */
@@ -100,8 +101,16 @@
     .scroll-section {
       min-width: 100%;
       min-height: 100vh;
-      height: 100vh;
+      height: auto;
       width: 100%;
+      padding: 2rem 0;
+    }
+  }
+  
+  /* Tablet responsive */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .scroll-section {
+      padding: 1.5rem 0;
     }
   }
   

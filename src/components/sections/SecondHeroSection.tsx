@@ -52,13 +52,13 @@ const SecondHeroSection = () => {
               <span className="font-semibold text-namespace-purple">Our Solution</span>
             </div>
             
-            <h2 className="text-5xl md:text-7xl font-sora font-bold mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8 leading-tight">
               Building Tomorrow's
               <br />
               <span className="bg-gradient-purple bg-clip-text text-transparent">Tech Ecosystem</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
               NAMESPACE is where ambitious technologists converge to learn, build, and scale. 
               We're creating the infrastructure that empowers the next generation of tech leaders.
             </p>
@@ -71,20 +71,20 @@ const SecondHeroSection = () => {
             </Button>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group text-center p-8 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                className="group text-center p-4 sm:p-6 lg:p-8 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-300 animate-scale-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-namespace-purple-light rounded-full mb-6 group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-namespace-purple-light rounded-full mb-4 sm:mb-6 group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-sora font-semibold mb-4 text-namespace-black">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-sora font-semibold mb-2 sm:mb-4 text-namespace-black">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-lg">
+                <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
                   {feature.description}
                 </p>
               </div>
