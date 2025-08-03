@@ -80,6 +80,10 @@ export default {
 				'scale-in': {
 					'0%': { opacity: '0', transform: 'scale(0.95)' },
 					'100%': { opacity: '1', transform: 'scale(1)' }
+				},
+				'scroll': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -87,7 +91,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'orbital-float': 'orbital-float 6s ease-in-out infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'scale-in': 'scale-in 0.5s ease-out'
+				'scale-in': 'scale-in 0.5s ease-out',
+				'scroll': 'scroll 30s linear infinite'
 			},
 			transitionProperty: {
 				'smooth': 'var(--transition-smooth)',

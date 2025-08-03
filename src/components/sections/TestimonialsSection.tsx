@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -19,11 +20,31 @@ const TestimonialsSection = () => {
       role: "AI Research Scientist",
       content: "The technical depth and real-world applications I learned here directly led to my dream role in AI research.",
       rating: 5
+    },
+    {
+      name: "Alex Thompson",
+      role: "CTO at TechCorp",
+      content: "The quality of developers and innovation coming out of NAMESPACE is exceptional. We've hired multiple graduates.",
+      rating: 5
+    },
+    {
+      name: "Maya Singh",
+      role: "Product Manager at Microsoft",
+      content: "NAMESPACE gave me the network and skills to transition from engineering to product management successfully.",
+      rating: 5
+    },
+    {
+      name: "David Kim",
+      role: "Venture Capitalist",
+      content: "We've invested in three startups founded by NAMESPACE alumni. The quality of projects is consistently impressive.",
+      rating: 5
     }
   ];
 
   const partners = [
-    "Google", "Microsoft", "Amazon", "Meta", "Apple", "Spotify", "Uber", "Airbnb"
+    "Google", "Microsoft", "Amazon", "Meta", "Apple", "Spotify", "Uber", "Airbnb", 
+    "Netflix", "Tesla", "PayPal", "Adobe", "Salesforce", "Oracle", "IBM", "Intel",
+    "NVIDIA", "Dropbox", "Slack", "Zoom", "Figma", "GitHub"
   ];
 
   return (
@@ -52,7 +73,8 @@ const TestimonialsSection = () => {
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up px-4">
+          {/* Testimonials Section */}
+          <div className="text-center mb-8 lg:mb-12 animate-fade-in-up px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
               Success <span className="bg-gradient-purple bg-clip-text text-transparent">Stories</span>
             </h2>
@@ -61,56 +83,78 @@ const TestimonialsSection = () => {
             </p>
           </div>
           
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 lg:mb-10 px-4">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className="group bg-namespace-white border-2 border-border rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="mb-6">
-                  <Quote className="w-8 h-8 text-namespace-purple-glow mb-4" />
-                  <p className="text-lg leading-relaxed text-namespace-black mb-6">
-                    "{testimonial.content}"
-                  </p>
-                  
-                  {/* Star Rating */}
-                  <div className="flex space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-sora font-bold text-namespace-black group-hover:text-namespace-purple transition-colors">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-muted-foreground">
-                    {testimonial.role}
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Testimonials Carousel */}
+          <div className="mb-16 lg:mb-20 px-4">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="group bg-namespace-white border-2 border-border rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-full">
+                      <div className="mb-6">
+                        <Quote className="w-8 h-8 text-namespace-purple-glow mb-4" />
+                        <p className="text-lg leading-relaxed text-namespace-black mb-6">
+                          "{testimonial.content}"
+                        </p>
+                        
+                        {/* Star Rating */}
+                        <div className="flex space-x-1 mb-4">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <div className="font-sora font-bold text-namespace-black group-hover:text-namespace-purple transition-colors">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-muted-foreground">
+                          {testimonial.role}
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
           </div>
           
-          {/* Partner Logos */}
+          {/* Partner Logos Section */}
           <div className="text-center">
             <h3 className="text-2xl font-sora font-semibold mb-8 text-muted-foreground">
               Trusted by teams at leading companies
             </h3>
             
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8 opacity-60 px-4">
-              {partners.map((partner, index) => (
-                <div 
-                  key={index}
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {partner}
-                </div>
-              ))}
+            {/* Continuous scrolling logos */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-scroll">
+                {/* First set of logos */}
+                {partners.map((partner, index) => (
+                  <div 
+                    key={index}
+                    className="flex-shrink-0 text-lg sm:text-xl lg:text-2xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-6 lg:mx-8"
+                  >
+                    {partner}
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {partners.map((partner, index) => (
+                  <div 
+                    key={`duplicate-${index}`}
+                    className="flex-shrink-0 text-lg sm:text-xl lg:text-2xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-6 lg:mx-8"
+                  >
+                    {partner}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
