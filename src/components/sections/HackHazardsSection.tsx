@@ -11,11 +11,27 @@ const HackHazardsSection = () => {
 
   return (
     <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
-      {/* Dynamic background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Geometric patterns */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-namespace-purple-light/30 to-transparent" />
         <div className="absolute -top-32 -right-32 w-64 h-64 bg-namespace-purple-glow/20 rounded-full blur-3xl animate-orbital-float" />
         <div className="absolute bottom-20 left-20 w-48 h-48 bg-namespace-purple-light rounded-full blur-2xl animate-orbital-float" style={{ animationDelay: '3s' }} />
+        
+        {/* Additional geometric patterns */}
+        <div className="absolute top-20 left-1/4 w-12 h-12 border-2 border-namespace-purple/20 rotate-45 animate-pulse" />
+        <div className="absolute bottom-28 right-1/3 w-16 h-16 border border-namespace-purple/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 right-20 w-8 h-8 bg-namespace-purple/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-1/3 left-16 w-6 h-6 border-2 border-namespace-purple/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        
+        {/* Lightning patterns */}
+        <div className="absolute top-32 right-16 w-10 h-10 border border-namespace-purple/25" style={{
+          clipPath: 'polygon(30% 0%, 60% 40%, 100% 35%, 70% 100%, 40% 60%, 0% 65%)',
+          animation: 'float 5s ease-in-out infinite'
+        }} />
+        <div className="absolute bottom-36 left-1/3 w-8 h-8 border border-namespace-purple/20" style={{
+          clipPath: 'polygon(30% 0%, 60% 40%, 100% 35%, 70% 100%, 40% 60%, 0% 65%)',
+          animation: 'float 3s ease-in-out infinite reverse'
+        }} />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">

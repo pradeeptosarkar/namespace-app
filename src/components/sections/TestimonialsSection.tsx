@@ -28,10 +28,26 @@ const TestimonialsSection = () => {
 
   return (
     <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Geometric patterns */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-orbital rounded-full blur-3xl opacity-30 animate-orbital-float" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-namespace-purple-light rounded-full blur-2xl opacity-50 animate-orbital-float" style={{ animationDelay: '3s' }} />
+        
+        {/* Additional geometric patterns */}
+        <div className="absolute top-16 right-20 w-12 h-12 border-2 border-namespace-purple/20 rotate-45 animate-pulse" />
+        <div className="absolute bottom-24 left-1/4 w-16 h-16 border border-namespace-purple/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-20 w-8 h-8 bg-namespace-purple/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-1/3 right-16 w-6 h-6 border-2 border-namespace-purple/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        
+        {/* Heart patterns for testimonials */}
+        <div className="absolute top-28 left-1/3 w-10 h-10 border border-namespace-purple/25" style={{
+          clipPath: 'polygon(50% 85%, 25% 65%, 0% 40%, 0% 25%, 15% 10%, 35% 10%, 50% 25%, 65% 10%, 85% 10%, 100% 25%, 100% 40%, 75% 65%)',
+          animation: 'float 6s ease-in-out infinite'
+        }} />
+        <div className="absolute bottom-32 right-1/3 w-8 h-8 border border-namespace-purple/20" style={{
+          clipPath: 'polygon(50% 85%, 25% 65%, 0% 40%, 0% 25%, 15% 10%, 35% 10%, 50% 25%, 65% 10%, 85% 10%, 100% 25%, 100% 40%, 75% 65%)',
+          animation: 'float 4s ease-in-out infinite reverse'
+        }} />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">

@@ -54,9 +54,27 @@ const ProgramsSection = () => {
 
   return (
     <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.3)_0%,transparent_50%)] bg-[size:200px_200px]" />
+      {/* Geometric patterns */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.3)_0%,transparent_50%)] bg-[size:200px_200px]" />
+        </div>
+        
+        {/* Additional geometric patterns */}
+        <div className="absolute top-20 right-1/4 w-14 h-14 border-2 border-namespace-purple-glow/20 rotate-45 animate-pulse" />
+        <div className="absolute bottom-24 left-1/4 w-18 h-18 border border-namespace-purple-glow/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 right-16 w-10 h-10 bg-namespace-purple-glow/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-1/3 left-20 w-6 h-6 border-2 border-namespace-purple-glow/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        
+        {/* Star patterns */}
+        <div className="absolute top-32 left-1/3 w-12 h-12 border border-namespace-purple-glow/25" style={{
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          animation: 'float 7s ease-in-out infinite'
+        }} />
+        <div className="absolute bottom-28 right-1/3 w-8 h-8 border border-namespace-purple-glow/20" style={{
+          clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
+          animation: 'float 4s ease-in-out infinite reverse'
+        }} />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">

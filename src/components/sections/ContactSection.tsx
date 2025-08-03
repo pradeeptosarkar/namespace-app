@@ -24,11 +24,27 @@ const ContactSection = () => {
 
   return (
     <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
-      {/* Background orbital elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Geometric patterns */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-32 h-32 border border-namespace-purple-glow rounded-full animate-orbital-float opacity-30" />
         <div className="absolute bottom-20 left-20 w-24 h-24 border border-namespace-purple-glow rounded-full animate-orbital-float opacity-20" style={{ animationDelay: '4s' }} />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-namespace-purple-glow rounded-full animate-orbital-float" style={{ animationDelay: '2s' }} />
+        
+        {/* Additional geometric patterns */}
+        <div className="absolute top-16 left-1/4 w-14 h-14 border-2 border-namespace-purple-glow/20 rotate-45 animate-pulse" />
+        <div className="absolute bottom-32 right-1/4 w-18 h-18 border border-namespace-purple-glow/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 right-16 w-10 h-10 bg-namespace-purple-glow/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-1/3 left-16 w-6 h-6 border-2 border-namespace-purple-glow/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        
+        {/* Arrow patterns for contact */}
+        <div className="absolute top-24 right-1/3 w-12 h-12 border border-namespace-purple-glow/25" style={{
+          clipPath: 'polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%)',
+          animation: 'float 5s ease-in-out infinite'
+        }} />
+        <div className="absolute bottom-28 left-1/3 w-10 h-10 border border-namespace-purple-glow/20" style={{
+          clipPath: 'polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%)',
+          animation: 'float 3s ease-in-out infinite reverse'
+        }} />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">

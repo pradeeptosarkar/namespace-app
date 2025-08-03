@@ -30,16 +30,30 @@ const WhoWeServeSection = () => {
 
   return (
     <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
-      {/* Background grid pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100px_100px]" />
-      </div>
-      
-      {/* Floating orbital elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Geometric patterns */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100px_100px]" />
+        </div>
+        
+        {/* Floating orbital elements */}
         <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-namespace-purple-glow rounded-full animate-orbital-float" />
         <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-namespace-purple-glow rounded-full animate-orbital-float" style={{ animationDelay: '2s' }} />
         <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-namespace-purple-glow rounded-full animate-orbital-float" style={{ animationDelay: '4s' }} />
+        
+        {/* Additional geometric patterns */}
+        <div className="absolute top-16 left-1/4 w-12 h-12 border-2 border-namespace-purple-glow/20 rotate-45 animate-pulse" />
+        <div className="absolute bottom-32 right-20 w-16 h-16 border border-namespace-purple-glow/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-16 w-8 h-8 bg-namespace-purple-glow/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-20 right-1/4 w-6 h-6 border-2 border-namespace-purple-glow/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        
+        {/* Diamond patterns */}
+        <div className="absolute top-24 right-1/3 w-10 h-10 border border-namespace-purple-glow/25 rotate-45" style={{
+          animation: 'float 6s ease-in-out infinite'
+        }} />
+        <div className="absolute bottom-40 left-20 w-8 h-8 border border-namespace-purple-glow/20 rotate-45" style={{
+          animation: 'float 4s ease-in-out infinite reverse'
+        }} />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
