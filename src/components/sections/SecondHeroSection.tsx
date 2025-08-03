@@ -1,22 +1,47 @@
 import { Button } from "@/components/ui/button";
-import { Rocket, Users, Zap } from "lucide-react";
+import { Globe, Users, TrendingUp, Target, Search, Heart, Building2, GraduationCap } from "lucide-react";
 
 const SecondHeroSection = () => {
   const features = [
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: "Innovation Labs",
-      description: "Real-world projects that matter"
+      icon: <Globe className="w-8 h-8" />,
+      title: "Borderless Ecosystem",
+      description: "Break silos and collaborate across geographies and backgrounds."
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Global Community",
-      description: "Connect with like-minded builders"
+      title: "Purposeful Collaboration",
+      description: "From hackathons to programs, every interaction creates real-world value."
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Rapid Growth",
-      description: "Accelerate your technical journey"
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Momentum for Builders",
+      description: "Fuel your growth with access, exposure, and opportunities that compound."
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Precision GTM",
+      description: "Launch and scale tech products with active developer communities."
+    },
+    {
+      icon: <Search className="w-8 h-8" />,
+      title: "Talent Discovery",
+      description: "Find exceptional builders through performance-driven programs."
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Authentic Engagement",
+      description: "Run campaigns and hackathons that resonate deeply with tech audiences."
+    },
+    {
+      icon: <Building2 className="w-8 h-8" />,
+      title: "Infra for Tech Communities",
+      description: "Support and supercharge your local or campus tech groups."
+    },
+    {
+      icon: <GraduationCap className="w-8 h-8" />,
+      title: "Modern Academia Connect",
+      description: "Bridge universities with the global tech world via pipelines and programs."
     }
   ];
 
@@ -71,7 +96,7 @@ const SecondHeroSection = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {features.map((feature, index) => (
               <div 
                 key={index}

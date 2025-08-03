@@ -1,4 +1,4 @@
-import { GraduationCap, Briefcase, Building, Heart } from "lucide-react";
+import { GraduationCap, Briefcase, Building, Heart, Users } from "lucide-react";
 
 const WhoWeServeSection = () => {
   const audiences = [
@@ -15,16 +15,22 @@ const WhoWeServeSection = () => {
       color: "from-namespace-purple to-purple-600"
     },
     {
-      icon: <Building className="w-12 h-12" />,
-      title: "Organizations",
-      description: "Forward-thinking companies seeking to build and nurture tech talent",
-      color: "from-green-500 to-green-600"
-    },
-    {
       icon: <Heart className="w-12 h-12" />,
       title: "Communities",
       description: "Tech groups and communities focused on collective growth and impact",
       color: "from-red-500 to-red-600"
+    },
+    {
+      icon: <Building className="w-12 h-12" />,
+      title: "Institutions",
+      description: "Educational institutions and research organizations driving innovation",
+      color: "from-green-500 to-green-600"
+    },
+    {
+      icon: <Users className="w-12 h-12" />,
+      title: "Companies",
+      description: "Forward-thinking organizations seeking to build and nurture tech talent",
+      color: "from-orange-500 to-orange-600"
     }
   ];
 
@@ -67,7 +73,7 @@ const WhoWeServeSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 px-4">
             {audiences.map((audience, index) => (
               <div 
                 key={index}
