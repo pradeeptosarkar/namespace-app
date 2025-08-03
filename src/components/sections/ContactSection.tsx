@@ -71,13 +71,13 @@ const ContactSection = () => {
           {/* Content */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in-up order-2 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sora font-bold leading-tight">
                 Ready to
                 <br />
                 <span className="text-namespace-purple-glow">Join Us?</span>
               </h2>
               
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
                 Whether you're a student, professional, or organization, we'd love to hear from you. 
                 Let's build the future of tech together.
               </p>
@@ -90,12 +90,12 @@ const ContactSection = () => {
                     key={index}
                     className="flex items-center space-x-4 text-gray-300 hover:text-namespace-purple-glow transition-colors cursor-pointer"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-namespace-white/10 rounded-full flex items-center justify-center">
+                    <div className="flex-shrink-0 w-9 h-9 bg-namespace-white/10 rounded-full flex items-center justify-center">
                       {info.icon}
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">{info.label}</div>
-                      <div className="text-lg font-medium">{info.value}</div>
+                      <div className="text-base font-medium">{info.value}</div>
                     </div>
                   </div>
                 ))}
@@ -103,13 +103,13 @@ const ContactSection = () => {
 
               {/* Social Media Links */}
               <div className="mt-8">
-                <h3 className="text-lg font-sora font-semibold text-namespace-white mb-4">Follow Us</h3>
+                <h3 className="text-base font-sora font-semibold text-namespace-white mb-3">Follow Us</h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <a 
                       key={index}
                       href={social.url}
-                      className="flex-shrink-0 w-12 h-12 bg-namespace-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-namespace-purple-glow hover:bg-namespace-white/20 transition-all duration-300"
+                      className="flex-shrink-0 w-9 h-9 bg-namespace-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-namespace-purple-glow hover:bg-namespace-white/20 transition-all duration-300"
                       aria-label={social.label}
                     >
                       {social.icon}
@@ -120,11 +120,11 @@ const ContactSection = () => {
             </div>
             
           {/* Contact Form */}
-          <div className="bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 animate-scale-in order-1 lg:order-2">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-3 sm:p-4 lg:p-6 animate-scale-in order-1 lg:order-2">
+              <form className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-xs font-medium text-gray-300 mb-1">
                       First Name
                     </label>
                     <Input 
@@ -133,7 +133,7 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-xs font-medium text-gray-300 mb-1">
                       Last Name
                     </label>
                     <Input 
@@ -144,7 +144,7 @@ const ContactSection = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs font-medium text-gray-300 mb-1">
                     Email
                   </label>
                   <Input 
@@ -155,40 +155,40 @@ const ContactSection = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs font-medium text-gray-300 mb-1">
                     Message
                   </label>
                   <Textarea 
                     placeholder="Tell us about your goals and how we can help..."
-                    rows={4}
+                    rows={3}
                     className="bg-namespace-white/10 border-namespace-white/20 text-namespace-white placeholder:text-gray-400 resize-none"
                   />
                 </div>
                 
                 <Button 
                   type="submit"
-                  size="lg"
+                  size="default"
                   className="w-full bg-namespace-purple hover:bg-primary-hover text-namespace-white font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300"
                 >
                   Send Message
-                  <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </form>
             </div>
           </div>
           
           {/* Footer */}
-          <div className="border-t border-namespace-white/10 mt-16 pt-8 text-center">
-            <div className="flex items-center justify-center mb-4">
+          <div className="border-t border-namespace-white/10 mt-12 pt-6 text-center">
+            <div className="flex items-center justify-center mb-3">
               <img 
                 src="/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png"
                 alt="NAMESPACE"
-                className="h-8"
+                className="h-6"
               />
             </div>
             
             {/* Legal Links */}
-            <div className="flex flex-wrap justify-center gap-6 mb-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-3">
               <a href="#" className="text-gray-400 hover:text-namespace-purple-glow text-sm transition-colors">
                 Privacy Policy
               </a>
