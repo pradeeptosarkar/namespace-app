@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
           </div>
           
           {/* Testimonials Carousel */}
-          <div className="mb-16 lg:mb-20 px-4">
+          <div className="mb-12 lg:mb-16 px-4">
             <Carousel
               opts={{
                 align: "start",
@@ -95,26 +95,26 @@ const TestimonialsSection = () => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="group bg-namespace-white border-2 border-border rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-full">
-                      <div className="mb-6">
-                        <Quote className="w-8 h-8 text-namespace-purple-glow mb-4" />
-                        <p className="text-lg leading-relaxed text-namespace-black mb-6">
+                    <div className="group bg-namespace-white border border-border rounded-xl p-3 sm:p-4 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-full">
+                      <div className="mb-4">
+                        <Quote className="w-6 h-6 text-namespace-purple-glow mb-3" />
+                        <p className="text-sm leading-relaxed text-namespace-black mb-4">
                           "{testimonial.content}"
                         </p>
                         
                         {/* Star Rating */}
-                        <div className="flex space-x-1 mb-4">
+                        <div className="flex space-x-1 mb-3">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                           ))}
                         </div>
                       </div>
                       
                       <div>
-                        <div className="font-sora font-bold text-namespace-black group-hover:text-namespace-purple transition-colors">
+                        <div className="font-sora font-bold text-sm text-namespace-black group-hover:text-namespace-purple transition-colors">
                           {testimonial.name}
                         </div>
-                        <div className="text-muted-foreground">
+                        <div className="text-muted-foreground text-xs">
                           {testimonial.role}
                         </div>
                       </div>
@@ -127,20 +127,20 @@ const TestimonialsSection = () => {
             </Carousel>
           </div>
           
-          {/* Partner Logos Section */}
-          <div className="text-center">
-            <h3 className="text-2xl font-sora font-semibold mb-8 text-muted-foreground">
+          {/* Partner Logos Section - Expanded */}
+          <div className="text-center bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-8 lg:p-12">
+            <h3 className="text-3xl lg:text-4xl font-sora font-semibold mb-12 text-muted-foreground">
               Trusted by teams at leading companies
             </h3>
             
-            {/* Continuous scrolling logos */}
+            {/* Continuous scrolling logos - Larger */}
             <div className="relative overflow-hidden">
               <div className="flex animate-scroll">
                 {/* First set of logos */}
                 {partners.map((partner, index) => (
                   <div 
                     key={index}
-                    className="flex-shrink-0 text-lg sm:text-xl lg:text-2xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-6 lg:mx-8"
+                    className="flex-shrink-0 text-2xl sm:text-3xl lg:text-4xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-8 lg:mx-12"
                   >
                     {partner}
                   </div>
@@ -149,7 +149,7 @@ const TestimonialsSection = () => {
                 {partners.map((partner, index) => (
                   <div 
                     key={`duplicate-${index}`}
-                    className="flex-shrink-0 text-lg sm:text-xl lg:text-2xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-6 lg:mx-8"
+                    className="flex-shrink-0 text-2xl sm:text-3xl lg:text-4xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-8 lg:mx-12"
                   >
                     {partner}
                   </div>

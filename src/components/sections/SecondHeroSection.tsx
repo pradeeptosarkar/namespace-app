@@ -100,18 +100,29 @@ const SecondHeroSection = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group text-center p-4 sm:p-6 lg:p-8 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                className="group relative h-32 sm:h-36 lg:h-40 rounded-2xl bg-namespace-white border border-border hover:border-namespace-purple/30 hover:shadow-elegant transition-all duration-500 animate-scale-in perspective-1000"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-namespace-purple-light rounded-full mb-4 sm:mb-6 group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
-                  {feature.icon}
+                {/* Front side */}
+                <div className="absolute inset-0 w-full h-full transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180">
+                  <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-namespace-white border border-border flex flex-col items-center justify-center p-4">
+                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-namespace-purple-light rounded-full mb-3 group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-sm sm:text-base lg:text-lg font-sora font-semibold text-center text-namespace-black">
+                      {feature.title}
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-sora font-semibold mb-2 sm:mb-4 text-namespace-black">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">
-                  {feature.description}
-                </p>
+
+                {/* Back side */}
+                <div className="absolute inset-0 w-full h-full transition-transform duration-500 transform-style-preserve-3d rotate-y-180 group-hover:rotate-y-0">
+                  <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-namespace-purple to-namespace-purple-glow flex items-center justify-center p-4">
+                    <p className="text-namespace-white text-xs sm:text-sm text-center leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

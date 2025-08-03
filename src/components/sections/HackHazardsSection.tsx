@@ -3,17 +3,17 @@ import { Calendar, Trophy, Users, Zap, Globe, Building, School, Eye, UserCheck, 
 
 const HackHazardsSection = () => {
   const stats = [
-    { icon: <Users className="w-8 h-8" />, number: "17,000+", label: "Hackers" },
-    { icon: <Trophy className="w-8 h-8" />, number: "3,000+", label: "Proposals" },
-    { icon: <Zap className="w-8 h-8" />, number: "780+", label: "Builds" },
-    { icon: <Globe className="w-8 h-8" />, number: "6", label: "Global Partners" },
-    { icon: <MapPin className="w-8 h-8" />, number: "25+", label: "Countries" },
-    { icon: <Building className="w-8 h-8" />, number: "500+", label: "Indian Cities and Towns" },
-    { icon: <School className="w-8 h-8" />, number: "1500+", label: "Institutions" },
-    { icon: <Eye className="w-8 h-8" />, number: "2mn+", label: "Social media impressions" },
-    { icon: <UserCheck className="w-8 h-8" />, number: "35%", label: "Women" },
-    { icon: <UsersRound className="w-8 h-8" />, number: "35%", label: "First-timers" },
-    { icon: <Users className="w-8 h-8" />, number: "25%", label: "Participants from Rural Areas" }
+    { number: "17,000+", label: "Hackers" },
+    { number: "3,000+", label: "Proposals" },
+    { number: "780+", label: "Builds" },
+    { number: "6", label: "Global Partners" },
+    { number: "25+", label: "Countries" },
+    { number: "500+", label: "Indian Cities and Towns" },
+    { number: "1500+", label: "Institutions" },
+    { number: "2mn+", label: "Social media impressions" },
+    { number: "35%", label: "Women" },
+    { number: "35%", label: "First-timers" },
+    { number: "25%", label: "Participants from Rural Areas" }
   ];
 
   return (
@@ -82,26 +82,19 @@ const HackHazardsSection = () => {
             </div>
             
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 order-1 lg:order-2">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3 order-1 lg:order-2">
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="group bg-namespace-white border-2 border-border rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                  className="group bg-namespace-white border border-border rounded-lg p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="text-center space-y-3 sm:space-y-4">
-                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-namespace-purple-light rounded-full group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
-                      <div className="[&>svg]:w-5 [&>svg]:h-5 sm:[&>svg]:w-6 sm:[&>svg]:h-6 lg:[&>svg]:w-8 lg:[&>svg]:h-8">
-                        {stat.icon}
-                      </div>
+                  <div className="text-center space-y-1 sm:space-y-2">
+                    <div className="text-sm sm:text-base lg:text-lg font-sora font-bold text-namespace-black group-hover:text-namespace-purple transition-colors">
+                      {stat.number}
                     </div>
-                    <div>
-                      <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-sora font-bold text-namespace-black group-hover:text-namespace-purple transition-colors">
-                        {stat.number}
-                      </div>
-                      <div className="text-muted-foreground font-medium text-sm sm:text-base">
-                        {stat.label}
-                      </div>
+                    <div className="text-muted-foreground font-medium text-xs sm:text-sm">
+                      {stat.label}
                     </div>
                   </div>
                 </div>

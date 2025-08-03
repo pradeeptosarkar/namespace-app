@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, Send, Linkedin, Instagram, Twitter, Github, Youtube } from "lucide-react";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -9,16 +9,34 @@ const ContactSection = () => {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
       value: "hello@namespace.tech"
+    }
+  ];
+
+  const socialLinks = [
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      label: "LinkedIn",
+      url: "#"
     },
     {
-      icon: <Phone className="w-6 h-6" />,
-      label: "Phone",
-      value: "+1 (555) 123-4567"
+      icon: <Instagram className="w-6 h-6" />,
+      label: "Instagram", 
+      url: "#"
     },
     {
-      icon: <MapPin className="w-6 h-6" />,
-      label: "Location",
-      value: "San Francisco, CA"
+      icon: <Twitter className="w-6 h-6" />,
+      label: "Twitter",
+      url: "#"
+    },
+    {
+      icon: <Github className="w-6 h-6" />,
+      label: "GitHub",
+      url: "#"
+    },
+    {
+      icon: <Youtube className="w-6 h-6" />,
+      label: "YouTube",
+      url: "#"
     }
   ];
 
@@ -81,6 +99,23 @@ const ContactSection = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Social Media Links */}
+              <div className="mt-8">
+                <h3 className="text-lg font-sora font-semibold text-namespace-white mb-4">Follow Us</h3>
+                <div className="flex space-x-4">
+                  {socialLinks.map((social, index) => (
+                    <a 
+                      key={index}
+                      href={social.url}
+                      className="flex-shrink-0 w-12 h-12 bg-namespace-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-namespace-purple-glow hover:bg-namespace-white/20 transition-all duration-300"
+                      aria-label={social.label}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
             

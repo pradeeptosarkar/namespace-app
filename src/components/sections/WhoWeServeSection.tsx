@@ -77,28 +77,32 @@ const WhoWeServeSection = () => {
             {audiences.map((audience, index) => (
               <div 
                 key={index}
-                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 animate-scale-in"
+                className="group relative h-48 sm:h-52 cursor-pointer overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl transition-all duration-500 animate-scale-in"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                {/* Gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${audience.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                
-                <div className="relative z-10">
-                  <div className="flex justify-center mb-4 sm:mb-6">
-                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-namespace-white/10 rounded-full group-hover:bg-namespace-purple-glow/20 transition-all duration-300">
-                      <div className="text-namespace-white group-hover:text-namespace-purple-glow transition-colors [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8 lg:[&>svg]:w-12 lg:[&>svg]:h-12">
-                        {audience.icon}
-                      </div>
+                {/* Front content - visible by default */}
+                <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                  <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-namespace-white/10 rounded-full mb-4">
+                    <div className="text-namespace-white [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8">
+                      {audience.icon}
                     </div>
                   </div>
                   
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-sora font-bold mb-2 sm:mb-4 text-center text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
+                  <h3 className="text-lg sm:text-xl font-sora font-bold text-center text-namespace-white">
                     {audience.title}
                   </h3>
-                  
-                  <p className="text-gray-300 text-center leading-relaxed text-sm sm:text-base">
-                    {audience.description}
-                  </p>
+                </div>
+
+                {/* Back content - visible on hover */}
+                <div className={`absolute inset-0 p-4 sm:p-6 flex items-center justify-center bg-gradient-to-br ${audience.color} opacity-0 group-hover:opacity-100 transition-all duration-300`}>
+                  <div className="text-center">
+                    <h3 className="text-lg sm:text-xl font-sora font-bold text-white mb-3">
+                      {audience.title}
+                    </h3>
+                    <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                      {audience.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

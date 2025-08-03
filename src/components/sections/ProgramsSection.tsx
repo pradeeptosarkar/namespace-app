@@ -88,38 +88,72 @@ const ProgramsSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-4">
-            {programs.map((program, index) => (
-              <div 
-                key={index}
-                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-                
-                <div className="relative z-10 h-full flex flex-col">
-                  <div className="flex-1">
-                    <div className="inline-block px-3 py-1 bg-namespace-purple-glow/20 rounded-full text-xs font-semibold text-namespace-purple-glow mb-4">
-                      {program.category}
+          {/* Programs Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-programs gap-6">
+              {/* First set of programs */}
+              {programs.map((program, index) => (
+                <div 
+                  key={index}
+                  className="group relative flex-shrink-0 w-80 overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-6 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer"
+                >
+                  {/* Gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+                  
+                  <div className="relative z-10 h-full flex flex-col">
+                    <div className="flex-1">
+                      <div className="inline-block px-3 py-1 bg-namespace-purple-glow/20 rounded-full text-xs font-semibold text-namespace-purple-glow mb-4">
+                        {program.category}
+                      </div>
+                      
+                      <h3 className="text-xl font-sora font-bold mb-3 text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
+                        {program.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                        {program.description}
+                      </p>
                     </div>
                     
-                    <h3 className="text-xl font-sora font-bold mb-3 text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
-                      {program.title}
-                    </h3>
-                    
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                      {program.description}
-                    </p>
-                  </div>
-                  
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-400 font-medium">Learn More</span>
-                    <ExternalLink className="w-4 h-4 text-namespace-purple-glow opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400 font-medium">Learn More</span>
+                      <ExternalLink className="w-4 h-4 text-namespace-purple-glow opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {programs.map((program, index) => (
+                <div 
+                  key={`duplicate-${index}`}
+                  className="group relative flex-shrink-0 w-80 overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-6 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer"
+                >
+                  {/* Gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+                  
+                  <div className="relative z-10 h-full flex flex-col">
+                    <div className="flex-1">
+                      <div className="inline-block px-3 py-1 bg-namespace-purple-glow/20 rounded-full text-xs font-semibold text-namespace-purple-glow mb-4">
+                        {program.category}
+                      </div>
+                      
+                      <h3 className="text-xl font-sora font-bold mb-3 text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
+                        {program.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                        {program.description}
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400 font-medium">Learn More</span>
+                      <ExternalLink className="w-4 h-4 text-namespace-purple-glow opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

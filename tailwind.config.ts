@@ -17,7 +17,19 @@ export default {
 				'2xl': '1400px'
 			}
 		},
-		extend: {
+      extend: {
+        perspective: {
+          '1000': '1000px',
+        },
+        transform: {
+          'preserve-3d': 'preserve-3d',
+        },
+        backfaceVisibility: {
+          'hidden': 'hidden',
+        },
+        rotate: {
+          'y-180': 'rotateY(180deg)',
+        },
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
 				'sora': ['Sora', 'sans-serif'],
@@ -84,6 +96,10 @@ export default {
 				'scroll': {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(-50%)' }
+				},
+				'scroll-programs': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -92,7 +108,8 @@ export default {
 				'orbital-float': 'orbital-float 6s ease-in-out infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out',
-				'scroll': 'scroll 30s linear infinite'
+				'scroll': 'scroll 30s linear infinite',
+				'scroll-programs': 'scroll-programs 80s linear infinite'
 			},
 			transitionProperty: {
 				'smooth': 'var(--transition-smooth)',
