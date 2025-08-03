@@ -137,22 +137,21 @@ const HeroSection = () => {
           {/* Right side - Animated Logo */}
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="relative">
-              {/* Geometric frame around logo */}
-              <div className="absolute inset-0 w-96 h-96 border border-namespace-purple/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
-              <div className="absolute inset-4 w-88 h-88 border-2 border-namespace-purple/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+              {/* Subtle geometric frame around logo */}
+              <div className="absolute inset-0 w-96 h-96 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
+              <div className="absolute inset-8 w-80 h-80 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
-              {/* Main logo */}
+              {/* Main logo with subtle breathing animation */}
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-80 h-80 animate-pulse hover:scale-110 transition-transform duration-500 relative z-10"
+                className="w-80 h-80 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
               />
               
-              {/* Floating particles around logo */}
-              <div className="absolute top-10 right-10 w-4 h-4 bg-namespace-purple rounded-full animate-bounce" style={{ animationDelay: '0s' }} />
-              <div className="absolute bottom-20 left-5 w-3 h-3 bg-namespace-purple/60 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
-              <div className="absolute top-32 left-8 w-2 h-2 bg-namespace-purple/40 rounded-full animate-bounce" style={{ animationDelay: '2s' }} />
-              <div className="absolute bottom-10 right-20 w-5 h-5 bg-namespace-purple/80 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
+              {/* Subtle floating elements */}
+              <div className="absolute top-16 right-16 w-2 h-2 bg-namespace-purple/40 rounded-full animate-[float_6s_ease-in-out_infinite]" />
+              <div className="absolute bottom-24 left-12 w-1.5 h-1.5 bg-namespace-purple/30 rounded-full animate-[float_8s_ease-in-out_infinite]" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-40 left-16 w-1 h-1 bg-namespace-purple/25 rounded-full animate-[float_7s_ease-in-out_infinite]" style={{ animationDelay: '4s' }} />
             </div>
           </div>
         </div>

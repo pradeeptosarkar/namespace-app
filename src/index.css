@@ -103,6 +103,26 @@
       height: 100vh;
       width: 100%;
     }
+    }
+  }
+  
+  /* Professional animations */
+  @keyframes breathing {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
   }
 }
 
