@@ -53,11 +53,11 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [taglines.length]);
 
-  // Cursor blinking
+  // Cursor smooth fade animation
   useEffect(() => {
     const interval = setInterval(() => {
       setShowCursor(prev => !prev);
-    }, 600);
+    }, 1200); // Slower, more professional timing
 
     return () => clearInterval(interval);
   }, []);
@@ -105,7 +105,7 @@ const HeroSection = () => {
                   <br />
                   <span className="bg-gradient-purple bg-clip-text text-transparent inline-flex items-center">
                     {typedText}
-                    <span className={`ml-1 w-1 h-16 md:h-20 bg-namespace-purple ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`} />
+                    <span className={`ml-1 w-1 h-16 md:h-20 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
                   </span>
                 </h1>
                 
