@@ -42,7 +42,7 @@ const ProblemSection = () => {
   };
 
   return (
-    <section className="scroll-section bg-black text-white relative overflow-hidden min-h-screen py-20">
+    <section className="scroll-section bg-black text-white relative overflow-hidden h-screen py-12">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-10 w-32 h-32 border border-purple-500/30 rounded-full animate-pulse opacity-20" />
@@ -67,11 +67,11 @@ const ProblemSection = () => {
       
       <div className="relative z-10 container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-10 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold mb-3 sm:mb-4">
               The <span className="text-purple-400">Current</span> Reality
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl text-gray-300 max-w-3xl mx-auto">
               The tech ecosystem is broken. Talent is wasted, opportunities are missed, and innovation is stifled by outdated systems.
             </p>
           </div>

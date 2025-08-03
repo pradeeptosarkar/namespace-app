@@ -46,26 +46,26 @@ const SecondHeroSection = () => {
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <div className="inline-flex items-center space-x-2 bg-namespace-purple-light px-6 py-3 rounded-full mb-8">
+          <div className="text-center mb-10 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-2 bg-namespace-purple-light px-4 py-2 rounded-full mb-6">
               <div className="w-3 h-3 bg-namespace-purple rounded-full animate-pulse" />
               <span className="font-semibold text-namespace-purple">Our Solution</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6 leading-tight">
               Building Tomorrow's
               <br />
               <span className="bg-gradient-purple bg-clip-text text-transparent">Tech Ecosystem</span>
             </h2>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto mb-6 sm:mb-8 px-4">
               NAMESPACE is where ambitious technologists converge to learn, build, and scale. 
               We're creating the infrastructure that empowers the next generation of tech leaders.
             </p>
             
             <Button 
               size="lg"
-              className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold shadow-elegant hover:shadow-orbital transition-all duration-300"
+              className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-6 py-4 text-base font-semibold shadow-elegant hover:shadow-orbital transition-all duration-300"
             >
               Join Our Community
             </Button>

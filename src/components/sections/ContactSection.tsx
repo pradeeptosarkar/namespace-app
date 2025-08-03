@@ -53,13 +53,13 @@ const ContactSection = () => {
           {/* Content */}
           <div className="space-y-6 sm:space-y-8 animate-fade-in-up order-2 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold leading-tight">
                 Ready to
                 <br />
                 <span className="text-namespace-purple-glow">Join Us?</span>
               </h2>
               
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
                 Whether you're a student, professional, or organization, we'd love to hear from you. 
                 Let's build the future of tech together.
               </p>

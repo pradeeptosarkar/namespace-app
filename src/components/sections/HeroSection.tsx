@@ -91,7 +91,7 @@ const HeroSection = () => {
         <div className="flex w-full">
           {/* Left side content */}
           <div className="flex-1 max-w-4xl">
-            <div className="space-y-8 animate-fade-in-up">
+            <div className="space-y-6 animate-fade-in-up">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 bg-namespace-purple-light px-4 py-2 rounded-full">
                   <div className="w-2 h-2 bg-namespace-purple rounded-full animate-pulse" />
@@ -100,16 +100,16 @@ const HeroSection = () => {
                   </span>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-sora font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold leading-tight">
                   Welcome to
                   <br />
                   <span className="bg-gradient-purple bg-clip-text text-transparent inline-flex items-center">
                     {typedText}
-                    <span className={`ml-1 w-1 h-8 sm:h-12 md:h-16 lg:h-20 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
+                    <span className={`ml-1 w-1 h-8 sm:h-12 md:h-14 lg:h-16 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
                   </span>
                 </h1>
                 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl font-inter">
+                <p className="text-base sm:text-lg md:text-xl lg:text-xl text-muted-foreground max-w-2xl font-inter">
                   Where human potential meets technological innovation. We're building the infrastructure for tomorrow's tech leaders.
                 </p>
               </div>
@@ -145,7 +145,7 @@ const HeroSection = () => {
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-56 h-56 xl:w-72 xl:h-72 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
+                className="w-48 h-48 xl:w-56 xl:h-56 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
               />
               
               {/* Subtle floating elements */}
