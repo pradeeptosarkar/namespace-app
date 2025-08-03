@@ -100,16 +100,16 @@ const HeroSection = () => {
                   </span>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-sora font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-[clamp(3rem,5vw,6rem)] xl:text-[clamp(4rem,6vw,8rem)] font-sora font-bold leading-tight">
                   Welcome to
                   <br />
                   <span className="bg-gradient-purple bg-clip-text text-transparent inline-flex items-center">
                     {typedText}
-                    <span className={`ml-1 w-1 h-8 sm:h-12 md:h-16 lg:h-20 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
+                    <span className={`ml-1 w-1 h-8 sm:h-12 md:h-16 lg:h-[clamp(3rem,4vw,5rem)] xl:h-[clamp(4rem,5vw,6rem)] bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
                   </span>
                 </h1>
                 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl font-inter">
+                <p className="text-base sm:text-lg md:text-xl lg:text-[clamp(1.25rem,1.5vw,2rem)] xl:text-[clamp(1.5rem,1.8vw,2.5rem)] text-muted-foreground max-w-2xl font-inter">
                   Where human potential meets technological innovation. We're building the infrastructure for tomorrow's tech leaders.
                 </p>
               </div>
@@ -138,14 +138,14 @@ const HeroSection = () => {
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="relative">
               {/* Subtle geometric frame around logo */}
-              <div className="absolute inset-0 w-64 h-64 xl:w-80 xl:h-80 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
-              <div className="absolute inset-4 w-56 h-56 xl:w-72 xl:h-72 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
+              <div className="absolute inset-0 lg:w-[clamp(16rem,20vw,24rem)] lg:h-[clamp(16rem,20vw,24rem)] xl:w-[clamp(20rem,25vw,30rem)] xl:h-[clamp(20rem,25vw,30rem)] border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
+              <div className="absolute inset-4 lg:w-[clamp(14rem,18vw,22rem)] lg:h-[clamp(14rem,18vw,22rem)] xl:w-[clamp(18rem,23vw,28rem)] xl:h-[clamp(18rem,23vw,28rem)] border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
               {/* Main logo with subtle breathing animation */}
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-56 h-56 xl:w-72 xl:h-72 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
+                className="lg:w-[clamp(14rem,18vw,22rem)] lg:h-[clamp(14rem,18vw,22rem)] xl:w-[clamp(18rem,23vw,28rem)] xl:h-[clamp(18rem,23vw,28rem)] hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
               />
               
               {/* Subtle floating elements */}

@@ -50,19 +50,19 @@ const TestimonialsSection = () => {
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8">
+      <div className="relative z-10 container mx-auto px-6 h-full flex items-center lg:px-[clamp(2rem,4vw,6rem)]">
+        <div className="w-full max-w-7xl mx-auto lg:max-w-[clamp(60rem,85vw,95rem)]">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-[clamp(3rem,5vw,6rem)] animate-fade-in-up px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[clamp(3rem,4.5vw,5.5rem)] xl:text-[clamp(4rem,5.5vw,7rem)] font-sora font-bold mb-6 sm:mb-8 lg:mb-[clamp(1.5rem,2.5vw,3rem)]">
               Success <span className="bg-gradient-purple bg-clip-text text-transparent">Stories</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-[clamp(1.125rem,1.3vw,1.75rem)] xl:text-[clamp(1.25rem,1.5vw,2rem)] text-muted-foreground max-w-4xl mx-auto">
               Hear from our community members who are building the future of technology.
             </p>
           </div>
           
           {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 lg:mb-16 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-[clamp(1.5rem,2.5vw,3rem)] mb-8 sm:mb-12 lg:mb-[clamp(3rem,5vw,6rem)] px-4">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
