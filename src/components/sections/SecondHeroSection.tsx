@@ -1,45 +1,36 @@
 import { Button } from "@/components/ui/button";
-import { Globe, Users, TrendingUp, Target, Search, Heart, Building2, GraduationCap } from "lucide-react";
 
 const SecondHeroSection = () => {
   const features = [
     {
-      icon: <Globe className="w-8 h-8" />,
       title: "Borderless Ecosystem",
       description: "Break silos and collaborate across geographies and backgrounds."
     },
     {
-      icon: <Users className="w-8 h-8" />,
       title: "Purposeful Collaboration",
       description: "From hackathons to programs, every interaction creates real-world value."
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
       title: "Momentum for Builders",
       description: "Fuel your growth with access, exposure, and opportunities that compound."
     },
     {
-      icon: <Target className="w-8 h-8" />,
       title: "Precision GTM",
       description: "Launch and scale tech products with active developer communities."
     },
     {
-      icon: <Search className="w-8 h-8" />,
       title: "Talent Discovery",
       description: "Find exceptional builders through performance-driven programs."
     },
     {
-      icon: <Heart className="w-8 h-8" />,
       title: "Authentic Engagement",
       description: "Run campaigns and hackathons that resonate deeply with tech audiences."
     },
     {
-      icon: <Building2 className="w-8 h-8" />,
       title: "Infra for Tech Communities",
       description: "Support and supercharge your local or campus tech groups."
     },
     {
-      icon: <GraduationCap className="w-8 h-8" />,
       title: "Modern Academia Connect",
       description: "Bridge universities with the global tech world via pipelines and programs."
     }
@@ -87,13 +78,6 @@ const SecondHeroSection = () => {
               NAMESPACE is where ambitious technologists converge to learn, build, and scale. 
               We're creating the infrastructure that empowers the next generation of tech leaders.
             </p>
-            
-            <Button 
-              size="lg"
-              className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-6 py-4 text-base font-semibold shadow-elegant hover:shadow-orbital transition-all duration-300"
-            >
-              Join Our Community
-            </Button>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
@@ -103,14 +87,15 @@ const SecondHeroSection = () => {
                 className="group relative h-20 sm:h-24 lg:h-28 rounded-2xl border border-border bg-gradient-to-br from-namespace-white to-gray-50 hover:border-namespace-purple/50 hover:shadow-elegant transition-all duration-500 animate-scale-in overflow-hidden cursor-pointer"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {/* Default state - Icon only */}
-                <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:scale-75 group-hover:opacity-0">
-                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-namespace-purple-light text-namespace-purple rounded-full">
-                    {feature.icon}
-                  </div>
+                {/* Default state - Dot and Title */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-3 sm:p-4 transition-all duration-300 group-hover:opacity-0">
+                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-namespace-purple rounded-full mb-2 sm:mb-3"></div>
+                  <h3 className="text-xs sm:text-sm lg:text-base font-sora font-semibold text-center text-namespace-black leading-tight">
+                    {feature.title}
+                  </h3>
                 </div>
 
-                {/* Hover state - Title and description */}
+                {/* Hover state - Description */}
                 <div className="absolute inset-0 bg-namespace-purple rounded-2xl p-3 sm:p-4 flex flex-col justify-center transform scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300">
                   <h3 className="text-xs sm:text-sm font-sora font-bold text-center text-namespace-white mb-1 sm:mb-2">
                     {feature.title}
