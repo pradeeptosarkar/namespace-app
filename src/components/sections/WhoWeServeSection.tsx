@@ -56,41 +56,41 @@ const WhoWeServeSection = () => {
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 h-full flex items-center lg:px-[clamp(2rem,4vw,6rem)]">
-        <div className="w-full max-w-7xl mx-auto lg:max-w-[clamp(60rem,85vw,95rem)]">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-[clamp(3rem,5vw,6rem)] animate-fade-in-up px-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[clamp(3rem,4.5vw,5.5rem)] xl:text-[clamp(4rem,5.5vw,7rem)] font-sora font-bold mb-6 sm:mb-8 lg:mb-[clamp(1.5rem,2.5vw,3rem)]">
+      <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold mb-6 sm:mb-8">
               Who We <span className="text-namespace-purple-glow">Serve</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-[clamp(1.125rem,1.3vw,1.75rem)] xl:text-[clamp(1.25rem,1.5vw,2rem)] text-gray-300 max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto">
               NAMESPACE is designed for everyone in the tech ecosystem — from curious beginners to seasoned leaders driving innovation.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-[clamp(1.5rem,2.5vw,3rem)] px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4">
             {audiences.map((audience, index) => (
               <div 
                 key={index}
-                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 lg:p-[clamp(1.5rem,2.5vw,3rem)] hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 animate-scale-in"
+                className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 animate-scale-in"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${audience.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 
                 <div className="relative z-10">
-                  <div className="flex justify-center mb-4 sm:mb-6 lg:mb-[clamp(1rem,1.5vw,2rem)]">
-                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 lg:w-[clamp(3rem,4vw,5rem)] lg:h-[clamp(3rem,4vw,5rem)] bg-namespace-white/10 rounded-full group-hover:bg-namespace-purple-glow/20 transition-all duration-300">
-                      <div className="text-namespace-white group-hover:text-namespace-purple-glow transition-colors [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8 lg:[&>svg]:w-[clamp(1.5rem,2vw,2.5rem)] lg:[&>svg]:h-[clamp(1.5rem,2vw,2.5rem)]">
+                  <div className="flex justify-center mb-4 sm:mb-6">
+                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-namespace-white/10 rounded-full group-hover:bg-namespace-purple-glow/20 transition-all duration-300">
+                      <div className="text-namespace-white group-hover:text-namespace-purple-glow transition-colors [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8 lg:[&>svg]:w-12 lg:[&>svg]:h-12">
                         {audience.icon}
                       </div>
                     </div>
                   </div>
                   
-                  <h3 className="text-lg sm:text-xl lg:text-[clamp(1.25rem,1.5vw,2rem)] font-sora font-bold mb-2 sm:mb-4 lg:mb-[clamp(0.75rem,1vw,1.5rem)] text-center text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-sora font-bold mb-2 sm:mb-4 text-center text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
                     {audience.title}
                   </h3>
                   
-                  <p className="text-gray-300 text-center leading-relaxed text-sm sm:text-base lg:text-[clamp(0.875rem,1vw,1.125rem)]">
+                  <p className="text-gray-300 text-center leading-relaxed text-sm sm:text-base">
                     {audience.description}
                   </p>
                 </div>

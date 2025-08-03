@@ -34,8 +34,8 @@ const HackHazardsSection = () => {
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 h-full flex items-center lg:px-[clamp(2rem,4vw,6rem)]">
-        <div className="w-full max-w-7xl mx-auto lg:max-w-[clamp(60rem,85vw,95rem)]">
+      <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
+        <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4">
             {/* Content */}
             <div className="space-y-6 sm:space-y-8 animate-fade-in-up order-2 lg:order-1">
@@ -45,12 +45,12 @@ const HackHazardsSection = () => {
                   <span className="font-bold text-namespace-white text-lg">FLAGSHIP EVENT</span>
                 </div>
                 
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[clamp(3rem,4.5vw,5.5rem)] xl:text-[clamp(4rem,5.5vw,7rem)] font-sora font-bold leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold leading-tight">
                   HACK
                   <span className="bg-gradient-purple bg-clip-text text-transparent">HAZARDS</span>
                 </h2>
                 
-                <p className="text-base sm:text-lg md:text-xl lg:text-[clamp(1.125rem,1.3vw,1.75rem)] xl:text-[clamp(1.25rem,1.5vw,2rem)] text-muted-foreground leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
                   Our flagship hackathon where brilliant minds converge to solve real-world challenges. 
                   48 hours of intense innovation, mentorship, and community building.
                 </p>
@@ -75,24 +75,24 @@ const HackHazardsSection = () => {
             </div>
             
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-[clamp(1.5rem,2.5vw,3rem)] order-1 lg:order-2">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 order-1 lg:order-2">
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="group bg-namespace-white border-2 border-border rounded-2xl p-4 sm:p-6 lg:p-[clamp(1.5rem,2.5vw,3rem)] hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                  className="group bg-namespace-white border-2 border-border rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="text-center space-y-3 sm:space-y-4 lg:space-y-[clamp(1rem,1.5vw,2rem)]">
-                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-[clamp(3rem,4vw,5rem)] lg:h-[clamp(3rem,4vw,5rem)] bg-namespace-purple-light rounded-full group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
-                      <div className="[&>svg]:w-5 [&>svg]:h-5 sm:[&>svg]:w-6 sm:[&>svg]:h-6 lg:[&>svg]:w-[clamp(1.5rem,2vw,2.5rem)] lg:[&>svg]:h-[clamp(1.5rem,2vw,2.5rem)]">
+                  <div className="text-center space-y-3 sm:space-y-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-namespace-purple-light rounded-full group-hover:bg-namespace-purple group-hover:text-namespace-white transition-all duration-300">
+                      <div className="[&>svg]:w-5 [&>svg]:h-5 sm:[&>svg]:w-6 sm:[&>svg]:h-6 lg:[&>svg]:w-8 lg:[&>svg]:h-8">
                         {stat.icon}
                       </div>
                     </div>
                     <div>
-                      <div className="text-xl sm:text-2xl lg:text-[clamp(1.5rem,2.5vw,3rem)] xl:text-[clamp(2rem,3vw,4rem)] font-sora font-bold text-namespace-black group-hover:text-namespace-purple transition-colors">
+                      <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-sora font-bold text-namespace-black group-hover:text-namespace-purple transition-colors">
                         {stat.number}
                       </div>
-                      <div className="text-muted-foreground font-medium text-sm sm:text-base lg:text-[clamp(0.875rem,1vw,1.125rem)]">
+                      <div className="text-muted-foreground font-medium text-sm sm:text-base">
                         {stat.label}
                       </div>
                     </div>

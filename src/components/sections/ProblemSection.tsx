@@ -65,19 +65,19 @@ const ProblemSection = () => {
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 lg:px-[clamp(2rem,4vw,6rem)]">
-        <div className="max-w-7xl mx-auto lg:max-w-[clamp(60rem,85vw,95rem)]">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-[clamp(3rem,5vw,6rem)] px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[clamp(3rem,4.5vw,5.5rem)] xl:text-[clamp(4rem,5.5vw,7rem)] font-bold mb-4 sm:mb-6 lg:mb-[clamp(1.5rem,2.5vw,3rem)]">
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
               The <span className="text-purple-400">Current</span> Reality
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-[clamp(1.125rem,1.3vw,1.75rem)] xl:text-[clamp(1.25rem,1.5vw,2rem)] text-gray-300 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl mx-auto">
               The tech ecosystem is broken. Talent is wasted, opportunities are missed, and innovation is stifled by outdated systems.
             </p>
           </div>
           
           {/* Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-[clamp(1.5rem,2.5vw,3rem)] px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4">
             {problems.map((problem, index) => (
               <div
                 key={index}
