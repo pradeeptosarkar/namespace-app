@@ -9,10 +9,10 @@ const HeroSection = () => {
   const [showCursor, setShowCursor] = useState(true);
 
   const taglines = [
-    "Empowering the next generation of tech innovators",
-    "Where brilliant minds converge to shape tomorrow",
-    "Building bridges between potential and possibility", 
-    "Transforming ideas into digital reality",
+    "Empowering students to learn better",
+    "Innovating education delivery through technology",
+    "Building bridges between professionals and opportunities", 
+    "Delivering better talent solutions for businesses",
     "Creating the future through collaborative innovation"
   ];
 
@@ -93,7 +93,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="flex w-full">
           {/* Left side content */}
-          <div className="flex-1 max-w-4xl">
+          <div className="lg:pl-12 flex-1 max-w-4xl">
             <div className="space-y-6 progressive-reveal">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 glassmorphism px-6 py-3 rounded-full magnetic-element micro-float">
@@ -113,7 +113,7 @@ const HeroSection = () => {
                 </h1>
                 
                 <p className="text-base sm:text-lg md:text-xl lg:text-xl text-muted-foreground max-w-2xl font-inter">
-                  Where human potential meets technological innovation. We're building the infrastructure for tomorrow's tech leaders.
+                  Building the Ecosystem for Humans and Organizations in Tech
                 </p>
               </div>
               
