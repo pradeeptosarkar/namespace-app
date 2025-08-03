@@ -138,14 +138,14 @@ const HeroSection = () => {
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="relative">
               {/* Geometric frame around logo */}
-              <div className="absolute inset-0 w-80 h-80 border border-namespace-purple/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
-              <div className="absolute inset-4 w-72 h-72 border-2 border-namespace-purple/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+              <div className="absolute inset-0 w-96 h-96 border border-namespace-purple/20 rounded-full animate-spin" style={{ animationDuration: '20s' }} />
+              <div className="absolute inset-4 w-88 h-88 border-2 border-namespace-purple/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
               
               {/* Main logo */}
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-64 h-64 animate-pulse hover:scale-110 transition-transform duration-500 relative z-10"
+                className="w-80 h-80 animate-pulse hover:scale-110 transition-transform duration-500 relative z-10"
               />
               
               {/* Floating particles around logo */}
