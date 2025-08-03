@@ -1,33 +1,37 @@
-import { GraduationCap, Briefcase, Building, Heart, Users } from "lucide-react";
+import studentsVector from "@/assets/students-vector.png";
+import professionalsVector from "@/assets/professionals-vector.png";
+import communitiesVector from "@/assets/communities-vector.png";
+import institutionsVector from "@/assets/institutions-vector.png";
+import companiesVector from "@/assets/companies-vector.png";
 
 const WhoWeServeSection = () => {
   const audiences = [
     {
-      icon: <GraduationCap className="w-12 h-12" />,
+      image: studentsVector,
       title: "Students",
       description: "Ambitious learners ready to bridge the gap between education and industry",
       color: "from-blue-500 to-blue-600"
     },
     {
-      icon: <Briefcase className="w-12 h-12" />,
+      image: professionalsVector,
       title: "Professionals",
       description: "Experienced technologists looking to level up and lead innovation",
       color: "from-namespace-purple to-purple-600"
     },
     {
-      icon: <Heart className="w-12 h-12" />,
+      image: communitiesVector,
       title: "Communities",
       description: "Tech groups and communities focused on collective growth and impact",
       color: "from-red-500 to-red-600"
     },
     {
-      icon: <Building className="w-12 h-12" />,
+      image: institutionsVector,
       title: "Institutions",
       description: "Educational institutions and research organizations driving innovation",
       color: "from-green-500 to-green-600"
     },
     {
-      icon: <Users className="w-12 h-12" />,
+      image: companiesVector,
       title: "Companies",
       description: "Forward-thinking organizations seeking to build and nurture tech talent",
       color: "from-orange-500 to-orange-600"
@@ -82,10 +86,12 @@ const WhoWeServeSection = () => {
               >
                 {/* Front content - visible by default */}
                 <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                  <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 glassmorphism rounded-full mb-4 image-mask-circle">
-                    <div className="text-namespace-white [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8">
-                      {audience.icon}
-                    </div>
+                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 glassmorphism rounded-full mb-4 image-mask-circle overflow-hidden">
+                    <img 
+                      src={audience.image} 
+                      alt={audience.title}
+                      className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    />
                   </div>
                   
                   <h3 className="text-lg sm:text-xl font-sora font-bold text-center text-namespace-white">
