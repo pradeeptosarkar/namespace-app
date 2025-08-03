@@ -63,14 +63,17 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
-      {/* Interactive gradient background */}
+    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
+      {/* Interactive gradient background with glassmorphism */}
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-15 shimmer-effect"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, hsl(var(--namespace-purple)) 0%, transparent 50%)`
         }}
       />
+      
+      {/* Glassmorphism overlay */}
+      <div className="absolute top-20 right-20 w-96 h-96 glassmorphism rounded-full glass-glow" />
       
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden">
@@ -91,9 +94,9 @@ const HeroSection = () => {
         <div className="flex w-full">
           {/* Left side content */}
           <div className="flex-1 max-w-4xl">
-            <div className="space-y-6 animate-fade-in-up">
+            <div className="space-y-6 progressive-reveal">
               <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-namespace-purple-light px-4 py-2 rounded-full">
+                <div className="inline-flex items-center space-x-2 glassmorphism px-6 py-3 rounded-full magnetic-element micro-float">
                   <div className="w-2 h-2 bg-namespace-purple rounded-full animate-pulse" />
                   <span className="text-sm font-medium text-namespace-purple transition-all duration-500">
                     {taglines[currentTaglineIndex]}
@@ -117,7 +120,7 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300"
+                  className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300 magnetic-element glass-glow"
                 >
                   Explore Our Ecosystem
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -126,7 +129,7 @@ const HeroSection = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-8 py-6 text-lg font-semibold transition-all duration-300"
+                  className="glassmorphism border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-8 py-6 text-lg font-semibold transition-all duration-300 magnetic-element"
                 >
                   Watch Our Story
                 </Button>
@@ -141,11 +144,11 @@ const HeroSection = () => {
               <div className="absolute inset-0 w-64 h-64 xl:w-80 xl:h-80 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
               <div className="absolute inset-4 w-56 h-56 xl:w-72 xl:h-72 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
-              {/* Main logo with subtle breathing animation */}
+              {/* Main logo with enhanced effects */}
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-48 h-48 xl:w-96 xl:h-96 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite]"
+                className="w-48 h-48 xl:w-96 xl:h-96 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite] image-mask-circle magnetic-element"
               />
               
               {/* Subtle floating elements */}

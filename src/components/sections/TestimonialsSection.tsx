@@ -48,7 +48,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
+    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-orbital rounded-full blur-3xl opacity-30 animate-orbital-float" />
@@ -74,9 +74,9 @@ const TestimonialsSection = () => {
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto">
           {/* Testimonials Section */}
-          <div className="text-center mb-8 lg:mb-12 animate-fade-in-up px-4">
+          <div className="text-center mb-8 lg:mb-12 progressive-reveal px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
-              Success <span className="bg-gradient-purple bg-clip-text text-transparent">Stories</span>
+              Success <span className="bg-gradient-purple bg-clip-text text-transparent shimmer-effect">Stories</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto">
               Hear from our community members who are building the future of technology.
@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="group bg-namespace-white border border-border rounded-xl p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-24">
+                    <div className="group glassmorphism border border-border rounded-xl p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-24 magnetic-element micro-float">
                       <div className="mb-2">
                         <Quote className="w-4 h-4 text-namespace-purple-glow mb-1" />
                         <p className="text-xs leading-relaxed text-namespace-black mb-2 line-clamp-2">
@@ -121,10 +121,10 @@ const TestimonialsSection = () => {
           </div>
           
           {/* Partner Logos Section - Expanded */}
-          <div className="text-center bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-8 lg:p-12">
-            <h3 className="text-3xl lg:text-4xl font-sora font-semibold mb-12 text-muted-foreground">
-              Trusted by teams at leading companies
-            </h3>
+            <div className="text-center glassmorphism border border-namespace-white/10 rounded-2xl p-8 lg:p-12 glass-glow">
+              <h3 className="text-3xl lg:text-4xl font-sora font-semibold mb-12 text-muted-foreground shimmer-effect">
+                Trusted by teams at leading companies
+              </h3>
             
             {/* Continuous scrolling logos - Larger */}
             <div className="relative overflow-hidden">
@@ -133,7 +133,7 @@ const TestimonialsSection = () => {
                 {partners.map((partner, index) => (
                   <div 
                     key={index}
-                    className="flex-shrink-0 text-2xl sm:text-3xl lg:text-4xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-8 lg:mx-12"
+                    className="flex-shrink-0 text-2xl sm:text-3xl lg:text-4xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-8 lg:mx-12 magnetic-element"
                   >
                     {partner}
                   </div>

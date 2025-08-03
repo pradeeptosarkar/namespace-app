@@ -35,7 +35,7 @@ const WhoWeServeSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
+    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 opacity-10">
@@ -64,9 +64,9 @@ const WhoWeServeSection = () => {
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up px-4">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-10 progressive-reveal px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
-              Who We <span className="text-namespace-purple-glow">Serve</span>
+              Who We <span className="text-namespace-purple-glow shimmer-effect">Serve</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto">
               NAMESPACE is designed for everyone in the tech ecosystem — from curious beginners to seasoned leaders driving innovation.
@@ -77,12 +77,12 @@ const WhoWeServeSection = () => {
             {audiences.map((audience, index) => (
               <div 
                 key={index}
-                className="group relative h-48 sm:h-52 cursor-pointer overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl transition-all duration-500 animate-scale-in"
+                className="group relative h-48 sm:h-52 cursor-pointer overflow-hidden glassmorphism-dark border border-namespace-white/10 rounded-2xl transition-all duration-500 progressive-reveal magnetic-element glass-glow micro-float"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Front content - visible by default */}
                 <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                  <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-namespace-white/10 rounded-full mb-4">
+                  <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 glassmorphism rounded-full mb-4 image-mask-circle">
                     <div className="text-namespace-white [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-8 sm:[&>svg]:h-8">
                       {audience.icon}
                     </div>

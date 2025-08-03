@@ -42,7 +42,7 @@ const ProblemSection = () => {
   };
 
   return (
-    <section className="scroll-section bg-black text-white relative overflow-hidden h-screen py-12">
+    <section className="scroll-section bg-black text-white relative overflow-hidden h-screen py-12 section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-10 w-32 h-32 border border-purple-500/30 rounded-full animate-pulse opacity-20" />
@@ -67,9 +67,9 @@ const ProblemSection = () => {
       
       <div className="relative z-10 container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-10 px-4">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-10 px-4 progressive-reveal">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold mb-3 sm:mb-4">
-              The <span className="text-purple-400">Current</span> Reality
+              The <span className="text-purple-400 shimmer-effect">Current</span> Reality
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl text-gray-300 max-w-3xl mx-auto">
               The tech ecosystem is broken. Talent is wasted, opportunities are missed, and innovation is stifled by outdated systems.
@@ -81,13 +81,14 @@ const ProblemSection = () => {
             {problems.map((problem, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-purple-400/50 transition-all duration-300 cursor-pointer"
+                className="glassmorphism-dark border border-white/10 rounded-2xl overflow-hidden hover:bg-white/15 hover:border-purple-400/50 transition-all duration-300 cursor-pointer magnetic-element progressive-reveal glass-glow"
+                style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => toggleProblem(index)}
               >
                 <div className="p-4 sm:p-6">
                   <div className="flex items-start space-x-3 sm:space-x-4 mb-4">
-                    <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-purple-500/20 rounded-full flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
-                      <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-purple-400 rounded-full" />
+                    <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 glassmorphism rounded-full flex items-center justify-center hover:glass-glow transition-colors mini-bounce">
+                      <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-purple-400 rounded-full animate-pulse" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white hover:text-purple-400 transition-colors leading-tight">

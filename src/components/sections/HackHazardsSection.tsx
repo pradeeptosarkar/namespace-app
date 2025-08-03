@@ -17,7 +17,7 @@ const HackHazardsSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
+    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-namespace-purple-light/30 to-transparent" />
@@ -45,16 +45,16 @@ const HackHazardsSection = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4">
             {/* Content */}
-            <div className="space-y-6 sm:space-y-8 animate-fade-in-up order-2 lg:order-1">
+            <div className="space-y-6 sm:space-y-8 progressive-reveal order-2 lg:order-1">
               <div className="space-y-6">
-                <div className="inline-flex items-center space-x-3 bg-gradient-purple px-6 py-3 rounded-full">
-                  <Zap className="w-5 h-5 text-namespace-white" />
+                <div className="inline-flex items-center space-x-3 glassmorphism bg-gradient-purple px-6 py-3 rounded-full magnetic-element glass-glow">
+                  <Zap className="w-5 h-5 text-namespace-white animate-pulse" />
                   <span className="font-bold text-namespace-white text-lg">World's largest independent community-run hackathon</span>
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold leading-tight">
                   HACK
-                  <span className="bg-gradient-purple bg-clip-text text-transparent">HAZARDS</span>
+                  <span className="bg-gradient-purple bg-clip-text text-transparent shimmer-effect">HAZARDS</span>
                 </h2>
                 
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
@@ -66,7 +66,7 @@ const HackHazardsSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg"
-                  className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold shadow-elegant hover:shadow-orbital transition-all duration-300"
+                  className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold shadow-elegant hover:shadow-orbital transition-all duration-300 magnetic-element glass-glow"
                 >
                   Visit website
                 </Button>
@@ -74,7 +74,7 @@ const HackHazardsSection = () => {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-8 py-6 text-lg font-semibold transition-all duration-300"
+                  className="glassmorphism border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-8 py-6 text-lg font-semibold transition-all duration-300 magnetic-element"
                 >
                   View projects
                 </Button>
@@ -86,7 +86,7 @@ const HackHazardsSection = () => {
               {stats.map((stat, index) => (
                 <div 
                   key={index}
-                  className="group bg-namespace-white border border-border rounded-lg p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                  className="group glassmorphism border border-border rounded-lg p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 progressive-reveal magnetic-element micro-float"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="text-center space-y-1 sm:space-y-2">

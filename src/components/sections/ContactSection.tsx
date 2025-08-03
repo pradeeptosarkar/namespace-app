@@ -41,7 +41,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
+    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-32 h-32 border border-namespace-purple-glow rounded-full animate-orbital-float opacity-30" />
@@ -69,12 +69,12 @@ const ContactSection = () => {
         <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4">
           {/* Content */}
-          <div className="space-y-6 sm:space-y-8 animate-fade-in-up order-2 lg:order-1">
+          <div className="space-y-6 sm:space-y-8 progressive-reveal order-2 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sora font-bold leading-tight">
                 Ready to
                 <br />
-                <span className="text-namespace-purple-glow">Join Us?</span>
+                <span className="text-namespace-purple-glow shimmer-effect">Join Us?</span>
               </h2>
               
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
@@ -90,7 +90,7 @@ const ContactSection = () => {
                     key={index}
                     className="flex items-center space-x-4 text-gray-300 hover:text-namespace-purple-glow transition-colors cursor-pointer"
                   >
-                    <div className="flex-shrink-0 w-9 h-9 bg-namespace-white/10 rounded-full flex items-center justify-center">
+                    <div className="flex-shrink-0 w-9 h-9 glassmorphism rounded-full flex items-center justify-center magnetic-element mini-bounce">
                       {info.icon}
                     </div>
                     <div>
@@ -109,7 +109,7 @@ const ContactSection = () => {
                     <a 
                       key={index}
                       href={social.url}
-                      className="flex-shrink-0 w-9 h-9 bg-namespace-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-namespace-purple-glow hover:bg-namespace-white/20 transition-all duration-300"
+                      className="flex-shrink-0 w-9 h-9 glassmorphism rounded-full flex items-center justify-center text-gray-300 hover:text-namespace-purple-glow hover:bg-namespace-white/20 transition-all duration-300 magnetic-element mini-bounce"
                       aria-label={social.label}
                     >
                       {social.icon}
@@ -120,7 +120,7 @@ const ContactSection = () => {
             </div>
             
           {/* Contact Form */}
-          <div className="bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-3 sm:p-4 lg:p-6 animate-scale-in order-1 lg:order-2">
+          <div className="glassmorphism-dark border border-namespace-white/10 rounded-2xl p-3 sm:p-4 lg:p-6 progressive-reveal glass-glow order-1 lg:order-2">
               <form className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-3">
                   <div>
@@ -168,7 +168,7 @@ const ContactSection = () => {
                 <Button 
                   type="submit"
                   size="default"
-                  className="w-full bg-namespace-purple hover:bg-primary-hover text-namespace-white font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300"
+                  className="w-full bg-namespace-purple hover:bg-primary-hover text-namespace-white font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300 magnetic-element glass-glow"
                 >
                   Send Message
                   <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -183,7 +183,7 @@ const ContactSection = () => {
               <img 
                 src="/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png"
                 alt="NAMESPACE"
-                className="h-6"
+                className="h-6 image-mask-circle magnetic-element"
               />
             </div>
             

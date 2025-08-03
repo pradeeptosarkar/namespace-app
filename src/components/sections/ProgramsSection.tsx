@@ -54,7 +54,7 @@ const ProgramsSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden">
+    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 opacity-5">
@@ -80,9 +80,9 @@ const ProgramsSection = () => {
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up px-4">
+          <div className="text-center mb-6 sm:mb-8 lg:mb-10 progressive-reveal px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
-              Flagship <span className="text-namespace-purple-glow">Programs</span>
+              Flagship <span className="text-namespace-purple-glow shimmer-effect">Programs</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto">
               Comprehensive learning experiences designed to accelerate your growth in the ever-evolving tech landscape.
@@ -101,13 +101,13 @@ const ProgramsSection = () => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {programs.map((program, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/4">
-                    <div className="group relative overflow-hidden bg-namespace-white/5 backdrop-blur-sm border border-namespace-white/10 rounded-2xl p-6 hover:bg-namespace-white/10 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer h-64">
-                      {/* Gradient overlay */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+                    <div className="group relative overflow-hidden glassmorphism-dark border border-namespace-white/10 rounded-2xl p-6 hover:bg-namespace-white/15 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer h-64 magnetic-element glass-glow micro-float image-mask-polygon">
+                      {/* Enhanced gradient overlay */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-0 group-hover:opacity-30 transition-opacity duration-500 shimmer-effect`} />
                       
                       <div className="relative z-10 h-full flex flex-col">
                         <div className="flex-1">
-                          <div className="inline-block px-3 py-1 bg-namespace-purple-glow/20 rounded-full text-xs font-semibold text-namespace-purple-glow mb-4">
+                          <div className="inline-block px-3 py-1 glassmorphism rounded-full text-xs font-semibold text-namespace-purple-glow mb-4 mini-bounce">
                             {program.category}
                           </div>
                           

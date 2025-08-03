@@ -114,7 +114,7 @@
     }
   }
   
-  /* Professional animations */
+  /* Enhanced Professional Animations */
   @keyframes breathing {
     0%, 100% {
       transform: scale(1);
@@ -133,7 +133,61 @@
     }
   }
 
-  /* 3D flip card utilities */
+  @keyframes section-reveal {
+    0% {
+      opacity: 0;
+      transform: translateX(100px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes progressive-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.9);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes glass-glow {
+    0%, 100% {
+      box-shadow: 0 8px 32px rgba(128, 90, 213, 0.2);
+    }
+    50% {
+      box-shadow: 0 8px 40px rgba(128, 90, 213, 0.4);
+    }
+  }
+
+  @keyframes magnetic-pull {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.05) rotate(1deg);
+    }
+    100% {
+      transform: scale(1.02) rotate(0deg);
+    }
+  }
+
+  /* Enhanced 3D and Glass Effects */
   .perspective-1000 {
     perspective: 1000px;
   }
@@ -148,5 +202,89 @@
 
   .rotate-y-180 {
     transform: rotateY(180deg);
+  }
+
+  /* Glassmorphism Effects */
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glassmorphism-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* Enhanced Animation Classes */
+  .progressive-reveal {
+    animation: progressive-reveal 1s ease-out forwards;
+    animation-fill-mode: both;
+  }
+
+  .section-transition {
+    animation: section-reveal 1.2s ease-out forwards;
+    animation-fill-mode: both;
+  }
+
+  .magnetic-element {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+  }
+
+  .magnetic-element:hover {
+    animation: magnetic-pull 0.6s ease-out;
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  .glass-glow {
+    animation: glass-glow 4s ease-in-out infinite;
+  }
+
+  /* Image Masking Effects */
+  .image-mask-circle {
+    clip-path: circle(40% at 50% 50%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .image-mask-circle:hover {
+    clip-path: circle(60% at 50% 50%);
+    transform: scale(1.1);
+  }
+
+  .image-mask-polygon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .image-mask-polygon:hover {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: scale(1.05);
+  }
+
+  /* Mini-interaction Effects */
+  .mini-bounce:hover {
+    animation: bounce 0.6s ease-in-out;
+  }
+
+  .micro-float {
+    transition: transform 0.3s ease;
+  }
+
+  .micro-float:hover {
+    transform: translateY(-4px);
   }
 }
