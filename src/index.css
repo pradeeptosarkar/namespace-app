@@ -78,8 +78,8 @@
   }
   
   .scroll-section {
-    min-width: 100vw;
-    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     flex-shrink: 0;
