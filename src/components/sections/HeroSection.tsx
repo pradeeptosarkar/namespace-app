@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const HeroSection = () => {
-  const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [typedText, setTypedText] = useState("");
   const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
@@ -65,7 +63,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={elementRef} className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
+    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
       {/* Interactive gradient background with glassmorphism */}
       <div 
         className="absolute inset-0 opacity-15 shimmer-effect"
@@ -96,7 +94,7 @@ const HeroSection = () => {
         <div className="flex w-full">
           {/* Left side content */}
           <div className="lg:pl-12 flex-1 max-w-4xl">
-            <div className={`space-y-6 ${isVisible ? 'progressive-reveal' : 'opacity-0'}`}>
+            <div className="space-y-6 progressive-reveal">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 glassmorphism px-6 py-3 rounded-full magnetic-element micro-float">
                   <div className="w-2 h-2 bg-namespace-purple rounded-full animate-pulse" />
