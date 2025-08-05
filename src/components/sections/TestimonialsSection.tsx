@@ -3,16 +3,17 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 // Import partner logos
-import amazonLogo from "@/assets/partners/amazon-logo.svg";
-import googleLogo from "@/assets/partners/google-logo.svg";
-import microsoftLogo from "@/assets/partners/microsoft-logo.svg";
-import appleLogo from "@/assets/partners/apple-logo.svg";
-import metaLogo from "@/assets/partners/meta-logo.svg";
-import netflixLogo from "@/assets/partners/netflix-logo.svg";
-import ibmLogo from "@/assets/partners/ibm-logo.svg";
-import adobeLogo from "@/assets/partners/adobe-logo.svg";
-import youtubeLogo from "@/assets/partners/youtube-logo.svg";
-import firefoxLogo from "@/assets/partners/firefox-logo.svg";
+import groqLogo from "@/assets/partners/groq-logo.png";
+import coinbaseLogo from "@/assets/partners/coinbase-logo.png";
+import monadLogo from "@/assets/partners/monad-logo.png";
+import orkesLogo from "@/assets/partners/orkes-logo.png";
+import stellarLogo from "@/assets/partners/stellar-logo.png";
+import screenpipeLogo from "@/assets/partners/screenpipe-logo.png";
+import infinyonLogo from "@/assets/partners/infinyon-logo.png";
+import xxNetworksLogo from "@/assets/partners/xx-networks-logo.png";
+import googleForStartupsLogo from "@/assets/partners/google-for-startups-logo.png";
+import microsoftForStartupsLogo from "@/assets/partners/microsoft-for-startups-logo.png";
+import geeksforgeeksLogo from "@/assets/partners/geeksforgeeks-logo.png";
 
 const TestimonialsSection = () => {
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.3 });
@@ -56,16 +57,17 @@ const TestimonialsSection = () => {
   ];
 
   const partners = [
-    { name: "Google", logo: googleLogo },
-    { name: "Microsoft", logo: microsoftLogo },
-    { name: "Amazon", logo: amazonLogo },
-    { name: "Meta", logo: metaLogo },
-    { name: "Apple", logo: appleLogo },
-    { name: "Netflix", logo: netflixLogo },
-    { name: "IBM", logo: ibmLogo },
-    { name: "Adobe", logo: adobeLogo },
-    { name: "YouTube", logo: youtubeLogo },
-    { name: "Firefox", logo: firefoxLogo }
+    { name: "Groq", logo: groqLogo },
+    { name: "Coinbase", logo: coinbaseLogo },
+    { name: "Monad", logo: monadLogo },
+    { name: "Orkes", logo: orkesLogo },
+    { name: "Stellar", logo: stellarLogo },
+    { name: "Screenpipe", logo: screenpipeLogo },
+    { name: "InfinyOn", logo: infinyonLogo },
+    { name: "XX Networks", logo: xxNetworksLogo },
+    { name: "Google for Startups", logo: googleForStartupsLogo },
+    { name: "Microsoft for Startups", logo: microsoftForStartupsLogo },
+    { name: "GeeksforGeeks", logo: geeksforgeeksLogo }
   ];
 
   return (
