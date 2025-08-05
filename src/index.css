@@ -288,27 +288,28 @@
     transform: translateY(-4px);
   }
 
-/* Hand-drawn animation keyframes */
-@keyframes drawOval {
-  to {
-    stroke-dashoffset: 0;
+  /* Hand-drawn animation keyframes */
+  @keyframes drawOval {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
-}
 
-@keyframes drawDash1 {
-  to {
-    stroke-dashoffset: 0;
+  @keyframes drawDash1 {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
-}
 
-@keyframes drawDash2 {
-  to {
-    stroke-dashoffset: 0;
+  @keyframes drawDash2 {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
-}
 
-@keyframes drawDash3 {
-  to {
-    stroke-dashoffset: 0;
+  @keyframes drawDash3 {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 }
