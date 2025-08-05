@@ -71,7 +71,10 @@ const SecondHeroSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6 leading-tight">
               Building Tomorrow's
               <br />
-              <span className="bg-gradient-purple bg-clip-text text-transparent">Tech Ecosystem</span>
+              <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
+                <span className="absolute inset-0 border-2 border-namespace-purple/30 rounded-full animate-pulse -m-4 scale-110"></span>
+                Tech Ecosystem
+              </span>
             </h2>
             
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto mb-6 sm:mb-8 px-4">

@@ -76,7 +76,11 @@ const TestimonialsSection = () => {
           {/* Testimonials Section */}
           <div className="text-center mb-8 lg:mb-12 progressive-reveal px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
-              Success <span className="bg-gradient-purple bg-clip-text text-transparent shimmer-effect">Stories</span>
+              Success <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent shimmer-effect">
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-namespace-purple via-namespace-purple-glow to-namespace-purple animate-pulse"></span>
+                <span className="absolute -bottom-3 left-1/4 w-1/2 h-0.5 bg-namespace-purple-light animate-pulse" style={{ animationDelay: '0.5s' }}></span>
+                Stories
+              </span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto">
               Hear from our community members who are building the future of technology.
