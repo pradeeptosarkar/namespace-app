@@ -10,6 +10,7 @@ const HackHazardsSection = () => {
     { number: "25+", label: "Countries" },
     { number: "500+", label: "Indian Cities and Towns" },
     { number: "1500+", label: "Institutions" },
+    { number: "200+", label: "Outreach Partners" }, 
     { number: "2mn+", label: "Social media impressions" },
     { number: "35%", label: "Women" },
     { number: "35%", label: "First-timers" },
