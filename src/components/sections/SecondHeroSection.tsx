@@ -72,22 +72,32 @@ const SecondHeroSection = () => {
               Building Tomorrow's
               <br />
               <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
-                {/* Animated hand-drawn oval */}
-                <svg className="absolute inset-0 -m-8 w-full h-full pointer-events-none" viewBox="0 0 200 80" style={{ transform: 'scale(1.3)' }}>
+                {/* Responsive animated hand-drawn oval */}
+                <svg 
+                  className="absolute inset-0 pointer-events-none" 
+                  style={{ 
+                    width: '120%', 
+                    height: '140%',
+                    left: '-10%',
+                    top: '-20%'
+                  }}
+                  viewBox="0 0 100 40" 
+                  preserveAspectRatio="none"
+                >
                   <ellipse
-                    cx="100" 
-                    cy="40" 
-                    rx="80" 
-                    ry="30"
+                    cx="50" 
+                    cy="20" 
+                    rx="45" 
+                    ry="15"
                     fill="none"
                     stroke="rgb(139, 92, 246)"
-                    strokeWidth="2.5"
+                    strokeWidth="0.8"
                     opacity="0.6"
                     strokeLinecap="round"
                     style={{
-                      strokeDasharray: '400',
-                      strokeDashoffset: '400',
-                      transform: 'rotate(-3deg)',
+                      strokeDasharray: '200',
+                      strokeDashoffset: '200',
+                      transform: 'rotate(-2deg)',
                       transformOrigin: 'center',
                       animation: 'drawOval 2s ease-out 1s forwards'
                     }}

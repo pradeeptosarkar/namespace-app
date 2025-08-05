@@ -78,41 +78,54 @@ const TestimonialsSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
               <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent shimmer-effect">
                 Success Stories
-                {/* Animated hand-drawn dashes */}
-                <svg className="absolute -bottom-6 left-0 w-full h-4 pointer-events-none" viewBox="0 0 300 20">
+                {/* Responsive animated hand-drawn dashes - 3 vertical stacked */}
+                <svg 
+                  className="absolute pointer-events-none" 
+                  style={{ 
+                    width: '100%', 
+                    height: '40px',
+                    left: '0',
+                    top: '100%'
+                  }}
+                  viewBox="0 0 100 20" 
+                  preserveAspectRatio="xMidYMin meet"
+                >
+                  {/* First dash */}
                   <line
-                    x1="20" y1="10" x2="70" y2="12"
+                    x1="10" y1="4" x2="90" y2="3.5"
                     stroke="rgb(139, 92, 246)"
-                    strokeWidth="3"
+                    strokeWidth="0.8"
                     strokeLinecap="round"
                     opacity="0.7"
                     style={{
-                      strokeDasharray: '50',
-                      strokeDashoffset: '50',
+                      strokeDasharray: '80',
+                      strokeDashoffset: '80',
                       animation: 'drawDash1 0.8s ease-out 1.5s forwards'
                     }}
                   />
+                  {/* Second dash */}
                   <line
-                    x1="90" y1="8" x2="140" y2="11"
+                    x1="15" y1="9" x2="85" y2="8.5"
                     stroke="rgb(139, 92, 246)"
-                    strokeWidth="3"
+                    strokeWidth="0.8"
                     strokeLinecap="round"
                     opacity="0.7"
                     style={{
-                      strokeDasharray: '50',
-                      strokeDashoffset: '50',
+                      strokeDasharray: '70',
+                      strokeDashoffset: '70',
                       animation: 'drawDash2 0.8s ease-out 2s forwards'
                     }}
                   />
+                  {/* Third dash */}
                   <line
-                    x1="160" y1="12" x2="200" y2="9"
+                    x1="20" y1="14" x2="80" y2="13.5"
                     stroke="rgb(139, 92, 246)"
-                    strokeWidth="3"
+                    strokeWidth="0.8"
                     strokeLinecap="round"
                     opacity="0.7"
                     style={{
-                      strokeDasharray: '40',
-                      strokeDashoffset: '40',
+                      strokeDasharray: '60',
+                      strokeDashoffset: '60',
                       animation: 'drawDash3 0.8s ease-out 2.5s forwards'
                     }}
                   />
