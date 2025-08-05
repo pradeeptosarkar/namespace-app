@@ -2,6 +2,18 @@ import { Star, Quote } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
+// Import partner logos
+import amazonLogo from "@/assets/partners/amazon-logo.svg";
+import googleLogo from "@/assets/partners/google-logo.svg";
+import microsoftLogo from "@/assets/partners/microsoft-logo.svg";
+import appleLogo from "@/assets/partners/apple-logo.svg";
+import metaLogo from "@/assets/partners/meta-logo.svg";
+import netflixLogo from "@/assets/partners/netflix-logo.svg";
+import ibmLogo from "@/assets/partners/ibm-logo.svg";
+import adobeLogo from "@/assets/partners/adobe-logo.svg";
+import youtubeLogo from "@/assets/partners/youtube-logo.svg";
+import firefoxLogo from "@/assets/partners/firefox-logo.svg";
+
 const TestimonialsSection = () => {
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.3 });
   const testimonials = [
@@ -44,9 +56,16 @@ const TestimonialsSection = () => {
   ];
 
   const partners = [
-    "Google", "Microsoft", "Amazon", "Meta", "Apple", "Spotify", "Uber", "Airbnb", 
-    "Netflix", "Tesla", "PayPal", "Adobe", "Salesforce", "Oracle", "IBM", "Intel",
-    "NVIDIA", "Dropbox", "Slack", "Zoom", "Figma", "GitHub"
+    { name: "Google", logo: googleLogo },
+    { name: "Microsoft", logo: microsoftLogo },
+    { name: "Amazon", logo: amazonLogo },
+    { name: "Meta", logo: metaLogo },
+    { name: "Apple", logo: appleLogo },
+    { name: "Netflix", logo: netflixLogo },
+    { name: "IBM", logo: ibmLogo },
+    { name: "Adobe", logo: adobeLogo },
+    { name: "YouTube", logo: youtubeLogo },
+    { name: "Firefox", logo: firefoxLogo }
   ];
 
   return (
@@ -184,23 +203,31 @@ const TestimonialsSection = () => {
             
             {/* Continuous scrolling logos - Larger */}
             <div className="relative overflow-hidden">
-              <div className="flex animate-scroll-fast">
+              <div className="flex animate-scroll-fast items-center">
                 {/* First set of logos */}
                 {partners.map((partner, index) => (
                   <div 
                     key={index}
-                    className="flex-shrink-0 text-2xl sm:text-3xl lg:text-4xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-8 lg:mx-12 magnetic-element"
+                    className="flex-shrink-0 mx-8 lg:mx-12 magnetic-element cursor-pointer hover:scale-110 transition-transform duration-300"
                   >
-                    {partner}
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
                 ))}
                 {/* Duplicate set for seamless loop */}
                 {partners.map((partner, index) => (
                   <div 
                     key={`duplicate-${index}`}
-                    className="flex-shrink-0 text-2xl sm:text-3xl lg:text-4xl font-bold text-namespace-black hover:text-namespace-purple transition-colors cursor-pointer mx-8 lg:mx-12"
+                    className="flex-shrink-0 mx-8 lg:mx-12 cursor-pointer hover:scale-110 transition-transform duration-300"
                   >
-                    {partner}
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
                 ))}
               </div>
