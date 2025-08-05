@@ -8,7 +8,7 @@ const ContactSection = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "hello@namespace.tech"
+      value: "contact@namespacecomm.in"
     }
   ];
 
@@ -183,7 +183,7 @@ const ContactSection = () => {
               <img 
                 src="/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png"
                 alt="NAMESPACE"
-                className="h-6 image-mask-circle magnetic-element"
+                className="h-6"
               />
             </div>
             
@@ -201,7 +201,7 @@ const ContactSection = () => {
             </div>
             
             <p className="text-gray-400">
-              © 2025 NAMESPACE. Building the future of tech ecosystems.
+              © 2025 Namespace Ecosystem India Pvt. Ltd. and Pradeepto Sarkar. Building the future of tech ecosystems.
             </p>
           </div>
         </div>
