@@ -7,6 +7,7 @@ const HeroSection = () => {
   const [typedText, setTypedText] = useState("");
   const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
+  const [logoRevealed, setLogoRevealed] = useState(false);
 
   const taglines = [
     "Empowering students to learn better",
@@ -60,6 +61,15 @@ const HeroSection = () => {
     }, 1200); // Slower, more professional timing
 
     return () => clearInterval(interval);
+  }, []);
+
+  // Logo reveal animation trigger
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLogoRevealed(true);
+    }, 500); // Start logo reveal after 0.5s
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -144,11 +154,14 @@ const HeroSection = () => {
               <div className="absolute inset-0 w-64 h-64 xl:w-80 xl:h-80 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
               <div className="absolute inset-4 w-56 h-56 xl:w-72 xl:h-72 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
-              {/* Main logo with enhanced effects */}
+              {/* Main logo with glitch reveal effect */}
               <img 
                 src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                 alt="NAMESPACE Logo"
-                className="w-48 h-48 xl:w-96 xl:h-96 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite] image-mask-circle magnetic-element"
+                className={`w-48 h-48 xl:w-96 xl:h-96 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 image-mask-circle magnetic-element ${
+                  logoRevealed ? 'glitch-reveal animate-[breathing_4s_ease-in-out_infinite]' : 'opacity-0'
+                }`}
+                style={{ animationDelay: logoRevealed ? '2s' : '0s' }}
               />
               
               {/* Subtle floating elements */}
