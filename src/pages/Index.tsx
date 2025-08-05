@@ -5,6 +5,8 @@ import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import SecondHeroSection from "@/components/sections/SecondHeroSection";
 import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
+import EcosystemFlywheelSection from "@/components/sections/EcosystemFlywheelSection";
+import ImpactSection from "@/components/sections/ImpactSection";
 import HackHazardsSection from "@/components/sections/HackHazardsSection";
 import ProgramsSection from "@/components/sections/ProgramsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -80,6 +82,8 @@ const Index = () => {
         <ProblemSection />
         <SecondHeroSection />
         <WhoWeServeSection />
+        <EcosystemFlywheelSection />
+        <ImpactSection />
         <HackHazardsSection />
         <ProgramsSection />
         <TestimonialsSection />
