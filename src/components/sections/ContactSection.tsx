@@ -201,7 +201,7 @@ const ContactSection = () => {
             </div>
             
             <p className="text-gray-400">
-              © 2025 Namespace Ecosystem India Pvt. Ltd. and Pradeepto Sarkar. Building the future of tech ecosystems.
+              © 2025 Namespace Ecosystem India Pvt. Ltd.. Building the future of tech ecosystems.
             </p>
           </div>
         </div>
