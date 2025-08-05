@@ -286,7 +286,7 @@
 
   .micro-float:hover {
     transform: translateY(-4px);
-}
+  }
 
 /* Hand-drawn animation keyframes */
 @keyframes drawOval {
