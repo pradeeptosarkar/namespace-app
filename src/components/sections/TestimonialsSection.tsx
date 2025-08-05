@@ -1,7 +1,9 @@
 import { Star, Quote } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const TestimonialsSection = () => {
+  const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.3 });
   const testimonials = [
     {
       name: "Sarah Chen",
@@ -48,7 +50,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
+    <section ref={ref} className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-orbital rounded-full blur-3xl opacity-30 animate-orbital-float" />
@@ -99,8 +101,8 @@ const TestimonialsSection = () => {
                     opacity="0.7"
                     style={{
                       strokeDasharray: '80',
-                      strokeDashoffset: '80',
-                      animation: 'drawDash1 0.8s ease-out 1.5s forwards'
+                      strokeDashoffset: hasIntersected ? '0' : '80',
+                      transition: 'stroke-dashoffset 0.8s ease-out 1.5s'
                     }}
                   />
                   {/* Second dash */}
@@ -112,8 +114,8 @@ const TestimonialsSection = () => {
                     opacity="0.7"
                     style={{
                       strokeDasharray: '70',
-                      strokeDashoffset: '70',
-                      animation: 'drawDash2 0.8s ease-out 2s forwards'
+                      strokeDashoffset: hasIntersected ? '0' : '70',
+                      transition: 'stroke-dashoffset 0.8s ease-out 2s'
                     }}
                   />
                   {/* Third dash */}
@@ -125,8 +127,8 @@ const TestimonialsSection = () => {
                     opacity="0.7"
                     style={{
                       strokeDasharray: '60',
-                      strokeDashoffset: '60',
-                      animation: 'drawDash3 0.8s ease-out 2.5s forwards'
+                      strokeDashoffset: hasIntersected ? '0' : '60',
+                      transition: 'stroke-dashoffset 0.8s ease-out 2.5s'
                     }}
                   />
                 </svg>

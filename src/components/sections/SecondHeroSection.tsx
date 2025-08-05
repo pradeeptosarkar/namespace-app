@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const SecondHeroSection = () => {
+  const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.3 });
   const features = [
     {
       title: "Borderless Ecosystem",
@@ -37,7 +39,7 @@ const SecondHeroSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
+    <section ref={ref} className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-orbital rounded-full blur-3xl opacity-60 animate-orbital-float" />
@@ -96,10 +98,10 @@ const SecondHeroSection = () => {
                     strokeLinecap="round"
                     style={{
                       strokeDasharray: '200',
-                      strokeDashoffset: '200',
+                      strokeDashoffset: hasIntersected ? '0' : '200',
                       transform: 'rotate(-2deg)',
                       transformOrigin: 'center',
-                      animation: 'drawOval 2s ease-out 1s forwards'
+                      transition: 'stroke-dashoffset 2s ease-out 1s'
                     }}
                   />
                 </svg>
