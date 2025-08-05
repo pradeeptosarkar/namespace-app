@@ -99,104 +99,97 @@ const ImpactSection = () => {
   return (
     <section 
       ref={ref}
-      className="scroll-section min-h-screen w-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background"
+      className="scroll-section min-h-screen w-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
         {/* Geometric patterns */}
-        <div className="absolute top-16 left-16 w-64 h-64 border border-primary/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 border border-accent/10 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute top-1/3 right-16 w-32 h-32 border border-secondary/10 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute top-16 left-16 w-64 h-64 border border-white/10 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 border border-white/10 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/3 right-16 w-32 h-32 border border-white/10 rounded-full animate-pulse delay-500"></div>
         
         {/* Floating dots */}
-        <div className="absolute top-24 left-1/3 w-3 h-3 bg-primary/20 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-accent/20 rounded-full animate-bounce delay-300"></div>
-        <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-secondary/20 rounded-full animate-bounce delay-700"></div>
+        <div className="absolute top-24 left-1/3 w-3 h-3 bg-white/20 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-white/20 rounded-full animate-bounce delay-300"></div>
+        <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-white/20 rounded-full animate-bounce delay-700"></div>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center">
+        {/* Central Title */}
         <div className="text-center mb-20">
-          <h2 className={`text-5xl lg:text-7xl font-bold mb-6 transition-all duration-1000 ${
+          <h2 className={`text-5xl lg:text-7xl font-bold transition-all duration-1000 ${
             hasIntersected 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-10'
           }`}>
-            Impact Created{' '}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-white">Impact Created </span>
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Till Now
             </span>
           </h2>
-          <p className={`text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
-            hasIntersected 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-10'
-          }`}>
-            Building credibility through measurable achievements
-          </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.key}
-              className={`group relative overflow-hidden rounded-2xl p-8 text-center transition-all duration-1000 transform hover:scale-105 ${
-                hasIntersected 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-20'
-              }`}
-              style={{ 
-                transitionDelay: `${500 + index * 150}ms`,
-                background: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
-              }}
-            >
-              {/* Gradient background on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-              
-              {/* Animated counter */}
-              <div className="relative z-10">
-                <div className={`text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
-                  {stat.value.toLocaleString()}{stat.suffix}
-                </div>
-                <div className="text-base lg:text-lg font-medium text-foreground mb-2">
-                  {stat.label}
-                </div>
-                
-                {/* Progress bar */}
-                <div className="w-full bg-muted/30 rounded-full h-2 mt-4">
-                  <div 
-                    className={`bg-gradient-to-r ${stat.color} h-2 rounded-full transition-all duration-2000 ease-out`}
-                    style={{ 
-                      width: hasIntersected ? `${(stat.value / stat.target) * 100}%` : '0%',
-                      transitionDelay: `${500 + index * 150}ms`
-                    }}
-                  ></div>
+        {/* Randomly Positioned Stats */}
+        <div className="relative h-96 w-full">
+          {stats.map((stat, index) => {
+            // Random positions for each stat
+            const positions = [
+              { top: '10%', left: '15%' },
+              { top: '20%', right: '10%' },
+              { bottom: '30%', left: '8%' },
+              { top: '50%', right: '20%' },
+              { bottom: '15%', left: '45%' }
+            ];
+            
+            const position = positions[index];
+            
+            return (
+              <div
+                key={stat.key}
+                className={`absolute group transition-all duration-1000 transform hover:scale-110 ${
+                  hasIntersected 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-20'
+                }`}
+                style={{ 
+                  ...position,
+                  transitionDelay: `${index * 400}ms`
+                }}
+              >
+                <div className="relative overflow-hidden rounded-2xl p-6 text-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  {/* Gradient background on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                  
+                  {/* Animated counter */}
+                  <div className="relative z-10">
+                    <div className={`text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                      {stat.value.toLocaleString()}{stat.suffix}
+                    </div>
+                    <div className="text-sm lg:text-base font-medium text-white/90">
+                      {stat.label}
+                    </div>
+                  </div>
+
+                  {/* Decorative glow */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute top-4 right-4 w-8 h-8 border-2 border-current opacity-20 rounded-full"></div>
-              <div className="absolute bottom-4 left-4 w-4 h-4 bg-current opacity-20 rounded-full"></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom Call to Action */}
-        <div className={`text-center transition-all duration-1000 delay-1200 ${
+        <div className={`text-center mt-20 transition-all duration-1000 delay-1500 ${
           hasIntersected 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-10'
         }`}>
-          <div className="inline-block p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50">
-            <h3 className="text-xl lg:text-2xl font-bold mb-2">
-              This is just the beginning
-            </h3>
-            <p className="text-muted-foreground">
-              Join us as we scale to reach millions of learners worldwide
-            </p>
-          </div>
+          <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
+            This is just the beginning
+          </h3>
+          <p className="text-xl text-white/80">
+            Join us as we scale to reach millions of learners worldwide
+          </p>
         </div>
       </div>
 
