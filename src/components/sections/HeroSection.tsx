@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [typedText, setTypedText] = useState("");
   const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const taglines = [
     "Empowering students to learn better",
@@ -61,6 +63,32 @@ const HeroSection = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Video hover effects
+  const handleVideoHover = () => {
+    if (videoRef.current && isPlaying) {
+      videoRef.current.playbackRate = 0.5; // Slow motion on hover
+    }
+  };
+
+  const handleVideoLeave = () => {
+    if (videoRef.current && isPlaying) {
+      videoRef.current.playbackRate = 1; // Normal speed
+    }
+  };
+
+  // Play/Pause on click
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
 
   return (
     <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
@@ -137,19 +165,41 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right side - Animated Logo */}
+          {/* Right side - Animated Video Logo */}
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="relative">
-              {/* Subtle geometric frame around logo */}
+              {/* Subtle geometric frame around video */}
               <div className="absolute inset-0 w-64 h-64 xl:w-80 xl:h-80 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
               <div className="absolute inset-4 w-56 h-56 xl:w-72 xl:h-72 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
               
-              {/* Main logo with enhanced effects */}
-              <img 
-                src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
-                alt="NAMESPACE Logo"
-                className="w-48 h-48 xl:w-96 xl:h-96 hover:scale-105 transition-all duration-700 ease-in-out relative z-10 animate-[breathing_4s_ease-in-out_infinite] image-mask-circle magnetic-element"
-              />
+              {/* Video element with enhanced effects */}
+              <div className="relative w-48 h-48 xl:w-96 xl:h-96 rounded-full overflow-hidden magnetic-element">
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  onMouseEnter={handleVideoHover}
+                  onMouseLeave={handleVideoLeave}
+                  className="w-full h-full object-cover hover:scale-105 transition-all duration-700 ease-in-out"
+                  style={{
+                    filter: 'drop-shadow(0 0 30px rgba(147, 51, 234, 0.3))',
+                  }}
+                >
+                  <source src="/path-to-your-logo-video.webm" type="video/webm" />
+                  <source src="/lovable-uploads/logo-video.mp4" type="video/mp4" />
+                  {/* Fallback image */}
+                  <img 
+                    src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
+                    alt="NAMESPACE Logo"
+                    className="w-full h-full object-cover"
+                  />
+                </video>
+                
+                {/* Glow effect overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-namespace-purple/20 to-transparent opacity-40 pointer-events-none" />
+              </div>
               
               {/* Subtle floating elements */}
               <div className="absolute top-12 right-12 w-2 h-2 bg-namespace-purple/40 rounded-full animate-[float_6s_ease-in-out_infinite]" />
