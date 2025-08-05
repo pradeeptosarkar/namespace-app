@@ -120,10 +120,10 @@ const EcosystemFlywheelSection = () => {
           </div>
 
           {/* Redesigned Central Flywheel */}
-          <div className={`relative w-60 h-60 lg:w-60 lg:h-60 transition-all duration-1000 delay-500 ${
+          <div className={`relative w-60 h-60 lg:w-60 my-8 lg:h-60 transition-all duration-1000 delay-500 ${
             hasIntersected 
-              ? 'opacity-100 scale-100' 
-              : 'opacity-0 scale-75'
+              ? 'opacity-100 scale-75' 
+              : 'opacity-0 scale-50'
           }`}>
             
             {/* Outer Glow Effects */}
