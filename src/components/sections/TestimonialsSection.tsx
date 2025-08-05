@@ -78,12 +78,45 @@ const TestimonialsSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
               <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent shimmer-effect">
                 Success Stories
-                {/* Hand-drawn dashes effect */}
-                <div className="absolute -bottom-4 left-0 w-full">
-                  <div className="absolute left-2 w-16 h-0.5 bg-namespace-purple transform -rotate-1" style={{ borderRadius: '50%' }}></div>
-                  <div className="absolute left-20 w-14 h-0.5 bg-namespace-purple transform rotate-1" style={{ borderRadius: '50%' }}></div>
-                  <div className="absolute right-4 w-12 h-0.5 bg-namespace-purple transform -rotate-0.5" style={{ borderRadius: '50%' }}></div>
-                </div>
+                {/* Animated hand-drawn dashes */}
+                <svg className="absolute -bottom-6 left-0 w-full h-4 pointer-events-none" viewBox="0 0 300 20">
+                  <line
+                    x1="20" y1="10" x2="70" y2="12"
+                    stroke="rgb(139, 92, 246)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    opacity="0.7"
+                    style={{
+                      strokeDasharray: '50',
+                      strokeDashoffset: '50',
+                      animation: 'drawDash1 0.8s ease-out 1.5s forwards'
+                    }}
+                  />
+                  <line
+                    x1="90" y1="8" x2="140" y2="11"
+                    stroke="rgb(139, 92, 246)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    opacity="0.7"
+                    style={{
+                      strokeDasharray: '50',
+                      strokeDashoffset: '50',
+                      animation: 'drawDash2 0.8s ease-out 2s forwards'
+                    }}
+                  />
+                  <line
+                    x1="160" y1="12" x2="200" y2="9"
+                    stroke="rgb(139, 92, 246)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    opacity="0.7"
+                    style={{
+                      strokeDasharray: '40',
+                      strokeDashoffset: '40',
+                      animation: 'drawDash3 0.8s ease-out 2.5s forwards'
+                    }}
+                  />
+                </svg>
               </span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto">

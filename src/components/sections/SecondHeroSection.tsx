@@ -72,30 +72,26 @@ const SecondHeroSection = () => {
               Building Tomorrow's
               <br />
               <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
-                {/* Hand-drawn oval effect */}
-                <svg className="absolute inset-0 -m-6 w-full h-full" viewBox="0 0 200 80" style={{ transform: 'scale(1.2)' }}>
+                {/* Animated hand-drawn oval */}
+                <svg className="absolute inset-0 -m-8 w-full h-full pointer-events-none" viewBox="0 0 200 80" style={{ transform: 'scale(1.3)' }}>
                   <ellipse
                     cx="100" 
                     cy="40" 
-                    rx="85" 
-                    ry="35"
+                    rx="80" 
+                    ry="30"
                     fill="none"
                     stroke="rgb(139, 92, 246)"
-                    strokeWidth="2"
-                    opacity="0.4"
+                    strokeWidth="2.5"
+                    opacity="0.6"
+                    strokeLinecap="round"
                     style={{
-                      strokeDasharray: '3,2',
-                      transform: 'rotate(-2deg)',
+                      strokeDasharray: '400',
+                      strokeDashoffset: '400',
+                      transform: 'rotate(-3deg)',
                       transformOrigin: 'center',
-                      filter: 'url(#roughen)'
+                      animation: 'drawOval 2s ease-out 1s forwards'
                     }}
                   />
-                  <defs>
-                    <filter id="roughen">
-                      <feTurbulence baseFrequency="0.04" numOctaves="3" result="noise"/>
-                      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1"/>
-                    </filter>
-                  </defs>
                 </svg>
                 Tech Ecosystem
               </span>
