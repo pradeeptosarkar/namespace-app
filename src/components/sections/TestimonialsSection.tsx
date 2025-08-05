@@ -76,10 +76,14 @@ const TestimonialsSection = () => {
           {/* Testimonials Section */}
           <div className="text-center mb-8 lg:mb-12 progressive-reveal px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
-              Success <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent shimmer-effect">
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-namespace-purple via-namespace-purple-glow to-namespace-purple animate-pulse"></span>
-                <span className="absolute -bottom-3 left-1/4 w-1/2 h-0.5 bg-namespace-purple-light animate-pulse" style={{ animationDelay: '0.5s' }}></span>
-                Stories
+              <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent shimmer-effect">
+                Success Stories
+                {/* Hand-drawn dashes effect */}
+                <div className="absolute -bottom-4 left-0 w-full">
+                  <div className="absolute left-2 w-16 h-0.5 bg-namespace-purple transform -rotate-1" style={{ borderRadius: '50%' }}></div>
+                  <div className="absolute left-20 w-14 h-0.5 bg-namespace-purple transform rotate-1" style={{ borderRadius: '50%' }}></div>
+                  <div className="absolute right-4 w-12 h-0.5 bg-namespace-purple transform -rotate-0.5" style={{ borderRadius: '50%' }}></div>
+                </div>
               </span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto">
