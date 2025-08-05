@@ -6,14 +6,14 @@ const EcosystemFlywheelSection = () => {
 
   const flywheelElements = [
     {
-      title: "Humans",
-      description: "Gain skills, visibility, opportunities, network",
+      title: "Events",
+      description: "Become discovery + engagement channels",
       position: "top",
       delay: "0s"
     },
     {
-      title: "Organizations", 
-      description: "Run events, hire talent, test products, teach better",
+      title: "Humans",
+      description: "Gain skills, visibility, opportunities, network",
       position: "right",
       delay: "0.5s"
     },
@@ -24,8 +24,8 @@ const EcosystemFlywheelSection = () => {
       delay: "1s"
     },
     {
-      title: "Events",
-      description: "Become discovery + engagement channels",
+      title: "Organizations", 
+      description: "Run events, hire talent, test products, teach better",
       position: "left",
       delay: "1.5s"
     }
@@ -52,13 +52,13 @@ const EcosystemFlywheelSection = () => {
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <h2 className={`text-5xl lg:text-7xl font-bold mb-4 transition-all duration-1000 ${
+          <h2 className={`text-4xl lg:text-5xl font-bold mb-4 transition-all duration-1000 ${
             hasIntersected 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-10'
           }`}>
             The Ecosystem{' '}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
               Flywheel
             </span>
           </h2>
@@ -120,7 +120,7 @@ const EcosystemFlywheelSection = () => {
           </div>
 
           {/* Redesigned Central Flywheel */}
-          <div className={`relative w-72 h-72 lg:w-80 lg:h-80 transition-all duration-1000 delay-500 ${
+          <div className={`relative w-60 h-60 lg:w-60 lg:h-60 transition-all duration-1000 delay-500 ${
             hasIntersected 
               ? 'opacity-100 scale-100' 
               : 'opacity-0 scale-75'
@@ -153,10 +153,10 @@ const EcosystemFlywheelSection = () => {
               {/* Flywheel Elements - Redesigned */}
               {flywheelElements.map((element, index) => {
                 const positions = {
-                  top: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2",
-                  right: "right-0 top-1/2 translate-x-1/2 -translate-y-1/2", 
-                  bottom: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2",
-                  left: "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  top: "-top-20 left-1/2 -translate-x-1/2 -translate-y-1/2",
+                  right: "-right-40 top-1/2 translate-x-1/2 -translate-y-1/2", 
+                  bottom: "-bottom-20 left-1/2 -translate-x-1/2 translate-y-1/2",
+                  left: "-left-40 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 };
 
                 return (
@@ -176,7 +176,7 @@ const EcosystemFlywheelSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                       
                       {/* Main Card */}
-                      <div className="relative bg-gradient-to-br from-card/95 to-card/85 backdrop-blur-xl border border-primary/15 rounded-xl p-4 w-42 text-center shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:border-primary/30">
+                      <div className="relative w-52 h-28 bg-gradient-to-br from-card/95 to-card/85 backdrop-blur-xl border border-primary/15 rounded-xl p-4 w-42 text-center shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:border-primary/30">
                         
                         {/* Top Border Accent */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></div>
@@ -227,7 +227,7 @@ const EcosystemFlywheelSection = () => {
         }`}>
           <h3 className="text-xl lg:text-2xl font-bold">
             Everything feeds everything.{' '}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
               That's the flywheel.
             </span>
           </h3>
