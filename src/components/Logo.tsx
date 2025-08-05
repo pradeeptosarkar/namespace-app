@@ -31,7 +31,7 @@ const Logo = () => {
   // Sections: Hero(0), Problem(1), SecondHero(2), WhoWeServe(3), HackHazards(4), Programs(5), Testimonials(6), Contact(7)
   // Black backgrounds (use white logo): sections 1, 3, 5, 7
   // White backgrounds (use purple logo): sections 0, 2, 4, 6
-  const isWhiteBackground = [0, 2, 4, 6].includes(currentSection);
+  const isWhiteBackground = [0, 2, 4, 6, 8].includes(currentSection);
   const logoColor = isWhiteBackground ? 'text-namespace-purple' : 'text-namespace-white';
 
   return (
