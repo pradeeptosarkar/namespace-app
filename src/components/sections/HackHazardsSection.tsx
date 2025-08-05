@@ -69,6 +69,7 @@ const HackHazardsSection = () => {
                 <Button 
                   size="lg"
                   className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold shadow-elegant hover:shadow-orbital transition-all duration-300 magnetic-element glass-glow"
+                  onClick={() => window.open('https://hackhazards.namespace.world', '_blank')}
                 >
                   Visit website
                 </Button>
@@ -77,6 +78,7 @@ const HackHazardsSection = () => {
                   variant="outline"
                   size="lg"
                   className="glassmorphism border-2 border-namespace-purple text-namespace-purple hover:bg-namespace-purple hover:text-namespace-white px-8 py-6 text-lg font-semibold transition-all duration-300 magnetic-element"
+                  onClick={() => window.open('https://hackhazards25.devfolio.co/projects', '_blank')}
                 >
                   View projects
                 </Button>

@@ -151,7 +151,7 @@ const TestimonialsSection = () => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="group glassmorphism border border-border rounded-xl p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-24 magnetic-element micro-float">
+                    <div className="group glassmorphism border border-border rounded-xl p-2 sm:p-3 hover:border-namespace-purple hover:shadow-elegant transition-all duration-300 h-36 magnetic-element micro-float">
                       <div className="mb-2">
                         <Quote className="w-4 h-4 text-namespace-purple-glow mb-1" />
                         <p className="text-xs leading-relaxed text-namespace-black mb-2 line-clamp-2">
@@ -179,7 +179,7 @@ const TestimonialsSection = () => {
           {/* Partner Logos Section - Expanded */}
             <div className="text-center glassmorphism border border-namespace-white/10 rounded-2xl p-8 lg:p-12 glass-glow">
               <h3 className="text-3xl lg:text-4xl font-sora font-semibold mb-12 text-muted-foreground shimmer-effect">
-                Trusted by teams at leading companies
+                Some of the partners who have collaborated with us
               </h3>
             
             {/* Continuous scrolling logos - Larger */}
