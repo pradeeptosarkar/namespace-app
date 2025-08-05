@@ -178,7 +178,7 @@ const ContactSection = () => {
           </div>
           
           {/* Footer */}
-          <div className="border-t border-namespace-white/10 mt-12 pt-6 text-center">
+          <div className="border-t border-namespace-white/10 mt-6 pt-6 text-center">
             <div className="flex items-center justify-center mb-3">
               <img 
                 src="/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png"
@@ -201,7 +201,7 @@ const ContactSection = () => {
             </div>
             
             <p className="text-gray-400">
-              © 2025 Namespace Ecosystem India Pvt. Ltd.. Building the future of tech ecosystems.
+              © 2025 Namespace Ecosystem India Pvt. Ltd.. Building the Global Ecosystem for Humans and Organizations in Tech.
             </p>
           </div>
         </div>

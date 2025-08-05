@@ -99,7 +99,7 @@ const ImpactSection = () => {
   return (
     <section 
       ref={ref}
-      className="min-h-screen w-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background"
+      className="scroll-section min-h-screen w-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
