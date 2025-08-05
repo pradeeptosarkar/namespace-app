@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Progress } from "@/components/ui/progress";
-import Logo from "@/components/Logo";
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import SecondHeroSection from "@/components/sections/SecondHeroSection";
@@ -11,52 +11,22 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!scrollContainerRef.current) return;
-      
-      const container = scrollContainerRef.current;
-      const scrollLeft = container.scrollLeft;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const progress = maxScrollLeft > 0 ? (scrollLeft / maxScrollLeft) * 100 : 0;
-      
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       setScrollProgress(progress);
     };
 
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-      handleScroll(); // Initial calculation
-    }
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial calculation
 
     return () => {
-      if (container) {
-        container.removeEventListener("scroll", handleScroll);
-      }
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    const handleKeydown = (e: KeyboardEvent) => {
-      if (!scrollContainerRef.current) return;
-      
-      const container = scrollContainerRef.current;
-      const sectionWidth = window.innerWidth;
-      
-      if (e.key === "ArrowRight") {
-        e.preventDefault();
-        container.scrollBy({ left: sectionWidth, behavior: "smooth" });
-      } else if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        container.scrollBy({ left: -sectionWidth, behavior: "smooth" });
-      }
-    };
-
-    window.addEventListener("keydown", handleKeydown);
-    return () => window.removeEventListener("keydown", handleKeydown);
   }, []);
 
   return (
@@ -69,21 +39,35 @@ const Index = () => {
         />
       </div>
 
-      {/* Logo */}
-      <Logo />
+      {/* Navigation */}
+      <Navbar />
       
-      <div 
-        ref={scrollContainerRef}
-        className="horizontal-scroll"
-      >
-        <HeroSection />
-        <ProblemSection />
-        <SecondHeroSection />
-        <WhoWeServeSection />
-        <HackHazardsSection />
-        <ProgramsSection />
-        <TestimonialsSection />
-        <ContactSection />
+      {/* Sections with anchor IDs */}
+      <div className="w-full">
+        <section id="home">
+          <HeroSection />
+        </section>
+        <section id="problem">
+          <ProblemSection />
+        </section>
+        <section id="solution">
+          <SecondHeroSection />
+        </section>
+        <section id="who-we-serve">
+          <WhoWeServeSection />
+        </section>
+        <section id="hackhazards">
+          <HackHazardsSection />
+        </section>
+        <section id="programs">
+          <ProgramsSection />
+        </section>
+        <section id="testimonials">
+          <TestimonialsSection />
+        </section>
+        <section id="contact">
+          <ContactSection />
+        </section>
       </div>
     </>
   );

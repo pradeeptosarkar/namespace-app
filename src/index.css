@@ -56,6 +56,7 @@
   
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
   }
 
   body {
@@ -63,46 +64,21 @@
     overflow-x: hidden;
   }
   
-  /* Horizontal scroll container */
-  .horizontal-scroll {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
   
-  .horizontal-scroll::-webkit-scrollbar {
-    display: none;
-  }
-  
+  /* Vertical scroll sections */
   .scroll-section {
-    width: 100vw;
-    height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    flex-shrink: 0;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
   
-  /* Mobile responsive - vertical stacking */
+  /* Mobile responsive */
   @media (max-width: 768px) {
-    .horizontal-scroll {
-      flex-direction: column;
-      overflow-x: hidden;
-      overflow-y: auto;
-      scroll-snap-type: y mandatory;
-    }
-    
     .scroll-section {
-      min-width: 100%;
       min-height: 100vh;
-      height: auto;
-      width: 100%;
       padding: 2rem 0;
     }
   }

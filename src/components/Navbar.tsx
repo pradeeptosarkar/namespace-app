@@ -5,13 +5,12 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionIndex: number) => {
-    const container = document.querySelector('.horizontal-scroll');
-    if (container) {
-      const sectionWidth = window.innerWidth;
-      container.scrollTo({
-        left: sectionIndex * sectionWidth,
-        behavior: 'smooth'
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     }
     setIsOpen(false);
@@ -41,25 +40,49 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <button 
-              onClick={() => scrollToSection(0)}
+              onClick={() => scrollToSection('home')}
               className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
             >
               Home
             </button>
             <button 
-              onClick={() => scrollToSection(1)}
+              onClick={() => scrollToSection('problem')}
               className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
             >
               Problem
             </button>
             <button 
-              onClick={() => scrollToSection(4)}
+              onClick={() => scrollToSection('solution')}
+              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
+            >
+              Solution
+            </button>
+            <button 
+              onClick={() => scrollToSection('who-we-serve')}
+              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
+            >
+              Who We Serve
+            </button>
+            <button 
+              onClick={() => scrollToSection('hackhazards')}
               className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
             >
               HACKHAZARDS
             </button>
             <button 
-              onClick={() => scrollToSection(7)}
+              onClick={() => scrollToSection('programs')}
+              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
+            >
+              Programs
+            </button>
+            <button 
+              onClick={() => scrollToSection('testimonials')}
+              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
+            >
+              Testimonials
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
               className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
             >
               Contact
@@ -73,25 +96,49 @@ const Navbar = () => {
         <div className="fixed inset-0 z-40 bg-namespace-black/90 backdrop-blur-md md:hidden">
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             <button 
-              onClick={() => scrollToSection(0)}
+              onClick={() => scrollToSection('home')}
               className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
             >
               Home
             </button>
             <button 
-              onClick={() => scrollToSection(1)}
+              onClick={() => scrollToSection('problem')}
               className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
             >
               Problem
             </button>
             <button 
-              onClick={() => scrollToSection(4)}
+              onClick={() => scrollToSection('solution')}
+              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
+            >
+              Solution
+            </button>
+            <button 
+              onClick={() => scrollToSection('who-we-serve')}
+              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
+            >
+              Who We Serve
+            </button>
+            <button 
+              onClick={() => scrollToSection('hackhazards')}
               className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
             >
               HACKHAZARDS
             </button>
             <button 
-              onClick={() => scrollToSection(7)}
+              onClick={() => scrollToSection('programs')}
+              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
+            >
+              Programs
+            </button>
+            <button 
+              onClick={() => scrollToSection('testimonials')}
+              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
+            >
+              Testimonials
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
               className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
             >
               Contact
