@@ -106,19 +106,20 @@ const TestimonialsSection = () => {
                   className="absolute pointer-events-none" 
                   style={{ 
                     width: '100%', 
-                    height: '40px',
+                    height: '25px',
                     left: '0',
                     top: '100%'
                   }}
-                  viewBox="0 0 100 20" 
+                  viewBox="0 0 100 15" 
                   preserveAspectRatio="xMidYMin meet"
                 >
-                  {/* First dash */}
-                  <line
-                    x1="10" y1="4" x2="90" y2="3.5"
+                  {/* First dash - hand-drawn curve */}
+                  <path
+                    d="M12,3 Q30,2.5 50,3.2 Q70,4 88,3.5"
                     stroke="rgb(139, 92, 246)"
-                    strokeWidth="0.8"
+                    strokeWidth="0.9"
                     strokeLinecap="round"
+                    fill="none"
                     opacity="0.7"
                     style={{
                       strokeDasharray: '80',
@@ -126,12 +127,13 @@ const TestimonialsSection = () => {
                       transition: 'stroke-dashoffset 0.8s ease-out 1.5s'
                     }}
                   />
-                  {/* Second dash */}
-                  <line
-                    x1="15" y1="9" x2="85" y2="8.5"
+                  {/* Second dash - slightly wavy */}
+                  <path
+                    d="M16,7 Q35,6.8 52,7.3 Q68,7.8 84,7.2"
                     stroke="rgb(139, 92, 246)"
                     strokeWidth="0.8"
                     strokeLinecap="round"
+                    fill="none"
                     opacity="0.7"
                     style={{
                       strokeDasharray: '70',
@@ -139,12 +141,13 @@ const TestimonialsSection = () => {
                       transition: 'stroke-dashoffset 0.8s ease-out 2s'
                     }}
                   />
-                  {/* Third dash */}
-                  <line
-                    x1="20" y1="14" x2="80" y2="13.5"
+                  {/* Third dash - more organic curve */}
+                  <path
+                    d="M22,11 Q40,10.5 55,11.2 Q72,11.9 78,11.3"
                     stroke="rgb(139, 92, 246)"
-                    strokeWidth="0.8"
+                    strokeWidth="0.7"
                     strokeLinecap="round"
+                    fill="none"
                     opacity="0.7"
                     style={{
                       strokeDasharray: '60',
