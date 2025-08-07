@@ -71,53 +71,8 @@ const EcosystemFlywheelSection = () => {
           </p>
         </div>
 
-        {/* Flywheel Visualization with Side Insights */}
+        {/* Flywheel Visualization */}
         <div className="relative flex items-center justify-center mb-12">
-          {/* Left Side Insights */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-24 space-y-6">
-            {insights.slice(0, 2).map((insight, index) => (
-              <div
-                key={index}
-                className={`relative group cursor-pointer transition-all duration-1000 hover:scale-105 w-48 ${
-                  hasIntersected 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 -translate-x-10'
-                }`}
-                style={{ transitionDelay: `${800 + index * 200}ms` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <div className="relative bg-card/80 backdrop-blur-xl border border-primary/10 rounded-2xl p-4 shadow-lg group-hover:shadow-xl group-hover:border-primary/20 transition-all duration-300">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-t-2xl"></div>
-                  <p className="text-sm font-medium text-foreground/90 leading-relaxed mt-2">
-                    "{insight}"
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Right Side Insights */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-24 space-y-6">
-            {insights.slice(2, 4).map((insight, index) => (
-              <div
-                key={index + 2}
-                className={`relative group cursor-pointer transition-all duration-1000 hover:scale-105 w-48 ${
-                  hasIntersected 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 translate-x-10'
-                }`}
-                style={{ transitionDelay: `${1000 + index * 200}ms` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-l from-primary/20 to-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <div className="relative bg-card/80 backdrop-blur-xl border border-primary/10 rounded-2xl p-4 shadow-lg group-hover:shadow-xl group-hover:border-primary/20 transition-all duration-300">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-l from-primary to-accent rounded-t-2xl"></div>
-                  <p className="text-sm font-medium text-foreground/90 leading-relaxed mt-2">
-                    "{insight}"
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
 
           {/* Redesigned Central Flywheel */}
           <div className={`relative w-40 h-40 lg:w-60 lg:h-60 my-8 transition-all duration-1000 delay-500 scale-50 md:scale-75`}>
