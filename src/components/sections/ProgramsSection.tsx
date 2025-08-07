@@ -6,50 +6,42 @@ const ProgramsSection = () => {
     {
       title: "Developer Bootcamp",
       description: "Intensive full-stack development program",
-      category: "Education",
-      color: "from-blue-500 to-blue-600"
+      category: "Education"
     },
     {
       title: "Startup Incubator",
       description: "From idea to MVP in 12 weeks",
-      category: "Entrepreneurship", 
-      color: "from-green-500 to-green-600"
+      category: "Entrepreneurship"
     },
     {
       title: "AI/ML Workshop Series",
       description: "Hands-on machine learning projects",
-      category: "Technology",
-      color: "from-purple-500 to-purple-600"
+      category: "Technology"
     },
     {
       title: "Design Thinking Lab",
       description: "Human-centered design methodology",
-      category: "Innovation",
-      color: "from-pink-500 to-pink-600"
+      category: "Innovation"
     },
     {
       title: "Open Source Projects",
       description: "Contribute to meaningful codebases",
-      category: "Community",
-      color: "from-orange-500 to-orange-600"
+      category: "Community"
     },
     {
       title: "Tech Leadership Track",
       description: "Management and technical excellence",
-      category: "Leadership",
-      color: "from-indigo-500 to-indigo-600"
+      category: "Leadership"
     },
     {
       title: "Blockchain Academy",
       description: "Web3 and decentralized technologies",
-      category: "Emerging Tech",
-      color: "from-teal-500 to-teal-600"
+      category: "Emerging Tech"
     },
     {
       title: "Global Mentorship",
       description: "1-on-1 guidance from industry experts",
-      category: "Mentorship",
-      color: "from-red-500 to-red-600"
+      category: "Mentorship"
     }
   ];
 
@@ -101,28 +93,29 @@ const ProgramsSection = () => {
               <CarouselContent className="-ml-2 md:-ml-4">
                 {programs.map((program, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/4">
-                    <div className="group relative overflow-hidden glassmorphism-dark border border-namespace-white/10 rounded-2xl p-6 hover:bg-namespace-white/15 hover:border-namespace-purple-glow/50 transition-all duration-500 cursor-pointer h-64 magnetic-element glass-glow micro-float image-mask-polygon">
-                      {/* Enhanced gradient overlay */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-0 group-hover:opacity-30 transition-opacity duration-500 shimmer-effect`} />
+                    <div className="group relative overflow-hidden rounded-3xl p-6 cursor-pointer h-64 transition-all duration-500 bg-gradient-to-br from-white/5 to-white/10 hover:from-purple-500/20 hover:to-purple-600/20 border border-white/10 hover:border-purple-400/50 backdrop-blur-sm">
+                      {/* Decorative elements */}
+                      <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute top-6 right-8 w-1 h-1 bg-purple-300 rounded-full opacity-30 group-hover:opacity-70 transition-opacity" />
                       
                       <div className="relative z-10 h-full flex flex-col">
                         <div className="flex-1">
-                          <div className="inline-block px-3 py-1 glassmorphism rounded-full text-xs font-semibold text-namespace-purple-glow mb-4 mini-bounce">
+                          <div className="inline-block px-3 py-1 bg-purple-500/20 border border-purple-400/30 rounded-full text-xs font-semibold text-purple-300 mb-4 group-hover:bg-purple-500/30 transition-colors">
                             {program.category}
                           </div>
                           
-                          <h3 className="text-xl font-sora font-bold mb-3 text-namespace-white group-hover:text-namespace-purple-glow transition-colors">
+                          <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-200 transition-colors">
                             {program.title}
                           </h3>
                           
-                          <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                          <p className="text-gray-300 text-sm leading-relaxed mb-6 group-hover:text-gray-200 transition-colors">
                             {program.description}
                           </p>
                         </div>
                         
                         <div className="flex items-center justify-between">
-                          <span className="text-xs text-gray-400 font-medium">Learn More</span>
-                          <ExternalLink className="w-4 h-4 text-namespace-purple-glow opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <span className="text-xs text-gray-400 font-medium group-hover:text-purple-300 transition-colors">Learn More</span>
+                          <ExternalLink className="w-4 h-4 text-purple-400 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
                         </div>
                       </div>
                     </div>
