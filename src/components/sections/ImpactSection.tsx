@@ -164,15 +164,12 @@ const ImpactSection = () => {
                   transitionDelay: `${index * 400}ms`
                 }}
               >
-                <div className="relative overflow-hidden rounded-2xl p-4 md:p-6 text-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  {/* Animated counter */}
-                  <div className="relative z-10">
-                    <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-white">
-                      {stat.value.toLocaleString()}{stat.suffix}
-                    </div>
-                    <div className="text-xs md:text-sm lg:text-base font-medium text-white/80">
-                      {stat.label}
-                    </div>
+                <div className="text-center group hover:scale-110 transition-all duration-300">
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-white">
+                    {stat.value.toLocaleString()}{stat.suffix}
+                  </div>
+                  <div className="text-sm md:text-base lg:text-lg font-medium text-white/70">
+                    {stat.label}
                   </div>
                 </div>
               </div>
