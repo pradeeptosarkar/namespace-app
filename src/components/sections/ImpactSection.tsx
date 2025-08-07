@@ -114,37 +114,45 @@ const ImpactSection = () => {
         <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-white/20 rounded-full animate-bounce delay-700"></div>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10 h-full flex flex-col justify-center">
-        {/* Central Title */}
-        <div className="text-center mb-20">
-          <h2 className={`text-5xl lg:text-7xl font-bold transition-all duration-1000 ${
-            hasIntersected 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-10'
-          }`}>
-            <span className="text-white">Impact Created </span>
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Till Now
-            </span>
-          </h2>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 h-full flex flex-col">
+        {/* Centered Title */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <h2 className={`text-4xl md:text-5xl lg:text-7xl font-bold transition-all duration-1000 ${
+              hasIntersected 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}>
+              <span className="text-white">Impact Created Till Now</span>
+            </h2>
+          </div>
         </div>
 
         {/* Randomly Positioned Stats */}
-        <div className="relative h-96 w-full">
+        <div className="absolute inset-0 w-full h-full">
           {stats.map((stat, index) => {
-            // Random positions for each stat
+            // Responsive positions for each stat
             const positions = [
-              { top: '10%', left: '15%' },
-              { top: '20%', right: '10%' },
-              { bottom: '30%', left: '8%' },
-              { top: '50%', right: '20%' },
-              { bottom: '15%', left: '45%' }
+              { top: '15%', left: '5%' },
+              { top: '25%', right: '5%' },
+              { bottom: '35%', left: '3%' },
+              { top: '55%', right: '8%' },
+              { bottom: '20%', left: '35%' }
+            ];
+            
+            const mobilePositions = [
+              { top: '10%', left: '10%' },
+              { top: '15%', right: '10%' },
+              { bottom: '40%', left: '5%' },
+              { top: '45%', right: '15%' },
+              { bottom: '25%', left: '40%' }
             ];
             
             const position = positions[index];
+            const mobilePosition = mobilePositions[index];
             
             return (
-              <div
+                <div
                 key={stat.key}
                 className={`absolute group transition-all duration-1000 transform hover:scale-110 ${
                   hasIntersected 
@@ -152,26 +160,20 @@ const ImpactSection = () => {
                     : 'opacity-0 translate-y-20'
                 }`}
                 style={{ 
-                  ...position,
+                  ...(window.innerWidth < 768 ? mobilePosition : position),
                   transitionDelay: `${index * 400}ms`
                 }}
               >
-                <div className="relative overflow-hidden rounded-2xl p-6 text-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  {/* Gradient background on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
-                  
+                <div className="relative overflow-hidden rounded-2xl p-4 md:p-6 text-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
                   {/* Animated counter */}
                   <div className="relative z-10">
-                    <div className={`text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                    <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-white">
                       {stat.value.toLocaleString()}{stat.suffix}
                     </div>
-                    <div className="text-sm lg:text-base font-medium text-white/90">
+                    <div className="text-xs md:text-sm lg:text-base font-medium text-white/80">
                       {stat.label}
                     </div>
                   </div>
-
-                  {/* Decorative glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </div>
             );
@@ -179,15 +181,15 @@ const ImpactSection = () => {
         </div>
 
         {/* Bottom Call to Action */}
-        <div className={`text-center mt-20 transition-all duration-1000 delay-1500 ${
+        <div className={`text-center pb-8 md:pb-12 transition-all duration-1000 delay-1500 ${
           hasIntersected 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-10'
         }`}>
-          <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-4 text-white">
             This is just the beginning
           </h3>
-          <p className="text-xl text-white/80">
+          <p className="text-lg md:text-xl text-white/80">
             Join us as we scale to reach millions of learners worldwide
           </p>
         </div>
