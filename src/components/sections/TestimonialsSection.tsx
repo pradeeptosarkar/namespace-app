@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 // Partner logos via user uploads (public/lovable-uploads/*).
@@ -210,21 +211,21 @@ const TestimonialsSection = () => {
                 Some of the partners who have collaborated with us
               </h3>
             
-            {/* Continuous scrolling logos - Larger */}
-            <div className="relative overflow-hidden">
-              <div className="flex animate-scroll-fast items-center">
+            {/* Enhanced scrolling logos - Larger, colored, and manually scrollable */}
+            <ScrollArea className="relative">
+              <div className="flex animate-[scroll_15s_linear_infinite] items-center hover:[animation-play-state:paused]">
                 {/* First set of logos */}
                 {partners.map((partner, index) => (
                   <div 
                     key={index}
-                    className="flex-shrink-0 mx-8 lg:mx-12 magnetic-element cursor-pointer hover:scale-110 transition-transform duration-300"
+                    className="flex-shrink-0 mx-12 lg:mx-16 xl:mx-20 magnetic-element cursor-pointer hover:scale-110 transition-transform duration-300"
                   >
                     <img 
                       src={partner.logo} 
                       alt={`${partner.name} logo`}
                       loading="lazy"
                       decoding="async"
-                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-12 sm:h-16 lg:h-20 xl:h-24 w-auto object-contain hover:scale-110 transition-all duration-300"
                     />
                   </div>
                 ))}
@@ -232,19 +233,19 @@ const TestimonialsSection = () => {
                 {partners.map((partner, index) => (
                   <div 
                     key={`duplicate-${index}`}
-                    className="flex-shrink-0 mx-8 lg:mx-12 cursor-pointer hover:scale-110 transition-transform duration-300"
+                    className="flex-shrink-0 mx-12 lg:mx-16 xl:mx-20 cursor-pointer hover:scale-110 transition-transform duration-300"
                   >
                     <img 
                       src={partner.logo} 
                       alt={`${partner.name} logo`}
                       loading="lazy"
                       decoding="async"
-                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-12 sm:h-16 lg:h-20 xl:h-24 w-auto object-contain hover:scale-110 transition-all duration-300"
                     />
                   </div>
                 ))}
               </div>
-            </div>
+            </ScrollArea>
           </div>
         </div>
       </div>
