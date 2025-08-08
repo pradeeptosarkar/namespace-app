@@ -211,41 +211,41 @@ const TestimonialsSection = () => {
                 Some of the partners who have collaborated with us
               </h3>
             
-            {/* Enhanced scrolling logos - Larger, colored, and manually scrollable */}
-            <ScrollArea className="relative">
-              <div className="flex animate-[scroll_15s_linear_infinite] items-center hover:[animation-play-state:paused]">
-                {/* First set of logos */}
-                {partners.map((partner, index) => (
-                  <div 
-                    key={index}
-                    className="flex-shrink-0 mx-12 lg:mx-16 xl:mx-20 magnetic-element cursor-pointer hover:scale-110 transition-transform duration-300"
-                  >
-                    <img 
-                      src={partner.logo} 
-                      alt={`${partner.name} logo`}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-12 sm:h-16 lg:h-20 xl:h-24 w-auto object-contain hover:scale-110 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {partners.map((partner, index) => (
-                  <div 
-                    key={`duplicate-${index}`}
-                    className="flex-shrink-0 mx-12 lg:mx-16 xl:mx-20 cursor-pointer hover:scale-110 transition-transform duration-300"
-                  >
-                    <img 
-                      src={partner.logo} 
-                      alt={`${partner.name} logo`}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-12 sm:h-16 lg:h-20 xl:h-24 w-auto object-contain hover:scale-110 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
+             {/* Enhanced scrolling logos - Larger, colored, and manually scrollable */}
+             <ScrollArea className="relative h-32 w-full">
+               <div className="flex animate-[scroll_11.25s_linear_infinite] items-center hover:[animation-play-state:paused] w-max">
+                 {/* First set of logos */}
+                 {partners.map((partner, index) => (
+                   <div 
+                     key={index}
+                     className="flex-shrink-0 mx-16 lg:mx-20 xl:mx-24 magnetic-element cursor-pointer hover:scale-110 transition-transform duration-300"
+                   >
+                     <img 
+                       src={partner.logo} 
+                       alt={`${partner.name} logo`}
+                       loading="lazy"
+                       decoding="async"
+                       className="h-16 sm:h-20 lg:h-24 xl:h-28 w-auto object-contain hover:scale-110 transition-all duration-300"
+                     />
+                   </div>
+                 ))}
+                 {/* Duplicate set for seamless loop */}
+                 {partners.map((partner, index) => (
+                   <div 
+                     key={`duplicate-${index}`}
+                     className="flex-shrink-0 mx-16 lg:mx-20 xl:mx-24 cursor-pointer hover:scale-110 transition-transform duration-300"
+                   >
+                     <img 
+                       src={partner.logo} 
+                       alt={`${partner.name} logo`}
+                       loading="lazy"
+                       decoding="async"
+                       className="h-16 sm:h-20 lg:h-24 xl:h-28 w-auto object-contain hover:scale-110 transition-all duration-300"
+                     />
+                   </div>
+                 ))}
+               </div>
+             </ScrollArea>
           </div>
         </div>
       </div>
