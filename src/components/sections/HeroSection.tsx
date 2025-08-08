@@ -91,7 +91,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
+    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition min-h-screen">
       {/* Interactive gradient background with glassmorphism */}
       <div 
         className="absolute inset-0 opacity-15 shimmer-effect"
@@ -119,9 +119,9 @@ const HeroSection = () => {
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
-        <div className="flex w-full">
+        <div className="flex w-full items-center justify-between">
           {/* Left side content */}
-          <div className="lg:pl-12 flex-1 max-w-4xl">
+          <div className="lg:pl-12 flex-1">
             <div className="space-y-6 progressive-reveal">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 glassmorphism px-6 py-3 rounded-full magnetic-element micro-float">
