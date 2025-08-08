@@ -145,7 +145,8 @@ const HeroSection = () => {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* Two buttons commented out */}
+              {/* <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
                   className="bg-namespace-purple hover:bg-primary-hover text-namespace-white px-8 py-6 text-lg font-semibold group shadow-elegant hover:shadow-orbital transition-all duration-300 magnetic-element glass-glow"
@@ -161,7 +162,7 @@ const HeroSection = () => {
                 >
                   Watch Our Story
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
 
