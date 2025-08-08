@@ -2,18 +2,7 @@ import { Star, Quote } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
-// Import partner logos
-import groqLogo from "@/assets/partners/groq-logo.png";
-import coinbaseLogo from "@/assets/partners/coinbase-logo.png";
-import monadLogo from "@/assets/partners/monad-logo.png";
-import orkesLogo from "@/assets/partners/orkes-logo.png";
-import stellarLogo from "@/assets/partners/stellar-logo.png";
-import screenpipeLogo from "@/assets/partners/screenpipe-logo.png";
-import infinyonLogo from "@/assets/partners/infinyon-logo.png";
-import xxNetworksLogo from "@/assets/partners/xx-networks-logo.png";
-import googleForStartupsLogo from "@/assets/partners/google-for-startups-logo.png";
-import microsoftForStartupsLogo from "@/assets/partners/microsoft-for-startups-logo.png";
-import geeksforgeeksLogo from "@/assets/partners/geeksforgeeks-logo.png";
+// Partner logos via user uploads (public/lovable-uploads/*).
 
 const TestimonialsSection = () => {
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.3 });
@@ -57,17 +46,16 @@ const TestimonialsSection = () => {
   ];
 
   const partners = [
-    { name: "Groq", logo: groqLogo },
-    { name: "Coinbase", logo: coinbaseLogo },
-    { name: "Monad", logo: monadLogo },
-    { name: "Orkes", logo: orkesLogo },
-    { name: "Stellar", logo: stellarLogo },
-    { name: "Screenpipe", logo: screenpipeLogo },
-    { name: "InfinyOn", logo: infinyonLogo },
-    { name: "XX Networks", logo: xxNetworksLogo },
-    { name: "Google for Startups", logo: googleForStartupsLogo },
-    { name: "Microsoft for Startups", logo: microsoftForStartupsLogo },
-    { name: "GeeksforGeeks", logo: geeksforgeeksLogo }
+    { name: "Groq", logo: "/lovable-uploads/f400820a-6bf7-414b-83f8-3fe46fe8ae7b.png" },
+    { name: "Base", logo: "/lovable-uploads/511a29ea-e469-42d1-8722-e8bce0b0b938.png" },
+    { name: "Stellar", logo: "/lovable-uploads/be12e445-da80-4c80-9e82-0c7541bbb935.png" },
+    { name: "Screenpipe", logo: "/lovable-uploads/494b3733-d738-4c2d-8932-f6c4619d7590.png" },
+    { name: "Monad", logo: "/lovable-uploads/1711468c-c79a-4158-b499-3ba736136325.png" },
+    { name: "InfinyOn", logo: "/lovable-uploads/ac9a36b0-4c29-4cc8-9624-0e002e4005e9.png" },
+    { name: "Orkes", logo: "/lovable-uploads/184e5f47-87e0-49aa-b537-7bde42f2b970.png" },
+    { name: "Sprint.dev", logo: "/lovable-uploads/9b94fe11-d6bf-4de0-bd24-315ca7e3f4fc.png" },
+    { name: "Polygon", logo: "/lovable-uploads/59d38d75-d0be-445c-ba37-f0fdca56bc0d.png" },
+    { name: "Tezos", logo: "/lovable-uploads/f3f6164e-6d46-41d0-ae19-b96ab854517e.png" },
   ];
 
   return (
@@ -218,6 +206,8 @@ const TestimonialsSection = () => {
                     <img 
                       src={partner.logo} 
                       alt={`${partner.name} logo`}
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
@@ -231,6 +221,8 @@ const TestimonialsSection = () => {
                     <img 
                       src={partner.logo} 
                       alt={`${partner.name} logo`}
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
