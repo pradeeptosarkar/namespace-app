@@ -213,7 +213,7 @@ const TestimonialsSection = () => {
             
              {/* Enhanced scrolling logos - Larger, colored, and manually scrollable */}
              <ScrollArea className="relative h-32 w-full">
-               <div className="flex animate-[scroll_11.25s_linear_infinite] items-center hover:[animation-play-state:paused] w-max">
+               <div className="flex animate-[scroll_16.875s_linear_infinite] items-center hover:[animation-play-state:paused] w-max">
                  {/* First set of logos */}
                  {partners.map((partner, index) => (
                    <div 
