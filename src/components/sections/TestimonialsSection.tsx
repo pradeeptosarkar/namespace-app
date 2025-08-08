@@ -56,6 +56,16 @@ const TestimonialsSection = () => {
     { name: "Sprint.dev", logo: "/lovable-uploads/9b94fe11-d6bf-4de0-bd24-315ca7e3f4fc.png" },
     { name: "Polygon", logo: "/lovable-uploads/59d38d75-d0be-445c-ba37-f0fdca56bc0d.png" },
     { name: "Tezos", logo: "/lovable-uploads/f3f6164e-6d46-41d0-ae19-b96ab854517e.png" },
+    { name: "QuillAudits", logo: "/lovable-uploads/458cc2c0-eb65-4838-87ba-661230e0d633.png" },
+    { name: "Push", logo: "/lovable-uploads/24a5e0df-c7b2-45e4-b6e0-2da3774c74c4.png" },
+    { name: "TechGig", logo: "/lovable-uploads/f364908e-4af2-4389-80be-99ae0d3b7e25.png" },
+    { name: "Solana", logo: "/lovable-uploads/715c756a-1816-4190-a426-510ba7748f09.png" },
+    { name: "GeeksforGeeks", logo: "/lovable-uploads/9a96ab5c-b8f5-4046-9aef-af8888b8317f.png" },
+    { name: "CSSBattle", logo: "/lovable-uploads/56a25318-36cf-4610-a597-d30c46d32559.png" },
+    { name: "Reskill", logo: "/lovable-uploads/af05f95c-f551-4603-9134-6fa6f9f4ce07.png" },
+    { name: "Commudle", logo: "/lovable-uploads/1390fc94-6aca-4995-a3dc-5d00b6be10c6.png" },
+    { name: "Where U Elevate", logo: "/lovable-uploads/4731d691-9795-4ccf-9e1a-fd0adf7360ce.png" },
+    { name: "Bobble", logo: "/lovable-uploads/a4127b4c-c23e-42a1-89bd-06092ab4a4e3.png" },
   ];
 
   return (
