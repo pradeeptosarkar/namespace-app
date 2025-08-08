@@ -104,10 +104,10 @@ const EcosystemFlywheelSection = () => {
               {/* Flywheel Elements - Redesigned */}
               {flywheelElements.map((element, index) => {
                 const positions = {
-                  top: "-top-20 left-1/2 -translate-x-1/2 -translate-y-1/2",
-                  right: "-right-40 top-1/2 translate-x-1/2 -translate-y-1/2", 
-                  bottom: "-bottom-20 left-1/2 -translate-x-1/2 translate-y-1/2",
-                  left: "-left-40 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  top: "-top-24 md:-top-20 left-1/2 -translate-x-1/2 -translate-y-1/2",
+                  right: "-right-36 md:-right-40 top-1/2 translate-x-1/2 -translate-y-1/2", 
+                  bottom: "-bottom-24 md:-bottom-20 left-1/2 -translate-x-1/2 translate-y-1/2",
+                  left: "-left-36 md:-left-40 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 };
 
                 return (
@@ -127,7 +127,7 @@ const EcosystemFlywheelSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                       
                       {/* Main Card */}
-                      <div className="relative w-52 h-28 bg-gradient-to-br from-card/95 to-card/85 backdrop-blur-xl border border-primary/15 rounded-xl p-4 w-42 text-center shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:border-primary/30">
+                      <div className="relative w-40 h-36 lg:w-52 lg:h-28 bg-gradient-to-br from-card/95 to-card/85 backdrop-blur-xl border border-primary/15 rounded-xl p-4 text-center shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:border-primary/30">
                         
                         {/* Top Border Accent */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></div>
