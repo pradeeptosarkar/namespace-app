@@ -206,8 +206,8 @@ const TestimonialsSection = () => {
           </div>
           
           {/* Partner Logos Section - Expanded */}
-            <div className="text-center glassmorphism border border-namespace-white/10 rounded-2xl p-8 lg:p-12 glass-glow">
-              <h3 className="text-3xl lg:text-4xl font-sora font-semibold mb-12 text-muted-foreground shimmer-effect">
+            <div className="text-center glassmorphism border border-namespace-white/10 rounded-2xl p-8 glass-glow">
+              <h3 className="text-3xl lg:text-4xl font-sora font-semibold mb-4 text-muted-foreground shimmer-effect">
                 Some of the partners who have collaborated with us
               </h3>
             
