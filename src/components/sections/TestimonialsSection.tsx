@@ -66,6 +66,12 @@ const TestimonialsSection = () => {
     { name: "Commudle", logo: "/lovable-uploads/1390fc94-6aca-4995-a3dc-5d00b6be10c6.png" },
     { name: "Where U Elevate", logo: "/lovable-uploads/4731d691-9795-4ccf-9e1a-fd0adf7360ce.png" },
     { name: "Bobble", logo: "/lovable-uploads/a4127b4c-c23e-42a1-89bd-06092ab4a4e3.png" },
+    { name: "XNetwork", logo: "/lovable-uploads/23c4670e-c747-4d94-aed1-28add4d830f6.png" },
+    { name: "Router", logo: "/lovable-uploads/2ad404c6-093e-44a6-9665-1e91f8dbd5d5.png" },
+    { name: "Slido", logo: "/lovable-uploads/ff097a2d-3a21-446e-9cf7-2829fd4a60f7.png" },
+    { name: "Axure", logo: "/lovable-uploads/72cdc346-8fe1-4ca5-8313-e406b566b556.png" },
+    { name: "QuickNode", logo: "/lovable-uploads/4c85da3f-3bdc-48fc-91c3-71dd9eada12c.png" },
+    { name: "Cybrancee", logo: "/lovable-uploads/6f3c34f5-08ad-4e6a-adea-d40408e0f098.png" },
   ];
 
   return (
