@@ -47,8 +47,8 @@ const Maintenance = () => {
           <p className="mt-2 text-muted-foreground">
             If you need assistance, contact us at
             {" "}
-            <a href="mailto:support@example.com" className="underline underline-offset-4">
-              support@example.com
+            <a href="mailto:contact@namespacecomm.in" className="underline underline-offset-4">
+              contact@namespacecomm.in
             </a>
             .
           </p>
