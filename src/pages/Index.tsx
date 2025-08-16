@@ -48,10 +48,10 @@ const Index = () => {
       const container = scrollContainerRef.current;
       const sectionWidth = window.innerWidth;
       
-      if (e.key === "ArrowRight") {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         e.preventDefault();
         container.scrollBy({ left: sectionWidth, behavior: "smooth" });
-      } else if (e.key === "ArrowLeft") {
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         e.preventDefault();
         container.scrollBy({ left: -sectionWidth, behavior: "smooth" });
       }
@@ -73,9 +73,10 @@ const Index = () => {
       // Prevent default vertical scrolling
       e.preventDefault();
       
-      // Convert vertical scroll to horizontal scroll
-      const scrollAmount = e.deltaY;
-      container.scrollBy({ left: scrollAmount, behavior: "instant" });
+      // Convert vertical scroll to horizontal scroll with reduced speed
+      // Reduce scroll sensitivity for touchpad and add smooth animation
+      const scrollAmount = e.deltaY * 0.8; // Reduce speed by 20%
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
     };
 
     // Add wheel event listener to the document
