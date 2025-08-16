@@ -61,6 +61,29 @@ const Index = () => {
     return () => window.removeEventListener("keydown", handleKeydown);
   }, []);
 
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      // Only apply on desktop screens (width >= 1024px)
+      if (window.innerWidth < 1024) return;
+      
+      if (!scrollContainerRef.current) return;
+      
+      const container = scrollContainerRef.current;
+      
+      // Prevent default vertical scrolling
+      e.preventDefault();
+      
+      // Convert vertical scroll to horizontal scroll
+      const scrollAmount = e.deltaY;
+      container.scrollBy({ left: scrollAmount, behavior: "instant" });
+    };
+
+    // Add wheel event listener to the document
+    document.addEventListener("wheel", handleWheel, { passive: false });
+    
+    return () => document.removeEventListener("wheel", handleWheel);
+  }, []);
+
   return (
     <>
       {/* Progress Bar */}
