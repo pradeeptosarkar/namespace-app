@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Copy, Download, Check } from "lucide-react";
 import { toast } from "sonner";
-import Navbar from "@/components/Navbar";
 
 const Branding = () => {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
@@ -80,21 +79,20 @@ const Branding = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-namespace-black text-namespace-white py-16 lg:py-24">
+      <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold mb-6">
               <span className="text-purple-400">Brand</span> Guidelines
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8">
               Download official NAMESPACE logos and assets for your projects, presentations, and partnerships.
             </p>
-            <div className="bg-namespace-white/10 border border-namespace-white/20 rounded-lg p-6">
+            <div className="bg-muted/50 border border-border rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-3">Usage Guidelines</h3>
-              <ul className="text-left text-gray-300 space-y-2">
+              <ul className="text-left text-muted-foreground space-y-2">
                 <li>• Maintain minimum clear space around all logos</li>
                 <li>• Do not alter colors, proportions, or typography</li>
                 <li>• Use appropriate logo version for your background</li>
