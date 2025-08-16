@@ -74,7 +74,7 @@ const ProgramsSection = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-10 progressive-reveal px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
-              Flagship <span className="text-namespace-purple-glow shimmer-effect">Programs</span>
+              Flagship <span className="text-namespace-purple">Programs</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto">
               Comprehensive learning experiences designed to accelerate your growth in the ever-evolving tech landscape.

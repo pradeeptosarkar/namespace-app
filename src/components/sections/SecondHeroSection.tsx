@@ -40,25 +40,23 @@ const SecondHeroSection = () => {
 
   return (
     <section ref={ref} className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
-      {/* Geometric patterns */}
+      {/* Subtle geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-orbital rounded-full blur-3xl opacity-60 animate-orbital-float" />
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-namespace-purple-light rounded-full blur-2xl opacity-40 animate-orbital-float" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-namespace-purple/5 rounded-full" />
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-namespace-purple/3 rounded-full" />
         
-        {/* Additional geometric patterns */}
-        <div className="absolute top-16 left-20 w-12 h-12 border-2 border-namespace-purple/20 rotate-45 animate-pulse" />
-        <div className="absolute bottom-32 right-16 w-16 h-16 border border-namespace-purple/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-10 w-8 h-8 bg-namespace-purple/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-20 right-1/3 w-6 h-6 border-2 border-namespace-purple/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        {/* Clean geometric patterns */}
+        <div className="absolute top-16 left-20 w-12 h-12 border border-namespace-purple/15 rotate-45" />
+        <div className="absolute bottom-32 right-16 w-16 h-16 border border-namespace-purple/20 rounded-full" />
+        <div className="absolute top-1/2 left-10 w-8 h-8 bg-namespace-purple/5 rotate-12" />
+        <div className="absolute bottom-20 right-1/3 w-6 h-6 border border-namespace-purple/25 rounded-full" />
         
         {/* Triangle patterns */}
-        <div className="absolute top-20 right-1/4 w-10 h-10 border border-namespace-purple/25" style={{
-          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-          animation: 'float 5s ease-in-out infinite'
+        <div className="absolute top-20 right-1/4 w-10 h-10 border border-namespace-purple/20" style={{
+          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
         }} />
-        <div className="absolute bottom-40 left-1/3 w-8 h-8 border border-namespace-purple/20" style={{
-          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-          animation: 'float 3s ease-in-out infinite reverse'
+        <div className="absolute bottom-40 left-1/3 w-8 h-8 border border-namespace-purple/15" style={{
+          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
         }} />
       </div>
       
@@ -73,38 +71,7 @@ const SecondHeroSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6 leading-tight">
               Building Tomorrow's
               <br />
-              <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
-                {/* Responsive animated hand-drawn oval */}
-                <svg 
-                  className="absolute inset-0 pointer-events-none" 
-                  style={{ 
-                    width: '120%', 
-                    height: '140%',
-                    left: '-10%',
-                    top: '-20%'
-                  }}
-                  viewBox="0 0 100 40" 
-                  preserveAspectRatio="none"
-                >
-                  <ellipse
-                    cx="50" 
-                    cy="20" 
-                    rx="45" 
-                    ry="15"
-                    fill="none"
-                    stroke="rgb(139, 92, 246)"
-                    strokeWidth="0.8"
-                    opacity="0.6"
-                    strokeLinecap="round"
-                    style={{
-                      strokeDasharray: '200',
-                      strokeDashoffset: hasIntersected ? '0' : '200',
-                      transform: 'rotate(-2deg)',
-                      transformOrigin: 'center',
-                      transition: 'stroke-dashoffset 2s ease-out 1s'
-                    }}
-                  />
-                </svg>
+              <span className="text-namespace-purple">
                 Tech Ecosystem
               </span>
             </h2>
@@ -119,7 +86,7 @@ const SecondHeroSection = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="group relative h-20 sm:h-24 lg:h-28 rounded-2xl border border-border bg-gradient-to-br from-namespace-white to-gray-50 hover:border-namespace-purple/50 hover:shadow-elegant transition-all duration-500 animate-scale-in overflow-hidden cursor-pointer"
+                className="group relative h-20 sm:h-24 lg:h-28 rounded-2xl border border-namespace-purple/20 bg-namespace-white hover:border-namespace-purple/40 hover:shadow-sm transition-all duration-300 overflow-hidden cursor-pointer"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Default state - Dot and Title */}

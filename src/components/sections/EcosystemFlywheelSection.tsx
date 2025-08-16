@@ -58,7 +58,7 @@ const EcosystemFlywheelSection = () => {
               : 'opacity-0 translate-y-10'
           }`}>
             The Ecosystem{' '}
-            <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
+            <span className="text-primary">
               Flywheel
             </span>
           </h2>
@@ -77,12 +77,11 @@ const EcosystemFlywheelSection = () => {
           {/* Redesigned Central Flywheel */}
           <div className={`relative w-40 h-40 lg:w-60 lg:h-60 my-8 transition-all duration-1000 delay-500 scale-50 md:scale-75`}>
             
-            {/* Outer Glow Effects */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-primary/30 blur-3xl animate-pulse"></div>
-            <div className="absolute inset-2 rounded-full bg-gradient-to-tl from-accent/20 via-primary/20 to-accent/20 blur-2xl"></div>
+            {/* Subtle background */}
+            <div className="absolute inset-0 rounded-full bg-primary/5"></div>
             
             {/* Main Flywheel Container */}
-            <div className="absolute inset-6 rounded-full border border-primary/20 bg-gradient-to-br from-background/95 via-background/90 to-background/95 backdrop-blur-2xl shadow-2xl">
+            <div className="absolute inset-6 rounded-full border border-primary/20 bg-background shadow-lg">
               
               {/* Animated Rings */}
               <div className="absolute inset-3 rounded-full border-2 border-dashed border-primary/40 animate-spin-slow"></div>
@@ -92,7 +91,7 @@ const EcosystemFlywheelSection = () => {
               {/* Center Content */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center z-10">
-                  <div className="text-2xl lg:text-3xl font-bold mb-2 bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent drop-shadow-sm">
+                  <div className="text-2xl lg:text-3xl font-bold mb-2 text-primary">
                     NAMESPACE
                   </div>
                   <div className="text-sm text-muted-foreground font-medium opacity-80">
@@ -123,11 +122,8 @@ const EcosystemFlywheelSection = () => {
                     }}
                   >
                     <div className="group relative">
-                      {/* Glow Effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                      
                       {/* Main Card */}
-                      <div className="relative w-40 h-36 lg:w-52 lg:h-28 bg-gradient-to-br from-card/95 to-card/85 backdrop-blur-xl border border-primary/15 rounded-xl p-4 text-center shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:border-primary/30">
+                      <div className="relative w-40 h-36 lg:w-52 lg:h-28 bg-card border border-primary/20 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/30">
                         
                         {/* Top Border Accent */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></div>
@@ -178,7 +174,7 @@ const EcosystemFlywheelSection = () => {
         }`}>
           <h3 className="text-xl lg:text-2xl font-bold">
             Everything feeds everything.{' '}
-            <span className="relative inline-block bg-gradient-purple bg-clip-text text-transparent">
+            <span className="text-primary">
               That's the flywheel.
             </span>
           </h3>

@@ -100,8 +100,8 @@ const HeroSection = () => {
         }}
       />
       
-      {/* Glassmorphism overlay */}
-      <div className="absolute top-20 right-20 w-96 h-96 glassmorphism rounded-full glass-glow" />
+      {/* Subtle overlay */}
+      <div className="absolute top-20 right-20 w-96 h-96 bg-namespace-purple/5 rounded-full" />
       
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden">
@@ -112,10 +112,10 @@ const HeroSection = () => {
         <div className="absolute bottom-40 right-20 w-20 h-20 border-l-2 border-t-2 border-namespace-purple/25 rotate-45" />
       </div>
       
-      {/* Background orbital elements */}
+      {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-orbital rounded-full blur-3xl animate-orbital-float" />
-        <div className="absolute bottom-20 left-20 w-48 h-48 bg-namespace-purple-light rounded-full blur-2xl animate-orbital-float" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-20 right-20 w-64 h-64 bg-namespace-purple/3 rounded-full" />
+        <div className="absolute bottom-20 left-20 w-48 h-48 bg-namespace-purple/2 rounded-full" />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
@@ -124,7 +124,7 @@ const HeroSection = () => {
           <div className="lg:pl-12 flex-1">
             <div className="space-y-6 progressive-reveal">
               <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 glassmorphism px-6 py-3 rounded-full magnetic-element micro-float">
+                <div className="inline-flex items-center space-x-2 bg-namespace-white/80 border border-namespace-purple/20 px-6 py-3 rounded-full">
                   <div className="w-2 h-2 bg-namespace-purple rounded-full animate-pulse" />
                   <span className="text-sm font-medium text-namespace-purple transition-all duration-500">
                     {taglines[currentTaglineIndex]}
@@ -134,7 +134,7 @@ const HeroSection = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold leading-tight">
                   Welcome to
                   <br />
-                  <span className="bg-gradient-purple bg-clip-text text-transparent inline-flex items-center">
+                  <span className="text-namespace-purple inline-flex items-center">
                     {typedText}
                     <span className={`ml-1 w-1 h-8 sm:h-12 md:h-14 lg:h-16 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
                   </span>
