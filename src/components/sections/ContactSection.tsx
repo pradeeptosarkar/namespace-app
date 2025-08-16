@@ -72,7 +72,7 @@ const ContactSection = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sora font-bold leading-tight">
                 Ready to
                 <br />
-                <span className="text-namespace-purple">Join Us?</span>
+                <span className="text-purple-400">Join Us?</span>
               </h2>
               
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">

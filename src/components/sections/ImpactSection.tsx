@@ -123,7 +123,7 @@ const ImpactSection = () => {
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-10'
             }`}>
-              <span className="text-purple-400">Impact</span> Created Till Now
+              <span className="text-purple-400">Impact</span> <span className="text-white">Created Till Now</span>
             </h2>
           </div>
         </div>
