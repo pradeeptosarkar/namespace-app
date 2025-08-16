@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Copy, Download, Check } from "lucide-react";
+import { Copy, Download, Check, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 
 const Branding = () => {
@@ -79,6 +80,16 @@ const Branding = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <Link to="/">
+            <Button variant="ghost" className="mb-4">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
+      </div>
       
       {/* Hero Section */}
       <section className="bg-background py-16 lg:py-24">
