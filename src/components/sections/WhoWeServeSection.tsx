@@ -46,31 +46,27 @@ const WhoWeServeSection = () => {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100px_100px]" />
         </div>
         
-        {/* Floating orbital elements */}
-        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-namespace-purple-glow rounded-full animate-orbital-float" />
-        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-namespace-purple-glow rounded-full animate-orbital-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-namespace-purple-glow rounded-full animate-orbital-float" style={{ animationDelay: '4s' }} />
+        {/* Floating elements */}
+        <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-namespace-purple/30 rounded-full" />
+        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-namespace-purple/30 rounded-full" />
+        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-namespace-purple/30 rounded-full" />
         
-        {/* Additional geometric patterns */}
-        <div className="absolute top-16 left-1/4 w-12 h-12 border-2 border-namespace-purple-glow/20 rotate-45 animate-pulse" />
-        <div className="absolute bottom-32 right-20 w-16 h-16 border border-namespace-purple-glow/30 rounded-full animate-bounce" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-16 w-8 h-8 bg-namespace-purple-glow/10 rotate-12 animate-spin" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-20 right-1/4 w-6 h-6 border-2 border-namespace-purple-glow/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+        {/* Clean geometric patterns */}
+        <div className="absolute top-16 left-1/4 w-12 h-12 border border-namespace-purple/15 rotate-45" />
+        <div className="absolute bottom-32 right-20 w-16 h-16 border border-namespace-purple/20 rounded-full" />
+        <div className="absolute top-1/2 left-16 w-8 h-8 bg-namespace-purple/5 rotate-12" />
+        <div className="absolute bottom-20 right-1/4 w-6 h-6 border border-namespace-purple/25 rounded-full" />
         
         {/* Diamond patterns */}
-        <div className="absolute top-24 right-1/3 w-10 h-10 border border-namespace-purple-glow/25 rotate-45" style={{
-          animation: 'float 6s ease-in-out infinite'
-        }} />
-        <div className="absolute bottom-40 left-20 w-8 h-8 border border-namespace-purple-glow/20 rotate-45" style={{
-          animation: 'float 4s ease-in-out infinite reverse'
-        }} />
+        <div className="absolute top-24 right-1/3 w-10 h-10 border border-namespace-purple/20 rotate-45" />
+        <div className="absolute bottom-40 left-20 w-8 h-8 border border-namespace-purple/15 rotate-45" />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="w-full max-w-7xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 lg:mb-10 progressive-reveal px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold mb-4 sm:mb-6">
-              Who We <span className="text-namespace-purple-glow shimmer-effect">Serve</span>
+              Who We <span className="text-namespace-purple">Serve</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto">
               NAMESPACE is designed for everyone in the tech ecosystem — from curious beginners to seasoned leaders driving innovation.
@@ -81,12 +77,12 @@ const WhoWeServeSection = () => {
             {audiences.map((audience, index) => (
               <div 
                 key={index}
-                className="group relative h-48 sm:h-52 cursor-pointer overflow-hidden glassmorphism-dark border border-namespace-white/10 rounded-2xl transition-all duration-500 progressive-reveal magnetic-element glass-glow micro-float"
+                className="group relative h-48 sm:h-52 cursor-pointer overflow-hidden bg-namespace-black/80 border border-namespace-white/20 rounded-2xl transition-all duration-300"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Front content - visible by default */}
                 <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 glassmorphism rounded-full mb-4 image-mask-circle overflow-hidden">
+                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-namespace-white/10 border border-namespace-white/20 rounded-full mb-4 overflow-hidden">
                     <img 
                       src={audience.image} 
                       alt={audience.title}
@@ -100,7 +96,7 @@ const WhoWeServeSection = () => {
                 </div>
 
                 {/* Back content - visible on hover */}
-                <div className="absolute inset-0 p-4 sm:p-6 flex items-center justify-center bg-gradient-to-br from-namespace-purple to-namespace-purple-glow opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute inset-0 p-4 sm:p-6 flex items-center justify-center bg-namespace-purple opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div className="text-center">
                     <h3 className="text-lg sm:text-xl font-sora font-bold text-white mb-3">
                       {audience.title}
