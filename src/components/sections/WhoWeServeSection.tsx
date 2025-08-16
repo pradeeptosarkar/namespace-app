@@ -1,8 +1,8 @@
-import studentsVector from "@/assets/students-vector.png";
-import professionalsVector from "@/assets/professionals-vector.png";
-import communitiesVector from "@/assets/communities-vector.png";
-import institutionsVector from "@/assets/institutions-vector.png";
-import companiesVector from "@/assets/companies-vector.png";
+import studentsVector from "@/assets/students-vector-purple.png";
+import professionalsVector from "@/assets/professionals-vector-purple.png";
+import communitiesVector from "@/assets/communities-vector-purple.png";
+import institutionsVector from "@/assets/institutions-vector-purple.png";
+import companiesVector from "@/assets/companies-vector-purple.png";
 
 const WhoWeServeSection = () => {
   const audiences = [
@@ -82,13 +82,11 @@ const WhoWeServeSection = () => {
               >
                 {/* Front content - visible by default */}
                 <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-namespace-white/10 border border-namespace-white/20 rounded-full mb-4 overflow-hidden">
-                    <img 
-                      src={audience.image} 
-                      alt={audience.title}
-                      className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
-                    />
-                  </div>
+                  <img 
+                    src={audience.image} 
+                    alt={audience.title}
+                    className="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-4"
+                  />
                   
                   <h3 className="text-lg sm:text-xl font-sora font-bold text-center text-namespace-white">
                     {audience.title}
