@@ -75,7 +75,7 @@ const Index = () => {
       
       // Convert vertical scroll to horizontal scroll with reduced speed
       // Reduce scroll sensitivity for touchpad and add smooth animation
-      const scrollAmount = e.deltaY * 0.4; // Reduce speed by 60% total
+      const scrollAmount = e.deltaY * 0.2; // Reduce speed by 80% total
       container.scrollBy({ left: scrollAmount, behavior: "smooth" });
     };
 

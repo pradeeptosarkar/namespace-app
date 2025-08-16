@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Send, Linkedin, Instagram, Twitter, Github, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -187,15 +188,15 @@ const ContactSection = () => {
             
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center gap-4 mb-3">
-              <a href="#" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
                 Privacy Policy
-              </a>
+              </Link>
               <a href="#" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
                 Corporate Information
               </a>
-              <a href="/branding" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
+              <Link to="/branding" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
                 Brand Guidelines
-              </a>
+              </Link>
             </div>
             
             <p className="text-gray-400">
