@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const EcosystemFlywheelSection = () => {
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.3 });
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const flywheelElements = [
     {
@@ -100,7 +101,7 @@ const EcosystemFlywheelSection = () => {
                 </div>
               </div>
 
-              {/* Flywheel Elements - Redesigned */}
+              {/* Flywheel Elements - Interactive Cards */}
               {flywheelElements.map((element, index) => {
                 const positions = {
                   top: "-top-24 md:-top-20 left-1/2 -translate-x-1/2 -translate-y-1/2",
@@ -109,10 +110,14 @@ const EcosystemFlywheelSection = () => {
                   left: "-left-36 md:-left-40 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 };
 
+                const isExpanded = expandedCard === index;
+
                 return (
                   <div
                     key={index}
-                    className={`absolute ${positions[element.position as keyof typeof positions]} transition-all duration-1000`}
+                    className={`absolute ${positions[element.position as keyof typeof positions]} transition-all duration-1000 ${
+                      isExpanded ? 'z-50' : 'z-10'
+                    }`}
                     style={{ 
                       animationDelay: element.delay,
                       opacity: hasIntersected ? 1 : 0,
@@ -123,14 +128,70 @@ const EcosystemFlywheelSection = () => {
                   >
                     <div className="group relative">
                       {/* Main Card */}
-                      <div className="relative w-40 h-36 lg:w-52 lg:h-28 bg-card border border-primary/20 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/30">
-                        
+                      <div 
+                        className={`relative cursor-pointer bg-card border rounded-xl text-center shadow-sm transition-all duration-500 ease-in-out ${
+                          isExpanded 
+                            ? 'w-[480px] h-[320px] md:w-[600px] md:h-[400px] border-primary/40 shadow-2xl z-50 bg-card/95 backdrop-blur-sm' 
+                            : 'w-40 h-24 lg:w-52 lg:h-20 border-primary/20 hover:border-primary/30 hover:shadow-md'
+                        } ${
+                          isExpanded ? 'p-8' : 'p-4'
+                        }`}
+                        onMouseEnter={() => {
+                          // Only trigger on desktop (non-touch devices)
+                          if (!('ontouchstart' in window)) {
+                            setExpandedCard(index);
+                          }
+                        }}
+                        onMouseLeave={() => {
+                          // Only trigger on desktop (non-touch devices)
+                          if (!('ontouchstart' in window)) {
+                            setExpandedCard(null);
+                          }
+                        }}
+                        onClick={() => {
+                          // Handle mobile touch interactions
+                          setExpandedCard(isExpanded ? null : index);
+                        }}
+                      >
                         {/* Top Border Accent */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></div>
                         
-                        <div className="relative z-10">
-                          <h3 className="font-bold text-base mb-2 text-foreground group-hover:text-primary transition-colors duration-300">{element.title}</h3>
-                          <p className="text-xs text-muted-foreground leading-relaxed">{element.description}</p>
+                        <div className="relative z-10 h-full flex flex-col justify-center">
+                          <h3 className={`font-bold text-foreground group-hover:text-primary transition-all duration-300 ${
+                            isExpanded ? 'text-2xl md:text-3xl mb-6' : 'text-base mb-2'
+                          }`}>
+                            {element.title}
+                          </h3>
+                          
+                          {/* Description - only visible when expanded */}
+                          <div className={`transition-all duration-500 overflow-hidden ${
+                            isExpanded 
+                              ? 'opacity-100 max-h-96 translate-y-0' 
+                              : 'opacity-0 max-h-0 translate-y-4'
+                          }`}>
+                            <p className={`text-muted-foreground leading-relaxed ${
+                              isExpanded ? 'text-lg md:text-xl' : 'text-xs'
+                            }`}>
+                              {element.description}
+                            </p>
+                            
+                            {/* Expanded content placeholder for future detailed descriptions */}
+                            {isExpanded && (
+                              <div className="mt-6 space-y-4">
+                                <div className="text-sm md:text-base text-muted-foreground opacity-75">
+                                  {element.position === 'top' && "Discover new opportunities, connect with like-minded individuals, and showcase your skills through various engaging activities."}
+                                  {element.position === 'right' && "Build valuable connections, develop expertise, and unlock career opportunities in our thriving community."}
+                                  {element.position === 'bottom' && "Comprehensive programs designed to bridge the gap between learning and real-world application."}
+                                  {element.position === 'left' && "Partner with us to discover talent, validate ideas, and contribute to the next generation of innovators."}
+                                </div>
+                                
+                                {/* Close hint for mobile */}
+                                <div className="text-xs text-primary/60 mt-4 md:hidden">
+                                  Tap to close
+                                </div>
+                              </div>
+                            )}
+                          </div>
                         </div>
 
                         {/* Bottom Glow */}
