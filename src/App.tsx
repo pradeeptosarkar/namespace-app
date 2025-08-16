@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Maintenance from "./pages/Maintenance";
+import Branding from "./pages/Branding";
 import { MAINTENANCE_MODE } from "./config";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           ) : (
             <>
               <Route path="/" element={<Index />} />
+              <Route path="/branding" element={<Branding />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </>

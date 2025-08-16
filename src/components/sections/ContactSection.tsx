@@ -193,7 +193,7 @@ const ContactSection = () => {
               <a href="#" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
                 Corporate Information
               </a>
-              <a href="#" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
+              <a href="/branding" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
                 Brand Guidelines
               </a>
             </div>
