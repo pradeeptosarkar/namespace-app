@@ -129,10 +129,10 @@ const EcosystemFlywheelSection = () => {
                     <div className="group relative">
                       {/* Main Card */}
                       <div 
-                        className={`relative cursor-pointer bg-card border rounded-xl text-center shadow-sm transition-all duration-500 ease-in-out ${
+                        className={`relative cursor-pointer border rounded-xl text-center shadow-sm transition-all duration-500 ease-in-out ${
                           isExpanded 
-                            ? 'w-[480px] h-[320px] md:w-[600px] md:h-[400px] border-primary/40 shadow-2xl z-50 bg-card/95 backdrop-blur-sm' 
-                            : 'w-40 h-24 lg:w-52 lg:h-20 border-primary/20 hover:border-primary/30 hover:shadow-md'
+                            ? 'w-[480px] h-[320px] md:w-[600px] md:h-[400px] border-primary/40 shadow-2xl z-50 bg-background/95 backdrop-blur-md' 
+                            : 'w-48 h-28 md:w-52 md:h-20 lg:w-60 lg:h-24 border-primary/20 hover:border-primary/30 hover:shadow-md bg-card'
                         } ${
                           isExpanded ? 'p-8' : 'p-4'
                         }`}
@@ -158,7 +158,7 @@ const EcosystemFlywheelSection = () => {
                         
                         <div className="relative z-10 h-full flex flex-col justify-center">
                           <h3 className={`font-bold text-foreground group-hover:text-primary transition-all duration-300 ${
-                            isExpanded ? 'text-2xl md:text-3xl mb-6' : 'text-base mb-2'
+                            isExpanded ? 'text-2xl md:text-3xl mb-6' : 'text-lg md:text-xl lg:text-2xl mb-2'
                           }`}>
                             {element.title}
                           </h3>
