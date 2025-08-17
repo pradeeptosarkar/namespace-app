@@ -96,6 +96,29 @@ const ImpactSection = () => {
     };
   }, [hasIntersected]);
 
+  // Better positioning that avoids the center text area
+  const getStatPositions = () => {
+    // Desktop positions - avoiding center area
+    const desktopPositions = [
+      { top: '10%', left: '8%' },      // Top left
+      { top: '15%', right: '8%' },     // Top right
+      { top: '65%', left: '5%' },      // Bottom left
+      { top: '70%', right: '10%' },    // Bottom right
+      { top: '35%', left: '2%' }       // Middle left
+    ];
+    
+    // Mobile positions - better organized to avoid center text
+    const mobilePositions = [
+      { top: '12%', left: '5%' },      // Top left
+      { top: '15%', right: '5%' },     // Top right  
+      { bottom: '25%', left: '8%' },   // Bottom left
+      { bottom: '22%', right: '8%' },  // Bottom right
+      { bottom: '8%', left: '50%', transform: 'translateX(-50%)' } // Bottom center
+    ];
+    
+    return window.innerWidth < 768 ? mobilePositions : desktopPositions;
+  };
+
   return (
     <section 
       ref={ref}
@@ -117,8 +140,8 @@ const ImpactSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10 h-full flex flex-col">
         {/* Centered Title */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <h2 className={`text-4xl md:text-5xl lg:text-7xl font-bold transition-all duration-1000 ${
+          <div className="text-center max-w-4xl">
+            <h2 className={`text-4xl md:text-5xl lg:text-7xl font-bold transition-all duration-1000 leading-tight ${
               hasIntersected 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-10'
@@ -128,47 +151,30 @@ const ImpactSection = () => {
           </div>
         </div>
 
-        {/* Randomly Positioned Stats */}
-        <div className="absolute inset-0 w-full h-full">
+        {/* Strategically Positioned Stats */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none">
           {stats.map((stat, index) => {
-            // Responsive positions for each stat
-            const positions = [
-              { top: '15%', left: '5%' },
-              { top: '25%', right: '5%' },
-              { bottom: '35%', left: '3%' },
-              { top: '55%', right: '8%' },
-              { bottom: '20%', left: '35%' }
-            ];
-            
-            const mobilePositions = [
-              { top: '10%', left: '10%' },
-              { top: '15%', right: '10%' },
-              { bottom: '40%', left: '5%' },
-              { top: '45%', right: '15%' },
-              { bottom: '25%', left: '40%' }
-            ];
-            
+            const positions = getStatPositions();
             const position = positions[index];
-            const mobilePosition = mobilePositions[index];
             
             return (
-                <div
+              <div
                 key={stat.key}
-                className={`absolute group transition-all duration-1000 transform hover:scale-110 ${
+                className={`absolute group transition-all duration-1000 transform hover:scale-110 pointer-events-auto ${
                   hasIntersected 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-20'
                 }`}
                 style={{ 
-                  ...(window.innerWidth < 768 ? mobilePosition : position),
+                  ...position,
                   transitionDelay: `${index * 400}ms`
                 }}
               >
                 <div className="text-center group hover:scale-110 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-white">
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2 text-white">
                     {stat.value.toLocaleString()}{stat.suffix}
                   </div>
-                  <div className="text-sm md:text-base lg:text-lg font-medium text-white/70">
+                  <div className="text-xs md:text-sm lg:text-base font-medium text-white/70 leading-tight">
                     {stat.label}
                   </div>
                 </div>
