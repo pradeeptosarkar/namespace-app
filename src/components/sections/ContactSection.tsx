@@ -82,11 +82,11 @@ const ContactSection = () => {
         }} />
       </div>
       
-      <div className="relative z-10 container mx-auto px-6 py-16">
+      <div className="relative z-10 container mx-auto px-6 py-8">
         <div className="w-full max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 progressive-reveal">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sora font-bold leading-tight mb-6">
+          <div className="text-center mb-6 progressive-reveal">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sora font-bold leading-tight mb-4">
               Ready to
               <br />
               <span className="text-purple-400">Connect?</span>
@@ -99,21 +99,19 @@ const ContactSection = () => {
           </div>
 
           {/* Compact CTA Cards Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
             {ctaSections.map((section, index) => (
               <Dialog key={index}>
-                <div className="scale-90 md:scale-50">
-                  <DialogTrigger asChild>
-                  <div className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-6 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group cursor-pointer hover:bg-namespace-black/80 aspect-square flex flex-col items-center justify-center text-center">
-                    <div className="w-12 h-12 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors mb-4">
+                <DialogTrigger asChild>
+                  <div className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-4 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group cursor-pointer hover:bg-namespace-black/80 aspect-square flex flex-col items-center justify-center text-center scale-75 md:scale-50 origin-center">
+                    <div className="w-8 h-8 bg-namespace-purple/20 border border-namespace-purple/30 rounded-lg flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors mb-2">
                       {section.icon}
                     </div>
-                    <h3 className="text-lg font-sora font-bold text-namespace-white">
+                    <h3 className="text-sm font-sora font-bold text-namespace-white leading-tight">
                       {section.title}
                     </h3>
                   </div>
                 </DialogTrigger>
-                </div>
                 
                 <DialogContent className="bg-namespace-black border-namespace-white/20 text-namespace-white max-w-md">
                   <div className="p-2">
@@ -201,17 +199,17 @@ const ContactSection = () => {
         </div>
         
         {/* Footer */}
-        <div className="border-t border-namespace-white/10 mt-6 pt-6 text-center">
-          <div className="flex items-center justify-center mb-3">
+        <div className="border-t border-namespace-white/10 pt-4 text-center">
+          <div className="flex items-center justify-center mb-2">
             <img 
               src="/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png"
               alt="NAMESPACE"
-              className="h-6"
+              className="h-5"
             />
           </div>
           
           {/* Legal Links */}
-          <div className="flex flex-wrap justify-center gap-4 mb-3">
+          <div className="flex flex-wrap justify-center gap-4 mb-2">
             <Link to="/privacy-policy" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
               Privacy Policy
             </Link>
@@ -226,7 +224,7 @@ const ContactSection = () => {
             </Link>
           </div>
           
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-sm">
             © 2025 Namespace Ecosystem India Pvt. Ltd.. Building the Global Ecosystem for Humans and Organizations in Tech.
           </p>
         </div>
