@@ -42,7 +42,7 @@ const ProblemSection = () => {
   };
 
   return (
-    <section className="scroll-section bg-black text-white relative overflow-hidden h-screen py-12 section-transition">
+    <section id="problem" className="scroll-section bg-black text-white relative overflow-hidden h-screen py-12 section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-10 w-32 h-32 border border-purple-500/30 rounded-full animate-pulse opacity-20" />

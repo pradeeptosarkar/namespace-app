@@ -91,7 +91,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition min-h-screen">
+    <section id="hero" className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition min-h-screen">
       {/* Interactive gradient background with glassmorphism */}
       <div 
         className="absolute inset-0 opacity-15 shimmer-effect"

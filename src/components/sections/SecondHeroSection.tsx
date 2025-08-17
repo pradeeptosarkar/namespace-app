@@ -39,7 +39,7 @@ const SecondHeroSection = () => {
   ];
 
   return (
-    <section ref={ref} className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
+    <section id="solution" ref={ref} className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden">
       {/* Subtle geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-namespace-purple/5 rounded-full" />

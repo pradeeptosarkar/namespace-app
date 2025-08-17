@@ -93,6 +93,7 @@ const ImpactSection = () => {
 
   return (
     <section 
+      id="impact"
       ref={ref}
       className="scroll-section min-h-screen w-screen flex items-center justify-center relative overflow-hidden bg-black"
     >

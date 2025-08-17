@@ -60,7 +60,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden section-transition">
+    <section id="contact" className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden section-transition">
       {/* Subtle geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-32 h-32 border border-namespace-purple/20 rounded-full opacity-30" />
