@@ -25,40 +25,35 @@ const ImpactSection = () => {
       value: counts.participants,
       target: targetValues.participants,
       label: 'Participants Reached',
-      suffix: '+',
-      color: 'from-blue-500 to-cyan-500'
+      suffix: '+'
     },
     {
       key: 'events', 
       value: counts.events,
       target: targetValues.events,
       label: 'Events Conducted',
-      suffix: '+',
-      color: 'from-green-500 to-emerald-500'
+      suffix: '+'
     },
     {
       key: 'institutions',
       value: counts.institutions, 
       target: targetValues.institutions,
       label: 'Institutions Represented',
-      suffix: '+',
-      color: 'from-purple-500 to-pink-500'
+      suffix: '+'
     },
     {
       key: 'partners',
       value: counts.partners,
       target: targetValues.partners,
       label: 'Global Partners',
-      suffix: '+', 
-      color: 'from-orange-500 to-red-500'
+      suffix: '+'
     },
     {
       key: 'hours',
       value: counts.hours,
       target: targetValues.hours,
       label: 'Hours of Learning Delivered',
-      suffix: '+',
-      color: 'from-indigo-500 to-purple-500'
+      suffix: '+'
     }
   ];
 
@@ -95,7 +90,6 @@ const ImpactSection = () => {
       timers.forEach(timer => clearInterval(timer));
     };
   }, [hasIntersected]);
-
 
   return (
     <section 
@@ -141,12 +135,12 @@ const ImpactSection = () => {
                   transitionDelay: `${index * 200}ms`
                 }}
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className="text-center">
-                    <div className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300 h-32 md:h-36 flex items-center justify-center">
+                  <div className="text-center flex flex-col justify-center">
+                    <div className="text-3xl md:text-2xl lg:text-3xl font-bold mb-3 text-white">
                       {stat.value.toLocaleString()}{stat.suffix}
                     </div>
-                    <div className="text-sm md:text-base font-medium text-white/80 leading-tight">
+                    <div className="text-sm md:text-sm font-medium text-white/80 leading-tight">
                       {stat.label}
                     </div>
                   </div>
