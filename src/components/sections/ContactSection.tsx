@@ -99,15 +99,15 @@ const ContactSection = () => {
           </div>
 
           {/* Compact CTA Cards Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-3 mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {ctaSections.map((section, index) => (
               <Dialog key={index}>
                 <DialogTrigger asChild>
-                  <div className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-4 lg:p-2 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group cursor-pointer hover:bg-namespace-black/80 aspect-square flex flex-col items-center justify-center text-center">
-                    <div className="w-9 h-9 lg:w-6 lg:h-6 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors mb-3 lg:mb-2">
+                  <div className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-6 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group cursor-pointer hover:bg-namespace-black/80 aspect-square flex flex-col items-center justify-center text-center">
+                    <div className="w-12 h-12 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors mb-4">
                       {section.icon}
                     </div>
-                    <h3 className="text-base lg:text-sm font-sora font-bold text-namespace-white">
+                    <h3 className="text-lg font-sora font-bold text-namespace-white">
                       {section.title}
                     </h3>
                   </div>
