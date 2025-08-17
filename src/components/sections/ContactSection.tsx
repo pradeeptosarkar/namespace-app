@@ -101,27 +101,27 @@ const ContactSection = () => {
             {ctaSections.map((section, index) => (
               <div 
                 key={index}
-                className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-6 lg:p-8 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group"
+                className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-6 lg:p-6 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group"
               >
                 {/* Icon and Title */}
-                <div className="flex items-start space-x-4 mb-6">
-                  <div className="flex-shrink-0 w-16 h-16 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors">
+                <div className="flex items-start space-x-4 mb-4 lg:mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors">
                     {section.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl lg:text-2xl font-sora font-bold text-namespace-white mb-2">
+                    <h3 className="text-xl lg:text-xl font-sora font-bold text-namespace-white mb-2">
                       {section.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-sm lg:text-base text-gray-300 leading-relaxed">
                       {section.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Actions */}
-                <div className="space-y-4">
+                <div className="space-y-3 lg:space-y-3">
                   {section.action.type === 'email' && (
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       {/* <div className="flex items-center space-x-3 text-gray-300 bg-namespace-white/5 rounded-lg p-4">
                         <Mail className="w-5 h-5 text-namespace-purple" />
                         <span className="font-medium">{section.action.value}</span>
@@ -136,7 +136,7 @@ const ContactSection = () => {
                   )}
 
                   {section.action.type === 'community' && (
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       <div className="grid grid-cols-2 gap-3">
                         {section.action.platforms?.map((platform, idx) => (
                           <Button 
@@ -154,7 +154,7 @@ const ContactSection = () => {
                   )}
 
                   {section.action.type === 'social' && (
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       <div className="grid grid-cols-6 gap-3">
                         {section.action.platforms?.map((platform, idx) => (
                           <Button 
@@ -173,7 +173,7 @@ const ContactSection = () => {
                   )}
 
                   {section.action.type === 'newsletter' && (
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       <Button 
                         className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
                         onClick={() => {/* Newsletter signup logic */}}
