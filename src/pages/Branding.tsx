@@ -10,19 +10,26 @@ const Branding = () => {
 
   const logoCategories = [
     {
-      title: "Primary Logo",
-      description: "Main NAMESPACE logo for official use",
+      title: "Logomark",
+      description: "The NAMESPACE symbol for compact brand representation",
       logos: [
         {
-          id: "primary-dark",
-          name: "Dark Background",
+          id: "logomark-primary",
+          name: "Primary",
           preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           svgUrl: "#", // Will be provided later
         },
         {
-          id: "primary-light", 
-          name: "Light Background",
+          id: "logomark-white",
+          name: "White",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "logomark-black",
+          name: "Black",
           preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           svgUrl: "#", // Will be provided later
@@ -30,12 +37,26 @@ const Branding = () => {
       ]
     },
     {
-      title: "Monogram",
-      description: "Simplified logo for small spaces and social media",
+      title: "Horizontal Logo",
+      description: "Full NAMESPACE logo in horizontal format",
       logos: [
         {
-          id: "mono-dark",
-          name: "Dark Version",
+          id: "horizontal-primary",
+          name: "Primary",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "horizontal-white",
+          name: "White",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "horizontal-black",
+          name: "Black",
           preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           svgUrl: "#", // Will be provided later
@@ -43,12 +64,80 @@ const Branding = () => {
       ]
     },
     {
-      title: "Partner Logos",
-      description: "Co-branded logos for partners and affiliates",
+      title: "Vertical Logo",
+      description: "Full NAMESPACE logo in vertical format",
       logos: [
         {
-          id: "partner-horizontal",
-          name: "Horizontal Layout",
+          id: "vertical-primary",
+          name: "Primary",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "vertical-white",
+          name: "White",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "vertical-black",
+          name: "Black",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        }
+      ]
+    },
+    {
+      title: "NAMESPACE Ecosystem Logo - Horizontal",
+      description: "Ecosystem branding for community and partner initiatives",
+      logos: [
+        {
+          id: "ecosystem-horizontal-primary",
+          name: "Primary",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "ecosystem-horizontal-white",
+          name: "White",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "ecosystem-horizontal-black",
+          name: "Black",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        }
+      ]
+    },
+    {
+      title: "NAMESPACE Ecosystem Logo - Vertical",
+      description: "Ecosystem branding in vertical layout for various applications",
+      logos: [
+        {
+          id: "ecosystem-vertical-primary",
+          name: "Primary",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "ecosystem-vertical-white",
+          name: "White",
+          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
+          svgUrl: "#", // Will be provided later
+        },
+        {
+          id: "ecosystem-vertical-black",
+          name: "Black",
           preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
           svgUrl: "#", // Will be provided later
