@@ -39,7 +39,7 @@ const WhoWeServeSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden section-transition">
+    <section id="who-we-serve" className="scroll-section bg-namespace-black text-namespace-white relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 opacity-10">

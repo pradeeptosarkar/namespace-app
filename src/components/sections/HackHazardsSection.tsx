@@ -18,7 +18,7 @@ const HackHazardsSection = () => {
   ];
 
   return (
-    <section className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
+    <section id="hackhazards" className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition">
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-namespace-purple-light/30 to-transparent" />
