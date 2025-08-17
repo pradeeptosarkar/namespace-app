@@ -93,16 +93,17 @@ const ContactSection = () => {
             </h2>
             
             <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Choose how you'd like to engage with the Namespace ecosystem. 
+              Choose how you'd like to engage with the NAMESPACE Ecosystem. 
               Whether you're looking to partner, join our community, or stay updated.
             </p>
           </div>
 
           {/* Compact CTA Cards Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 mb-16">
             {ctaSections.map((section, index) => (
               <Dialog key={index}>
-                <DialogTrigger asChild>
+                <div className="scale-90 md:scale-50">
+                  <DialogTrigger asChild>
                   <div className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-6 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group cursor-pointer hover:bg-namespace-black/80 aspect-square flex flex-col items-center justify-center text-center">
                     <div className="w-12 h-12 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors mb-4">
                       {section.icon}
@@ -112,6 +113,7 @@ const ContactSection = () => {
                     </h3>
                   </div>
                 </DialogTrigger>
+                </div>
                 
                 <DialogContent className="bg-namespace-black border-namespace-white/20 text-namespace-white max-w-md">
                   <div className="p-2">
