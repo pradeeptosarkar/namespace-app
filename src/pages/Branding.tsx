@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Copy, Download, Check, ArrowLeft } from "lucide-react";
+import { Copy, Download, Check, ArrowLeft, Link as LinkIcon } from "lucide-react";
 import { toast } from "sonner";
 
 const Branding = () => {
@@ -16,23 +16,23 @@ const Branding = () => {
         {
           id: "logomark-primary",
           name: "Primary",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/logomark/logomark-primary.png",
+          pngUrl: "/logos/logomark/logomark-primary.png",
+          svgUrl: "/logos/logomark/logomark-primary.svg",
         },
         {
           id: "logomark-white",
           name: "White",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/logomark/logomark-white.png",
+          pngUrl: "/logos/logomark/logomark-white.png",
+          svgUrl: "/logos/logomark/logomark-white.svg",
         },
         {
           id: "logomark-black",
           name: "Black",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/logomark/logomark-black.png",
+          pngUrl: "/logos/logomark/logomark-black.png",
+          svgUrl: "/logos/logomark/logomark-black.svg",
         }
       ]
     },
@@ -43,23 +43,23 @@ const Branding = () => {
         {
           id: "horizontal-primary",
           name: "Primary",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/horizontal/horizontal-primary.png",
+          pngUrl: "/logos/horizontal/horizontal-primary.png",
+          svgUrl: "/logos/horizontal/horizontal-primary.svg",
         },
         {
           id: "horizontal-white",
           name: "White",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/horizontal/horizontal-white.png",
+          pngUrl: "/logos/horizontal/horizontal-white.png",
+          svgUrl: "/logos/horizontal/horizontal-white.svg",
         },
         {
           id: "horizontal-black",
           name: "Black",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/horizontal/horizontal-black.png",
+          pngUrl: "/logos/horizontal/horizontal-black.png",
+          svgUrl: "/logos/horizontal/horizontal-black.svg",
         }
       ]
     },
@@ -70,23 +70,23 @@ const Branding = () => {
         {
           id: "vertical-primary",
           name: "Primary",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/vertical/vertical-primary.png",
+          pngUrl: "/logos/vertical/vertical-primary.png",
+          svgUrl: "/logos/vertical/vertical-primary.svg",
         },
         {
           id: "vertical-white",
           name: "White",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/vertical/vertical-white.png",
+          pngUrl: "/logos/vertical/vertical-white.png",
+          svgUrl: "/logos/vertical/vertical-white.svg",
         },
         {
           id: "vertical-black",
           name: "Black",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/vertical/vertical-black.png",
+          pngUrl: "/logos/vertical/vertical-black.png",
+          svgUrl: "/logos/vertical/vertical-black.svg",
         }
       ]
     },
@@ -97,23 +97,23 @@ const Branding = () => {
         {
           id: "ecosystem-horizontal-primary",
           name: "Primary",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/ecosystem-horizontal/ecosystem-horizontal-primary.png",
+          pngUrl: "/logos/ecosystem-horizontal/ecosystem-horizontal-primary.png",
+          svgUrl: "/logos/ecosystem-horizontal/ecosystem-horizontal-primary.svg",
         },
         {
           id: "ecosystem-horizontal-white",
           name: "White",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/ecosystem-horizontal/ecosystem-horizontal-white.png",
+          pngUrl: "/logos/ecosystem-horizontal/ecosystem-horizontal-white.png",
+          svgUrl: "/logos/ecosystem-horizontal/ecosystem-horizontal-white.svg",
         },
         {
           id: "ecosystem-horizontal-black",
           name: "Black",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/ecosystem-horizontal/ecosystem-horizontal-black.png",
+          pngUrl: "/logos/ecosystem-horizontal/ecosystem-horizontal-black.png",
+          svgUrl: "/logos/ecosystem-horizontal/ecosystem-horizontal-black.svg",
         }
       ]
     },
@@ -124,36 +124,75 @@ const Branding = () => {
         {
           id: "ecosystem-vertical-primary",
           name: "Primary",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/ecosystem-vertical/ecosystem-vertical-primary.png",
+          pngUrl: "/logos/ecosystem-vertical/ecosystem-vertical-primary.png",
+          svgUrl: "/logos/ecosystem-vertical/ecosystem-vertical-primary.svg",
         },
         {
           id: "ecosystem-vertical-white",
           name: "White",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/ecosystem-vertical/ecosystem-vertical-white.png",
+          pngUrl: "/logos/ecosystem-vertical/ecosystem-vertical-white.png",
+          svgUrl: "/logos/ecosystem-vertical/ecosystem-vertical-white.svg",
         },
         {
           id: "ecosystem-vertical-black",
           name: "Black",
-          preview: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          pngUrl: "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png",
-          svgUrl: "#", // Will be provided later
+          preview: "/logos/ecosystem-vertical/ecosystem-vertical-black.png",
+          pngUrl: "/logos/ecosystem-vertical/ecosystem-vertical-black.png",
+          svgUrl: "/logos/ecosystem-vertical/ecosystem-vertical-black.svg",
         }
       ]
     }
   ];
 
-  const copyToClipboard = async (url: string, name: string) => {
+  // Copy image to clipboard (works for PNG images)
+  const copyImageToClipboard = async (url: string, name: string, format: string) => {
     try {
-      await navigator.clipboard.writeText(url);
-      setCopiedItem(name);
+      if (format === 'SVG') {
+        // For SVG, copy the SVG content as text
+        const response = await fetch(url);
+        const svgText = await response.text();
+        await navigator.clipboard.writeText(svgText);
+        setCopiedItem(name);
+        toast.success(`${name} SVG code copied to clipboard`);
+      } else {
+        // For PNG, copy the actual image
+        const response = await fetch(url);
+        const blob = await response.blob();
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            [blob.type]: blob
+          })
+        ]);
+        setCopiedItem(name);
+        toast.success(`${name} image copied to clipboard`);
+      }
+      setTimeout(() => setCopiedItem(null), 2000);
+    } catch (err) {
+      // Fallback to copying URL if image copy fails
+      try {
+        const fullUrl = window.location.origin + url;
+        await navigator.clipboard.writeText(fullUrl);
+        setCopiedItem(name);
+        toast.success(`${name} URL copied to clipboard (image copy not supported)`);
+        setTimeout(() => setCopiedItem(null), 2000);
+      } catch (fallbackErr) {
+        toast.error("Failed to copy to clipboard");
+      }
+    }
+  };
+
+  // Copy URL to clipboard
+  const copyUrlToClipboard = async (url: string, name: string) => {
+    try {
+      const fullUrl = window.location.origin + url;
+      await navigator.clipboard.writeText(fullUrl);
+      setCopiedItem(`${name} URL`);
       toast.success(`${name} URL copied to clipboard`);
       setTimeout(() => setCopiedItem(null), 2000);
     } catch (err) {
-      toast.error("Failed to copy to clipboard");
+      toast.error("Failed to copy URL to clipboard");
     }
   };
 
@@ -161,6 +200,7 @@ const Branding = () => {
     const link = document.createElement('a');
     link.href = url;
     link.download = filename;
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -181,7 +221,7 @@ const Branding = () => {
       </div>
       
       {/* Hero Section */}
-      <section className="bg-background py-16 lg:py-24">
+      <section className="bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold mb-6">
@@ -193,7 +233,7 @@ const Branding = () => {
             <div className="bg-muted/50 border border-border rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-3">Usage Guidelines</h3>
               <ul className="text-left text-muted-foreground space-y-2">
-                <li>• Maintain minimum clear space around all logos</li>
+                <li>• Maintain clear space around all logos</li>
                 <li>• Do not alter colors, proportions, or typography</li>
                 <li>• Use appropriate logo version for your background</li>
                 <li>• Always use high-resolution files for print materials</li>
@@ -222,22 +262,27 @@ const Branding = () => {
                       <div className="aspect-video bg-gray-50 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
                         <img 
                           src={logo.preview}
-                          alt={logo.name}
+                          alt={`${category.title} - ${logo.name}`}
                           className="max-w-full max-h-full object-contain"
+                          onError={(e) => {
+                            // Fallback to placeholder if image fails to load
+                            e.currentTarget.src = "/lovable-uploads/a80506ea-ea01-43a9-88a5-04fad9724985.png";
+                          }}
                         />
                       </div>
                       
                       <h3 className="font-semibold mb-4">{logo.name}</h3>
                       
                       <div className="space-y-3">
-                        {/* PNG Download */}
+                        {/* PNG Actions */}
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-600">PNG Format</span>
-                          <div className="flex space-x-2">
+                          <div className="flex space-x-1">
                             <Button
                               size="sm"
                               variant="outline"
-                              onClick={() => copyToClipboard(logo.pngUrl, `${logo.name} PNG`)}
+                              onClick={() => copyImageToClipboard(logo.pngUrl, `${logo.name} PNG`, 'PNG')}
+                              title="Copy image to clipboard"
                             >
                               {copiedItem === `${logo.name} PNG` ? (
                                 <Check className="w-4 h-4" />
@@ -247,21 +292,35 @@ const Branding = () => {
                             </Button>
                             <Button
                               size="sm"
-                              onClick={() => downloadFile(logo.pngUrl, `${logo.name.toLowerCase().replace(' ', '-')}.png`)}
+                              variant="outline"
+                              onClick={() => copyUrlToClipboard(logo.pngUrl, `${logo.name} PNG`)}
+                              title="Copy URL to clipboard"
+                            >
+                              {copiedItem === `${logo.name} PNG URL` ? (
+                                <Check className="w-4 h-4" />
+                              ) : (
+                                <LinkIcon className="w-4 h-4" />
+                              )}
+                            </Button>
+                            <Button
+                              size="sm"
+                              onClick={() => downloadFile(logo.pngUrl, `${category.title.toLowerCase().replace(/\s+/g, '-')}-${logo.name.toLowerCase().replace(' ', '-')}.png`)}
+                              title="Download file"
                             >
                               <Download className="w-4 h-4" />
                             </Button>
                           </div>
                         </div>
 
-                        {/* SVG Download */}
+                        {/* SVG Actions */}
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-600">SVG Format</span>
-                          <div className="flex space-x-2">
+                          <div className="flex space-x-1">
                             <Button
                               size="sm"
                               variant="outline"
-                              onClick={() => copyToClipboard(logo.svgUrl, `${logo.name} SVG`)}
+                              onClick={() => copyImageToClipboard(logo.svgUrl, `${logo.name} SVG`, 'SVG')}
+                              title="Copy SVG code to clipboard"
                             >
                               {copiedItem === `${logo.name} SVG` ? (
                                 <Check className="w-4 h-4" />
@@ -271,7 +330,20 @@ const Branding = () => {
                             </Button>
                             <Button
                               size="sm"
-                              onClick={() => downloadFile(logo.svgUrl, `${logo.name.toLowerCase().replace(' ', '-')}.svg`)}
+                              variant="outline"
+                              onClick={() => copyUrlToClipboard(logo.svgUrl, `${logo.name} SVG`)}
+                              title="Copy URL to clipboard"
+                            >
+                              {copiedItem === `${logo.name} SVG URL` ? (
+                                <Check className="w-4 h-4" />
+                              ) : (
+                                <LinkIcon className="w-4 h-4" />
+                              )}
+                            </Button>
+                            <Button
+                              size="sm"
+                              onClick={() => downloadFile(logo.svgUrl, `${category.title.toLowerCase().replace(/\s+/g, '-')}-${logo.name.toLowerCase().replace(' ', '-')}.svg`)}
+                              title="Download file"
                             >
                               <Download className="w-4 h-4" />
                             </Button>
