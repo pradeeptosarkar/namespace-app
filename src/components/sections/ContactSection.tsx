@@ -5,14 +5,19 @@ import { Link } from "react-router-dom";
 const ContactSection = () => {
   const ctaSections = [
     {
-      title: "Partnerships & Business",
-      description: "For partnerships, sales inquiries, and institutional collaborations",
-      icon: <Building2 className="w-8 h-8" />,
+      title: "Follow Us",
+      description: "Stay updated with our latest news and announcements",
+      icon: <Twitter className="w-8 h-8" />,
       action: {
-        type: "email",
-        label: "Contact Us",
-        value: "contact@namespacecomm.in",
-        buttonText: "Send Email"
+        type: "social",
+        label: "Social Media",
+        platforms: [
+          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "#" },
+          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "#" },
+          { name: "Twitter", icon: <Twitter className="w-5 h-5" />, url: "#" },
+          { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "#" },
+          { name: "YouTube", icon: <Youtube className="w-5 h-5" />, url: "#" }
+        ]
       }
     },
     {
@@ -29,19 +34,14 @@ const ContactSection = () => {
       }
     },
     {
-      title: "Follow Us",
-      description: "Stay updated with our latest news and announcements",
-      icon: <Twitter className="w-8 h-8" />,
+      title: "Partnerships & Business",
+      description: "For partnerships, sales inquiries, and institutional collaborations",
+      icon: <Building2 className="w-8 h-8" />,
       action: {
-        type: "social",
-        label: "Social Media",
-        platforms: [
-          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "#" },
-          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "#" },
-          { name: "Twitter", icon: <Twitter className="w-5 h-5" />, url: "#" },
-          { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "#" },
-          { name: "YouTube", icon: <Youtube className="w-5 h-5" />, url: "#" }
-        ]
+        type: "email",
+        label: "Contact Us",
+        value: "contact@namespacecomm.in",
+        buttonText: "Send Email"
       }
     },
     {
@@ -121,10 +121,10 @@ const ContactSection = () => {
                 <div className="space-y-4">
                   {section.action.type === 'email' && (
                     <div className="space-y-4">
-                      <div className="flex items-center space-x-3 text-gray-300 bg-namespace-white/5 rounded-lg p-4">
+                      {/* <div className="flex items-center space-x-3 text-gray-300 bg-namespace-white/5 rounded-lg p-4">
                         <Mail className="w-5 h-5 text-namespace-purple" />
                         <span className="font-medium">{section.action.value}</span>
-                      </div>
+                      </div> */}
                       <Button 
                         className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
                         onClick={() => window.location.href = `mailto:${section.action.value}`}
@@ -154,7 +154,7 @@ const ContactSection = () => {
 
                   {section.action.type === 'social' && (
                     <div className="space-y-4">
-                      <div className="grid grid-cols-3 gap-3">
+                      <div className="grid grid-cols-6 gap-3">
                         {section.action.platforms?.map((platform, idx) => (
                           <Button 
                             key={idx}
