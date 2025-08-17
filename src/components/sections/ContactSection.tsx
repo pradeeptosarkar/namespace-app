@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Mail, Linkedin, Instagram, X, Github, Youtube, Users, Hash, Send, Building2, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ContactSection = () => {
   const ctaSections = [
@@ -96,94 +98,102 @@ const ContactSection = () => {
             </p>
           </div>
 
-          {/* CTA Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {/* Compact CTA Cards Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {ctaSections.map((section, index) => (
-              <div 
-                key={index}
-                className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-6 lg:p-6 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group"
-              >
-                {/* Icon and Title */}
-                <div className="flex items-start space-x-4 mb-4 lg:mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors">
-                    {section.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl lg:text-xl font-sora font-bold text-namespace-white mb-2">
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <div className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-6 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group cursor-pointer hover:bg-namespace-black/80 aspect-square flex flex-col items-center justify-center text-center">
+                    <div className="w-12 h-12 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors mb-4">
+                      {section.icon}
+                    </div>
+                    <h3 className="text-lg font-sora font-bold text-namespace-white">
                       {section.title}
                     </h3>
-                    <p className="text-sm lg:text-base text-gray-300 leading-relaxed">
-                      {section.description}
-                    </p>
                   </div>
-                </div>
-
-                {/* Actions */}
-                <div className="space-y-3 lg:space-y-3">
-                  {section.action.type === 'email' && (
-                    <div className="space-y-3">
-                      {/* <div className="flex items-center space-x-3 text-gray-300 bg-namespace-white/5 rounded-lg p-4">
-                        <Mail className="w-5 h-5 text-namespace-purple" />
-                        <span className="font-medium">{section.action.value}</span>
-                      </div> */}
-                      <Button 
-                        className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
-                        onClick={() => window.location.href = `mailto:${section.action.value}`}
-                      >
-                        {section.action.buttonText}
-                      </Button>
-                    </div>
-                  )}
-
-                  {section.action.type === 'community' && (
-                    <div className="space-y-3">
-                      <div className="grid grid-cols-2 gap-3">
-                        {section.action.platforms?.map((platform, idx) => (
-                          <Button 
-                            key={idx}
-                            variant="outline"
-                            className="flex items-center space-x-2 bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple"
-                            onClick={() => window.open(platform.url, '_blank')}
-                          >
-                            {platform.icon}
-                            <span>{platform.name}</span>
-                          </Button>
-                        ))}
+                </DialogTrigger>
+                
+                <DialogContent className="bg-namespace-black border-namespace-white/20 text-namespace-white max-w-md">
+                  <div className="p-2">
+                    {/* Icon and Title */}
+                    <div className="flex items-start space-x-4 mb-4">
+                      <div className="flex-shrink-0 w-14 h-14 bg-namespace-purple/20 border border-namespace-purple/30 rounded-xl flex items-center justify-center text-namespace-purple">
+                        {section.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-sora font-bold text-namespace-white mb-2">
+                          {section.title}
+                        </h3>
+                        <p className="text-base text-gray-300 leading-relaxed">
+                          {section.description}
+                        </p>
                       </div>
                     </div>
-                  )}
 
-                  {section.action.type === 'social' && (
+                    {/* Actions */}
                     <div className="space-y-3">
-                      <div className="grid grid-cols-6 gap-3">
-                        {section.action.platforms?.map((platform, idx) => (
+                      {section.action.type === 'email' && (
+                        <div className="space-y-3">
                           <Button 
-                            key={idx}
-                            variant="outline"
-                            size="icon"
-                            className="bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple aspect-square"
-                            onClick={() => window.open(platform.url, '_blank')}
-                            title={platform.name}
+                            className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
+                            onClick={() => window.location.href = `mailto:${section.action.value}`}
                           >
-                            {platform.icon}
+                            {section.action.buttonText}
                           </Button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                        </div>
+                      )}
 
-                  {section.action.type === 'newsletter' && (
-                    <div className="space-y-3">
-                      <Button 
-                        className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
-                        onClick={() => {/* Newsletter signup logic */}}
-                      >
-                        {section.action.buttonText}
-                      </Button>
+                      {section.action.type === 'community' && (
+                        <div className="space-y-3">
+                          <div className="grid grid-cols-2 gap-3">
+                            {section.action.platforms?.map((platform, idx) => (
+                              <Button 
+                                key={idx}
+                                variant="outline"
+                                className="flex items-center space-x-2 bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple"
+                                onClick={() => window.open(platform.url, '_blank')}
+                              >
+                                {platform.icon}
+                                <span>{platform.name}</span>
+                              </Button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {section.action.type === 'social' && (
+                        <div className="space-y-3">
+                          <div className="grid grid-cols-6 gap-3">
+                            {section.action.platforms?.map((platform, idx) => (
+                              <Button 
+                                key={idx}
+                                variant="outline"
+                                size="icon"
+                                className="bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple aspect-square"
+                                onClick={() => window.open(platform.url, '_blank')}
+                                title={platform.name}
+                              >
+                                {platform.icon}
+                              </Button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {section.action.type === 'newsletter' && (
+                        <div className="space-y-3">
+                          <Button 
+                            className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
+                            onClick={() => {/* Newsletter signup logic */}}
+                          >
+                            {section.action.buttonText}
+                          </Button>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
         </div>
