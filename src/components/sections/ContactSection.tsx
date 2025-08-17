@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Instagram, Twitter, Github, Youtube, Users, MessageCircle, Send, Building2 } from "lucide-react";
+import { Mail, Linkedin, Instagram, X, Github, Youtube, Users, Hash, Send, Building2, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ContactSection = () => {
@@ -7,14 +7,15 @@ const ContactSection = () => {
     {
       title: "Follow Us",
       description: "Stay updated with our latest news and announcements",
-      icon: <Twitter className="w-8 h-8" />,
+      icon: <X className="w-8 h-8" />,
       action: {
         type: "social",
         label: "Social Media",
         platforms: [
           { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "#" },
           { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "#" },
-          { name: "Twitter", icon: <Twitter className="w-5 h-5" />, url: "#" },
+          { name: "X", icon: <X className="w-5 h-5" />, url: "#" },
+          { name: "WhatsApp", icon: <Phone className="w-5 h-5" />, url: "#" },
           { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "#" },
           { name: "YouTube", icon: <Youtube className="w-5 h-5" />, url: "#" }
         ]
@@ -28,7 +29,7 @@ const ContactSection = () => {
         type: "community",
         label: "Join Community",
         platforms: [
-          { name: "Discord", icon: <MessageCircle className="w-5 h-5" />, url: "#" },
+          { name: "Discord", icon: <Hash className="w-5 h-5" />, url: "#" },
           { name: "Telegram", icon: <Send className="w-5 h-5" />, url: "#" }
         ]
       }
