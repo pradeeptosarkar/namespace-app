@@ -46,7 +46,7 @@ const HackHazardsSection = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4">
             {/* Content */}
-            <div className="space-y-6 sm:space-y-8 progressive-reveal order-2 lg:order-1">
+            <div className="space-y-6 sm:space-y-8 progressive-reveal">
               <div className="space-y-6">
                 <div className="inline-flex items-center space-x-3 glassmorphism bg-gradient-purple px-6 py-3 rounded-full magnetic-element glass-glow">
                   <Zap className="w-5 h-5 text-namespace-white animate-pulse" />
@@ -86,7 +86,7 @@ const HackHazardsSection = () => {
             </div>
             
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3 order-1 lg:order-2">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
               {stats.map((stat, index) => (
                 <div 
                   key={index}
