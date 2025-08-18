@@ -452,8 +452,151 @@ const Branding = () => {
         </div>
       </section>
 
+      {/* Typography Section */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-12 text-center">
+              <h2 className="text-2xl md:text-3xl font-sora font-bold mb-3">
+                Typography
+              </h2>
+              <p className="text-gray-600">
+                Official NAMESPACE font families for consistent brand communication
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Sora Font */}
+              <Card className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Sora</h3>
+                  <p className="text-sm text-gray-600 mb-4">Primary brand font for headings and emphasis</p>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="font-sora">
+                    <div className="text-4xl font-bold mb-1">NAMESPACE</div>
+                    <div className="text-xs text-gray-500">48px / Bold</div>
+                  </div>
+                  
+                  <div className="font-sora">
+                    <div className="text-2xl font-semibold mb-1">Heading Two</div>
+                    <div className="text-xs text-gray-500">24px / Semibold</div>
+                  </div>
+                  
+                  <div className="font-sora">
+                    <div className="text-lg font-medium mb-1">Heading Three</div>
+                    <div className="text-xs text-gray-500">18px / Medium</div>
+                  </div>
+                  
+                  <div className="font-sora">
+                    <div className="text-base mb-1">Regular Text</div>
+                    <div className="text-xs text-gray-500">16px / Regular</div>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="text-sm space-y-1">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Font Family:</span>
+                      <span className="font-mono">Sora</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Weights:</span>
+                      <span>400, 500, 600, 700</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Usage:</span>
+                      <span>Headings, Logos, Emphasis</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Inter Font */}
+              <Card className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold mb-2">Inter</h3>
+                  <p className="text-sm text-gray-600 mb-4">Secondary font for body text and UI elements</p>
+                </div>
+                
+                <div className="space-y-4 font-inter">
+                  <div>
+                    <div className="text-lg font-semibold mb-1">Large Body Text</div>
+                    <div className="text-xs text-gray-500">18px / Semibold</div>
+                  </div>
+                  
+                  <div>
+                    <div className="text-base mb-1">Regular Body Text</div>
+                    <div className="text-xs text-gray-500">16px / Regular</div>
+                  </div>
+                  
+                  <div>
+                    <div className="text-sm mb-1">Small Text</div>
+                    <div className="text-xs text-gray-500">14px / Regular</div>
+                  </div>
+                  
+                  <div>
+                    <div className="text-xs mb-1">Caption Text</div>
+                    <div className="text-xs text-gray-500">12px / Regular</div>
+                  </div>
+                  
+                  <div className="mt-4">
+                    <p className="text-sm leading-relaxed">
+                      This is how Inter looks in paragraph form. It's highly readable and works well for longer content, user interfaces, and detailed descriptions throughout the NAMESPACE ecosystem.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="text-sm space-y-1">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Font Family:</span>
+                      <span className="font-mono">Inter</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Weights:</span>
+                      <span>400, 500, 600, 700</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Usage:</span>
+                      <span>Body text, UI, Descriptions</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Typography Guidelines */}
+            <Card className="mt-8 p-6">
+              <h3 className="text-lg font-semibold mb-4">Typography Guidelines</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div>
+                  <h4 className="font-semibold mb-2">Hierarchy</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Use Sora for all headings and brand elements</li>
+                    <li>• Use Inter for body text and UI components</li>
+                    <li>• Maintain consistent font sizes across sections</li>
+                    <li>• Use font weight to create visual hierarchy</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">Best Practices</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    <li>• Ensure adequate line spacing for readability</li>
+                    <li>• Use appropriate contrast ratios for accessibility</li>
+                    <li>• Limit font weights to maintain consistency</li>
+                    <li>• Test readability across different screen sizes</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-background py-16">
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-sora font-bold mb-4">
