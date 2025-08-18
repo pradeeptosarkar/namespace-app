@@ -1,20 +1,14 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow common crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-# AI Crawlers
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: GPTBot
 Allow: /
 
 User-agent: Claude-Web
@@ -23,5 +17,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-User-agent: *
-Allow: /
+Sitemap: https://namespace.world/sitemap.xml
