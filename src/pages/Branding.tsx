@@ -244,7 +244,7 @@ const Branding = () => {
       </section>
 
       {/* Logo Categories */}
-      <section className="py-16 lg:py-24">
+      <section className="py-4">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             {logoCategories.map((category, categoryIndex) => (
@@ -360,7 +360,7 @@ const Branding = () => {
       </section>
 
       {/* Brand Colors Section */}
-      <section className="py-16 lg:py-24">
+      <section className="py-4">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 text-center">
@@ -453,7 +453,7 @@ const Branding = () => {
       </section>
 
       {/* Typography Section */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-4 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 text-center">
@@ -604,11 +604,11 @@ const Branding = () => {
             </h2>
             <p className="text-gray-600 mb-6">
               If you need custom logos, brand materials, or have questions about brand usage, 
-              our team is here to help.
+              our team is here to help. Contact us at contact@namespacecomm.in
             </p>
-            <Button size="lg" className="bg-namespace-purple hover:bg-primary-hover text-namespace-white">
+            {/* <Button size="lg" className="bg-namespace-purple hover:bg-primary-hover text-namespace-white">
               Contact Brand Team
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
