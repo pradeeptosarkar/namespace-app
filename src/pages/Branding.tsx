@@ -359,6 +359,99 @@ const Branding = () => {
         </div>
       </section>
 
+      {/* Brand Colors Section */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-12 text-center">
+              <h2 className="text-2xl md:text-3xl font-sora font-bold mb-3">
+                Brand Colors
+              </h2>
+              <p className="text-gray-600">
+                Official NAMESPACE color palette for consistent brand representation
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* NAMESPACE Purple */}
+              <Card className="overflow-hidden">
+                <div 
+                  className="h-32 w-full"
+                  style={{ backgroundColor: '#8100C4' }}
+                />
+                <div className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">NAMESPACE Purple</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">HEX:</span>
+                      <span className="font-mono">#8100C4</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">RGB:</span>
+                      <span className="font-mono">129, 0, 196</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">CMYK:</span>
+                      <span className="font-mono">34, 100, 0, 23</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* NAMESPACE White */}
+              <Card className="overflow-hidden">
+                <div 
+                  className="h-32 w-full border-b"
+                  style={{ backgroundColor: '#E6E6E6' }}
+                />
+                <div className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">NAMESPACE White</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">HEX:</span>
+                      <span className="font-mono">#E6E6E6</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">RGB:</span>
+                      <span className="font-mono">230, 230, 230</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">CMYK:</span>
+                      <span className="font-mono">0, 0, 0, 10</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* NAMESPACE Black */}
+              <Card className="overflow-hidden">
+                <div 
+                  className="h-32 w-full"
+                  style={{ backgroundColor: '#2E2E2E' }}
+                />
+                <div className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">NAMESPACE Black</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">HEX:</span>
+                      <span className="font-mono">#2E2E2E</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">RGB:</span>
+                      <span className="font-mono">46, 46, 46</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">CMYK:</span>
+                      <span className="font-mono">0, 0, 0, 82</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-6 text-center">
