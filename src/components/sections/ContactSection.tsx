@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Mail, Linkedin, Instagram, X, Github, Youtube, Users, Hash, Send, Building2, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -101,8 +101,8 @@ const ContactSection = () => {
           {/* Compact CTA Cards Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
             {ctaSections.map((section, index) => (
-              <HoverCard key={index}>
-                <HoverCardTrigger asChild>
+              <Dialog key={index}>
+                <DialogTrigger asChild>
                   <div className="bg-namespace-black/60 border border-namespace-white/20 rounded-2xl p-4 progressive-reveal hover:border-namespace-purple/40 transition-all duration-300 group cursor-pointer hover:bg-namespace-black/80 aspect-square flex flex-col items-center justify-center text-center scale-75 md:scale-50 origin-center">
                     <div className="w-8 h-8 bg-namespace-purple/20 border border-namespace-purple/30 rounded-lg flex items-center justify-center text-namespace-purple group-hover:bg-namespace-purple/30 transition-colors mb-2">
                       {section.icon}
@@ -111,9 +111,9 @@ const ContactSection = () => {
                       {section.title}
                     </h3>
                   </div>
-                </HoverCardTrigger>
+                </DialogTrigger>
                 
-                <HoverCardContent className="bg-namespace-black border-namespace-white/20 text-namespace-white max-w-md">
+                <DialogContent className="bg-namespace-black border-namespace-white/20 text-namespace-white max-w-md">
                   <div className="p-2">
                     {/* Icon and Title */}
                     <div className="flex items-start space-x-4 mb-4">
@@ -192,8 +192,8 @@ const ContactSection = () => {
                       )}
                     </div>
                   </div>
-                </HoverCardContent>
-              </HoverCard>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
         </div>
