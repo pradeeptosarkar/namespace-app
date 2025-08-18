@@ -216,9 +216,6 @@ const ContactSection = () => {
             <Link to="/terms-of-use" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
               Terms of Use
             </Link>
-            <a href="#" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
-              Corporate Information
-            </a>
             <Link to="/branding" className="text-gray-400 hover:text-namespace-purple text-sm transition-colors">
               Brand Guidelines
             </Link>
