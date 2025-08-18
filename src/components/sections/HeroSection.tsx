@@ -210,24 +210,10 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Enhanced Scroll to Explore */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-3">
-          {/* Animated scroll indicator */}
-          <div className="bg-namespace-white/90 backdrop-blur-sm border border-namespace-purple/30 rounded-2xl px-6 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-namespace-purple/20 rounded-full flex items-center justify-center animate-pulse">
-                <div className="w-2 h-2 bg-namespace-purple rounded-full" />
-              </div>
-              <span className="text-lg font-semibold text-namespace-purple">Scroll to explore</span>
-            </div>
-          </div>
-          
-          {/* Animated scroll arrow */}
-          <div className="flex flex-col space-y-1 animate-[bounce_2s_ease-in-out_infinite]">
-            <ChevronRight className="w-6 h-6 text-namespace-purple rotate-90 opacity-80" />
-            <ChevronRight className="w-6 h-6 text-namespace-purple rotate-90 opacity-60" />
-            <ChevronRight className="w-6 h-6 text-namespace-purple rotate-90 opacity-40" />
-          </div>
+        {/* Scroll hint */}
+        <div className="absolute bottom-8 right-8 hidden lg:flex items-center space-x-2 text-muted-foreground">
+          <span className="text-sm font-medium">Scroll to explore</span>
+          <ChevronRight className="w-4 h-4 animate-pulse" />
         </div>
       </div>
     </section>
