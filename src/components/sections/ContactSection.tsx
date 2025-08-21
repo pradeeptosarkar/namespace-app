@@ -250,7 +250,7 @@ const ContactSection = () => {
                         <div className="space-y-3">
                           <Button 
                             className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
-                            onClick={() => {/* Newsletter signup logic */}}
+                            onClick={() => window.open(section.action.value, '_blank')}
                           >
                             {section.action.buttonText}
                           </Button>
