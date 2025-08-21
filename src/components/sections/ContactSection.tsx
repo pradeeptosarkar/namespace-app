@@ -79,12 +79,12 @@ const ContactSection = () => {
         type: "social",
         label: "Social Media",
         platforms: [
-          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "#" },
-          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "#" },
-          { name: "X", icon: <TwitterIcon className="w-5 h-5" />, url: "#" },
-          { name: "WhatsApp", icon: <WhatsAppIcon className="w-5 h-5" />, url: "#" },
-          { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "#" },
-          { name: "YouTube", icon: <YouTubeIcon className="w-5 h-5" />, url: "#" }
+          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/company/namespaceworld/" },
+          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "https://www.instagram.com/namespaceworld/" },
+          { name: "X", icon: <TwitterIcon className="w-5 h-5" />, url: "https://x.com/namespaceworld" },
+          { name: "WhatsApp", icon: <WhatsAppIcon className="w-5 h-5" />, url: "https://www.whatsapp.com/channel/0029VabtgrVKLaHjzSXEL52f" },
+          { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "https://github.com/namespacecomm" },
+          { name: "YouTube", icon: <YouTubeIcon className="w-5 h-5" />, url: "https://www.youtube.com/@namespaceworld" }
         ]
       }
     },
@@ -96,7 +96,7 @@ const ContactSection = () => {
         type: "community",
         label: "Join Community",
         platforms: [
-          { name: "Discord", icon: <DiscordIcon className="w-5 h-5" />, url: "#" },
+          { name: "Discord", icon: <DiscordIcon className="w-5 h-5" />, url: "https://discord.com/invite/z2fTnXjKMm" },
           { name: "Telegram", icon: <TelegramIcon className="w-5 h-5" />, url: "#" }
         ]
       }
@@ -119,6 +119,7 @@ const ContactSection = () => {
       action: {
         type: "newsletter",
         label: "Subscribe to Newsletter",
+        value: "https://namespacecomm.substack.com/",
         buttonText: "Subscribe Now"
       }
     }
