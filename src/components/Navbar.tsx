@@ -28,6 +28,7 @@ const Navbar = () => {
     { name: 'Programs', index: 7, id: 'programs' },
     { name: 'Testimonials', index: 8, id: 'testimonials' },
     { name: 'About Us', href: '/about-us' },
+    { name: 'Team', href: '/team' },
     { name: 'Contact', index: 9, id: 'contact' }
   ];
 
@@ -69,6 +70,12 @@ const Navbar = () => {
               className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors px-2 py-1 rounded-md hover:bg-namespace-purple/10"
             >
               About Us
+            </a>
+            <a 
+              href="/team"
+              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors px-2 py-1 rounded-md hover:bg-namespace-purple/10"
+            >
+              Team
             </a>
             <div className="w-px h-4 bg-border" />
             <button 
