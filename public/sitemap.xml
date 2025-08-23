@@ -6,9 +6,14 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://namespace.world/about-us</loc>
+    <lastmod>2025-01-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://namespace.world/branding</loc>
     <lastmod>2024-08-23</lastmod>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://namespace.world/privacy-policy</loc>

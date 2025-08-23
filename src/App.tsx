@@ -9,6 +9,7 @@ import Maintenance from "./pages/Maintenance";
 import Branding from "./pages/Branding";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import AboutUs from "./pages/AboutUs";
 import { MAINTENANCE_MODE } from "./config";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           ) : (
             <>
               <Route path="/" element={<Index />} />
+              <Route path="/about-us" element={<AboutUs />} />
               <Route path="/branding" element={<Branding />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-use" element={<TermsOfUse />} />

@@ -27,6 +27,7 @@ const Navbar = () => {
     { name: 'HackHazards', index: 6, id: 'hackhazards' },
     { name: 'Programs', index: 7, id: 'programs' },
     { name: 'Testimonials', index: 8, id: 'testimonials' },
+    { name: 'About Us', href: '/about-us' },
     { name: 'Contact', index: 9, id: 'contact' }
   ];
 
@@ -63,6 +64,12 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
+            <a 
+              href="/about-us"
+              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors px-2 py-1 rounded-md hover:bg-namespace-purple/10"
+            >
+              About Us
+            </a>
             <div className="w-px h-4 bg-border" />
             <button 
               onClick={() => scrollToSection(9)}
@@ -78,16 +85,27 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="fixed inset-0 z-40 bg-namespace-black/90 backdrop-blur-md md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-6 px-6">
+        <div className="flex flex-col items-center justify-center h-full space-y-6 px-6">
             {navigationItems.map((item) => (
-              <button 
-                key={item.id}
-                onClick={() => scrollToSection(item.index)}
-                className="text-xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors text-center"
-                aria-label={`Navigate to ${item.name} section`}
-              >
-                {item.name}
-              </button>
+              item.href ? (
+                <a 
+                  key={item.name}
+                  href={item.href}
+                  className="text-xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <button 
+                  key={item.id}
+                  onClick={() => scrollToSection(item.index)}
+                  className="text-xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors text-center"
+                  aria-label={`Navigate to ${item.name} section`}
+                >
+                  {item.name}
+                </button>
+              )
             ))}
           </div>
         </div>
