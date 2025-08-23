@@ -13,9 +13,9 @@ const HeroSection = () => {
   const taglines = [
     "Empowering students to learn better",
     "Innovating education delivery through technology",
-    "Building bridges between professionals and opportunities", 
+    "Building bridges between professionals and opportunities",
     "Delivering better talent solutions for businesses",
-    "Creating the future through collaborative innovation"
+    "Creating the future through collaborative innovation",
   ];
 
   const targetText = "NAMESPACE";
@@ -29,14 +29,14 @@ const HeroSection = () => {
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   // Typing animation
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    
+
     if (typedText.length < targetText.length) {
       timeout = setTimeout(() => {
         setTypedText(targetText.slice(0, typedText.length + 1));
@@ -58,7 +58,7 @@ const HeroSection = () => {
   // Cursor smooth fade animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowCursor(prev => !prev);
+      setShowCursor((prev) => !prev);
     }, 1200); // Slower, more professional timing
 
     return () => clearInterval(interval);
@@ -91,33 +91,39 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition min-h-screen">
+    <section
+      id="hero"
+      className="scroll-section bg-namespace-white text-namespace-black relative overflow-hidden section-transition min-h-screen"
+    >
       {/* Interactive gradient background with glassmorphism */}
-      <div 
+      <div
         className="absolute inset-0 opacity-15 shimmer-effect"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, hsl(var(--namespace-purple)) 0%, transparent 50%)`
+          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, hsl(var(--namespace-purple)) 0%, transparent 50%)`,
         }}
       />
-      
+
       {/* Subtle overlay */}
       <div className="absolute top-20 right-20 w-96 h-96 bg-namespace-purple/5 rounded-full" />
-      
+
       {/* Geometric patterns */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 left-10 w-32 h-32 border-2 border-namespace-purple/20 rotate-45 animate-pulse" />
         <div className="absolute top-40 right-40 w-24 h-24 border border-namespace-purple/30 rounded-full" />
-        <div className="absolute bottom-32 left-32 w-16 h-16 bg-namespace-purple/10 rotate-12 animate-bounce" style={{ animationDelay: '2s' }} />
+        <div
+          className="absolute bottom-32 left-32 w-16 h-16 bg-namespace-purple/10 rotate-12 animate-bounce"
+          style={{ animationDelay: "2s" }}
+        />
         <div className="absolute top-60 left-1/4 w-8 h-40 bg-gradient-to-b from-namespace-purple/20 to-transparent rotate-45" />
         <div className="absolute bottom-40 right-20 w-20 h-20 border-l-2 border-t-2 border-namespace-purple/25 rotate-45" />
       </div>
-      
+
       {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-64 h-64 bg-namespace-purple/3 rounded-full" />
         <div className="absolute bottom-20 left-20 w-48 h-48 bg-namespace-purple/2 rounded-full" />
       </div>
-      
+
       <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
         <div className="flex w-full items-center justify-between">
           {/* Left side content */}
@@ -130,21 +136,25 @@ const HeroSection = () => {
                     {taglines[currentTaglineIndex]}
                   </span>
                 </div>
-                
+
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold leading-tight">
                   Welcome to
                   <br />
                   <span className="text-namespace-purple inline-flex items-center">
                     {typedText}
-                    <span className={`ml-1 w-1 h-8 sm:h-12 md:h-14 lg:h-16 bg-namespace-purple transition-all duration-700 ease-in-out ${showCursor ? 'opacity-100' : 'opacity-30'}`} />
+                    <span
+                      className={`ml-1 w-1 h-8 sm:h-12 md:h-14 lg:h-16 bg-namespace-purple transition-all duration-700 ease-in-out ${
+                        showCursor ? "opacity-100" : "opacity-30"
+                      }`}
+                    />
                   </span>
                 </h1>
-                
+
                 <p className="text-base sm:text-lg md:text-xl lg:text-xl text-muted-foreground max-w-2xl font-inter">
                   Building the Ecosystem for Humans and Organizations in Tech
                 </p>
               </div>
-              
+
               {/* Two buttons commented out */}
               {/* <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -170,9 +180,18 @@ const HeroSection = () => {
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="relative">
               {/* Subtle geometric frame around video */}
-              <div className="absolute inset-0 w-64 h-64 xl:w-80 xl:h-80 border border-namespace-purple/10 rounded-full animate-spin opacity-50" style={{ animationDuration: '40s' }} />
-              <div className="absolute inset-4 w-56 h-56 xl:w-72 xl:h-72 border border-namespace-purple/15 rounded-full animate-spin opacity-30" style={{ animationDuration: '60s', animationDirection: 'reverse' }} />
-              
+              <div
+                className="absolute inset-0 w-64 h-64 xl:w-80 xl:h-80 border border-namespace-purple/10 rounded-full animate-spin opacity-50"
+                style={{ animationDuration: "40s" }}
+              />
+              <div
+                className="absolute inset-4 w-56 h-56 xl:w-72 xl:h-72 border border-namespace-purple/15 rounded-full animate-spin opacity-30"
+                style={{
+                  animationDuration: "60s",
+                  animationDirection: "reverse",
+                }}
+              />
+
               {/* Video element with enhanced effects */}
               <div className="relative w-48 h-48 xl:w-96 xl:h-96 rounded-full overflow-hidden magnetic-element">
                 <video
@@ -185,35 +204,47 @@ const HeroSection = () => {
                   onMouseLeave={handleVideoLeave}
                   className="w-full h-full object-cover hover:scale-105 transition-all duration-700 ease-in-out"
                   style={{
-                    filter: 'drop-shadow(0 0 30px rgba(147, 51, 234, 0.3))',
+                    filter: "drop-shadow(0 0 30px rgba(147, 51, 234, 0.3))",
                   }}
                 >
-                  <source src="/path-to-your-logo-video.webm" type="video/webm" />
-                  <source src="/lovable-uploads/logo-video.mp4" type="video/mp4" />
+                  <source
+                    src="/path-to-your-logo-video.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="/lovable-uploads/logo-video.mp4"
+                    type="video/mp4"
+                  />
                   {/* Fallback image */}
-                  <img 
+                  <img
                     src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
                     alt="NAMESPACE Logo"
                     className="w-full h-full object-cover"
                   />
                 </video>
-                
+
                 {/* Glow effect overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-namespace-purple/20 to-transparent opacity-40 pointer-events-none" />
               </div>
-              
+
               {/* Subtle floating elements */}
               <div className="absolute top-12 right-12 w-2 h-2 bg-namespace-purple/40 rounded-full animate-[float_6s_ease-in-out_infinite]" />
-              <div className="absolute bottom-16 left-8 w-1.5 h-1.5 bg-namespace-purple/30 rounded-full animate-[float_8s_ease-in-out_infinite]" style={{ animationDelay: '2s' }} />
-              <div className="absolute top-28 left-12 w-1 h-1 bg-namespace-purple/25 rounded-full animate-[float_7s_ease-in-out_infinite]" style={{ animationDelay: '4s' }} />
+              <div
+                className="absolute bottom-16 left-8 w-1.5 h-1.5 bg-namespace-purple/30 rounded-full animate-[float_8s_ease-in-out_infinite]"
+                style={{ animationDelay: "2s" }}
+              />
+              <div
+                className="absolute top-28 left-12 w-1 h-1 bg-namespace-purple/25 rounded-full animate-[float_7s_ease-in-out_infinite]"
+                style={{ animationDelay: "4s" }}
+              />
             </div>
           </div>
         </div>
-        
+
         {/* Scroll hint */}
-        <div className="absolute bottom-8 right-8 hidden lg:flex items-center space-x-2 text-muted-foreground">
-          <span className="text-sm font-medium">Scroll to explore</span>
-          <ChevronRight className="w-4 h-4 animate-pulse" />
+        <div className="absolute bottom-4 right-8 hidden lg:flex items-center space-x-2 text-muted-foreground">
+          <span className="text-lg font-medium">Scroll to explore</span>
+          <ChevronRight className="w-16 h-16 animate-pulse" />
         </div>
       </div>
     </section>
