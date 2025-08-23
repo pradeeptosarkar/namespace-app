@@ -79,12 +79,12 @@ const ContactSection = () => {
         type: "social",
         label: "Social Media",
         platforms: [
-          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/company/namespaceworld/", stats: "2.5K+ followers" },
-          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "https://www.instagram.com/namespaceworld/", stats: "1.8K+ followers" },
-          { name: "X", icon: <TwitterIcon className="w-5 h-5" />, url: "https://x.com/namespaceworld", stats: "900+ followers" },
-          { name: "WhatsApp", icon: <WhatsAppIcon className="w-5 h-5" />, url: "https://www.whatsapp.com/channel/0029VabtgrVKLaHjzSXEL52f", stats: "500+ subscribers" },
+          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/company/namespaceworld/", stats: "8.5K+ followers" },
+          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "https://www.instagram.com/namespaceworld/", stats: "4.8K+ followers" },
+          { name: "X", icon: <TwitterIcon className="w-5 h-5" />, url: "https://x.com/namespaceworld", stats: "3.2K+ followers" },
+          { name: "WhatsApp", icon: <WhatsAppIcon className="w-5 h-5" />, url: "https://www.whatsapp.com/channel/0029VabtgrVKLaHjzSXEL52f", stats: "900+ subscribers" },
           { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "https://github.com/namespacecomm", stats: "350+ stars" },
-          { name: "YouTube", icon: <YouTubeIcon className="w-5 h-5" />, url: "https://www.youtube.com/@namespaceworld", stats: "750+ subscribers" }
+          { name: "YouTube", icon: <YouTubeIcon className="w-5 h-5" />, url: "https://www.youtube.com/@namespaceworld", stats: "400+ subscribers" }
         ]
       }
     },
@@ -96,8 +96,8 @@ const ContactSection = () => {
         type: "community",
         label: "Join Community",
         platforms: [
-          { name: "Discord", icon: <DiscordIcon className="w-5 h-5" />, url: "https://discord.com/invite/z2fTnXjKMm", stats: "1.2K+ members" },
-          { name: "Telegram", icon: <TelegramIcon className="w-5 h-5" />, url: "#", stats: "800+ members" }
+          { name: "Discord", icon: <DiscordIcon className="w-5 h-5" />, url: "https://discord.com/invite/z2fTnXjKMm", stats: "6K+ members" },
+          { name: "Telegram", icon: <TelegramIcon className="w-5 h-5" />, url: "#", stats: "" }
         ]
       }
     },
@@ -121,7 +121,7 @@ const ContactSection = () => {
         label: "Subscribe to Newsletter",
         value: "https://namespacecomm.substack.com/",
         buttonText: "Subscribe Now",
-        stats: "3.5K+ subscribers"
+        stats: "31K+ subscribers"
       }
     }
   ];
