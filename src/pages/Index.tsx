@@ -1,16 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { Progress } from "@/components/ui/progress";
 import Logo from "@/components/Logo";
 import HeroSection from "@/components/sections/HeroSection";
-import ProblemSection from "@/components/sections/ProblemSection";
-import SecondHeroSection from "@/components/sections/SecondHeroSection";
-import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
-import EcosystemFlywheelSection from "@/components/sections/EcosystemFlywheelSection";
-import ImpactSection from "@/components/sections/ImpactSection";
-import HackHazardsSection from "@/components/sections/HackHazardsSection";
-import ProgramsSection from "@/components/sections/ProgramsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import ContactSection from "@/components/sections/ContactSection";
+
+// Lazy load sections for better performance
+const ProblemSection = lazy(() => import("@/components/sections/ProblemSection"));
+const SecondHeroSection = lazy(() => import("@/components/sections/SecondHeroSection"));
+const WhoWeServeSection = lazy(() => import("@/components/sections/WhoWeServeSection"));
+const EcosystemFlywheelSection = lazy(() => import("@/components/sections/EcosystemFlywheelSection"));
+const ImpactSection = lazy(() => import("@/components/sections/ImpactSection"));
+const HackHazardsSection = lazy(() => import("@/components/sections/HackHazardsSection"));
+const ProgramsSection = lazy(() => import("@/components/sections/ProgramsSection"));
+const TestimonialsSection = lazy(() => import("@/components/sections/TestimonialsSection"));
+const ContactSection = lazy(() => import("@/components/sections/ContactSection"));
 
 const Index = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -103,15 +105,69 @@ const Index = () => {
         className="horizontal-scroll"
       >
         <HeroSection />
-        <ProblemSection />
-        <SecondHeroSection />
-        <WhoWeServeSection />
-        <EcosystemFlywheelSection />
-        <ImpactSection />
-        <HackHazardsSection />
-        <ProgramsSection />
-        <TestimonialsSection />
-        <ContactSection />
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <ProblemSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <SecondHeroSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <WhoWeServeSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <EcosystemFlywheelSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <ImpactSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <HackHazardsSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <ProgramsSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <TestimonialsSection />
+        </Suspense>
+        <Suspense fallback={
+          <div className="scroll-section min-h-screen flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <ContactSection />
+        </Suspense>
       </div>
     </>
   );

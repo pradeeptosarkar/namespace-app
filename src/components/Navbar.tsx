@@ -17,6 +17,19 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const navigationItems = [
+    { name: 'Home', index: 0, id: 'hero' },
+    { name: 'Problem', index: 1, id: 'problem' },
+    { name: 'Solution', index: 2, id: 'solution' },
+    { name: 'Who We Serve', index: 3, id: 'who-we-serve' },
+    { name: 'Ecosystem', index: 4, id: 'ecosystem' },
+    { name: 'Impact', index: 5, id: 'impact' },
+    { name: 'HackHazards', index: 6, id: 'hackhazards' },
+    { name: 'Programs', index: 7, id: 'programs' },
+    { name: 'Testimonials', index: 8, id: 'testimonials' },
+    { name: 'Contact', index: 9, id: 'contact' }
+  ];
+
   return (
     <>
       {/* Floating Navbar */}
@@ -39,28 +52,22 @@ const Navbar = () => {
           </Button>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-4">
+            {navigationItems.slice(0, 5).map((item) => (
+              <button 
+                key={item.id}
+                onClick={() => scrollToSection(item.index)}
+                className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors px-2 py-1 rounded-md hover:bg-namespace-purple/10"
+                aria-label={`Navigate to ${item.name} section`}
+              >
+                {item.name}
+              </button>
+            ))}
+            <div className="w-px h-4 bg-border" />
             <button 
-              onClick={() => scrollToSection(0)}
-              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => scrollToSection(1)}
-              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
-            >
-              Problem
-            </button>
-            <button 
-              onClick={() => scrollToSection(4)}
-              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
-            >
-              HACKHAZARDS
-            </button>
-            <button 
-              onClick={() => scrollToSection(7)}
-              className="text-sm font-medium text-namespace-black hover:text-namespace-purple transition-colors"
+              onClick={() => scrollToSection(9)}
+              className="text-sm font-medium bg-namespace-purple text-namespace-white px-4 py-2 rounded-full hover:bg-namespace-purple/90 transition-colors"
+              aria-label="Navigate to Contact section"
             >
               Contact
             </button>
@@ -71,31 +78,17 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="fixed inset-0 z-40 bg-namespace-black/90 backdrop-blur-md md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            <button 
-              onClick={() => scrollToSection(0)}
-              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => scrollToSection(1)}
-              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
-            >
-              Problem
-            </button>
-            <button 
-              onClick={() => scrollToSection(4)}
-              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
-            >
-              HACKHAZARDS
-            </button>
-            <button 
-              onClick={() => scrollToSection(7)}
-              className="text-2xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors"
-            >
-              Contact
-            </button>
+          <div className="flex flex-col items-center justify-center h-full space-y-6 px-6">
+            {navigationItems.map((item) => (
+              <button 
+                key={item.id}
+                onClick={() => scrollToSection(item.index)}
+                className="text-xl font-medium text-namespace-white hover:text-namespace-purple-glow transition-colors text-center"
+                aria-label={`Navigate to ${item.name} section`}
+              >
+                {item.name}
+              </button>
+            ))}
           </div>
         </div>
       )}

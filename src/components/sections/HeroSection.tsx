@@ -218,8 +218,9 @@ const HeroSection = () => {
                   {/* Fallback image */}
                   <img
                     src="/lovable-uploads/44644046-4947-45b3-8da2-466f5e98beb9.png"
-                    alt="NAMESPACE Logo"
+                    alt="NAMESPACE Logo - Building the ecosystem for humans and organizations in tech"
                     className="w-full h-full object-cover"
+                    loading="eager"
                   />
                 </video>
 

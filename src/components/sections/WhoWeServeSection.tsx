@@ -3,6 +3,7 @@ import professionalsVector from "@/assets/professionals-vector-purple.png";
 import communitiesVector from "@/assets/communities-vector-purple.png";
 import institutionsVector from "@/assets/institutions-vector-purple.png";
 import companiesVector from "@/assets/companies-vector-purple.png";
+import SEOLazyImage from "@/components/SEOLazyImage";
 
 const WhoWeServeSection = () => {
   const audiences = [
@@ -82,11 +83,15 @@ const WhoWeServeSection = () => {
               >
                 {/* Front content - visible by default */}
                 <div className="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-                  <img 
-                    src={audience.image} 
-                    alt={audience.title}
-                    className="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-4"
-                  />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4">
+                    <SEOLazyImage 
+                      src={audience.image} 
+                      alt={`${audience.title} - NAMESPACE audience segment illustration`}
+                      className="w-full h-full object-contain"
+                      width={80}
+                      height={80}
+                    />
+                  </div>
                   
                   <h3 className="text-lg sm:text-xl font-sora font-bold text-center text-namespace-white">
                     {audience.title}
