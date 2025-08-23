@@ -79,12 +79,12 @@ const ContactSection = () => {
         type: "social",
         label: "Social Media",
         platforms: [
-          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/company/namespaceworld/" },
-          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "https://www.instagram.com/namespaceworld/" },
-          { name: "X", icon: <TwitterIcon className="w-5 h-5" />, url: "https://x.com/namespaceworld" },
-          { name: "WhatsApp", icon: <WhatsAppIcon className="w-5 h-5" />, url: "https://www.whatsapp.com/channel/0029VabtgrVKLaHjzSXEL52f" },
-          { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "https://github.com/namespacecomm" },
-          { name: "YouTube", icon: <YouTubeIcon className="w-5 h-5" />, url: "https://www.youtube.com/@namespaceworld" }
+          { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/company/namespaceworld/", stats: "2.5K+ followers" },
+          { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "https://www.instagram.com/namespaceworld/", stats: "1.8K+ followers" },
+          { name: "X", icon: <TwitterIcon className="w-5 h-5" />, url: "https://x.com/namespaceworld", stats: "900+ followers" },
+          { name: "WhatsApp", icon: <WhatsAppIcon className="w-5 h-5" />, url: "https://www.whatsapp.com/channel/0029VabtgrVKLaHjzSXEL52f", stats: "500+ subscribers" },
+          { name: "GitHub", icon: <Github className="w-5 h-5" />, url: "https://github.com/namespacecomm", stats: "350+ stars" },
+          { name: "YouTube", icon: <YouTubeIcon className="w-5 h-5" />, url: "https://www.youtube.com/@namespaceworld", stats: "750+ subscribers" }
         ]
       }
     },
@@ -96,8 +96,8 @@ const ContactSection = () => {
         type: "community",
         label: "Join Community",
         platforms: [
-          { name: "Discord", icon: <DiscordIcon className="w-5 h-5" />, url: "https://discord.com/invite/z2fTnXjKMm" },
-          { name: "Telegram", icon: <TelegramIcon className="w-5 h-5" />, url: "#" }
+          { name: "Discord", icon: <DiscordIcon className="w-5 h-5" />, url: "https://discord.com/invite/z2fTnXjKMm", stats: "1.2K+ members" },
+          { name: "Telegram", icon: <TelegramIcon className="w-5 h-5" />, url: "#", stats: "800+ members" }
         ]
       }
     },
@@ -120,7 +120,8 @@ const ContactSection = () => {
         type: "newsletter",
         label: "Subscribe to Newsletter",
         value: "https://namespacecomm.substack.com/",
-        buttonText: "Subscribe Now"
+        buttonText: "Subscribe Now",
+        stats: "3.5K+ subscribers"
       }
     }
   ];
@@ -211,16 +212,19 @@ const ContactSection = () => {
 
                       {section.action.type === 'community' && (
                         <div className="space-y-3">
-                          <div className="grid grid-cols-2 gap-3">
+                          <div className="grid grid-cols-1 gap-3">
                             {section.action.platforms?.map((platform, idx) => (
                               <Button 
                                 key={idx}
                                 variant="outline"
-                                className="flex items-center space-x-2 bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple"
+                                className="flex items-center justify-between bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple p-4 h-auto"
                                 onClick={() => window.open(platform.url, '_blank')}
                               >
-                                {platform.icon}
-                                <span>{platform.name}</span>
+                                <div className="flex items-center space-x-3">
+                                  {platform.icon}
+                                  <span className="font-medium">{platform.name}</span>
+                                </div>
+                                <span className="text-sm text-namespace-purple font-semibold">{platform.stats}</span>
                               </Button>
                             ))}
                           </div>
@@ -229,17 +233,19 @@ const ContactSection = () => {
 
                       {section.action.type === 'social' && (
                         <div className="space-y-3">
-                          <div className="grid grid-cols-6 gap-3">
+                          <div className="grid grid-cols-1 gap-2">
                             {section.action.platforms?.map((platform, idx) => (
                               <Button 
                                 key={idx}
                                 variant="outline"
-                                size="icon"
-                                className="bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple aspect-square"
+                                className="flex items-center justify-between bg-namespace-white/5 border-namespace-white/20 text-namespace-white hover:bg-namespace-purple/20 hover:border-namespace-purple p-3 h-auto"
                                 onClick={() => window.open(platform.url, '_blank')}
-                                title={platform.name}
                               >
-                                {platform.icon}
+                                <div className="flex items-center space-x-3">
+                                  {platform.icon}
+                                  <span className="font-medium">{platform.name}</span>
+                                </div>
+                                <span className="text-sm text-namespace-purple font-semibold">{platform.stats}</span>
                               </Button>
                             ))}
                           </div>
@@ -248,6 +254,12 @@ const ContactSection = () => {
 
                       {section.action.type === 'newsletter' && (
                         <div className="space-y-3">
+                          <div className="bg-namespace-white/5 border border-namespace-white/10 rounded-lg p-3 mb-3">
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-gray-300">Subscribers</span>
+                              <span className="text-lg font-bold text-namespace-purple">{section.action.stats}</span>
+                            </div>
+                          </div>
                           <Button 
                             className="w-full bg-namespace-purple hover:bg-namespace-purple/90 text-white font-semibold"
                             onClick={() => window.open(section.action.value, '_blank')}
