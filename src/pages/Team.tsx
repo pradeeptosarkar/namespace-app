@@ -82,7 +82,7 @@ const Team = () => {
             </div>
 
             {/* Leadership Profiles */}
-            <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 gap-16 max-w-4xl mx-auto">
               {/* Pradeepto Sarkar - Founder & CEO */}
               <div className="space-y-8">
                 {/* Profile Image */}
