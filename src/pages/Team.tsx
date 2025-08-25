@@ -81,8 +81,8 @@ const Team = () => {
               <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
             </div>
 
-            {/* Founder Profile */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Pradeepto Sarkar Profile */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
               {/* Profile Image Side */}
               <div className="flex justify-center lg:justify-start">
                 <div className="relative">
@@ -136,6 +136,68 @@ const Team = () => {
                     href="#" 
                     className="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-all duration-300 group"
                     aria-label="Pradeepto Sarkar's Twitter profile"
+                  >
+                    <Twitter className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Diksha Sharma Profile */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Profile Image Side */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="relative">
+                  {/* Decorative background */}
+                  <div className="absolute inset-0 w-80 h-80 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full" />
+                  <div className="absolute top-4 left-4 w-72 h-72 border-2 border-primary/20 rounded-full animate-spin" style={{ animationDuration: "30s" }} />
+                  
+                  {/* Profile Image Container */}
+                  <div className="relative w-64 h-64 bg-muted rounded-full overflow-hidden border-4 border-primary/20 mx-8 my-8">
+                    {/* Placeholder for professional headshot */}
+                    <div className="w-full h-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                      <Users className="w-24 h-24 text-primary/40" />
+                    </div>
+                    {/* Overlay for future image */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent" />
+                  </div>
+
+                  {/* Floating elements */}
+                  <div className="absolute top-12 right-8 w-4 h-4 bg-primary/40 rounded-full animate-ping" style={{ animationDelay: "2s" }} />
+                  <div className="absolute bottom-16 left-4 w-3 h-3 bg-primary/30 rounded-full animate-pulse" style={{ animationDelay: "3s" }} />
+                </div>
+              </div>
+
+              {/* Profile Content Side */}
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full">
+                    <Sparkles className="w-4 h-4 text-primary" />
+                    <span className="text-sm font-medium text-primary">Co-founder & COO</span>
+                  </div>
+                  
+                  <h3 className="text-3xl md:text-4xl font-sora font-bold text-foreground">
+                    Diksha Sharma
+                  </h3>
+                </div>
+
+                <p className="text-lg text-muted-foreground font-inter leading-relaxed">
+                  Diksha Sharma is the Co-founder and COO of NAMESPACE, bringing operational excellence and strategic leadership to the team. She plays a crucial role in scaling NAMESPACE's operations and ensuring the smooth execution of initiatives that create meaningful spaces for humans in technology.
+                </p>
+
+                {/* Social Links */}
+                <div className="flex space-x-4 pt-4">
+                  <a 
+                    href="#" 
+                    className="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-all duration-300 group"
+                    aria-label="Diksha Sharma's LinkedIn profile"
+                  >
+                    <Linkedin className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-all duration-300 group"
+                    aria-label="Diksha Sharma's Twitter profile"
                   >
                     <Twitter className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                   </a>
