@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const Team = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 pt-4 pb-2">
+      <div className="container mx-auto px-4 pt-2 pb-1">
         <Link to="/#contact">
           <Button variant="ghost">
             <ArrowLeft className="mr-2 h-4 w-4" />
