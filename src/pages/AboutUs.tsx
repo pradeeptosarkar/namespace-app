@@ -87,7 +87,7 @@ const AboutUs = () => {
               <div className="flex justify-center lg:justify-start">
                 <div className="relative">
                   <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center">
-                    <img src={missionIcon} alt="Mission illustration" className="w-32 h-32 opacity-80 filter brightness-0 invert-0" style={{ filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)' }} />
+                    <img src={missionIcon} alt="Mission illustration" className="w-32 h-32 opacity-80" />
                   </div>
                   {/* Floating elements */}
                   <div className="absolute top-12 right-12 w-4 h-4 bg-primary/40 rounded-full animate-ping" />
@@ -131,7 +131,7 @@ const AboutUs = () => {
               <div className="relative">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <img src={studentCommunityIcon} alt="Student community" className="w-8 h-8 opacity-80" style={{ filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)' }} />
+                    <img src={studentCommunityIcon} alt="Student community" className="w-8 h-8 opacity-80" />
                   </div>
                   <div className="flex-1 space-y-4">
                     <h3 className="text-xl md:text-2xl font-sora font-semibold text-foreground">
@@ -148,7 +148,7 @@ const AboutUs = () => {
               <div className="relative">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <img src={eventsIcon} alt="Flagship events" className="w-8 h-8 opacity-80" style={{ filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)' }} />
+                    <img src={eventsIcon} alt="Flagship events" className="w-8 h-8 opacity-80" />
                   </div>
                   <div className="flex-1 space-y-4">
                     <h3 className="text-xl md:text-2xl font-sora font-semibold text-foreground">
@@ -165,7 +165,7 @@ const AboutUs = () => {
               <div className="relative">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <img src={globalMovementIcon} alt="Global movement" className="w-8 h-8 opacity-80" style={{ filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)' }} />
+                    <img src={globalMovementIcon} alt="Global movement" className="w-8 h-8 opacity-80" />
                   </div>
                   <div className="flex-1 space-y-4">
                     <h3 className="text-xl md:text-2xl font-sora font-semibold text-foreground">
@@ -187,7 +187,7 @@ const AboutUs = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
-              <img src={humanTechIcon} alt="Human-centered technology" className="w-10 h-10 opacity-80" style={{ filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)' }} />
+              <img src={humanTechIcon} alt="Human-centered technology" className="w-10 h-10 opacity-80" />
             </div>
             
             <blockquote className="text-2xl md:text-3xl lg:text-4xl font-sora font-medium text-foreground leading-relaxed">
