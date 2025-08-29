@@ -6,7 +6,7 @@ const AboutUs = () => {
     <div className="min-h-screen bg-background">
       {/* SEO Meta Tags */}
       <head>
-        <title>About NAMESPACE - Space for Humans in Tech | Our Story & Mission</title>
+        <title>About NAMESPACE - Space for Humans and Organizations in Tech | Our Story & Mission</title>
         <meta name="description" content="Learn about NAMESPACE's mission to build a global tech ecosystem where humans and organizations thrive together. From student community to global movement." />
         <meta name="keywords" content="NAMESPACE about us, tech ecosystem, human-centric technology, HACKHAZARDS, tech community, innovation, collaboration" />
         <link rel="canonical" href="https://namespace.world/about-us" />
@@ -133,7 +133,7 @@ const AboutUs = () => {
                       Student-Led Community
                     </h3>
                     <p className="text-muted-foreground font-inter">
-                      NAMESPACE began as a student-led community (NAMESPACE BPIT), fostering collaboration and learning among tech enthusiasts.
+                      NAMESPACE began as a student-led community from a single college (NAMESPACE BPIT), fostering collaboration and learning among tech enthusiasts.
                     </p>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ const AboutUs = () => {
                       Flagship Events
                     </h3>
                     <p className="text-muted-foreground font-inter">
-                      We grew through flagship events like HACKHAZARDS, creating platforms for innovation and bringing together brilliant minds in tech.
+                      We grew through flagship events like HACKHAZARDS, TechXcelerate, OpenCode, Algorena etc. creating platforms for innovation and bringing together brilliant minds in tech.
                     </p>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ const AboutUs = () => {
                       Global Movement
                     </h3>
                     <p className="text-muted-foreground font-inter">
-                      In 2025, we incorporated as Namespace Ecosystem India Pvt. Ltd. — born from students, built for the world. A global movement connecting humans and organizations in tech.
+                      In 2025, we incorporated as a company, Namespace Ecosystem — born from students, built for the world. A global movement connecting humans and organizations in tech.
                     </p>
                   </div>
                 </div>
