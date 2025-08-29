@@ -1,10 +1,112 @@
 import { Rocket, Users, Target, Clock, Sparkles } from "lucide-react";
 import SEOLazyImage from "@/components/SEOLazyImage";
-import missionIcon from "@/assets/mission-icon.svg";
-import studentCommunityIcon from "@/assets/student-community-icon.svg";
-import eventsIcon from "@/assets/events-icon.svg";
-import globalMovementIcon from "@/assets/global-movement-icon.svg";
-import humanTechIcon from "@/assets/human-tech-icon.svg";
+
+// Custom SVG icons as components
+const MissionIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="25" cy="30" r="4" />
+    <circle cx="75" cy="30" r="4" />
+    <circle cx="50" cy="60" r="4" />
+    <circle cx="20" cy="70" r="4" />
+    <circle cx="80" cy="70" r="4" />
+    <path d="M25 30 L50 60" />
+    <path d="M75 30 L50 60" />
+    <path d="M50 60 L20 70" />
+    <path d="M50 60 L80 70" />
+    <path d="M25 30 L20 70" />
+    <path d="M75 30 L80 70" />
+    <rect x="35" y="15" width="8" height="12" />
+    <rect x="57" y="15" width="8" height="12" />
+    <path d="M35 27 L43 27" />
+    <path d="M57 27 L65 27" />
+    <circle cx="15" cy="45" r="1" />
+    <circle cx="85" cy="45" r="1" />
+    <circle cx="50" cy="20" r="1" />
+  </svg>
+);
+
+const StudentCommunityIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="35" cy="35" r="8" />
+    <path d="M20 50 L35 45 L50 50" />
+    <path d="M35 45 L35 52" />
+    <circle cx="65" cy="35" r="8" />
+    <path d="M50 50 L65 45 L80 50" />
+    <path d="M65 45 L65 52" />
+    <rect x="25" y="65" width="6" height="8" />
+    <rect x="32" y="63" width="6" height="8" />
+    <rect x="39" y="65" width="6" height="8" />
+    <path d="M55 65 Q65 60 75 65" />
+    <path d="M55 70 Q65 65 75 70" />
+    <path d="M55 75 Q65 70 75 75" />
+    <path d="M43 40 L57 40" strokeDasharray="2,2" />
+  </svg>
+);
+
+const EventsIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="30" y="50" width="40" height="20" />
+    <rect x="35" y="45" width="30" height="5" />
+    <circle cx="50" cy="35" r="4" />
+    <path d="M50 39 L50 45" />
+    <path d="M46 42 L54 42" />
+    <circle cx="20" cy="75" r="3" />
+    <circle cx="30" cy="78" r="3" />
+    <circle cx="40" cy="75" r="3" />
+    <circle cx="60" cy="75" r="3" />
+    <circle cx="70" cy="78" r="3" />
+    <circle cx="80" cy="75" r="3" />
+    <rect x="15" y="20" width="20" height="15" />
+    <path d="M20 25 L30 25" />
+    <path d="M20 28 L28 28" />
+    <path d="M20 31 L25 31" />
+    <rect x="65" y="20" width="20" height="15" />
+    <path d="M70 25 L75 30 L80 25" />
+    <circle cx="75" cy="30" r="2" />
+  </svg>
+);
+
+const GlobalMovementIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="50" cy="50" r="35" />
+    <path d="M25 35 Q30 30 40 35 Q45 40 35 45 Q30 40 25 35" />
+    <path d="M60 30 Q70 25 75 35 Q70 45 60 40 Q55 35 60 30" />
+    <path d="M40 60 Q50 55 60 65 Q55 75 45 70 Q40 65 40 60" />
+    <circle cx="25" cy="25" r="2" />
+    <circle cx="75" cy="25" r="2" />
+    <circle cx="85" cy="50" r="2" />
+    <circle cx="75" cy="75" r="2" />
+    <circle cx="25" cy="75" r="2" />
+    <circle cx="15" cy="50" r="2" />
+    <path d="M25 25 Q37.5 37.5 50 50" strokeDasharray="1,2" />
+    <path d="M75 25 Q62.5 37.5 50 50" strokeDasharray="1,2" />
+    <path d="M85 50 Q67.5 50 50 50" strokeDasharray="1,2" />
+    <path d="M75 75 Q62.5 62.5 50 50" strokeDasharray="1,2" />
+    <path d="M25 75 Q37.5 62.5 50 50" strokeDasharray="1,2" />
+    <path d="M15 50 Q32.5 50 50 50" strokeDasharray="1,2" />
+  </svg>
+);
+
+const HumanTechIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M50 75 C40 65, 20 45, 20 30 C20 20, 30 15, 40 20 C45 25, 50 30, 50 30 C50 30, 55 25, 60 20 C70 15, 80 20, 80 30 C80 45, 60 65, 50 75 Z" />
+    <circle cx="40" cy="35" r="2" />
+    <circle cx="60" cy="35" r="2" />
+    <circle cx="50" cy="50" r="2" />
+    <circle cx="35" cy="50" r="2" />
+    <circle cx="65" cy="50" r="2" />
+    <path d="M40 35 L50 50" />
+    <path d="M60 35 L50 50" />
+    <path d="M35 50 L50 50" />
+    <path d="M65 50 L50 50" />
+    <path d="M40 35 L35 50" />
+    <path d="M60 35 L65 50" />
+    <rect x="45" y="40" width="4" height="2" />
+    <rect x="51" y="40" width="4" height="2" />
+    <path d="M42 45 L48 45" />
+    <path d="M52 45 L58 45" />
+  </svg>
+);
 
 const AboutUs = () => {
   return (
@@ -87,7 +189,9 @@ const AboutUs = () => {
               <div className="flex justify-center lg:justify-start">
                 <div className="relative">
                   <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full flex items-center justify-center">
-                    <img src={missionIcon} alt="Mission illustration" className="w-32 h-32 opacity-80" />
+                    <div className="w-32 h-32 text-primary">
+                      <MissionIcon />
+                    </div>
                   </div>
                   {/* Floating elements */}
                   <div className="absolute top-12 right-12 w-4 h-4 bg-primary/40 rounded-full animate-ping" />
@@ -131,7 +235,9 @@ const AboutUs = () => {
               <div className="relative">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <img src={studentCommunityIcon} alt="Student community" className="w-8 h-8 opacity-80" />
+                    <div className="w-8 h-8 text-primary">
+                      <StudentCommunityIcon />
+                    </div>
                   </div>
                   <div className="flex-1 space-y-4">
                     <h3 className="text-xl md:text-2xl font-sora font-semibold text-foreground">
@@ -148,7 +254,9 @@ const AboutUs = () => {
               <div className="relative">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <img src={eventsIcon} alt="Flagship events" className="w-8 h-8 opacity-80" />
+                    <div className="w-8 h-8 text-primary">
+                      <EventsIcon />
+                    </div>
                   </div>
                   <div className="flex-1 space-y-4">
                     <h3 className="text-xl md:text-2xl font-sora font-semibold text-foreground">
@@ -165,7 +273,9 @@ const AboutUs = () => {
               <div className="relative">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <img src={globalMovementIcon} alt="Global movement" className="w-8 h-8 opacity-80" />
+                    <div className="w-8 h-8 text-primary">
+                      <GlobalMovementIcon />
+                    </div>
                   </div>
                   <div className="flex-1 space-y-4">
                     <h3 className="text-xl md:text-2xl font-sora font-semibold text-foreground">
@@ -187,7 +297,9 @@ const AboutUs = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
-              <img src={humanTechIcon} alt="Human-centered technology" className="w-10 h-10 opacity-80" />
+              <div className="w-10 h-10 text-primary">
+                <HumanTechIcon />
+              </div>
             </div>
             
             <blockquote className="text-2xl md:text-3xl lg:text-4xl font-sora font-medium text-foreground leading-relaxed">
