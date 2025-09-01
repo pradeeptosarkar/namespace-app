@@ -9,24 +9,29 @@ const PartnersSection = () => {
 
   const partnershipOpportunities = [
     {
-      icon: Building2,
-      title: "Technology Partners",
-      description: "Collaborate on cutting-edge projects and provide technology solutions to our community."
+      icon: Target,
+      title: "Custom Hackathons & Activations",
+      description: "Launch custom hackathons, business development activities and developer community activations"
     },
     {
       icon: Handshake,
-      title: "Ecosystem Partners",
-      description: "Join our ecosystem to provide tools, platforms, and resources to developers and startups."
+      title: "Flagship Event Sponsorship",
+      description: "Sponsor flagship events of NAMESPACE"
     },
     {
-      icon: Target,
-      title: "Event Sponsors",
-      description: "Support our hackathons, workshops, and community events to reach talented developers."
+      icon: Building2,
+      title: "Educational Institution Programs",
+      description: "For educational institutions - launch new age skill-based learning programs"
     },
     {
       icon: Users,
-      title: "Hiring Partners",
-      description: "Access our talent pool and connect with skilled professionals for your organization."
+      title: "Hiring & Recruitment",
+      description: "For companies - hire better with us with end to end support"
+    },
+    {
+      icon: Users,
+      title: "Community Partnerships",
+      description: "For communities - Partner with us to create bigger impact"
     }
   ];
 
@@ -196,7 +201,7 @@ const PartnersSection = () => {
                   Partner with us
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
+              <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-sora font-bold text-center mb-2">
                     Partnership Opportunities
@@ -206,12 +211,13 @@ const PartnersSection = () => {
                   </DialogDescription>
                 </DialogHeader>
                 
-                <div className="space-y-4 mt-6">
+                {/* Mobile: Single column, Desktop: Two columns */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                   {partnershipOpportunities.map((opportunity, index) => (
-                    <div key={index} className="flex items-start space-x-3 p-3 rounded-lg border border-border hover:border-namespace-purple/50 transition-colors">
+                    <div key={index} className="flex items-start space-x-3 p-4 rounded-lg border border-border hover:border-namespace-purple/50 transition-colors">
                       <opportunity.icon className="w-6 h-6 text-namespace-purple mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-sm mb-1">{opportunity.title}</h4>
+                        <h4 className="font-semibold text-sm mb-2">{opportunity.title}</h4>
                         <p className="text-xs text-muted-foreground leading-relaxed">{opportunity.description}</p>
                       </div>
                     </div>
