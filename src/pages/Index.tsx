@@ -11,7 +11,7 @@ const EcosystemFlywheelSection = lazy(() => import("@/components/sections/Ecosys
 const ImpactSection = lazy(() => import("@/components/sections/ImpactSection"));
 const HackHazardsSection = lazy(() => import("@/components/sections/HackHazardsSection"));
 const ProgramsSection = lazy(() => import("@/components/sections/ProgramsSection"));
-const TestimonialsSection = lazy(() => import("@/components/sections/TestimonialsSection"));
+const PartnersSection = lazy(() => import("@/components/sections/PartnersSection"));
 const ContactSection = lazy(() => import("@/components/sections/ContactSection"));
 
 const Index = () => {
@@ -159,7 +159,7 @@ const Index = () => {
             <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
           </div>
         }>
-          <TestimonialsSection />
+          <PartnersSection />
         </Suspense>
         <Suspense fallback={
           <div className="scroll-section min-h-screen flex items-center justify-center">
