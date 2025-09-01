@@ -143,14 +143,14 @@ const PartnersSection = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto">
-              Organizations that trust us to build the future of technology together.
+              Organizations that have trusted us to build the future of technology together.
             </p>
           </div>
           
           {/* Partner Logos Section */}
           <div className="text-center glassmorphism border border-namespace-white/10 rounded-2xl p-8 glass-glow mb-8">
             <h3 className="text-3xl lg:text-4xl font-sora font-semibold mb-6 text-muted-foreground shimmer-effect">
-              Trusted by Industry Leaders
+              Partners we are proud to have worked with
             </h3>
             
             {/* Enhanced scrolling logos - Larger, colored, and manually scrollable */}
