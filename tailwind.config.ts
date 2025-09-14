@@ -54,11 +54,24 @@ export default {
 				namespace: {
 					black: 'hsl(var(--namespace-black))',
 					white: 'hsl(var(--namespace-white))',
-					purple: 'hsl(var(--namespace-purple))',
-					'purple-light': 'hsl(var(--namespace-purple-light))',
-					'purple-glow': 'hsl(var(--namespace-purple-glow))',
-					blue: 'hsl(var(--namespace-blue))',
-					pink: 'hsl(var(--namespace-pink))'
+					purple: 'hsl(var(--hackhazards-green-primary))',
+					'purple-light': 'hsl(var(--hackhazards-green-light))',
+					'purple-glow': 'hsl(var(--hackhazards-green-glow))',
+					blue: 'hsl(var(--hackhazards-green-bright))',
+					pink: 'hsl(var(--hackhazards-green-dark))'
+				},
+				hackhazards: {
+					'dark-bg': 'hsl(var(--hackhazards-dark-bg))',
+					'darker-bg': 'hsl(var(--hackhazards-darker-bg))',
+					'light-text': 'hsl(var(--hackhazards-light-text))',
+					'muted-text': 'hsl(var(--hackhazards-muted-text))',
+					'green-primary': 'hsl(var(--hackhazards-green-primary))',
+					'green-bright': 'hsl(var(--hackhazards-green-bright))',
+					'green-dark': 'hsl(var(--hackhazards-green-dark))',
+					'green-light': 'hsl(var(--hackhazards-green-light))',
+					'green-glow': 'hsl(var(--hackhazards-green-glow))',
+					'border': 'hsl(var(--hackhazards-border))',
+					'muted': 'hsl(var(--hackhazards-muted))'
 				}
 			},
 			backgroundImage: {
