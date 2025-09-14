@@ -1,24 +1,25 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import hh26Logo from '@/assets/hh26-logo-green.png';
-import { CTAButton } from './CTAButton';
-import { RegistrationTimer } from './RegistrationTimer';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import hh26Logo from "@/assets/hh26-logo-green.png";
+import namespaceVerticalWhiteLogo from "@/assets/vertical-white.png";
+import { CTAButton } from "./CTAButton";
+import { RegistrationTimer } from "./RegistrationTimer";
 
 const navItems = [
-  { label: 'Hero', href: '#hero' },
-  { label: 'Vision', href: '#vision' },
-  { label: 'Past Stats', href: '#past-stats' },
-  { label: 'Pillars', href: '#pillars' },
-  { label: 'Themes', href: '#themes' },
-  { label: 'Opportunities', href: '#opportunities' },
-  { label: 'Sponsors', href: '#sponsors' },
-  { label: 'FAQs', href: '#faqs' },
+  { label: "Hero", href: "#hero" },
+  { label: "Vision", href: "#vision" },
+  { label: "Past Stats", href: "#past-stats" },
+  { label: "Pillars", href: "#pillars" },
+  { label: "Themes", href: "#themes" },
+  { label: "Opportunities", href: "#opportunities" },
+  { label: "Sponsors", href: "#sponsors" },
+  { label: "FAQs", href: "#faqs" },
 ];
 
 export const HackHazardsNavbar = () => {
   const [isSecondaryOpen, setIsSecondaryOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,7 +43,7 @@ export const HackHazardsNavbar = () => {
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({ behavior: "smooth" });
     setIsSecondaryOpen(false);
   };
 
@@ -52,16 +53,21 @@ export const HackHazardsNavbar = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src={hh26Logo} 
-              alt="HACKHAZARDS '26 Logo" 
-              className="h-12 w-auto"
+          <div className="flex gap-3 items-center">
+            <img
+              src={hh26Logo}
+              alt="HACKHAZARDS '26 Logo"
+              className="h-32 w-auto"
+            />
+            <img
+              src={namespaceVerticalWhiteLogo}
+              alt="Namespace Logo"
+              className="h-20 w-auto"
             />
           </div>
 
           {/* Timer - Desktop Only */}
-          <div className="hidden md:flex items-center flex-1 justify-center">
+          <div className="hidden md:flex flex-1 justify-center">
             <RegistrationTimer />
           </div>
 
@@ -70,9 +76,9 @@ export const HackHazardsNavbar = () => {
             <CTAButton variant="primary" size="default">
               Applications Opening Soon
             </CTAButton>
-            <CTAButton 
-              variant="secondary" 
-              size="default" 
+            <CTAButton
+              variant="secondary"
+              size="default"
               href="mailto:contact@namespacecomm.in"
             >
               Partner with Us
@@ -83,9 +89,9 @@ export const HackHazardsNavbar = () => {
               className="p-2 hover:bg-muted rounded-md transition-colors"
             >
               {isSecondaryOpen ? (
-                <X className="h-5 w-5" />
+                <X className="h-10 w-10 text-gray-300" />
               ) : (
-                <Menu className="h-5 w-5" />
+                <Menu className="h-10 w-10 text-gray-300" />
               )}
             </button>
           </div>
@@ -97,9 +103,9 @@ export const HackHazardsNavbar = () => {
             aria-label="Toggle navigation menu"
           >
             {isSecondaryOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-10 w-10 text-gray-300" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-10 w-10 text-gray-300" />
             )}
           </button>
         </nav>
@@ -134,15 +140,15 @@ export const HackHazardsNavbar = () => {
 
             {/* Mobile CTA Buttons */}
             <div className="md:hidden flex flex-col gap-3">
-              <CTAButton 
-                variant="primary" 
+              <CTAButton
+                variant="primary"
                 size="default"
                 className="w-full justify-center"
               >
                 Applications Opening Soon
               </CTAButton>
-              <CTAButton 
-                variant="secondary" 
+              <CTAButton
+                variant="secondary"
                 size="default"
                 href="mailto:contact@namespacecomm.in"
                 className="w-full justify-center"
