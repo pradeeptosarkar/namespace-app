@@ -52,6 +52,7 @@
 
   /* HACKHAZARDS Page Specific Dark Theme */
   .hackhazards-theme {
+    /* HACKHAZARDS Colors */
     --hackhazards-dark-bg: 220 13% 9%;
     --hackhazards-darker-bg: 220 13% 6%;
     --hackhazards-light-text: 0 0% 98%;
@@ -67,6 +68,8 @@
     /* Override semantic tokens for HACKHAZARDS */
     --background: var(--hackhazards-dark-bg);
     --foreground: var(--hackhazards-light-text);
+    --background-inverse: var(--hackhazards-light-text);
+    --foreground-inverse: var(--hackhazards-dark-bg);
     --primary: var(--hackhazards-green-primary);
     --primary-foreground: var(--hackhazards-dark-bg);
     --primary-hover: var(--hackhazards-green-dark);
@@ -75,6 +78,13 @@
     --border: var(--hackhazards-border);
     --input: var(--hackhazards-muted);
     --ring: var(--hackhazards-green-primary);
+    
+    /* Override namespace colors for HACKHAZARDS compatibility */
+    --namespace-purple: var(--hackhazards-green-primary);
+    --namespace-purple-light: var(--hackhazards-green-light);
+    --namespace-purple-glow: var(--hackhazards-green-glow);
+    --namespace-blue: var(--hackhazards-green-bright);
+    --namespace-pink: var(--hackhazards-green-dark);
     
     /* HACKHAZARDS Gradients */
     --gradient-orbital: linear-gradient(135deg, hsl(var(--hackhazards-green-primary) / 0.1), hsl(var(--hackhazards-green-light) / 0.2));
