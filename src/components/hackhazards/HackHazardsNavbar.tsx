@@ -67,11 +67,15 @@ export const HackHazardsNavbar = () => {
 
           {/* Desktop: CTA Buttons + Hamburger */}
           <div className="hidden md:flex items-center gap-4">
-            <CTAButton variant="secondary" size="default">
-              Register Interest
-            </CTAButton>
             <CTAButton variant="primary" size="default">
-              Join Community
+              Applications Opening Soon
+            </CTAButton>
+            <CTAButton 
+              variant="secondary" 
+              size="default" 
+              href="mailto:contact@namespacecomm.in"
+            >
+              Partner with Us
             </CTAButton>
             <button
               onClick={() => setIsSecondaryOpen(!isSecondaryOpen)}
@@ -104,20 +108,20 @@ export const HackHazardsNavbar = () => {
       {/* Secondary Collapsible Navbar */}
       {isSecondaryOpen && (
         <div className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-b border-border">
-          <div className="container mx-auto px-4 py-4">
+          <div className="container mx-auto px-4 py-4 md:py-2">
             {/* Mobile Timer */}
             <div className="md:hidden mb-4 flex justify-center">
               <RegistrationTimer />
             </div>
 
             {/* Navigation Items */}
-            <div className="grid grid-cols-2 md:flex md:justify-center gap-2 mb-4">
+            <div className="grid grid-cols-2 md:flex md:justify-center gap-2 md:gap-1 mb-4 md:mb-2">
               {navItems.map(({ label, href }) => (
                 <button
                   key={href}
                   onClick={() => scrollToSection(href)}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium rounded-md transition-colors text-center",
+                    "px-4 py-2 md:px-3 md:py-1 text-sm font-medium rounded-md transition-colors text-center",
                     activeSection === href.slice(1)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -131,18 +135,19 @@ export const HackHazardsNavbar = () => {
             {/* Mobile CTA Buttons */}
             <div className="md:hidden flex flex-col gap-3">
               <CTAButton 
-                variant="secondary" 
-                size="default"
-                className="w-full justify-center"
-              >
-                Register Interest
-              </CTAButton>
-              <CTAButton 
                 variant="primary" 
                 size="default"
                 className="w-full justify-center"
               >
-                Join Community
+                Applications Opening Soon
+              </CTAButton>
+              <CTAButton 
+                variant="secondary" 
+                size="default"
+                href="mailto:contact@namespacecomm.in"
+                className="w-full justify-center"
+              >
+                Partner with Us
               </CTAButton>
             </div>
           </div>
