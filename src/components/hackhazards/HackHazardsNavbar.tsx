@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import hh26Logo from '@/assets/hh26-logo-green.png';
 
 const navItems = [
   { label: 'Hero', href: '#hero' },
@@ -47,8 +48,12 @@ export const HackHazardsNavbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="font-sora font-bold text-xl text-foreground">
-          HACKHAZARDS '26
+        <div className="flex items-center">
+          <img 
+            src={hh26Logo} 
+            alt="HACKHAZARDS '26 Logo" 
+            className="h-8 w-auto"
+          />
         </div>
 
         {/* Desktop Navigation */}

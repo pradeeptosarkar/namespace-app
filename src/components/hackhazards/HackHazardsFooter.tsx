@@ -1,4 +1,5 @@
 import { CTAButton } from './CTAButton';
+import hh26Logo from '@/assets/hh26-logo-green.png';
 
 export const HackHazardsFooter = () => {
   return (
@@ -32,8 +33,13 @@ export const HackHazardsFooter = () => {
 
         {/* Footer Links */}
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-          <div className="mb-4 md:mb-0">
-            <p className="text-muted-foreground">
+          <div className="mb-4 md:mb-0 flex flex-col items-center md:items-start">
+            <img 
+              src={hh26Logo} 
+              alt="HACKHAZARDS '26 Logo" 
+              className="h-12 w-auto mb-2"
+            />
+            <p className="text-muted-foreground text-sm">
               © 2026 HACKHAZARDS. Organized by{' '}
               <a 
                 href="https://namespacecomm.in" 
