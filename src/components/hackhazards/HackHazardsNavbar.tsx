@@ -14,6 +14,7 @@ const navItems = [
   { label: "Themes", href: "#themes" },
   { label: "Opportunities", href: "#opportunities" },
   { label: "Sponsors", href: "#sponsors" },
+  { label: "People", href: "#past-mentors" },
   { label: "FAQs", href: "#faqs" },
 ];
 
