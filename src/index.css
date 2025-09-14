@@ -6,6 +6,21 @@
 
 /* NAMESPACE Design System - Professional, scalable, human-first tech */
 
+/* Hide scrollbars while maintaining scroll functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
 @layer base {
   :root {
     /* Core Brand Colors */
