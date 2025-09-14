@@ -56,7 +56,9 @@ export default {
 					white: 'hsl(var(--namespace-white))',
 					purple: 'hsl(var(--namespace-purple))',
 					'purple-light': 'hsl(var(--namespace-purple-light))',
-					'purple-glow': 'hsl(var(--namespace-purple-glow))'
+					'purple-glow': 'hsl(var(--namespace-purple-glow))',
+					blue: 'hsl(var(--namespace-blue))',
+					pink: 'hsl(var(--namespace-pink))'
 				}
 			},
 			backgroundImage: {

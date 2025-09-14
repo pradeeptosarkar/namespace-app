@@ -11,9 +11,11 @@
     /* Core Brand Colors */
     --namespace-black: 0 0% 2%;
     --namespace-white: 0 0% 100%;
-    --namespace-purple: 270 50% 30%;
+    --namespace-purple: 270 60% 40%;
     --namespace-purple-light: 270 100% 95%;
-    --namespace-purple-glow: 270 50% 50%;
+    --namespace-purple-glow: 270 70% 60%;
+    --namespace-blue: 240 80% 50%;
+    --namespace-pink: 320 65% 55%;
     
     /* Semantic tokens */
     --background: var(--namespace-white);
