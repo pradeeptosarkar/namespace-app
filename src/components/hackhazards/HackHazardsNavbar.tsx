@@ -50,13 +50,13 @@ export const HackHazardsNavbar = () => {
     <>
       {/* Main Navbar - Always Visible */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <nav className="container mx-auto px-4 h-20 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src={hh26Logo} 
               alt="HACKHAZARDS '26 Logo" 
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
           </div>
 
@@ -107,7 +107,7 @@ export const HackHazardsNavbar = () => {
 
       {/* Secondary Collapsible Navbar */}
       {isSecondaryOpen && (
-        <div className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-b border-border">
+        <div className="fixed top-20 left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-b border-border">
           <div className="container mx-auto px-4 py-4 md:py-2">
             {/* Mobile Timer */}
             <div className="md:hidden mb-4 flex justify-center">

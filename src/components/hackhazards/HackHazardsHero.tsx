@@ -10,7 +10,7 @@ export const HackHazardsHero = () => {
         <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-namespace-pink/20 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{ animationDelay: '-4s' }}></div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10 pt-16">
+      <div className="container mx-auto px-4 text-center relative z-10 pt-20">
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-sora font-bold text-foreground mb-6 tracking-tight">
           HACK<span className="text-transparent bg-clip-text bg-gradient-to-r from-namespace-purple to-namespace-blue">HAZARDS</span> '26
