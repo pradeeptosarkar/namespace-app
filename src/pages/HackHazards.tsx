@@ -50,7 +50,7 @@ const HackHazards = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="hackhazards-theme min-h-screen bg-background">
       <HackHazardsNavbar />
       
       <main>

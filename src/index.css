@@ -17,7 +17,41 @@
     --namespace-blue: 240 80% 50%;
     --namespace-pink: 320 65% 55%;
     
-    /* HACKHAZARDS Dark Theme with Green Accents */
+    /* Semantic tokens */
+    --background: var(--namespace-white);
+    --foreground: var(--namespace-black);
+    --background-inverse: var(--namespace-black);
+    --foreground-inverse: var(--namespace-white);
+    
+    /* Interactive elements */
+    --primary: var(--namespace-purple);
+    --primary-foreground: var(--namespace-white);
+    --primary-hover: 270 60% 25%;
+    
+    /* Subtle accents */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: var(--namespace-purple);
+    
+    /* Gradients */
+    --gradient-orbital: linear-gradient(135deg, hsl(270 50% 30% / 0.1), hsl(270 100% 95% / 0.3));
+    --gradient-purple: linear-gradient(135deg, hsl(var(--namespace-purple)), hsl(270 60% 40%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 20px 40px -10px hsl(var(--namespace-purple) / 0.1);
+    --shadow-orbital: 0 0 60px hsl(var(--namespace-purple) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-orbital: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    --radius: 12px;
+  }
+
+  /* HACKHAZARDS Page Specific Dark Theme */
+  .hackhazards-theme {
     --hackhazards-dark-bg: 220 13% 9%;
     --hackhazards-darker-bg: 220 13% 6%;
     --hackhazards-light-text: 0 0% 98%;
@@ -30,37 +64,25 @@
     --hackhazards-border: 220 13% 18%;
     --hackhazards-muted: 220 13% 15%;
     
-    /* Semantic tokens for HACKHAZARDS */
+    /* Override semantic tokens for HACKHAZARDS */
     --background: var(--hackhazards-dark-bg);
     --foreground: var(--hackhazards-light-text);
-    --background-inverse: var(--hackhazards-light-text);
-    --foreground-inverse: var(--hackhazards-dark-bg);
-    
-    /* Interactive elements */
     --primary: var(--hackhazards-green-primary);
     --primary-foreground: var(--hackhazards-dark-bg);
     --primary-hover: var(--hackhazards-green-dark);
-    
-    /* Subtle accents */
     --muted: var(--hackhazards-muted);
     --muted-foreground: var(--hackhazards-muted-text);
     --border: var(--hackhazards-border);
     --input: var(--hackhazards-muted);
     --ring: var(--hackhazards-green-primary);
     
-    /* Gradients */
+    /* HACKHAZARDS Gradients */
     --gradient-orbital: linear-gradient(135deg, hsl(var(--hackhazards-green-primary) / 0.1), hsl(var(--hackhazards-green-light) / 0.2));
     --gradient-purple: linear-gradient(135deg, hsl(var(--hackhazards-green-primary)), hsl(var(--hackhazards-green-bright)));
     
-    /* Shadows */
+    /* HACKHAZARDS Shadows */
     --shadow-elegant: 0 20px 40px -10px hsl(var(--hackhazards-green-primary) / 0.15);
     --shadow-orbital: 0 0 60px hsl(var(--hackhazards-green-glow) / 0.25);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-orbital: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-
-    --radius: 12px;
   }
 }
 
