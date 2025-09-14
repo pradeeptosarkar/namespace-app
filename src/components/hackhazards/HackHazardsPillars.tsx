@@ -3,19 +3,19 @@ import { Code, DollarSign, Users } from 'lucide-react';
 const pillars = [
   {
     icon: Code,
-    title: 'Hack',
+    title: 'Hacking',
     description: 'Global digital hackathon bringing together the brightest minds to solve real-world challenges',
     gradient: 'from-namespace-purple to-namespace-blue'
   },
   {
     icon: DollarSign,
-    title: 'Fund',
+    title: 'Funding',
     description: 'Direct access to VCs, incubators, and investors ready to fund your next big idea',
     gradient: 'from-namespace-blue to-namespace-pink'
   },
   {
     icon: Users,
-    title: 'Hire',
+    title: 'Hiring',
     description: 'Top companies actively scouting and recruiting talent from our participant pool',
     gradient: 'from-namespace-pink to-namespace-purple'
   }
