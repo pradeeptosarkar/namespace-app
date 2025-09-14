@@ -12,13 +12,8 @@ export const HackHazardsHero = () => {
 
       <div className="container mx-auto px-4 text-center relative z-10 pt-16">
         {/* Main Title */}
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-sora font-bold text-foreground mb-6 tracking-tight">
-          HACK
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-namespace-purple to-namespace-blue">
-            HAZARDS
-          </span>
-          <br />
-          <span className="text-4xl md:text-6xl lg:text-7xl">'26</span>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-sora font-bold text-foreground mb-6 tracking-tight">
+          HACK<span className="text-transparent bg-clip-text bg-gradient-to-r from-namespace-purple to-namespace-blue">HAZARDS</span> '26
         </h1>
 
         {/* Subtitle */}
