@@ -18,7 +18,7 @@ export const HackHazardsHero = () => {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl lg:text-3xl font-inter text-muted-foreground mb-8 max-w-3xl mx-auto">
-          India's Hackathon. Global Scale.
+          India's Lrgest Hackathon, now at a Global Scale.
         </p>
 
         {/* Date */}
