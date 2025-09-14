@@ -1,12 +1,17 @@
 import { CTAButton } from './CTAButton';
 
 const stats = [
-  { number: '2,500+', label: 'Participants' },
-  { number: '450+', label: 'Projects' },
-  { number: '50+', label: 'Countries' },
-  { number: '$100K+', label: 'Prize Pool' },
-  { number: '100+', label: 'Mentors' },
-  { number: '48', label: 'Hours of Hacking' },
+  { number: '17,000+', label: 'Hackers' },
+  { number: '3,000+', label: 'Proposals' },
+  { number: '780+', label: 'Builds' },
+  { number: '25+', label: 'Countries' },
+  { number: '500+', label: 'Indian Cities and Towns' },
+  { number: '1500+', label: 'Institutions' },
+  { number: '200+', label: 'Outreach Partners' },
+  { number: '2mn+', label: 'Social Media Impressions' },
+  { number: '35%', label: 'Women' },
+  { number: '35%', label: 'First-timers' },
+  { number: '25%', label: 'Participants from Rural Areas' },
 ];
 
 export const HackHazardsPastStats = () => {
