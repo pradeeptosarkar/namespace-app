@@ -354,7 +354,7 @@ export const HackHazardsPastMentors = () => {
               rel="noopener noreferrer"
               className="group block"
             >
-              <div className="bg-card rounded-xl p-4 border border-border hover:border-namespace-purple/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-namespace-purple/10 h-44 flex flex-col">
+              <div className="bg-card rounded-xl p-4 border border-border hover:border-namespace-purple/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-namespace-purple/10 h-52 flex flex-col">
                 <div className="aspect-square mb-3 overflow-hidden rounded-lg bg-muted flex-shrink-0">
                   <img 
                     src={mentor.photo}
