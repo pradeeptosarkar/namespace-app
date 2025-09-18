@@ -365,11 +365,11 @@ export const HackHazardsPastMentors = () => {
                     }}
                   />
                 </div>
-                <div className="text-center flex-1 flex flex-col">
-                  <h3 className="font-sora font-semibold text-foreground text-sm mb-1 line-clamp-2 flex-1">
+                <div className="text-center flex-1 flex flex-col justify-between">
+                  <h3 className="font-sora font-semibold text-foreground text-sm mb-1 line-clamp-2">
                     {mentor.name}
                   </h3>
-                  <div className="flex items-center justify-center text-namespace-purple group-hover:text-namespace-blue transition-colors mt-auto">
+                  <div className="flex items-center justify-center text-namespace-purple group-hover:text-namespace-blue transition-colors">
                     <ExternalLink size={12} />
                   </div>
                 </div>
