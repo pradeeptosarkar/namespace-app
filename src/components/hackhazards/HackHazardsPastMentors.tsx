@@ -354,8 +354,8 @@ export const HackHazardsPastMentors = () => {
               rel="noopener noreferrer"
               className="group block"
             >
-              <div className="bg-card rounded-xl p-4 border border-border hover:border-namespace-purple/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-namespace-purple/10">
-                <div className="aspect-square mb-3 overflow-hidden rounded-lg bg-muted">
+              <div className="bg-card rounded-xl p-4 border border-border hover:border-namespace-purple/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-namespace-purple/10 h-44 flex flex-col">
+                <div className="aspect-square mb-3 overflow-hidden rounded-lg bg-muted flex-shrink-0">
                   <img 
                     src={mentor.photo}
                     alt={`${mentor.name} - Judge, Speaker & Mentor`}
@@ -365,7 +365,7 @@ export const HackHazardsPastMentors = () => {
                     }}
                   />
                 </div>
-                <div className="text-center">
+                <div className="text-center flex-1 flex flex-col justify-between">
                   <h3 className="font-sora font-semibold text-foreground text-sm mb-1 line-clamp-2">
                     {mentor.name}
                   </h3>
