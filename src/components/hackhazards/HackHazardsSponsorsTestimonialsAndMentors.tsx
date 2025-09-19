@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 const sponsors = [
   { name: "Groq", logo: "/lovable-uploads/f400820a-6bf7-414b-83f8-3fe46fe8ae7b.png" },
@@ -398,7 +399,14 @@ export const HackHazardsSponsorsTestimonialsAndMentors = () => {
 
             {/* Mobile Carousel */}
             <div className="md:hidden">
-              <Carousel className="w-full">
+              <Carousel 
+                className="w-full"
+                plugins={[
+                  Autoplay({
+                    delay: 3000,
+                  }),
+                ]}
+              >
                 <CarouselContent className="-ml-2 md:-ml-4">
                   {sponsors.map((sponsor, index) => (
                     <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
@@ -492,7 +500,14 @@ export const HackHazardsSponsorsTestimonialsAndMentors = () => {
 
           {/* Mobile Carousel */}
           <div className="md:hidden">
-            <Carousel className="w-full">
+            <Carousel 
+              className="w-full"
+              plugins={[
+                Autoplay({
+                  delay: 3500,
+                }),
+              ]}
+            >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {mentors.map((mentor, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3">
