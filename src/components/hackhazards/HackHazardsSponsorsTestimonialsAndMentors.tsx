@@ -1,4 +1,5 @@
 import { ExternalLink } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const sponsors = [
   { name: "Groq", logo: "/lovable-uploads/f400820a-6bf7-414b-83f8-3fe46fe8ae7b.png" },
@@ -395,7 +396,29 @@ export const HackHazardsSponsorsTestimonialsAndMentors = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+            {/* Mobile Carousel */}
+            <div className="md:hidden">
+              <Carousel className="w-full">
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {sponsors.map((sponsor, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2">
+                      <div className="flex items-center justify-center p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 grayscale hover:grayscale-0">
+                        <img 
+                          src={sponsor.logo} 
+                          alt={`${sponsor.name} logo`}
+                          className="max-w-full max-h-10 object-contain"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
+
+            {/* Desktop Grid */}
+            <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
               {sponsors.map((sponsor, index) => (
                 <div 
                   key={index}
@@ -467,8 +490,49 @@ export const HackHazardsSponsorsTestimonialsAndMentors = () => {
             </p>
           </div>
 
-          {/* Mentors Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
+          {/* Mobile Carousel */}
+          <div className="md:hidden">
+            <Carousel className="w-full">
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {mentors.map((mentor, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3">
+                    <a
+                      href={mentor.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block"
+                    >
+                      <div className="bg-card rounded-xl p-4 border border-border hover:border-namespace-purple/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-namespace-purple/10 h-52 flex flex-col">
+                        <div className="aspect-square mb-3 overflow-hidden rounded-lg bg-muted flex-shrink-0">
+                          <img 
+                            src={mentor.photo}
+                            alt={`${mentor.name} - Judge, Speaker & Mentor`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            onError={(e) => {
+                              e.currentTarget.src = 'https://via.placeholder.com/150/9333ea/ffffff?text=' + mentor.name.charAt(0);
+                            }}
+                          />
+                        </div>
+                        <div className="text-center flex-1 flex flex-col justify-between">
+                          <h3 className="font-sora font-semibold text-foreground text-sm mb-1 line-clamp-2">
+                            {mentor.name}
+                          </h3>
+                          <div className="flex items-center justify-center text-namespace-purple group-hover:text-namespace-blue transition-colors">
+                            <ExternalLink size={12} />
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
             {mentors.map((mentor, index) => (
               <a
                 key={index}
