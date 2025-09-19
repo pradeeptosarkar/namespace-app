@@ -1,4 +1,4 @@
-import { CTAButton } from "./CTAButton";
+import { HackHazardsCTAButtons } from "./HackHazardsCTAButtons";
 import hh26Logo from "@/assets/hh26-logo-green.png";
 
 export const HackHazardsFooter = () => {
@@ -14,17 +14,8 @@ export const HackHazardsFooter = () => {
             </span>
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <CTAButton variant="primary" size="lg">
-              Applications Opening Soon
-            </CTAButton>
-            <CTAButton
-              variant="secondary"
-              size="lg"
-              href="mailto:contact@namespacecomm.in"
-            >
-              Partner with Us
-            </CTAButton>
+          <div className="mb-12">
+            <HackHazardsCTAButtons size="lg" />
           </div>
         </div>
 

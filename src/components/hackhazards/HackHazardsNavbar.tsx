@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import hh26Logo from "@/assets/hh26-logo-green.png";
 import namespaceVerticalWhiteLogo from "@/assets/vertical-white.png";
-import { CTAButton } from "./CTAButton";
+import { HackHazardsCTAButtons } from "./HackHazardsCTAButtons";
 import { RegistrationTimer } from "./RegistrationTimer";
 
 const navItems = [
@@ -74,16 +74,7 @@ export const HackHazardsNavbar = () => {
 
           {/* Desktop: CTA Buttons + Hamburger */}
           <div className="hidden md:flex items-center gap-4">
-            <CTAButton variant="primary" size="default">
-              Applications Opening Soon
-            </CTAButton>
-            <CTAButton
-              variant="secondary"
-              size="default"
-              href="mailto:contact@namespacecomm.in"
-            >
-              Partner with Us
-            </CTAButton>
+            <HackHazardsCTAButtons size="default" orientation="horizontal" />
             <button
               onClick={() => setIsSecondaryOpen(!isSecondaryOpen)}
               aria-label="Toggle navigation menu"
@@ -140,22 +131,13 @@ export const HackHazardsNavbar = () => {
             </div>
 
             {/* Mobile CTA Buttons */}
-            <div className="md:hidden flex flex-col gap-3">
-              <CTAButton
-                variant="primary"
-                size="default"
-                className="w-full justify-center"
-              >
-                Applications Opening Soon
-              </CTAButton>
-              <CTAButton
-                variant="secondary"
-                size="default"
-                href="mailto:contact@namespacecomm.in"
-                className="w-full justify-center"
-              >
-                Partner with Us
-              </CTAButton>
+            <div className="md:hidden">
+              <HackHazardsCTAButtons 
+                size="default" 
+                orientation="vertical"
+                className="gap-3"
+                buttonClassName="w-full justify-center"
+              />
             </div>
           </div>
         </div>

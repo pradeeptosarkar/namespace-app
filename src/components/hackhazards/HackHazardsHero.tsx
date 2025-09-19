@@ -1,4 +1,4 @@
-import { CTAButton } from './CTAButton';
+import { HackHazardsCTAButtons } from './HackHazardsCTAButtons';
 
 export const HackHazardsHero = () => {
   return (
@@ -29,18 +29,7 @@ export const HackHazardsHero = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <CTAButton variant="primary" size="lg">
-            Applications Opening Soon
-          </CTAButton>
-          <CTAButton 
-            variant="secondary" 
-            size="lg" 
-            href="mailto:contact@namespacecomm.in"
-          >
-            Partner with Us
-          </CTAButton>
-        </div>
+        <HackHazardsCTAButtons size="lg" />
 
         {/* Scroll Indicator */}
         {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
