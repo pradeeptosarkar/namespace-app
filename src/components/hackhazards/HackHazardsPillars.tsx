@@ -1,4 +1,4 @@
-import { Code, DollarSign, Users } from 'lucide-react';
+import { Code, DollarSign, Users, GraduationCap } from 'lucide-react';
 
 const pillars = [
   {
@@ -18,6 +18,12 @@ const pillars = [
     title: 'Hiring',
     description: 'Top companies actively scouting and recruiting talent from our participant pool',
     gradient: 'from-namespace-pink to-namespace-purple'
+  },
+  {
+    icon: GraduationCap,
+    title: 'Learning',
+    description: 'Comprehensive bootcamps and workshops to upskill participants and enhance their technical expertise',
+    gradient: 'from-namespace-purple to-namespace-pink'
   }
 ];
 
@@ -33,11 +39,11 @@ export const HackHazardsPillars = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Three core pillars that set us apart from every other hackathon.
+            Four core pillars that set us apart from every other hackathon.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {pillars.map((pillar, index) => (
             <div 
               key={index}
