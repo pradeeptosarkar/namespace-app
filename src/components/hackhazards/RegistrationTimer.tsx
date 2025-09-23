@@ -11,7 +11,7 @@ export const RegistrationTimer = () => {
 
   useEffect(() => {
     // Set registration opening date (example: March 1, 2024)
-    const registrationDate = new Date("2024-03-01T00:00:00");
+    const registrationDate = new Date("2025-11-01T00:00:00");
 
     const updateTimer = () => {
       const now = new Date().getTime();

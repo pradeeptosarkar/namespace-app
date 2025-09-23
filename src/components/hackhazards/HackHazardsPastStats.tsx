@@ -4,6 +4,7 @@ const stats = [
   { number: '17,000+', label: 'Hackers' },
   { number: '3,000+', label: 'Proposals' },
   { number: '780+', label: 'Builds' },
+  { number: '$10,000+', label: 'Cash Prize Pool' },
   { number: '25+', label: 'Countries' },
   { number: '500+', label: 'Indian Cities and Towns' },
   { number: '1500+', label: 'Institutions' },
@@ -26,7 +27,7 @@ export const HackHazardsPastStats = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Last year's numbers speak for themselves—and 2026 is going to be even bigger.
+            Last year's numbers speak for themselves - and 2026 is going to be even bigger.
           </p>
         </div>
 
