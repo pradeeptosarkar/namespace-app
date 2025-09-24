@@ -1,6 +1,7 @@
 import { Linkedin, Twitter, Users, Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { PartnerWithUsButton } from "@/components/PartnerWithUsButton";
 
 const Team = () => {
   return (
@@ -247,13 +248,7 @@ const Team = () => {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold transition-all duration-300"
-              >
-                Partner With Us
-              </Button>
+              <PartnerWithUsButton variant="outline" />
             </div>
 
             {/* Decorative Elements */}
