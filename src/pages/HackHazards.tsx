@@ -6,6 +6,7 @@ import { HackHazardsPastStats } from '@/components/hackhazards/HackHazardsPastSt
 import { HackHazardsPillars } from '@/components/hackhazards/HackHazardsPillars';
 import { HackHazardsThemes } from '@/components/hackhazards/HackHazardsThemes';
 import { HackHazardsOpportunities } from '@/components/hackhazards/HackHazardsOpportunities';
+import { HackHazardsPrizes } from '@/components/hackhazards/HackHazardsPrizes';
 import { HackHazardsSponsorsTestimonialsAndMentors } from '@/components/hackhazards/HackHazardsSponsorsTestimonialsAndMentors';
 import { HackHazardsFAQs } from '@/components/hackhazards/HackHazardsFAQs';
 import { HackHazardsFooter } from '@/components/hackhazards/HackHazardsFooter';
@@ -76,6 +77,10 @@ const HackHazards = () => {
         
         <section id="opportunities">
           <HackHazardsOpportunities />
+        </section>
+        
+        <section id="prizes">
+          <HackHazardsPrizes />
         </section>
         
         <section id="sponsors-and-mentors">

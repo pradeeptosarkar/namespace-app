@@ -13,6 +13,7 @@ const navItems = [
   { label: "Pillars", href: "#pillars" },
   { label: "Themes", href: "#themes" },
   { label: "Opportunities", href: "#opportunities" },
+  { label: "Prizes", href: "#prizes" },
   { label: "Sponsors", href: "#sponsors" },
   { label: "People", href: "#past-mentors" },
   { label: "FAQs", href: "#faqs" },
