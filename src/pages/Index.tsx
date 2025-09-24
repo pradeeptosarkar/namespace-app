@@ -23,9 +23,9 @@ const Index = () => {
       if (!scrollContainerRef.current) return;
       
       const container = scrollContainerRef.current;
-      const scrollTop = container.scrollTop;
-      const maxScrollTop = container.scrollHeight - container.clientHeight;
-      const progress = maxScrollTop > 0 ? (scrollTop / maxScrollTop) * 100 : 0;
+      const scrollLeft = container.scrollLeft;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const progress = maxScrollLeft > 0 ? (scrollLeft / maxScrollLeft) * 100 : 0;
       
       setScrollProgress(progress);
     };
@@ -48,14 +48,14 @@ const Index = () => {
       if (!scrollContainerRef.current) return;
       
       const container = scrollContainerRef.current;
-      const sectionHeight = window.innerHeight;
+      const sectionWidth = window.innerWidth;
       
-      if (e.key === "ArrowDown") {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         e.preventDefault();
-        container.scrollBy({ top: sectionHeight, behavior: "smooth" });
-      } else if (e.key === "ArrowUp") {
+        container.scrollBy({ left: sectionWidth, behavior: "smooth" });
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         e.preventDefault();
-        container.scrollBy({ top: -sectionHeight, behavior: "smooth" });
+        container.scrollBy({ left: -sectionWidth, behavior: "smooth" });
       }
     };
 
@@ -63,6 +63,29 @@ const Index = () => {
     return () => window.removeEventListener("keydown", handleKeydown);
   }, []);
 
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      // Only apply on desktop screens (width >= 1024px)
+      if (window.innerWidth < 1024) return;
+      
+      if (!scrollContainerRef.current) return;
+      
+      const container = scrollContainerRef.current;
+      
+      // Prevent default vertical scrolling
+      e.preventDefault();
+      
+      // Convert vertical scroll to horizontal scroll with reduced speed
+      // Reduce scroll sensitivity for touchpad and add smooth animation
+      const scrollAmount = e.deltaY * 0.2; // Reduce speed by 80% total
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    };
+
+    // Add wheel event listener to the document
+    document.addEventListener("wheel", handleWheel, { passive: false });
+    
+    return () => document.removeEventListener("wheel", handleWheel);
+  }, []);
 
   return (
     <>
@@ -79,7 +102,7 @@ const Index = () => {
       
       <div 
         ref={scrollContainerRef}
-        className="vertical-scroll"
+        className="horizontal-scroll"
       >
         <HeroSection />
         <Suspense fallback={

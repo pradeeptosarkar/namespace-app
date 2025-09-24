@@ -125,30 +125,48 @@ html {
     overflow-x: hidden;
   }
   
-  /* Vertical scroll container */
-  .vertical-scroll {
+  /* Horizontal scroll container */
+  .horizontal-scroll {
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
   
-  .vertical-scroll::-webkit-scrollbar {
+  .horizontal-scroll::-webkit-scrollbar {
     display: none;
   }
   
   .scroll-section {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem 0;
+  }
+  
+  /* Mobile responsive - vertical stacking */
+  @media (max-width: 768px) {
+    .horizontal-scroll {
+      flex-direction: column;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+    
+    .scroll-section {
+      min-width: 100%;
+      min-height: 100vh;
+      height: auto;
+      width: 100%;
+      padding: 2rem 0;
+    }
   }
   
   /* Tablet responsive */
