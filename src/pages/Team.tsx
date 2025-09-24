@@ -13,7 +13,7 @@ const TwitterIcon = ({ className }: { className?: string }) => (
 const Team = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 pt-2 pb-1">
+      <div className="container mx-auto px-4 pt-2 pb-0">
         <Link to="/#contact">
           <Button variant="ghost">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -31,7 +31,7 @@ const Team = () => {
       </head>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20 -mt-4">
         {/* Abstract Tech-Inspired Background */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Cosmic elements */}
