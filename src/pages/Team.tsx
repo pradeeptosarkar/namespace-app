@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Users, Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
+import { Linkedin, X, Users, Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PartnerWithUsButton } from "@/components/PartnerWithUsButton";
@@ -138,18 +138,22 @@ const Team = () => {
                 {/* Social Links */}
                 <div className="flex space-x-4 pt-4">
                   <a 
-                    href="#" 
+                    href="https://www.linkedin.com/in/pradeeptosarkar/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-all duration-300 group"
                     aria-label="Pradeepto Sarkar's LinkedIn profile"
                   >
                     <Linkedin className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://x.com/pradeepto_src" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-all duration-300 group"
-                    aria-label="Pradeepto Sarkar's Twitter profile"
+                    aria-label="Pradeepto Sarkar's X (Twitter) profile"
                   >
-                    <Twitter className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    <X className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -201,7 +205,9 @@ const Team = () => {
                 {/* Social Links */}
                 <div className="flex space-x-4 pt-4">
                   <a 
-                    href="#" 
+                    href="https://www.linkedin.com/in/diksha-sharma-1650b1258/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-all duration-300 group"
                     aria-label="Diksha Sharma's LinkedIn profile"
                   >
@@ -210,9 +216,9 @@ const Team = () => {
                   <a 
                     href="#" 
                     className="w-12 h-12 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-all duration-300 group"
-                    aria-label="Diksha Sharma's Twitter profile"
+                    aria-label="Diksha Sharma's X (Twitter) profile"
                   >
-                    <Twitter className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    <X className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                   </a>
                 </div>
               </div>
