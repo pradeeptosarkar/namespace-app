@@ -239,7 +239,7 @@ const Team = () => {
             </p>
 
             {/* Call to Action */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+            <div className="flex justify-center items-center pt-8">
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold group transition-all duration-300"
@@ -247,8 +247,6 @@ const Team = () => {
                 Join Our Team
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              <PartnerWithUsButton variant="outline" />
             </div>
 
             {/* Decorative Elements */}
