@@ -102,11 +102,12 @@ const Team = () => {
                   
                   {/* Profile Image Container */}
                   <div className="relative w-64 h-64 bg-muted rounded-full overflow-hidden border-4 border-primary/20 mx-8 my-8">
-                    {/* Placeholder for professional headshot */}
-                    <div className="w-full h-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                      <Users className="w-24 h-24 text-primary/40" />
-                    </div>
-                    {/* Overlay for future image */}
+                    <img 
+                      src="/team/pradeepto-sarkar.png" 
+                      alt="Pradeepto Sarkar - Founder & CEO of NAMESPACE"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay for styling */}
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent" />
                   </div>
 
