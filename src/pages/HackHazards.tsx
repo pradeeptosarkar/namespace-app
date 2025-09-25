@@ -87,9 +87,9 @@ const HackHazards = () => {
           <HackHazardsSponsorsTestimonialsAndMentors />
         </section>
         
-        <section id="faqs">
+        {/* <section id="faqs">
           <HackHazardsFAQs />
-        </section>
+        </section> */}
       </main>
       
       <footer id="footer">
