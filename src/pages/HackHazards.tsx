@@ -18,7 +18,7 @@ const HackHazards = () => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 
-        'Join HACKHAZARDS 2026 - India\'s premier global hackathon. Build innovative solutions in AI, Web3, and Software Engineering. Win prizes, get funding, and launch your career.'
+        'Join HACKHAZARDS 2026 - World\'s largest community-run hackathon and India\'s premier global hackathon. Build innovative solutions in AI, Web3, and Software Engineering. Win prizes, get funding, and launch your career.'
       );
     }
     
