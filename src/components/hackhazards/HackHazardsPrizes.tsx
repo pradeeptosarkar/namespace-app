@@ -33,8 +33,8 @@ const HackHazardsPrizes = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">Cash Prizes</h3>
               <p className="text-3xl md:text-4xl font-black text-foreground">USD 15,000+</p>
             </div>
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20">
-              <h3 className="text-2xl md:text-3xl font-bold text-accent mb-2">Total Perks & Benefits</h3>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">Total Perks & Benefits</h3>
               <p className="text-3xl md:text-4xl font-black text-foreground">USD 500,000+</p>
             </div>
           </div>
@@ -42,8 +42,8 @@ const HackHazardsPrizes = () => {
 
         {/* Main Prizes Section */}
         <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground">
-            A. Main Prizes
+            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground">
+            Main Prizes
             <span className="block text-lg font-normal text-muted-foreground mt-2">
               All participants are eligible
             </span>
@@ -64,7 +64,7 @@ const HackHazardsPrizes = () => {
                       <IconComponent className={`h-8 w-8 ${index === 0 ? 'text-yellow-500' : index === 1 ? 'text-gray-400' : index === 2 ? 'text-amber-600' : 'text-primary'}`} />
                     </div>
                     <div className="text-lg font-bold text-foreground mb-1">Rank {prize.rank}</div>
-                    <div className="text-xl font-black text-primary">₹{prize.amount}</div>
+                    <div className="text-xl font-black text-primary">₹{prize.amount} Cash</div>
                   </div>
                 );
               })}
@@ -79,7 +79,7 @@ const HackHazardsPrizes = () => {
                 className="p-6 rounded-xl bg-gradient-to-br from-muted/5 to-muted/10 border border-border text-center hover:scale-105 transition-transform duration-300"
               >
                 <div className="text-lg font-bold text-foreground mb-2">Rank {prize.ranks}</div>
-                <div className="text-xl font-black text-primary mb-1">₹{prize.amount}</div>
+                <div className="text-xl font-black text-primary mb-1">₹{prize.amount} Cash</div>
                 <div className="text-sm text-muted-foreground">each ({prize.count})</div>
               </div>
             ))}
@@ -88,11 +88,11 @@ const HackHazardsPrizes = () => {
 
         {/* Track Prizes */}
         <div className="mb-16">
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20 text-center max-w-4xl mx-auto">
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 text-center max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-              B. Track Prizes for Sponsored Tracks
+              Track Prizes for Sponsored Tracks
             </h3>
-            <p className="text-xl font-semibold text-accent mb-2">Over USD 10,000+ in cash prizes</p>
+            <p className="text-xl font-semibold text-primary mb-2">Over USD 10,000+ in cash prizes</p>
             <p className="text-muted-foreground">
               Across multiple tracks (all tracks to be announced closer to the hackathon date)
             </p>
@@ -103,7 +103,7 @@ const HackHazardsPrizes = () => {
         <div className="text-center">
           <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-              C. Total Perks and Benefits
+              Total Perks and Benefits
             </h3>
             <p className="text-xl font-semibold text-primary mb-2">
               Including Vouchers and Credits - USD 500,000+ for all participants
