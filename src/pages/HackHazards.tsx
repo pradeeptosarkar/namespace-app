@@ -83,14 +83,13 @@ const HackHazards = () => {
           <HackHazardsPrizes />
         </section>
         
-        {/* Temporarily hidden sections */}
-        {/* <section id="sponsors-and-mentors">
+        <section id="sponsors-and-mentors">
           <HackHazardsSponsorsTestimonialsAndMentors />
         </section>
         
         <section id="faqs">
           <HackHazardsFAQs />
-        </section> */}
+        </section>
       </main>
       
       <footer id="footer">
