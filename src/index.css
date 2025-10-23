@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NAMESPACE Design System - Professional, scalable, human-first tech */
+
+/* Hide scrollbars while maintaining scroll functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --namespace-black: 0 0% 2%;
+    --namespace-white: 0 0% 100%;
+    --namespace-purple: 270 60% 40%;
+    --namespace-purple-light: 270 100% 95%;
+    --namespace-purple-glow: 270 70% 60%;
+    --namespace-blue: 240 80% 50%;
+    --namespace-pink: 320 65% 55%;
+    
+    /* Semantic tokens */
+    --background: var(--namespace-white);
+    --foreground: var(--namespace-black);
+    --background-inverse: var(--namespace-black);
+    --foreground-inverse: var(--namespace-white);
+    
+    /* Interactive elements */
+    --primary: var(--namespace-purple);
+    --primary-foreground: var(--namespace-white);
+    --primary-hover: 270 60% 25%;
+    
+    /* Subtle accents */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: var(--namespace-purple);
+    
+    /* Gradients */
+    --gradient-orbital: linear-gradient(135deg, hsl(270 50% 30% / 0.1), hsl(270 100% 95% / 0.3));
+    --gradient-purple: linear-gradient(135deg, hsl(var(--namespace-purple)), hsl(270 60% 40%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 20px 40px -10px hsl(var(--namespace-purple) / 0.1);
+    --shadow-orbital: 0 0 60px hsl(var(--namespace-purple) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-orbital: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    --radius: 12px;
+
+    /* Additional UI tokens */
+    --card: var(--namespace-white);
+    --card-foreground: var(--namespace-black);
+    --popover: var(--namespace-white);
+    --popover-foreground: var(--namespace-black);
+    --secondary: 0 0% 96%;
+    --secondary-foreground: var(--namespace-black);
+    --accent: 0 0% 96%;
+    --accent-foreground: var(--namespace-black);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--namespace-white);
+  }
+
+  .dark {
+    /* Core Brand Colors for Dark Mode */
+    --namespace-black: 0 0% 98%;
+    --namespace-white: 0 0% 10%;
+    --namespace-purple: 270 60% 60%;
+    --namespace-purple-light: 270 60% 20%;
+    --namespace-purple-glow: 270 70% 70%;
+    
+    /* Semantic tokens for Dark Mode */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+    --background-inverse: 0 0% 98%;
+    --foreground-inverse: 0 0% 10%;
+    
+    /* Interactive elements */
+    --primary: var(--namespace-purple);
+    --primary-foreground: 0 0% 10%;
+    --primary-hover: 270 60% 70%;
+    
+    /* Subtle accents */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: var(--namespace-purple);
+    
+    /* Card and UI elements */
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Gradients for Dark Mode */
+    --gradient-orbital: linear-gradient(135deg, hsl(270 60% 40% / 0.2), hsl(270 60% 30% / 0.3));
+    --gradient-purple: linear-gradient(135deg, hsl(var(--namespace-purple)), hsl(270 60% 70%));
+    
+    /* Shadows for Dark Mode */
+    --shadow-elegant: 0 20px 40px -10px hsl(var(--namespace-purple) / 0.3);
+    --shadow-orbital: 0 0 60px hsl(var(--namespace-purple) / 0.4);
+  }
+
+  /* HACKHAZARDS Page Specific Dark Theme */
+  .hackhazards-theme {
+    /* HACKHAZARDS Colors */
+    --hackhazards-dark-bg: 220 13% 9%;
+    --hackhazards-darker-bg: 220 13% 6%;
+    --hackhazards-light-text: 0 0% 98%;
+    --hackhazards-muted-text: 0 0% 65%;
+    --hackhazards-green-primary: 142 76% 45%;
+    --hackhazards-green-bright: 142 84% 55%;
+    --hackhazards-green-dark: 142 60% 25%;
+    --hackhazards-green-light: 142 50% 70%;
+    --hackhazards-green-glow: 142 84% 65%;
+    --hackhazards-border: 220 13% 18%;
+    --hackhazards-muted: 220 13% 15%;
+    
+    /* Override semantic tokens for HACKHAZARDS */
+    --background: var(--hackhazards-dark-bg);
+    --foreground: var(--hackhazards-light-text);
+    --background-inverse: var(--hackhazards-light-text);
+    --foreground-inverse: var(--hackhazards-dark-bg);
+    --primary: var(--hackhazards-green-primary);
+    --primary-foreground: var(--hackhazards-dark-bg);
+    --primary-hover: var(--hackhazards-green-dark);
+    --muted: var(--hackhazards-muted);
+    --muted-foreground: var(--hackhazards-muted-text);
+    --border: var(--hackhazards-border);
+    --input: var(--hackhazards-muted);
+    --ring: var(--hackhazards-green-primary);
+    
+    /* Override namespace colors for HACKHAZARDS compatibility */
+    --namespace-purple: var(--hackhazards-green-primary);
+    --namespace-purple-light: var(--hackhazards-green-light);
+    --namespace-purple-glow: var(--hackhazards-green-glow);
+    --namespace-blue: var(--hackhazards-green-bright);
+    --namespace-pink: var(--hackhazards-green-dark);
+    
+    /* HACKHAZARDS Gradients */
+    --gradient-orbital: linear-gradient(135deg, hsl(var(--hackhazards-green-primary) / 0.1), hsl(var(--hackhazards-green-light) / 0.2));
+    --gradient-purple: linear-gradient(135deg, hsl(var(--hackhazards-green-primary)), hsl(var(--hackhazards-green-bright)));
+    
+    /* HACKHAZARDS Shadows */
+    --shadow-elegant: 0 20px 40px -10px hsl(var(--hackhazards-green-primary) / 0.15);
+    --shadow-orbital: 0 0 60px hsl(var(--hackhazards-green-glow) / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    overflow-x: hidden;
+  }
+  
+  .scroll-section {
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    scroll-snap-align: start;
+  }
+  
+  /* Enhanced Professional Animations */
+  @keyframes breathing {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes section-reveal {
+    0% {
+      opacity: 0;
+      transform: translateX(100px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes progressive-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.9);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes glass-glow {
+    0%, 100% {
+      box-shadow: 0 8px 32px rgba(128, 90, 213, 0.2);
+    }
+    50% {
+      box-shadow: 0 8px 40px rgba(128, 90, 213, 0.4);
+    }
+  }
+
+  @keyframes magnetic-pull {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.05) rotate(1deg);
+    }
+    100% {
+      transform: scale(1.02) rotate(0deg);
+    }
+  }
+
+  /* Enhanced 3D and Glass Effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Glassmorphism Effects */
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glassmorphism-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* Enhanced Animation Classes */
+  .progressive-reveal {
+    animation: progressive-reveal 1s ease-out forwards;
+    animation-fill-mode: both;
+  }
+
+  .section-transition {
+    animation: section-reveal 1.2s ease-out forwards;
+    animation-fill-mode: both;
+  }
+
+  .magnetic-element {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+  }
+
+  .magnetic-element:hover {
+    animation: magnetic-pull 0.6s ease-out;
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  .glass-glow {
+    animation: glass-glow 4s ease-in-out infinite;
+  }
+
+  /* Image Masking Effects */
+  .image-mask-circle {
+    clip-path: circle(40% at 50% 50%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .image-mask-circle:hover {
+    clip-path: circle(60% at 50% 50%);
+    transform: scale(1.1);
+  }
+
+  .image-mask-polygon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .image-mask-polygon:hover {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: scale(1.05);
+  }
+
+  /* Mini-interaction Effects */
+  .mini-bounce:hover {
+    animation: bounce 0.6s ease-in-out;
+  }
+
+  .micro-float {
+    transition: transform 0.3s ease;
+  }
+
+  .micro-float:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Hand-drawn animation keyframes */
+  @keyframes drawOval {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes drawDash1 {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes drawDash2 {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes drawDash3 {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+project_id = "gvwkdvpdmjagdbincqmu"
+
+[functions.send-email]
+verify_jwt = false
+
+[functions.admin-pending-approvals]
+verify_jwt = false
