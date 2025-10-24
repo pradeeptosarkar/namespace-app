@@ -29,29 +29,29 @@ interface Event {
   timezone: string;
 }
 
-// Timezone offset mapping (in hours)
-const timezoneOffsets: Record<string, number> = {
-  'Asia/Kolkata': 5.5,
-  'America/New_York': -5,
-  'America/Chicago': -6,
-  'America/Denver': -7,
-  'America/Los_Angeles': -8,
-  'Europe/London': 0,
-  'Europe/Paris': 1,
-  'Europe/Berlin': 1,
-  'Asia/Dubai': 4,
-  'Asia/Singapore': 8,
-  'Asia/Tokyo': 9,
-  'Australia/Sydney': 10,
-  'Pacific/Auckland': 12,
+// Helper function to convert UTC date to IST for display
+const formatDateInIST = (utcDateString: string): string => {
+  const utcDate = new Date(utcDateString);
+  // Add 5 hours 30 minutes for IST
+  const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
+  
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  };
+  
+  return istDate.toLocaleString('en-IN', options) + ' IST';
 };
 
-// Helper function to get current time in a specific timezone
-const getCurrentTimeInTimezone = (timezone: string): Date => {
+// Helper function to get current time in IST
+const getCurrentTimeInIST = (): Date => {
   const now = new Date();
   const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-  const offset = timezoneOffsets[timezone] || 0;
-  return new Date(utcTime + (offset * 3600000));
+  return new Date(utcTime + (5.5 * 3600000));
 };
 
 const eventTypeColors = {
@@ -298,9 +298,10 @@ export default function EventDetail() {
   };
 
   const formatDate = (dateString: string) => {
-    // Parse the date string and format it without timezone conversion
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
+    const utcDate = new Date(dateString);
+    // Convert to IST by adding 5.5 hours
+    const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
+    return istDate.toLocaleDateString('en-IN', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -309,17 +310,15 @@ export default function EventDetail() {
   };
 
   const formatTime = (dateString: string) => {
-    // Extract time directly from the ISO string to avoid timezone conversion
-    const date = new Date(dateString);
-    const hours = date.getUTCHours();
-    const minutes = date.getUTCMinutes();
+    const utcDate = new Date(dateString);
+    // Convert to IST by adding 5.5 hours
+    const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
     
-    // Format to 12-hour time
-    const period = hours >= 12 ? 'PM' : 'AM';
-    const displayHours = hours % 12 || 12;
-    const displayMinutes = minutes.toString().padStart(2, '0');
-    
-    return `${displayHours}:${displayMinutes} ${period}`;
+    return istDate.toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    }) + ' IST';
   };
 
   const sendConfirmationEmail = async () => {
@@ -424,7 +423,7 @@ export default function EventDetail() {
   }
 
   // Check if event has ended
-  const now = getCurrentTimeInTimezone(event.timezone || 'Asia/Kolkata');
+  const now = getCurrentTimeInIST();
   const eventEndDate = event.end_date ? new Date(event.end_date) : new Date(event.date);
   const hasEnded = eventEndDate < now;
 

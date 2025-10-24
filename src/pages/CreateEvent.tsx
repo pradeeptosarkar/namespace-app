@@ -71,6 +71,23 @@ const CreateEvent = () => {
     }
   }, [eventId, isEditMode]);
 
+  // Helper function to convert UTC date to IST for datetime-local input
+  const convertUTCtoIST = (utcDateString: string): string => {
+    const utcDate = new Date(utcDateString);
+    // Add 5 hours 30 minutes for IST
+    const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
+    // Format for datetime-local input (YYYY-MM-DDThh:mm)
+    return istDate.toISOString().slice(0, 16);
+  };
+
+  // Helper function to convert IST datetime-local value to UTC for storage
+  const convertISTtoUTC = (istDateString: string): string => {
+    // The datetime-local value is treated as IST, so subtract 5:30 to get UTC
+    const istDate = new Date(istDateString);
+    const utcDate = new Date(istDate.getTime() - (5.5 * 60 * 60 * 1000));
+    return utcDate.toISOString();
+  };
+
   const fetchEventData = async (id: string) => {
     setFetchLoading(true);
     try {
@@ -87,14 +104,14 @@ const CreateEvent = () => {
           name: data.name || '',
           description: data.description || '',
           event_type: data.event_type || '',
-          date: data.date ? new Date(data.date).toISOString().slice(0, 16) : '',
+          date: data.date ? convertUTCtoIST(data.date) : '',
           venue: data.venue || '',
           max_participants: data.max_participants?.toString() || '',
           mode: data.mode || '',
           team_size: data.team_size?.toString() || '',
           approval_enabled: data.approval_enabled || false,
           timezone: data.timezone || 'Asia/Kolkata',
-          end_date: data.end_date ? new Date(data.end_date).toISOString().slice(0, 16) : '',
+          end_date: data.end_date ? convertUTCtoIST(data.end_date) : '',
           speaker: data.speaker || '',
           prerequisites: data.prerequisites || '',
           prizes: data.prizes || '',
@@ -248,7 +265,7 @@ const CreateEvent = () => {
         name: formData.name,
         description: formData.description,
         event_type: formData.event_type as 'webinar' | 'hackathon' | 'meetup' | 'contest' | 'bootcamp',
-        date: formData.date,
+        date: convertISTtoUTC(formData.date),
         venue: formData.venue || (formData.mode === 'online' ? 'Online' : ''),
         max_participants: formData.max_participants ? parseInt(formData.max_participants) : null,
         mode: formData.mode || null,
@@ -257,7 +274,7 @@ const CreateEvent = () => {
         timezone: formData.timezone,
         banner_url: banner_url || null,
         display_image_url: display_image_url || null,
-        end_date: formData.end_date || null,
+        end_date: formData.end_date ? convertISTtoUTC(formData.end_date) : null,
         speaker: formData.speaker || null,
         prerequisites: formData.prerequisites || null,
         prizes: formData.prizes || null,
