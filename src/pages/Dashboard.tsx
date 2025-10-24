@@ -23,6 +23,7 @@ interface Registration {
   status: 'pending' | 'approved' | 'rejected';
   events: {
     id: string;
+    short_id: string;
     name: string;
     description: string;
     event_type: string;
@@ -533,7 +534,7 @@ export default function Dashboard() {
                       )}
                     </div>
                     <button
-                      onClick={() => navigate(`/events/${registration.events.id}`)}
+                      onClick={() => navigate(`/events/${registration.events.short_id}`)}
                       className="w-full bg-primary hover:bg-primary/90 transition-colors button-hover button-hover-light dark:button-hover-dark"
                       style={{backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)'}}
                     >
@@ -610,7 +611,7 @@ export default function Dashboard() {
                               )}
                             </div>
                             <button
-                              onClick={() => navigate(`/events/${registration.events.id}`)}
+                              onClick={() => navigate(`/events/${registration.events.short_id}`)}
                               className="w-full bg-primary hover:bg-primary/90 transition-colors button-hover button-hover-light dark:button-hover-dark"
                               style={{backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)'}}
                             >
@@ -665,7 +666,7 @@ export default function Dashboard() {
                               </div>
                             </div>
                             <button
-                              onClick={() => navigate(`/events/${registration.events.id}`)}
+                              onClick={() => navigate(`/events/${registration.events.short_id}`)}
                               className="w-full bg-primary hover:bg-primary/90 transition-colors button-hover button-hover-light dark:button-hover-dark"
                               style={{backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)'}}
                             >
@@ -1130,7 +1131,7 @@ export default function Dashboard() {
                                 )}
                               </div>
                               <button
-                                onClick={() => navigate(`/events/${registration.events.id}`)}
+                                onClick={() => navigate(`/events/${registration.events.short_id}`)}
                                 className="w-full bg-primary hover:bg-primary/90 transition-colors button-hover button-hover-light dark:button-hover-dark"
                                 style={{backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)'}}
                               >
@@ -1207,7 +1208,7 @@ export default function Dashboard() {
                                 )}
                               </div>
                               <button
-                                onClick={() => navigate(`/events/${registration.events.id}`)}
+                                onClick={() => navigate(`/events/${registration.events.short_id}`)}
                                 className="w-full bg-primary hover:bg-primary/90 transition-colors button-hover button-hover-light dark:button-hover-dark"
                                 style={{backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)'}}
                               >
@@ -1279,7 +1280,7 @@ export default function Dashboard() {
                                 </div>
                               </div>
                               <button
-                                onClick={() => navigate(`/events/${registration.events.id}`)}
+                                onClick={() => navigate(`/events/${registration.events.short_id}`)}
                                 className="w-full bg-primary hover:bg-primary/90 transition-colors button-hover button-hover-light dark:button-hover-dark"
                                 style={{backgroundColor: 'var(--primary)', color: 'var(--primary-foreground)'}}
                               >

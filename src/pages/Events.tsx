@@ -19,6 +19,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
 interface Event {
   id: string;
+  short_id: string;
   name: string;
   description: string;
   event_type: string;
@@ -273,7 +274,7 @@ export default function Events() {
   };
 
   const handleShare = async (event: Event) => {
-    const eventUrl = `${window.location.origin}/events/${event.id}`;
+    const eventUrl = `${window.location.origin}/events/${event.short_id}`;
     const shareData = {
       title: event.name,
       text: `Check out this ${event.event_type}: ${event.name}`,
@@ -355,7 +356,7 @@ export default function Events() {
 
           <div className="space-y-2">
             <Button
-              onClick={() => navigate(`/events/${event.id}`)}
+              onClick={() => navigate(`/events/${event.short_id}`)}
               className={`w-full transition-colors button-hover button-hover-light dark:button-hover-dark ${isRegistered ? 'bg-green-500 hover:bg-green-600' : 'bg-primary hover:bg-primary/90'}`}
             >
               View Details

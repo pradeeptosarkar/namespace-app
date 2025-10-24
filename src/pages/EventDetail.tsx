@@ -13,6 +13,7 @@ import LeaderboardModal from '@/components/LeaderboardModal';
 
 interface Event {
   id: string;
+  short_id: string;
   name: string;
   description: string;
   event_type: string;
@@ -104,8 +105,8 @@ export default function EventDetail() {
     const { data, error } = await supabase
       .from('events')
       .select('*')
-      .eq('id', eventId)
-      .single();
+      .eq('short_id', eventId)
+      .maybeSingle();
 
     if (error) {
       toast({
@@ -123,12 +124,14 @@ export default function EventDetail() {
   const checkRegistration = async () => {
     if (!user || !eventId) return;
 
+    if (!event) return;
+    
     const { data } = await supabase
       .from('registrations')
       .select('id, status')
       .eq('user_id', user.id)
-      .eq('event_id', eventId)
-      .single();
+      .eq('event_id', event.id)
+      .maybeSingle();
 
     if (data) {
       setIsRegistered(true);
@@ -137,13 +140,13 @@ export default function EventDetail() {
   };
 
   const fetchRegistrationCount = async () => {
-    if (!eventId) return;
+    if (!event) return;
 
     // Fetch approved registrations
     const { count } = await supabase
       .from('registrations')
       .select('*', { count: 'exact', head: true })
-      .eq('event_id', eventId)
+      .eq('event_id', event.id)
       .eq('status', 'approved');
 
     setRegistrationCount(count || 0);
@@ -153,7 +156,7 @@ export default function EventDetail() {
       const { count: totalCount } = await supabase
         .from('registrations')
         .select('*', { count: 'exact', head: true })
-        .eq('event_id', eventId);
+        .eq('event_id', event.id);
 
       setApplicationsCount(totalCount || 0);
     }
@@ -398,7 +401,7 @@ export default function EventDetail() {
     }
   };
 
-  const customUtmLink = user && event ? `${window.location.origin}/events/${event.id}?utm_source=${user.id}` : '';
+  const customUtmLink = user && event ? `${window.location.origin}/events/${event.short_id}?utm_source=${user.id}` : '';
 
   if (loading) {
     return (

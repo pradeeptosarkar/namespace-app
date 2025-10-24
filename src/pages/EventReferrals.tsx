@@ -19,6 +19,7 @@ interface ReferralData {
 
 interface Event {
   id: string;
+  short_id: string;
   name: string;
 }
 
@@ -56,7 +57,7 @@ const EventReferrals = () => {
       // Fetch event details
       const { data: eventData, error: eventError } = await supabase
         .from('events')
-        .select('id, name')
+        .select('id, short_id, name')
         .eq('id', eventId)
         .single();
 
@@ -85,7 +86,7 @@ const EventReferrals = () => {
 
   const generateReferralLink = (utmSource: string): string => {
     const baseUrl = window.location.origin;
-    return `${baseUrl}/events/${eventId}?utm_source=${utmSource}`;
+    return `${baseUrl}/events/${event?.short_id}?utm_source=${utmSource}`;
   };
 
   const generateShortId = (): string => {
