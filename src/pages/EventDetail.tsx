@@ -29,6 +29,31 @@ interface Event {
   timezone: string;
 }
 
+// Timezone offset mapping (in hours)
+const timezoneOffsets: Record<string, number> = {
+  'Asia/Kolkata': 5.5,
+  'America/New_York': -5,
+  'America/Chicago': -6,
+  'America/Denver': -7,
+  'America/Los_Angeles': -8,
+  'Europe/London': 0,
+  'Europe/Paris': 1,
+  'Europe/Berlin': 1,
+  'Asia/Dubai': 4,
+  'Asia/Singapore': 8,
+  'Asia/Tokyo': 9,
+  'Australia/Sydney': 10,
+  'Pacific/Auckland': 12,
+};
+
+// Helper function to get current time in a specific timezone
+const getCurrentTimeInTimezone = (timezone: string): Date => {
+  const now = new Date();
+  const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const offset = timezoneOffsets[timezone] || 0;
+  return new Date(utcTime + (offset * 3600000));
+};
+
 const eventTypeColors = {
   webinar: 'bg-blue-100 text-blue-800 hover:bg-blue-200',
   hackathon: 'bg-purple-100 text-purple-800 hover:bg-purple-200',
@@ -273,9 +298,9 @@ export default function EventDetail() {
   };
 
   const formatDate = (dateString: string) => {
-    const timezone = event?.timezone || 'Asia/Kolkata';
-    return new Date(dateString).toLocaleDateString('en-US', {
-      timeZone: timezone,
+    // Parse the date string and format it without timezone conversion
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -284,24 +309,17 @@ export default function EventDetail() {
   };
 
   const formatTime = (dateString: string) => {
-    const timezone = event?.timezone || 'Asia/Kolkata';
+    // Extract time directly from the ISO string to avoid timezone conversion
     const date = new Date(dateString);
+    const hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
     
-    const timeStr = date.toLocaleTimeString('en-US', {
-      timeZone: timezone,
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    });
+    // Format to 12-hour time
+    const period = hours >= 12 ? 'PM' : 'AM';
+    const displayHours = hours % 12 || 12;
+    const displayMinutes = minutes.toString().padStart(2, '0');
     
-    // Get timezone abbreviation
-    const tzFormatter = new Intl.DateTimeFormat('en-US', {
-      timeZone: timezone,
-      timeZoneName: 'short'
-    });
-    const timezoneName = tzFormatter.formatToParts(date).find(part => part.type === 'timeZoneName')?.value || '';
-    
-    return `${timeStr} ${timezoneName}`;
+    return `${displayHours}:${displayMinutes} ${period}`;
   };
 
   const sendConfirmationEmail = async () => {
@@ -406,7 +424,7 @@ export default function EventDetail() {
   }
 
   // Check if event has ended
-  const now = new Date();
+  const now = getCurrentTimeInTimezone(event.timezone || 'Asia/Kolkata');
   const eventEndDate = event.end_date ? new Date(event.end_date) : new Date(event.date);
   const hasEnded = eventEndDate < now;
 
