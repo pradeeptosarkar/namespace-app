@@ -88,6 +88,15 @@ const EventReferrals = () => {
     return `${baseUrl}/events/${eventId}?utm_source=${utmSource}`;
   };
 
+  const generateShortId = (): string => {
+    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < 8; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+  };
+
   const generateNewLink = () => {
     if (!newLinkName.trim()) {
       toast({
@@ -98,7 +107,7 @@ const EventReferrals = () => {
       return;
     }
 
-    const utmSource = crypto.randomUUID();
+    const utmSource = generateShortId();
     const link = generateReferralLink(utmSource);
     
     const newLink: GeneratedLink = {
