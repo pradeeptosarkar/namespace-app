@@ -34,7 +34,14 @@ export default function Auth() {
     const { error } = await signUp(email, password, fullName);
     
     if (!error) {
-      // User will be redirected after email confirmation
+      // Check if there's a stored redirect URL
+      const redirectUrl = localStorage.getItem('authRedirectUrl');
+      if (redirectUrl) {
+        localStorage.removeItem('authRedirectUrl');
+        navigate(redirectUrl);
+      } else {
+        navigate('/events');
+      }
     }
     
     setIsLoading(false);
@@ -51,11 +58,11 @@ export default function Auth() {
     const { error } = await signIn(email, password);
 
     if (!error) {
-      // Check if there's a stored redirect URL (e.g., from UTM link)
+      // Check if there's a stored redirect URL
       const redirectUrl = localStorage.getItem('authRedirectUrl');
       if (redirectUrl) {
         localStorage.removeItem('authRedirectUrl');
-        window.location.href = redirectUrl;
+        navigate(redirectUrl);
       } else {
         navigate('/events');
       }

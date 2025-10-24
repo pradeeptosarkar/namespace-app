@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Calendar, LogOut, BarChart3, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,6 +16,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 export function Navbar() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { theme, toggleTheme, isForcedLightMode } = useTheme();
 
   const handleSignOut = async () => {
@@ -83,9 +84,15 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Link to="/auth">
-              <Button className="bg-primary hover:bg-primary/90 transition-colors">Sign In</Button>
-            </Link>
+            <Button 
+              onClick={() => {
+                localStorage.setItem('authRedirectUrl', location.pathname);
+                navigate('/auth');
+              }}
+              className="bg-primary hover:bg-primary/90 transition-colors"
+            >
+              Sign In
+            </Button>
           )}
         </div>
       </div>
