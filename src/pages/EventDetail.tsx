@@ -298,36 +298,25 @@ export default function EventDetail() {
   };
 
   const formatDate = (dateString: string) => {
-    // Convert UTC to event timezone for display
+    // Display in the viewer's local timezone
     const date = new Date(dateString);
-    const offsetHours = timezoneOffsets[event?.timezone || 'Asia/Kolkata'] || 0;
-    const localDate = new Date(date.getTime() + offsetHours * 3600000);
-    
-    return localDate.toLocaleDateString('en-US', {
+    return date.toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric',
-      timeZone: 'UTC' // Use UTC since we already adjusted the time
     });
   };
 
   const formatTime = (dateString: string) => {
-    // Convert UTC to event timezone for display
+    // Display in the viewer's local timezone
     const date = new Date(dateString);
-    const offsetHours = timezoneOffsets[event?.timezone || 'Asia/Kolkata'] || 0;
-    const localDate = new Date(date.getTime() + offsetHours * 3600000);
-    const hours = localDate.getUTCHours();
-    const minutes = localDate.getUTCMinutes();
-    
-    // Format to 12-hour time
-    const period = hours >= 12 ? 'PM' : 'AM';
-    const displayHours = hours % 12 || 12;
-    const displayMinutes = minutes.toString().padStart(2, '0');
-    
-    return `${displayHours}:${displayMinutes} ${period}`;
+    return date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    });
   };
-
   const sendConfirmationEmail = async () => {
     if (!user || !event) return;
     
@@ -429,8 +418,8 @@ export default function EventDetail() {
     );
   }
 
-  // Check if event has ended
-  const now = getCurrentTimeInTimezone(event.timezone || 'Asia/Kolkata');
+  // Check if event has ended (compare UTC timestamps)
+  const now = new Date();
   const eventEndDate = event.end_date ? new Date(event.end_date) : new Date(event.date);
   const hasEnded = eventEndDate < now;
 

@@ -111,10 +111,20 @@ const CreateEvent = () => {
       'Australia/Sydney': 10,
       'Pacific/Auckland': 12,
     };
+
     const offsetHours = timezoneOffsets[timezone] || 0;
-    const localTime = new Date(localDateString);
-    const utcTime = new Date(localTime.getTime() - offsetHours * 3600000);
-    return utcTime.toISOString();
+    const offsetMs = offsetHours * 60 * 60 * 1000;
+
+    // Parse "YYYY-MM-DDTHH:mm" as if it's in the selected timezone (not the browser timezone)
+    const [datePart, timePart] = localDateString.split('T');
+    const [year, month, day] = datePart.split('-').map(Number);
+    const [hour, minute] = timePart.split(':').map(Number);
+
+    // Build a UTC timestamp from the selected timezone local time
+    const localAsUTC = Date.UTC(year, (month - 1), day, hour, minute);
+    const utcMs = localAsUTC - offsetMs; // subtract tz offset to get true UTC
+
+    return new Date(utcMs).toISOString();
   };
 
   const fetchEventData = async (id: string) => {
