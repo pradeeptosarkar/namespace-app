@@ -48,9 +48,8 @@ export const HackHazardsFooter = () => {
               © 2026 Namespace Ecosystem India Pvt. Ltd.. Building the Global
               Ecosystem for Humans and Organizations in Tech. Organized by{" "}
               <a
-                href="https://namespace.world"
+                href="/"
                 className="text-namespace-purple hover:underline"
-                target="_blank"
                 rel="noopener noreferrer"
               >
                 NAMESPACE

@@ -64,7 +64,7 @@ export const HackHazardsNavbar = () => {
               className="h-32 w-auto"
             />
             <img
-              src={theme === 'dark' ? namespaceVerticalWhiteLogo : "/Logo.png"}
+              src={namespaceVerticalWhiteLogo}
               alt="Namespace Logo"
               className="h-20 w-auto"
             />
