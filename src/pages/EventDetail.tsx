@@ -102,10 +102,14 @@ export default function EventDetail() {
   }, [event]);
 
   const fetchEvent = async () => {
+    // Check if eventId is a UUID (longer than 8 chars) or a short_id
+    const isUUID = eventId && eventId.length > 8;
+    const field = isUUID ? 'id' : 'short_id';
+    
     const { data, error } = await supabase
       .from('events')
       .select('*')
-      .eq('short_id', eventId)
+      .eq(field, eventId)
       .maybeSingle();
 
     if (error) {
