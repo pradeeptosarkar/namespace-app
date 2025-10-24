@@ -16,7 +16,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 export function Navbar() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, isForcedLightMode } = useTheme();
 
   const handleSignOut = async () => {
     await signOut();
@@ -39,7 +39,8 @@ export function Navbar() {
             onClick={toggleTheme} 
             variant="ghost" 
             size="icon"
-            className="text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            disabled={isForcedLightMode}
+            className="text-muted-foreground hover:bg-muted hover:text-foreground transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {theme === 'dark' ? (
               <Sun className="h-5 w-5" />
