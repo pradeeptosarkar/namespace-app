@@ -58,6 +58,7 @@ export type Database = {
           prizes: string | null
           refreshments: string | null
           rules: string | null
+          short_id: string
           speaker: string | null
           speakers: string[] | null
           submission_format: string | null
@@ -90,6 +91,7 @@ export type Database = {
           prizes?: string | null
           refreshments?: string | null
           rules?: string | null
+          short_id: string
           speaker?: string | null
           speakers?: string[] | null
           submission_format?: string | null
@@ -122,6 +124,7 @@ export type Database = {
           prizes?: string | null
           refreshments?: string | null
           rules?: string | null
+          short_id?: string
           speaker?: string | null
           speakers?: string[] | null
           submission_format?: string | null
@@ -347,10 +350,9 @@ export type Database = {
       }
     }
     Functions: {
-      is_admin: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
+      generate_short_id: { Args: never; Returns: string }
+      generate_unique_short_id: { Args: never; Returns: string }
+      is_admin: { Args: never; Returns: boolean }
     }
     Enums: {
       event_type: "webinar" | "hackathon" | "meetup" | "contest" | "bootcamp"
