@@ -180,7 +180,7 @@ export default function EventDetail() {
     
     const registrationData: any = { 
       user_id: user.id, 
-      event_id: eventId
+      event_id: event?.id
     };
     // Include utm_source if present, valid UUID, and it's not the same user (prevent self-referrals)
     if (utmSource && isValidUUID(utmSource) && utmSource !== user.id) {
@@ -228,13 +228,13 @@ export default function EventDetail() {
   };
 
   const handleUnregister = async () => {
-    if (!user || !eventId) return;
+    if (!user || !event) return;
 
     const { error } = await supabase
       .from('registrations')
       .delete()
       .eq('user_id', user.id)
-      .eq('event_id', eventId);
+      .eq('event_id', event.id);
 
     if (error) {
       toast({
