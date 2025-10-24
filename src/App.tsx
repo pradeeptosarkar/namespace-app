@@ -48,13 +48,13 @@ const LoadingSpinner = () => (
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <AuthProvider>
-          <AdminAuthProvider>
-            <TooltipProvider>
-              <Toaster />
-              <Sonner />
-              <BrowserRouter>
+      <BrowserRouter>
+        <ThemeProvider>
+          <AuthProvider>
+            <AdminAuthProvider>
+              <TooltipProvider>
+                <Toaster />
+                <Sonner />
                 <div className="min-h-screen bg-background relative">
                   {/* <Suspense fallback={<div />}>
                     <LightRays
@@ -104,11 +104,11 @@ const App = () => {
                     </Suspense>
                   </div>
                 </div>
-              </BrowserRouter>
-            </TooltipProvider>
-          </AdminAuthProvider>
-        </AuthProvider>
-      </ThemeProvider>
+              </TooltipProvider>
+            </AdminAuthProvider>
+          </AuthProvider>
+        </ThemeProvider>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 };
