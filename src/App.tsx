@@ -7,6 +7,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { AdminAuthProvider } from "@/hooks/useAdminAuth";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Layout from "@/components/Layout";
+import { LightModeLayout } from "@/components/LightModeLayout";
 import { lazy, Suspense } from "react";
 
 // Lazy load pages for better performance
@@ -92,13 +93,13 @@ const App = () => {
                         <Route path="/admin/forms/:formId/submissions" element={<FormSubmissions />} />
                         <Route path="/forms/:formId" element={<Layout><PublicFormView /></Layout>} />
                         <Route path="/maintenance" element={<Maintenance />} />
-                        <Route path="/branding" element={<Layout><Branding /></Layout>} />
-                        <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
-                        <Route path="/terms-of-use" element={<Layout><TermsOfUse /></Layout>} />
-                        <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
-                        <Route path="/team" element={<Layout><Team /></Layout>} />
+                        <Route path="/branding" element={<LightModeLayout><Branding /></LightModeLayout>} />
+                        <Route path="/privacy-policy" element={<LightModeLayout><PrivacyPolicy /></LightModeLayout>} />
+                        <Route path="/terms-of-use" element={<LightModeLayout><TermsOfUse /></LightModeLayout>} />
+                        <Route path="/about-us" element={<LightModeLayout><AboutUs /></LightModeLayout>} />
+                        <Route path="/team" element={<LightModeLayout><Team /></LightModeLayout>} />
                         <Route path="/hackhazards" element={<HackHazards />} />
-                        <Route path="*" element={<Layout><NotFound /></Layout>} />
+                        <Route path="*" element={<LightModeLayout><NotFound /></LightModeLayout>} />
 
                       </Routes>
                     </Suspense>

@@ -2,31 +2,16 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
-import { useTheme } from "@/contexts/ThemeContext";
 
 const NotFound = () => {
   const location = useLocation();
-  const { setTheme } = useTheme();
 
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
-    
-    // Force light mode for 404 page
-    document.documentElement.classList.remove('dark');
   }, [location.pathname]);
-  
-  useEffect(() => {
-    // Cleanup: restore user's theme preference when leaving this page
-    return () => {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-namespace-black text-namespace-white flex items-center justify-center relative overflow-hidden">
