@@ -82,9 +82,6 @@ export default function EventDetail() {
   useEffect(() => {
     if (eventId) {
       fetchEvent();
-      if (user) {
-        checkRegistration();
-      }
     }
 
     // Store UTM parameters for anonymous users
@@ -92,7 +89,14 @@ export default function EventDetail() {
       const currentUrl = window.location.href;
       localStorage.setItem('authRedirectUrl', currentUrl);
     }
-  }, [eventId, user, utmSource]);
+  }, [eventId, utmSource]);
+
+  // Check registration after event is loaded
+  useEffect(() => {
+    if (user && event) {
+      checkRegistration();
+    }
+  }, [user, event]);
 
   // Fetch registration counts after event data is loaded
   useEffect(() => {
