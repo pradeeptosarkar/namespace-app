@@ -35,30 +35,6 @@ interface Event {
   registrations?: { count: number }[];
 }
 
-// Timezone offset mapping (in hours)
-const timezoneOffsets: Record<string, number> = {
-  'Asia/Kolkata': 5.5,
-  'America/New_York': -5,
-  'America/Chicago': -6,
-  'America/Denver': -7,
-  'America/Los_Angeles': -8,
-  'Europe/London': 0,
-  'Europe/Paris': 1,
-  'Europe/Berlin': 1,
-  'Asia/Dubai': 4,
-  'Asia/Singapore': 8,
-  'Asia/Tokyo': 9,
-  'Australia/Sydney': 10,
-  'Pacific/Auckland': 12,
-};
-
-// Helper function to get current time in a specific timezone
-const getCurrentTimeInTimezone = (timezone: string): Date => {
-  const now = new Date();
-  const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-  const offset = timezoneOffsets[timezone] || 0;
-  return new Date(utcTime + (offset * 3600000));
-};
 
 const eventTypeColors = {
   webinar: 'bg-blue-100 text-blue-800 hover:bg-blue-200',
@@ -215,11 +191,11 @@ export default function Events() {
     const upcoming: Event[] = [];
     const past: Event[] = [];
 
+    // Get current time in UTC
+    const now = new Date();
+
     events.forEach(event => {
-      // Get current time in the event's timezone
-      const now = getCurrentTimeInTimezone(event.timezone || 'Asia/Kolkata');
-      
-      // Parse event dates (these are stored in the event's timezone)
+      // Parse event dates (stored as UTC in database)
       const startDate = new Date(event.date);
       const endDate = event.end_date ? new Date(event.end_date) : startDate;
 
@@ -245,6 +221,7 @@ export default function Events() {
   }, []);
 
   const formatDate = (dateString: string) => {
+    // Display in the viewer's local timezone
     const date = new Date(dateString);
     const dateOptions: Intl.DateTimeFormatOptions = {
       weekday: 'long',
@@ -253,14 +230,13 @@ export default function Events() {
       day: 'numeric',
     };
     
-    // Extract time directly from UTC to avoid timezone conversion
-    const hours = date.getUTCHours();
-    const minutes = date.getUTCMinutes();
-    const period = hours >= 12 ? 'PM' : 'AM';
-    const displayHours = hours % 12 || 12;
-    const displayMinutes = minutes.toString().padStart(2, '0');
+    const timeString = date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    });
     
-    return `${date.toLocaleDateString('en-US', dateOptions)}, ${displayHours}:${displayMinutes} ${period}`;
+    return `${date.toLocaleDateString('en-US', dateOptions)}, ${timeString}`;
   };
 
   const getRegistrationCount = (event: Event): number => {
