@@ -298,21 +298,27 @@ export default function EventDetail() {
   };
 
   const formatDate = (dateString: string) => {
-    // Parse the date string and format it without timezone conversion
+    // Convert UTC to event timezone for display
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
+    const offsetHours = timezoneOffsets[event?.timezone || 'Asia/Kolkata'] || 0;
+    const localDate = new Date(date.getTime() + offsetHours * 3600000);
+    
+    return localDate.toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric',
+      timeZone: 'UTC' // Use UTC since we already adjusted the time
     });
   };
 
   const formatTime = (dateString: string) => {
-    // Extract time directly from the ISO string to avoid timezone conversion
+    // Convert UTC to event timezone for display
     const date = new Date(dateString);
-    const hours = date.getUTCHours();
-    const minutes = date.getUTCMinutes();
+    const offsetHours = timezoneOffsets[event?.timezone || 'Asia/Kolkata'] || 0;
+    const localDate = new Date(date.getTime() + offsetHours * 3600000);
+    const hours = localDate.getUTCHours();
+    const minutes = localDate.getUTCMinutes();
     
     // Format to 12-hour time
     const period = hours >= 12 ? 'PM' : 'AM';

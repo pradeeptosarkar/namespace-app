@@ -71,6 +71,52 @@ const CreateEvent = () => {
     }
   }, [eventId, isEditMode]);
 
+  // Helper to convert UTC timestamp to local datetime-local format for the event's timezone
+  const convertUTCToLocal = (utcDateString: string, timezone: string): string => {
+    const date = new Date(utcDateString);
+    const timezoneOffsets: Record<string, number> = {
+      'Asia/Kolkata': 5.5,
+      'America/New_York': -5,
+      'America/Chicago': -6,
+      'America/Denver': -7,
+      'America/Los_Angeles': -8,
+      'Europe/London': 0,
+      'Europe/Paris': 1,
+      'Europe/Berlin': 1,
+      'Asia/Dubai': 4,
+      'Asia/Singapore': 8,
+      'Asia/Tokyo': 9,
+      'Australia/Sydney': 10,
+      'Pacific/Auckland': 12,
+    };
+    const offsetHours = timezoneOffsets[timezone] || 0;
+    const localTime = new Date(date.getTime() + offsetHours * 3600000);
+    return localTime.toISOString().slice(0, 16);
+  };
+
+  // Helper to convert local datetime-local format to UTC for storage
+  const convertLocalToUTC = (localDateString: string, timezone: string): string => {
+    const timezoneOffsets: Record<string, number> = {
+      'Asia/Kolkata': 5.5,
+      'America/New_York': -5,
+      'America/Chicago': -6,
+      'America/Denver': -7,
+      'America/Los_Angeles': -8,
+      'Europe/London': 0,
+      'Europe/Paris': 1,
+      'Europe/Berlin': 1,
+      'Asia/Dubai': 4,
+      'Asia/Singapore': 8,
+      'Asia/Tokyo': 9,
+      'Australia/Sydney': 10,
+      'Pacific/Auckland': 12,
+    };
+    const offsetHours = timezoneOffsets[timezone] || 0;
+    const localTime = new Date(localDateString);
+    const utcTime = new Date(localTime.getTime() - offsetHours * 3600000);
+    return utcTime.toISOString();
+  };
+
   const fetchEventData = async (id: string) => {
     setFetchLoading(true);
     try {
@@ -83,18 +129,19 @@ const CreateEvent = () => {
       if (error) throw error;
 
       if (data) {
+        const eventTimezone = data.timezone || 'Asia/Kolkata';
         setFormData({
           name: data.name || '',
           description: data.description || '',
           event_type: data.event_type || '',
-          date: data.date ? new Date(data.date).toISOString().slice(0, 16) : '',
+          date: data.date ? convertUTCToLocal(data.date, eventTimezone) : '',
           venue: data.venue || '',
           max_participants: data.max_participants?.toString() || '',
           mode: data.mode || '',
           team_size: data.team_size?.toString() || '',
           approval_enabled: data.approval_enabled || false,
-          timezone: data.timezone || 'Asia/Kolkata',
-          end_date: data.end_date ? new Date(data.end_date).toISOString().slice(0, 16) : '',
+          timezone: eventTimezone,
+          end_date: data.end_date ? convertUTCToLocal(data.end_date, eventTimezone) : '',
           speaker: data.speaker || '',
           prerequisites: data.prerequisites || '',
           prizes: data.prizes || '',
@@ -248,7 +295,7 @@ const CreateEvent = () => {
         name: formData.name,
         description: formData.description,
         event_type: formData.event_type as 'webinar' | 'hackathon' | 'meetup' | 'contest' | 'bootcamp',
-        date: formData.date,
+        date: formData.date ? convertLocalToUTC(formData.date, formData.timezone) : null,
         venue: formData.venue || (formData.mode === 'online' ? 'Online' : ''),
         max_participants: formData.max_participants ? parseInt(formData.max_participants) : null,
         mode: formData.mode || null,
@@ -257,7 +304,7 @@ const CreateEvent = () => {
         timezone: formData.timezone,
         banner_url: banner_url || null,
         display_image_url: display_image_url || null,
-        end_date: formData.end_date || null,
+        end_date: formData.end_date ? convertLocalToUTC(formData.end_date, formData.timezone) : null,
         speaker: formData.speaker || null,
         prerequisites: formData.prerequisites || null,
         prizes: formData.prizes || null,
