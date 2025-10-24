@@ -97,7 +97,7 @@ const App = () => {
                         <Route path="/terms-of-use" element={<Layout><TermsOfUse /></Layout>} />
                         <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
                         <Route path="/team" element={<Layout><Team /></Layout>} />
-                        <Route path="/hackhazards" element={<Layout><HackHazards /></Layout>} />
+                        <Route path="/hackhazards" element={<HackHazards />} />
                         <Route path="*" element={<Layout><NotFound /></Layout>} />
 
                       </Routes>
