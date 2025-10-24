@@ -171,26 +171,6 @@ export default function EventDetail() {
       navigate('/auth');
       return;
     }
-
-    // Check if user has completed their profile
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('profile_completed')
-      .eq('id', user.id)
-      .single();
-
-    if (!profile?.profile_completed) {
-      toast({
-        variant: "destructive",
-        title: "Profile Incomplete",
-        description: "Please complete your profile before registering for events",
-      });
-      // Store current event URL for redirect after profile completion
-      const currentUrl = window.location.href;
-      localStorage.setItem('profileRedirectUrl', currentUrl);
-      navigate('/dashboard#profile');
-      return;
-    }
     
     const registrationData: any = { 
       user_id: user.id, 

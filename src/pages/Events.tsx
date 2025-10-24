@@ -127,17 +127,6 @@ export default function Events() {
     mutationFn: async (eventId: string) => {
       if (!user) throw new Error('User not authenticated');
 
-      // Check if user has completed their profile
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('profile_completed')
-        .eq('id', user.id)
-        .single();
-
-      if (!profile?.profile_completed) {
-        throw new Error('PROFILE_INCOMPLETE');
-      }
-
       const { error } = await supabase
         .from('registrations')
         .insert([{ user_id: user.id, event_id: eventId }]);
@@ -154,14 +143,7 @@ export default function Events() {
       });
     },
     onError: (error: any) => {
-      if (error.message === 'PROFILE_INCOMPLETE') {
-        toast({
-          variant: "destructive",
-          title: "Profile Incomplete",
-          description: "Please complete your profile before registering for events",
-        });
-        navigate('/dashboard#profile');
-      } else if (error.code === '23505') {
+      if (error.code === '23505') {
         toast({
           variant: "destructive",
           title: "Already registered",
