@@ -166,6 +166,12 @@ export default function EventDetail() {
     }
   };
 
+  // Helper to validate UUID format
+  const isValidUUID = (str: string): boolean => {
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    return uuidRegex.test(str);
+  };
+
   const handleRegister = async () => {
     if (!user) {
       navigate('/auth');
@@ -176,8 +182,8 @@ export default function EventDetail() {
       user_id: user.id, 
       event_id: eventId
     };
-    // Include utm_source if present and it's not the same user (prevent self-referrals)
-    if (utmSource && utmSource !== user.id) {
+    // Include utm_source if present, valid UUID, and it's not the same user (prevent self-referrals)
+    if (utmSource && isValidUUID(utmSource) && utmSource !== user.id) {
       registrationData.utm_source = utmSource;
     }
 
