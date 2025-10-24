@@ -30,6 +30,7 @@ const FormBuilder = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [isPublished, setIsPublished] = useState(false);
+  const [requireSignin, setRequireSignin] = useState(false);
   const [fields, setFields] = useState<FormField[]>([]);
   const [loading, setLoading] = useState(false);
   const { isAdminAuthenticated } = useAdminAuth();
@@ -67,6 +68,7 @@ const FormBuilder = () => {
       setTitle(form.title);
       setDescription(form.description || '');
       setIsPublished(form.is_published);
+      setRequireSignin(form.require_signin || false);
       setFields(formFields.map(f => ({
         id: f.id,
         field_type: f.field_type as FieldType,
@@ -139,7 +141,7 @@ const FormBuilder = () => {
         // Update existing form
         const { error: updateError } = await supabase
           .from('forms')
-          .update({ title, description, is_published: isPublished })
+          .update({ title, description, is_published: isPublished, require_signin: requireSignin })
           .eq('id', formId);
 
         if (updateError) throw updateError;
@@ -155,7 +157,7 @@ const FormBuilder = () => {
         // Create new form
         const { data: newForm, error: createError } = await supabase
           .from('forms')
-          .insert({ title, description, is_published: isPublished })
+          .insert({ title, description, is_published: isPublished, require_signin: requireSignin })
           .select()
           .single();
 
@@ -213,13 +215,23 @@ const FormBuilder = () => {
             <h1 className="text-2xl font-bold">{formId ? 'Edit Form' : 'Create Form'}</h1>
           </div>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Label htmlFor="publish">{isPublished ? 'Published' : 'Publish'}</Label>
-              <Switch
-                id="publish"
-                checked={isPublished}
-                onCheckedChange={setIsPublished}
-              />
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Label htmlFor="require-signin">Require Sign In</Label>
+                <Switch
+                  id="require-signin"
+                  checked={requireSignin}
+                  onCheckedChange={setRequireSignin}
+                />
+              </div>
+              <div className="flex items-center gap-2">
+                <Label htmlFor="publish">{isPublished ? 'Published' : 'Publish'}</Label>
+                <Switch
+                  id="publish"
+                  checked={isPublished}
+                  onCheckedChange={setIsPublished}
+                />
+              </div>
             </div>
             <Button onClick={saveForm} disabled={loading}>
               <Save className="h-4 w-4 mr-2" />

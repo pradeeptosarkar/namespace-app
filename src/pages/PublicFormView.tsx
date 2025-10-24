@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
 
 
 interface FormField {
@@ -26,12 +27,15 @@ interface Form {
   id: string;
   title: string;
   description: string | null;
+  require_signin: boolean;
 }
 
 const PublicFormView = () => {
   const { formId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
+  const { user } = useAuth();
   const [form, setForm] = useState<Form | null>(null);
   const [fields, setFields] = useState<FormField[]>([]);
   const [formData, setFormData] = useState<Record<string, any>>({});
@@ -79,8 +83,19 @@ const PublicFormView = () => {
     }
   };
 
+  const handleSignInClick = () => {
+    localStorage.setItem('authRedirectUrl', location.pathname);
+    navigate('/auth');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Check if form requires sign-in
+    if (form?.require_signin && !user) {
+      handleSignInClick();
+      return;
+    }
 
     // Validate required fields
     const missingFields = fields
@@ -299,7 +314,11 @@ const PublicFormView = () => {
               ))}
 
               <Button type="submit" disabled={submitting} className="w-full">
-                {submitting ? 'Submitting...' : 'Submit Form'}
+                {form?.require_signin && !user 
+                  ? 'Sign in to submit' 
+                  : submitting 
+                    ? 'Submitting...' 
+                    : 'Submit Form'}
               </Button>
             </form>
           </CardContent>

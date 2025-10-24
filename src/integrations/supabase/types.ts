@@ -216,6 +216,7 @@ export type Database = {
           description: string | null
           id: string
           is_published: boolean | null
+          require_signin: boolean
           title: string
           updated_at: string
         }
@@ -224,6 +225,7 @@ export type Database = {
           description?: string | null
           id?: string
           is_published?: boolean | null
+          require_signin?: boolean
           title: string
           updated_at?: string
         }
@@ -232,6 +234,7 @@ export type Database = {
           description?: string | null
           id?: string
           is_published?: boolean | null
+          require_signin?: boolean
           title?: string
           updated_at?: string
         }
