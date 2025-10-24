@@ -71,20 +71,68 @@ const CreateEvent = () => {
     }
   }, [eventId, isEditMode]);
 
-  // Helper function to convert UTC date to IST for datetime-local input
-  const convertUTCtoIST = (utcDateString: string): string => {
+  // Convert UTC to local datetime for the input field based on event timezone
+  const convertUTCToLocal = (utcDateString: string, timezone: string): string => {
     const utcDate = new Date(utcDateString);
-    // Add 5 hours 30 minutes for IST
-    const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
+    // Create a formatter for the specified timezone
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: timezone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+    
+    const parts = formatter.formatToParts(utcDate);
+    const year = parts.find(p => p.type === 'year')?.value;
+    const month = parts.find(p => p.type === 'month')?.value;
+    const day = parts.find(p => p.type === 'day')?.value;
+    const hour = parts.find(p => p.type === 'hour')?.value;
+    const minute = parts.find(p => p.type === 'minute')?.value;
+    
     // Format for datetime-local input (YYYY-MM-DDThh:mm)
-    return istDate.toISOString().slice(0, 16);
+    return `${year}-${month}-${day}T${hour}:${minute}`;
   };
 
-  // Helper function to convert IST datetime-local value to UTC for storage
-  const convertISTtoUTC = (istDateString: string): string => {
-    // The datetime-local value is treated as IST, so subtract 5:30 to get UTC
-    const istDate = new Date(istDateString);
-    const utcDate = new Date(istDate.getTime() - (5.5 * 60 * 60 * 1000));
+  // Convert local datetime to UTC for storage
+  const convertLocalToUTC = (localDateString: string, timezone: string): string => {
+    // Parse the datetime-local value
+    const [datePart, timePart] = localDateString.split('T');
+    const [year, month, day] = datePart.split('-');
+    const [hour, minute] = timePart.split(':');
+    
+    // Create a date string in the specified timezone
+    const dateStr = `${year}-${month}-${day}T${hour}:${minute}:00`;
+    
+    // Get the offset for this timezone at this specific date/time
+    const testDate = new Date(dateStr + 'Z'); // Create as UTC first
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: timezone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+    
+    // Format the date in the target timezone
+    const formatted = formatter.format(testDate);
+    const parts = formatter.formatToParts(testDate);
+    
+    // Calculate the offset by comparing UTC time to timezone time
+    const utcTime = testDate.getTime();
+    const localStr = `${parts.find(p => p.type === 'year')?.value}-${parts.find(p => p.type === 'month')?.value}-${parts.find(p => p.type === 'day')?.value}T${parts.find(p => p.type === 'hour')?.value}:${parts.find(p => p.type === 'minute')?.value}:${parts.find(p => p.type === 'second')?.value}Z`;
+    const localTime = new Date(localStr).getTime();
+    const offset = localTime - utcTime;
+    
+    // Now create the actual date in the target timezone
+    const inputDate = new Date(`${dateStr}Z`);
+    const utcDate = new Date(inputDate.getTime() - offset);
+    
     return utcDate.toISOString();
   };
 
@@ -100,18 +148,19 @@ const CreateEvent = () => {
       if (error) throw error;
 
       if (data) {
+        const eventTimezone = data.timezone || 'Asia/Kolkata';
         setFormData({
           name: data.name || '',
           description: data.description || '',
           event_type: data.event_type || '',
-          date: data.date ? convertUTCtoIST(data.date) : '',
+          date: data.date ? convertUTCToLocal(data.date, eventTimezone) : '',
           venue: data.venue || '',
           max_participants: data.max_participants?.toString() || '',
           mode: data.mode || '',
           team_size: data.team_size?.toString() || '',
           approval_enabled: data.approval_enabled || false,
-          timezone: data.timezone || 'Asia/Kolkata',
-          end_date: data.end_date ? convertUTCtoIST(data.end_date) : '',
+          timezone: eventTimezone,
+          end_date: data.end_date ? convertUTCToLocal(data.end_date, eventTimezone) : '',
           speaker: data.speaker || '',
           prerequisites: data.prerequisites || '',
           prizes: data.prizes || '',
@@ -265,7 +314,7 @@ const CreateEvent = () => {
         name: formData.name,
         description: formData.description,
         event_type: formData.event_type as 'webinar' | 'hackathon' | 'meetup' | 'contest' | 'bootcamp',
-        date: convertISTtoUTC(formData.date),
+        date: convertLocalToUTC(formData.date, formData.timezone),
         venue: formData.venue || (formData.mode === 'online' ? 'Online' : ''),
         max_participants: formData.max_participants ? parseInt(formData.max_participants) : null,
         mode: formData.mode || null,
@@ -274,7 +323,7 @@ const CreateEvent = () => {
         timezone: formData.timezone,
         banner_url: banner_url || null,
         display_image_url: display_image_url || null,
-        end_date: formData.end_date ? convertISTtoUTC(formData.end_date) : null,
+        end_date: formData.end_date ? convertLocalToUTC(formData.end_date, formData.timezone) : null,
         speaker: formData.speaker || null,
         prerequisites: formData.prerequisites || null,
         prizes: formData.prizes || null,

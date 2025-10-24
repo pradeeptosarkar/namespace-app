@@ -73,6 +73,7 @@ const WebinarForm: React.FC<WebinarFormProps> = ({
           onChange={onInputChange}
           required
         />
+        <p className="text-xs text-muted-foreground">Enter date & time in the timezone selected below</p>
       </div>
 
       <div className="space-y-2">
@@ -97,6 +98,7 @@ const WebinarForm: React.FC<WebinarFormProps> = ({
             <SelectItem value="Pacific/Auckland">Auckland (NZDT - UTC+13/+12)</SelectItem>
           </SelectContent>
         </Select>
+        <p className="text-xs text-muted-foreground">Timezone for the event - times will be displayed in this timezone</p>
       </div>
 
       {/* Banner Image Upload - Desktop: 1200x400, Mobile: 600x200 */}

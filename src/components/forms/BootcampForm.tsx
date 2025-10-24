@@ -47,7 +47,7 @@ const BootcampForm: React.FC<BootcampFormProps> = ({ formData, onInputChange, on
           onChange={onInputChange}
           required
         />
-        <p className="text-xs text-muted-foreground">Enter time in IST (Indian Standard Time)</p>
+        <p className="text-xs text-muted-foreground">Enter date & time in the timezone selected below</p>
       </div>
 
       <div className="space-y-2">
@@ -72,7 +72,7 @@ const BootcampForm: React.FC<BootcampFormProps> = ({ formData, onInputChange, on
             <SelectItem value="Pacific/Auckland">Auckland (NZDT - UTC+13/+12)</SelectItem>
           </SelectContent>
         </Select>
-        <p className="text-xs text-muted-foreground">Display timezone (currently all times shown in IST)</p>
+        <p className="text-xs text-muted-foreground">Timezone for the event - times will be displayed in this timezone</p>
       </div>
 
       <div className="space-y-2">
@@ -85,7 +85,7 @@ const BootcampForm: React.FC<BootcampFormProps> = ({ formData, onInputChange, on
           onChange={onInputChange}
           required
         />
-        <p className="text-xs text-muted-foreground">Enter time in IST (can be same day as start date)</p>
+        <p className="text-xs text-muted-foreground">Enter date & time in the timezone selected above (can be same day)</p>
       </div>
 
       <div className="space-y-2">

@@ -29,31 +29,6 @@ interface Event {
   timezone: string;
 }
 
-// Helper function to convert UTC date to IST for display
-const formatDateInIST = (utcDateString: string): string => {
-  const utcDate = new Date(utcDateString);
-  // Add 5 hours 30 minutes for IST
-  const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
-  
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true,
-  };
-  
-  return istDate.toLocaleString('en-IN', options) + ' IST';
-};
-
-// Helper function to get current time in IST
-const getCurrentTimeInIST = (): Date => {
-  const now = new Date();
-  const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-  return new Date(utcTime + (5.5 * 3600000));
-};
-
 const eventTypeColors = {
   webinar: 'bg-blue-100 text-blue-800 hover:bg-blue-200',
   hackathon: 'bg-purple-100 text-purple-800 hover:bg-purple-200',
@@ -298,10 +273,9 @@ export default function EventDetail() {
   };
 
   const formatDate = (dateString: string) => {
-    const utcDate = new Date(dateString);
-    // Convert to IST by adding 5.5 hours
-    const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
-    return istDate.toLocaleDateString('en-IN', {
+    const timezone = event?.timezone || 'Asia/Kolkata';
+    return new Date(dateString).toLocaleDateString('en-US', {
+      timeZone: timezone,
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -310,15 +284,24 @@ export default function EventDetail() {
   };
 
   const formatTime = (dateString: string) => {
-    const utcDate = new Date(dateString);
-    // Convert to IST by adding 5.5 hours
-    const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
+    const timezone = event?.timezone || 'Asia/Kolkata';
+    const date = new Date(dateString);
     
-    return istDate.toLocaleTimeString('en-IN', {
+    const timeStr = date.toLocaleTimeString('en-US', {
+      timeZone: timezone,
       hour: '2-digit',
       minute: '2-digit',
       hour12: true,
-    }) + ' IST';
+    });
+    
+    // Get timezone abbreviation
+    const tzFormatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: timezone,
+      timeZoneName: 'short'
+    });
+    const timezoneName = tzFormatter.formatToParts(date).find(part => part.type === 'timeZoneName')?.value || '';
+    
+    return `${timeStr} ${timezoneName}`;
   };
 
   const sendConfirmationEmail = async () => {
@@ -423,7 +406,7 @@ export default function EventDetail() {
   }
 
   // Check if event has ended
-  const now = getCurrentTimeInIST();
+  const now = new Date();
   const eventEndDate = event.end_date ? new Date(event.end_date) : new Date(event.date);
   const hasEnded = eventEndDate < now;
 

@@ -53,6 +53,7 @@ const HackathonForm: React.FC<HackathonFormProps> = ({ formData, onInputChange, 
           onChange={onInputChange}
           required
         />
+        <p className="text-xs text-muted-foreground">Enter date & time in the timezone selected below</p>
       </div>
 
       <div className="space-y-2">
@@ -77,6 +78,7 @@ const HackathonForm: React.FC<HackathonFormProps> = ({ formData, onInputChange, 
             <SelectItem value="Pacific/Auckland">Auckland (NZDT - UTC+13/+12)</SelectItem>
           </SelectContent>
         </Select>
+        <p className="text-xs text-muted-foreground">Timezone for the event - times will be displayed in this timezone</p>
       </div>
 
       <div className="space-y-2">
