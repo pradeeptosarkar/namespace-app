@@ -6,7 +6,7 @@ import SEOLazyImage from "@/components/sections/SEOLazyImage";
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 pt-2 pb-1">
+      <div className="container mx-auto px-4 pt-4 pb-0">
         <Link to="/">
           <Button variant="ghost">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -24,7 +24,7 @@ const AboutUs = () => {
       </head>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
+      <section className="relative py-10 overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
         {/* Cosmic Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full animate-pulse" />
@@ -33,7 +33,7 @@ const AboutUs = () => {
           <div className="absolute bottom-1/3 left-1/4 w-16 h-16 bg-primary/10 rotate-12" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-6 pb-8 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full mb-8">
               <Sparkles className="w-4 h-4 text-primary" />
@@ -53,7 +53,7 @@ const AboutUs = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
           </div>

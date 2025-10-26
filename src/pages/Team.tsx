@@ -13,7 +13,7 @@ const TwitterIcon = ({ className }: { className?: string }) => (
 const Team = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 pt-2 pb-0">
+      <div className="container mx-auto px-4 pt-4 pb-0">
         <Link to="/">
           <Button variant="ghost">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -31,7 +31,7 @@ const Team = () => {
       </head>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20 -mt-4">
+      <section className="relative py-10 overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
         {/* Abstract Tech-Inspired Background */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Cosmic elements */}
@@ -60,7 +60,7 @@ const Team = () => {
           <div className="absolute top-1/2 left-1/6 w-24 h-24 border border-primary/15 rounded-full animate-ping" style={{ animationDelay: "1s" }} />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-6 pb-8 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full mb-8">
               <Users className="w-4 h-4 text-primary" />
@@ -80,7 +80,7 @@ const Team = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
           </div>
