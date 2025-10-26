@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Calendar, LogOut, BarChart3, Moon, Sun, ChevronDown, Menu } from 'lucide-react';
+import { Calendar, LogOut, BarChart3, Moon, Sun, ChevronDown, Menu, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,6 +30,7 @@ export function Navbar() {
   const location = useLocation();
   const { theme, toggleTheme, isForcedLightMode } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [partnersOpen, setPartnersOpen] = useState(false);
 
   const handleSignOut = async () => {
     await signOut();
@@ -45,54 +47,6 @@ export function Navbar() {
             className="h-8 w-auto object-contain max-h-8"
           />
         </Link>
-
-        {/* Mobile Menu */}
-        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[300px]">
-            <nav className="flex flex-col space-y-4 mt-8">
-              <Link 
-                to="/about-us" 
-                className="text-lg font-medium hover:text-primary transition-colors px-2 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link 
-                to="/events" 
-                className="text-lg font-medium hover:text-primary transition-colors px-2 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Events
-              </Link>
-              <div className="px-2 py-2">
-                <div className="text-lg font-medium mb-2">Partners</div>
-                <div className="flex flex-col space-y-2 pl-4">
-                  <button className="text-sm text-muted-foreground text-left" disabled>
-                    Companies (Coming soon)
-                  </button>
-                  <button className="text-sm text-muted-foreground text-left" disabled>
-                    Institutions (Coming soon)
-                  </button>
-                  <button className="text-sm text-muted-foreground text-left" disabled>
-                    Communities (Coming soon)
-                  </button>
-                </div>
-              </div>
-              <Link 
-                to="/team" 
-                className="text-lg font-medium hover:text-primary transition-colors px-2 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Team
-              </Link>
-            </nav>
-          </SheetContent>
-        </Sheet>
 
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden md:flex">
@@ -175,7 +129,7 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 md:space-x-4">
           <Button 
             onClick={toggleTheme} 
             variant="ghost" 
@@ -234,6 +188,57 @@ export function Navbar() {
               Sign In
             </Button>
           )}
+
+          {/* Mobile Menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px]">
+              <nav className="flex flex-col space-y-4 mt-8">
+                <Link 
+                  to="/about-us" 
+                  className="text-lg font-medium hover:text-primary transition-colors px-2 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link 
+                  to="/events" 
+                  className="text-lg font-medium hover:text-primary transition-colors px-2 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Events
+                </Link>
+                <Collapsible open={partnersOpen} onOpenChange={setPartnersOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-medium hover:text-primary transition-colors px-2 py-2">
+                    Partners
+                    <ChevronRight className={`h-4 w-4 transition-transform ${partnersOpen ? 'rotate-90' : ''}`} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="flex flex-col space-y-2 pl-6 pt-2">
+                    <button className="text-sm text-muted-foreground text-left py-1" disabled>
+                      Companies (Coming soon)
+                    </button>
+                    <button className="text-sm text-muted-foreground text-left py-1" disabled>
+                      Institutions (Coming soon)
+                    </button>
+                    <button className="text-sm text-muted-foreground text-left py-1" disabled>
+                      Communities (Coming soon)
+                    </button>
+                  </CollapsibleContent>
+                </Collapsible>
+                <Link 
+                  to="/team" 
+                  className="text-lg font-medium hover:text-primary transition-colors px-2 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Team
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>
