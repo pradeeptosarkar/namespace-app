@@ -78,7 +78,7 @@ export function Navbar() {
                 Partners
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 bg-popover">
+                <ul className="grid w-[200px] gap-3 p-4 bg-white dark:bg-gray-800">
                   <li>
                     <button 
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground w-full text-left"
