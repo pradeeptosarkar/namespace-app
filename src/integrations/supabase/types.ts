@@ -140,6 +140,7 @@ export type Database = {
       form_fields: {
         Row: {
           created_at: string
+          description: string | null
           field_type: Database["public"]["Enums"]["form_field_type"]
           form_id: string
           id: string
@@ -151,6 +152,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          description?: string | null
           field_type: Database["public"]["Enums"]["form_field_type"]
           form_id: string
           id?: string
@@ -162,6 +164,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          description?: string | null
           field_type?: Database["public"]["Enums"]["form_field_type"]
           form_id?: string
           id?: string
