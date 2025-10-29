@@ -19,6 +19,7 @@ interface FormField {
   id: string;
   field_type: FieldType;
   label: string;
+  description: string;
   placeholder: string;
   required: boolean;
   options: string[];
@@ -73,6 +74,7 @@ const FormBuilder = () => {
         id: f.id,
         field_type: f.field_type as FieldType,
         label: f.label,
+        description: (f as any).description || '',
         placeholder: f.placeholder || '',
         required: f.required,
         options: Array.isArray(f.options) ? (f.options as string[]) : [],
@@ -92,6 +94,7 @@ const FormBuilder = () => {
       id: `temp-${Date.now()}`,
       field_type: 'text',
       label: 'New Field',
+      description: '',
       placeholder: '',
       required: false,
       options: [],
@@ -170,6 +173,7 @@ const FormBuilder = () => {
         form_id: savedFormId,
         field_type: f.field_type as any,
         label: f.label,
+        description: f.description,
         placeholder: f.placeholder,
         required: f.required,
         options: f.options.length > 0 ? (f.options as any) : null,
@@ -331,6 +335,14 @@ const FormBuilder = () => {
                                 value={field.label}
                                 onChange={(e) => updateField(field.id, { label: e.target.value })}
                                 placeholder="Field label"
+                              />
+                            </div>
+                            <div>
+                              <Label>Description</Label>
+                              <Input
+                                value={field.description}
+                                onChange={(e) => updateField(field.id, { description: e.target.value })}
+                                placeholder="Optional field description"
                               />
                             </div>
                             <div>

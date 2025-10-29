@@ -17,6 +17,7 @@ interface FormField {
   id: string;
   field_type: string;
   label: string;
+  description: string | null;
   placeholder: string | null;
   required: boolean;
   options: string[] | null;
@@ -69,6 +70,7 @@ const PublicFormView = () => {
       setForm(formData);
       setFields((fieldsData || []).map(f => ({
         ...f,
+        description: (f as any).description || null,
         options: Array.isArray(f.options) ? f.options as string[] : null
       })));
     } catch (error: any) {
@@ -300,6 +302,13 @@ const PublicFormView = () => {
             {form.description && (
               <CardDescription className="text-base">{form.description}</CardDescription>
             )}
+            {form.require_signin && (
+              <div className="mt-4 p-3 bg-primary/10 border border-primary/20 rounded-md">
+                <p className="text-sm text-foreground">
+                  <span className="font-semibold">Sign-in required:</span> You must be signed in to submit this form.
+                </p>
+              </div>
+            )}
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -309,6 +318,9 @@ const PublicFormView = () => {
                     {field.label}
                     {field.required && <span className="text-destructive ml-1">*</span>}
                   </Label>
+                  {field.description && (
+                    <p className="text-sm text-muted-foreground">{field.description}</p>
+                  )}
                   {renderField(field)}
                 </div>
               ))}
