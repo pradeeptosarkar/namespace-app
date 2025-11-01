@@ -249,7 +249,9 @@ const JoinTheTeam = () => {
                   </div>
                 </Card>
               ) : (
-                jobOpenings.map((job) => (
+                jobOpenings
+                  .filter(job => job.id !== "template")
+                  .map((job) => (
                   <Collapsible key={job.id}>
                     <Card className="border border-border bg-card overflow-hidden hover:border-primary/50 transition-all">
                       <CollapsibleTrigger className="w-full">

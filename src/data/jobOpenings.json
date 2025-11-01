@@ -1,5 +1,22 @@
 [
   {
+    "_comment": "TEMPLATE - Copy this structure to add new job openings. Remove this object before publishing.",
+    "id": "template",
+    "title": "Job Title Here",
+    "description": "Brief description of the role and its impact on the organization.",
+    "expectations": [
+      "First key responsibility or expectation",
+      "Second key responsibility or expectation",
+      "Third key responsibility or expectation",
+      "Add more as needed"
+    ],
+    "vertical": "NAMESPACE [Community/Media/Tech/etc.]",
+    "applicationDeadline": "YYYY-MM-DD",
+    "startDate": "YYYY-MM-DD",
+    "applicationStatus": "open or closed or soon",
+    "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20[Job%20Title]"
+  },
+  {
     "id": "1",
     "title": "Community Manager",
     "description": "Lead and grow our global tech community through engaging events, content, and programs.",
