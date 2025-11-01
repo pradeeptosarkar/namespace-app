@@ -94,7 +94,7 @@ const JoinTheTeam = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-sora font-bold text-foreground leading-tight">
               Join the Team
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/60">
+              <span className="text-primary">
                 Building the Future
               </span>
             </h1>
@@ -110,7 +110,7 @@ const JoinTheTeam = () => {
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="mailto:careers@namespacecomm.in">
+                <a href="mailto:contact@namespacecomm.in">
                   Get in Touch
                 </a>
               </Button>
@@ -321,7 +321,7 @@ const JoinTheTeam = () => {
             </p>
 
             <Button size="lg" asChild>
-              <a href="mailto:careers@namespacecomm.in">
+              <a href="mailto:contact@namespacecomm.in">
                 Get in Touch
               </a>
             </Button>
