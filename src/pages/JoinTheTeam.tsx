@@ -331,6 +331,39 @@ const JoinTheTeam = () => {
                             </div>
                           )}
 
+                          {job.numberOfOpenings && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Number of Openings
+                              </h4>
+                              <p className="text-muted-foreground font-inter leading-relaxed">
+                                {job.numberOfOpenings}
+                              </p>
+                            </div>
+                          )}
+
+                          {job.selectionProcess && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Selection Process
+                              </h4>
+                              <p className="text-muted-foreground font-inter leading-relaxed">
+                                {job.selectionProcess}
+                              </p>
+                            </div>
+                          )}
+
+                          {job.payRange && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Pay Range
+                              </h4>
+                              <p className="text-muted-foreground font-inter leading-relaxed">
+                                {job.payRange}
+                              </p>
+                            </div>
+                          )}
+
                           <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Calendar className="w-4 h-4" />
