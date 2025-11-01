@@ -13,6 +13,10 @@
       "Third key responsibility or expectation",
       "Add more as needed"
     ],
+    "perks": [
+      "Perk 1",
+      "Perk 2"
+    ],
     "essentialSkills": [
       "Required skill 1",
       "Required skill 2"
@@ -40,6 +44,7 @@
       "Moderate discussions across Discord, WhatsApp, and Telegram",
       "Maintain a healthy and inclusive community culture"
     ],
+    "perks": [],
     "essentialSkills": [
       "Strong written and verbal communication skills",
       "Active listening and empathy",
@@ -71,6 +76,7 @@
       "Collaborate with content and social teams for visual storytelling",
       "Maintain brand consistency across all design assets"
     ],
+    "perks": [],
     "essentialSkills": [
       "Proficiency in graphic design tools (Canva, Figma, Adobe Creative Suite, or similar)",
       "Basic understanding of design principles and visual hierarchy",
@@ -102,6 +108,7 @@
       "Keep up with digital trends, formats, and campaigns",
       "Collaborate with creative and content teams for daily posting"
     ],
+    "perks": [],
     "essentialSkills": [
       "Strong understanding of social media platforms (Instagram, X, LinkedIn, YouTube)",
       "Ability to stay updated with digital trends and viral content",
@@ -133,6 +140,7 @@
       "Support campaigns and growth initiatives",
       "Coordinate with the central team on outreach strategies"
     ],
+    "perks": [],
     "essentialSkills": [
       "Strong networking and relationship-building abilities",
       "Excellent written communication for outreach emails and pitches",
@@ -164,6 +172,7 @@
       "Collaborate with creative and social teams for storytelling",
       "Explore community-led narratives and thought pieces"
     ],
+    "perks": [],
     "essentialSkills": [
       "Strong writing and storytelling abilities",
       "Research skills and curiosity about tech trends",

@@ -317,6 +317,24 @@ const JoinTheTeam = () => {
                             </ul>
                           </div>
 
+                          {job.perks && job.perks.length > 0 && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Perks of this role
+                              </h4>
+                              <ul className="space-y-2">
+                                {job.perks.map((perk, index) => (
+                                  <li key={index} className="flex items-start gap-3">
+                                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                    <span className="text-muted-foreground font-inter leading-relaxed">
+                                      {perk}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
                           {job.essentialSkills && job.essentialSkills.length > 0 && (
                             <div>
                               <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
