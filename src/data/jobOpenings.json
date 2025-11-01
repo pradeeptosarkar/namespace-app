@@ -17,35 +17,83 @@
     "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20[Job%20Title]"
   },
   {
-    "id": "1",
-    "title": "Community Manager",
-    "description": "Lead and grow our global tech community through engaging events, content, and programs.",
+    "id": "3",
+    "title": "Public Relations & Communications Volunteer",
+    "description": "Be the voice that keeps our community connected. Anchor conversations, engage with members, and maintain active and inclusive community spaces across our platforms. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
     "expectations": [
-      "Build and nurture relationships with community members",
-      "Organize and execute community events and programs",
-      "Create engaging content for various platforms",
-      "Monitor community health and engagement metrics"
+      "Anchor and host community events or sessions",
+      "Respond to member queries and ensure smooth communication",
+      "Moderate discussions across Discord, WhatsApp, and Telegram",
+      "Maintain a healthy and inclusive community culture"
     ],
     "vertical": "NAMESPACE Community",
     "applicationDeadline": "2025-12-31",
     "startDate": "2026-01-15",
     "applicationStatus": "open",
-    "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20Community%20Manager"
+    "applicationLink": "https://forms.gle/namespace-community-volunteer"
   },
   {
-    "id": "2",
-    "title": "Content Creator",
-    "description": "Create compelling content that showcases our community, events, and impact across all media channels.",
+    "id": "4",
+    "title": "Creative & Design Volunteer",
+    "description": "Turn NAMESPACE's ideas and moments into visuals that inspire. Shape how our community looks and feels through compelling graphic design, illustration, and video editing. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
     "expectations": [
-      "Produce high-quality written and visual content",
-      "Manage social media presence and engagement",
-      "Document events and community stories",
-      "Collaborate with the team on content strategy"
+      "Design graphics for events, campaigns, and social media",
+      "Edit videos and reels that capture NAMESPACE's spirit",
+      "Collaborate with content and social teams for visual storytelling",
+      "Maintain brand consistency across all design assets"
     ],
-    "vertical": "NAMESPACE Media",
+    "vertical": "NAMESPACE Community",
     "applicationDeadline": "2025-12-31",
     "startDate": "2026-01-15",
-    "applicationStatus": "closed",
-    "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20Content%20Creator"
+    "applicationStatus": "open",
+    "applicationLink": "https://forms.gle/namespace-community-volunteer"
+  },
+  {
+    "id": "5",
+    "title": "Social Media & Digital Volunteer",
+    "description": "Drive conversations, create trends, and make NAMESPACE go viral. Manage our digital presence across Instagram, X, LinkedIn, and YouTube with engaging content. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "expectations": [
+      "Manage NAMESPACE's social media handles",
+      "Brainstorm and execute viral content ideas",
+      "Keep up with digital trends, formats, and campaigns",
+      "Collaborate with creative and content teams for daily posting"
+    ],
+    "vertical": "NAMESPACE Community",
+    "applicationDeadline": "2025-12-31",
+    "startDate": "2026-01-15",
+    "applicationStatus": "open",
+    "applicationLink": "https://forms.gle/namespace-community-volunteer"
+  },
+  {
+    "id": "6",
+    "title": "Marketing & Outreach Volunteer",
+    "description": "Build bridges and grow the ecosystem. Connect with universities, startups, and tech communities through strategic outreach and partnership building. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "expectations": [
+      "Reach out to communities, campuses, and partners",
+      "Secure event collaborations and marketing tie-ups",
+      "Support campaigns and growth initiatives",
+      "Coordinate with the central team on outreach strategies"
+    ],
+    "vertical": "NAMESPACE Community",
+    "applicationDeadline": "2025-12-31",
+    "startDate": "2026-01-15",
+    "applicationStatus": "open",
+    "applicationLink": "https://forms.gle/namespace-community-volunteer"
+  },
+  {
+    "id": "7",
+    "title": "Content & Research Volunteer",
+    "description": "Fuel ideas that inspire creation. Research emerging trends in tech, explore new narratives, and create compelling content for blogs, social media, and newsletters. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "expectations": [
+      "Research emerging ideas in tech and innovation",
+      "Write and develop content for social channels and blogs",
+      "Collaborate with creative and social teams for storytelling",
+      "Explore community-led narratives and thought pieces"
+    ],
+    "vertical": "NAMESPACE Community",
+    "applicationDeadline": "2025-12-31",
+    "startDate": "2026-01-15",
+    "applicationStatus": "open",
+    "applicationLink": "https://forms.gle/namespace-community-volunteer"
   }
 ]
