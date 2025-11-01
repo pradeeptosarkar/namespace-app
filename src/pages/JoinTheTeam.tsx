@@ -279,6 +279,28 @@ const JoinTheTeam = () => {
                             </p>
                           </div>
 
+                          {job.numberOfOpenings && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Number of Openings
+                              </h4>
+                              <p className="text-muted-foreground font-inter leading-relaxed">
+                                {job.numberOfOpenings}
+                              </p>
+                            </div>
+                          )}
+
+                          {job.payRange && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Pay Range
+                              </h4>
+                              <p className="text-muted-foreground font-inter leading-relaxed">
+                                {job.payRange}
+                              </p>
+                            </div>
+                          )}
+
                           <div>
                             <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
                               What We Expect
@@ -331,17 +353,6 @@ const JoinTheTeam = () => {
                             </div>
                           )}
 
-                          {job.numberOfOpenings && (
-                            <div>
-                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
-                                Number of Openings
-                              </h4>
-                              <p className="text-muted-foreground font-inter leading-relaxed">
-                                {job.numberOfOpenings}
-                              </p>
-                            </div>
-                          )}
-
                           {job.selectionProcess && (
                             <div>
                               <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
@@ -349,17 +360,6 @@ const JoinTheTeam = () => {
                               </h4>
                               <p className="text-muted-foreground font-inter leading-relaxed">
                                 {job.selectionProcess}
-                              </p>
-                            </div>
-                          )}
-
-                          {job.payRange && (
-                            <div>
-                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
-                                Pay Range
-                              </h4>
-                              <p className="text-muted-foreground font-inter leading-relaxed">
-                                {job.payRange}
                               </p>
                             </div>
                           )}

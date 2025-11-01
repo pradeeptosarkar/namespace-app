@@ -3,7 +3,10 @@
     "_comment": "TEMPLATE - Copy this structure to add new job openings. Remove this object before publishing.",
     "id": "template",
     "title": "Job Title Here",
+    "vertical": "NAMESPACE [Community/Media/Tech/etc.]",
     "description": "Brief description of the role and its impact on the organization.",
+    "numberOfOpenings": "",
+    "payRange": "",
     "expectations": [
       "First key responsibility or expectation",
       "Second key responsibility or expectation",
@@ -18,19 +21,19 @@
       "Optional skill 1",
       "Optional skill 2"
     ],
-    "numberOfOpenings": "",
-    "selectionProcess": "",
-    "payRange": "",
-    "vertical": "NAMESPACE [Community/Media/Tech/etc.]",
     "applicationDeadline": "YYYY-MM-DD",
     "startDate": "YYYY-MM-DD",
+    "selectionProcess": "",
     "applicationStatus": "open or closed or soon",
     "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20[Job%20Title]"
   },
   {
     "id": "3",
     "title": "Volunteer - Public Relations & Communications Team",
+    "vertical": "NAMESPACE Community",
     "description": "Be the voice that keeps our community connected. Anchor conversations, engage with members, and maintain active and inclusive community spaces across our platforms. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "numberOfOpenings": "",
+    "payRange": "",
     "expectations": [
       "Anchor and host community events or sessions",
       "Respond to member queries and ensure smooth communication",
@@ -49,19 +52,19 @@
       "Event hosting or anchoring experience",
       "Conflict resolution skills"
     ],
-    "numberOfOpenings": "",
-    "selectionProcess": "",
-    "payRange": "",
-    "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
+    "selectionProcess": "",
     "applicationStatus": "open",
     "applicationLink": "https://forms.gle/namespace-community-volunteer"
   },
   {
     "id": "4",
     "title": "Volunteer - Creative & Design Team",
+    "vertical": "NAMESPACE Community",
     "description": "Turn NAMESPACE's ideas and moments into visuals that inspire. Shape how our community looks and feels through compelling graphic design, illustration, and video editing. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "numberOfOpenings": "",
+    "payRange": "",
     "expectations": [
       "Design graphics for events, campaigns, and social media",
       "Edit videos and reels that capture NAMESPACE's spirit",
@@ -80,19 +83,19 @@
       "Experience with social media content formats (Instagram Reels, Stories, etc.)",
       "Photography skills"
     ],
-    "numberOfOpenings": "",
-    "selectionProcess": "",
-    "payRange": "",
-    "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
+    "selectionProcess": "",
     "applicationStatus": "open",
     "applicationLink": "https://forms.gle/namespace-community-volunteer"
   },
   {
     "id": "5",
     "title": "Volunteer - Social Media & Digital Team",
+    "vertical": "NAMESPACE Community",
     "description": "Drive conversations, create trends, and make NAMESPACE go viral. Manage our digital presence across Instagram, X, LinkedIn, and YouTube with engaging content. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "numberOfOpenings": "",
+    "payRange": "",
     "expectations": [
       "Manage NAMESPACE's social media handles",
       "Brainstorm and execute viral content ideas",
@@ -111,19 +114,19 @@
       "Understanding of hashtag strategies and SEO",
       "Familiarity with social media scheduling tools"
     ],
-    "numberOfOpenings": "",
-    "selectionProcess": "",
-    "payRange": "",
-    "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
+    "selectionProcess": "",
     "applicationStatus": "open",
     "applicationLink": "https://forms.gle/namespace-community-volunteer"
   },
   {
     "id": "6",
     "title": "Volunteer - Marketing & Outreach Team",
+    "vertical": "NAMESPACE Community",
     "description": "Build bridges and grow the ecosystem. Connect with universities, startups, and tech communities through strategic outreach and partnership building. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "numberOfOpenings": "",
+    "payRange": "",
     "expectations": [
       "Reach out to communities, campuses, and partners",
       "Secure event collaborations and marketing tie-ups",
@@ -142,19 +145,19 @@
       "Understanding of marketing strategies and campaigns",
       "CRM or outreach tool experience"
     ],
-    "numberOfOpenings": "",
-    "selectionProcess": "",
-    "payRange": "",
-    "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
+    "selectionProcess": "",
     "applicationStatus": "open",
     "applicationLink": "https://forms.gle/namespace-community-volunteer"
   },
   {
     "id": "7",
     "title": "Volunteer - Content & Research Team",
+    "vertical": "NAMESPACE Community",
     "description": "Fuel ideas that inspire creation. Research emerging trends in tech, explore new narratives, and create compelling content for blogs, social media, and newsletters. Applications are accepted and reviewed on a rolling basis, and applicants will be informed of their selection through email.",
+    "numberOfOpenings": "",
+    "payRange": "",
     "expectations": [
       "Research emerging ideas in tech and innovation",
       "Write and develop content for social channels and blogs",
@@ -173,12 +176,9 @@
       "Knowledge of SEO and content optimization",
       "Familiarity with content management systems"
     ],
-    "numberOfOpenings": "",
-    "selectionProcess": "",
-    "payRange": "",
-    "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
+    "selectionProcess": "",
     "applicationStatus": "open",
     "applicationLink": "https://forms.gle/namespace-community-volunteer"
   }
