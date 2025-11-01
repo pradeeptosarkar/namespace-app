@@ -298,11 +298,23 @@ const JoinTheTeam = () => {
                           <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Calendar className="w-4 h-4" />
-                              <span>Apply by: {new Date(job.applicationDeadline).toLocaleDateString()}</span>
+                              <span>
+                                Apply by: {
+                                  !isNaN(new Date(job.applicationDeadline).getTime())
+                                    ? new Date(job.applicationDeadline).toLocaleDateString()
+                                    : job.applicationDeadline
+                                }
+                              </span>
                             </div>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Briefcase className="w-4 h-4" />
-                              <span>Starts: {new Date(job.startDate).toLocaleDateString()}</span>
+                              <span>
+                                Starts: {
+                                  !isNaN(new Date(job.startDate).getTime())
+                                    ? new Date(job.startDate).toLocaleDateString()
+                                    : job.startDate
+                                }
+                              </span>
                             </div>
                           </div>
 
