@@ -76,7 +76,7 @@ const JoinTheTeam = () => {
       </head>
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
+      <section className="relative py-10 overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-96 h-96 bg-primary/5 rounded-full animate-pulse" />
@@ -84,12 +84,12 @@ const JoinTheTeam = () => {
           <div className="absolute top-1/2 left-1/3 w-32 h-32 border-2 border-primary/20 rotate-45 animate-spin" style={{ animationDuration: "20s" }} />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-6 py-8 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full mb-8">
+            {/* <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full mb-8">
               <Heart className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">We're Hiring</span>
-            </div>
+            </div> */}
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-sora font-bold text-foreground leading-tight">
               Join the Team
