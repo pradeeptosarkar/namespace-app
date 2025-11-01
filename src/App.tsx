@@ -19,6 +19,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfUse = lazy(() => import("./pages/TermsOfUse"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const Team = lazy(() => import("./pages/Team"));
+const JoinTheTeam = lazy(() => import("./pages/JoinTheTeam"));
 const HackHazards = lazy(() => import("./pages/HackHazards"));
 const LightRays = lazy(() => import("@/components/LightRays"));
 const Events = lazy(() => import("./pages/Events"));
@@ -97,6 +98,7 @@ const App = () => {
                         <Route path="/terms-of-use" element={<Layout><TermsOfUse /></Layout>} />
                         <Route path="/about-us" element={<Layout><AboutUs /></Layout>} />
                         <Route path="/team" element={<Layout><Team /></Layout>} />
+                        <Route path="/join-the-team" element={<Layout><JoinTheTeam /></Layout>} />
                         <Route path="/hackhazards" element={<HackHazards />} />
                         <Route path="*" element={<Layout><NotFound /></Layout>} />
 
