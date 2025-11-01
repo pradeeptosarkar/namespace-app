@@ -31,6 +31,7 @@ export function Navbar() {
   const { theme, toggleTheme, isForcedLightMode } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [partnersOpen, setPartnersOpen] = useState(false);
+  const [teamOpen, setTeamOpen] = useState(false);
 
   const handleSignOut = async () => {
     await signOut();
@@ -117,14 +118,39 @@ export function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link 
-                  to="/team" 
-                  className="group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-primary focus:outline-none"
-                >
-                  Team
-                </Link>
-              </NavigationMenuLink>
+              <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent hover:text-primary">
+                Team
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[200px] gap-3 p-4 bg-white dark:bg-gray-800">
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link 
+                        to="/team"
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">Current Team</div>
+                        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                          Meet our team members
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink asChild>
+                      <Link 
+                        to="/join-the-team"
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">Join the Team</div>
+                        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                          Explore career opportunities
+                        </p>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -229,13 +255,28 @@ export function Navbar() {
                     </button>
                   </CollapsibleContent>
                 </Collapsible>
-                <Link 
-                  to="/team" 
-                  className="text-lg font-medium hover:text-primary transition-colors px-2 py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Team
-                </Link>
+                <Collapsible open={teamOpen} onOpenChange={setTeamOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-medium hover:text-primary transition-colors px-2 py-2">
+                    Team
+                    <ChevronRight className={`h-4 w-4 transition-transform ${teamOpen ? 'rotate-90' : ''}`} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="flex flex-col space-y-2 pl-6 pt-2">
+                    <Link 
+                      to="/team"
+                      className="text-sm hover:text-primary text-left py-1"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Current Team
+                    </Link>
+                    <Link 
+                      to="/join-the-team"
+                      className="text-sm hover:text-primary text-left py-1"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Join the Team
+                    </Link>
+                  </CollapsibleContent>
+                </Collapsible>
               </nav>
             </SheetContent>
           </Sheet>
