@@ -1,60 +1,16 @@
-import { ArrowLeft, Heart, Rocket, Users, Zap, Globe, Code, TrendingUp, Award, Mail } from "lucide-react";
+import { ArrowLeft, Rocket, ChevronDown, Calendar, Briefcase, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Badge } from "@/components/ui/badge";
+import jobOpenings from "@/data/jobOpenings.json";
 
 const JoinTheTeam = () => {
-  const benefits = [
-    {
-      icon: Rocket,
-      title: "High Impact Work",
-      description: "Build products and experiences that reach thousands of developers and innovators worldwide."
-    },
-    {
-      icon: TrendingUp,
-      title: "Rapid Growth",
-      description: "Learn from the best, grow fast, and take on responsibilities beyond your role."
-    },
-    {
-      icon: Globe,
-      title: "Global Reach",
-      description: "Work with a diverse, international community and make a real impact across borders."
-    },
-    {
-      icon: Zap,
-      title: "Innovation First",
-      description: "Experiment with cutting-edge tech and bring your wildest ideas to life."
-    },
-    {
-      icon: Users,
-      title: "Amazing Team",
-      description: "Collaborate with passionate, talented people who genuinely care about the mission."
-    },
-    {
-      icon: Award,
-      title: "Recognition",
-      description: "Your work matters and will be recognized—both within the team and the wider community."
-    }
-  ];
-
-  const values = [
-    {
-      title: "Human-Centric",
-      description: "Technology exists to serve humans. We build with empathy and purpose."
-    },
-    {
-      title: "Collaborative",
-      description: "Great things happen when brilliant minds work together. We thrive on teamwork."
-    },
-    {
-      title: "Curious",
-      description: "We question, explore, and never stop learning. Curiosity drives our innovation."
-    },
-    {
-      title: "Bold",
-      description: "We take calculated risks and aren't afraid to challenge the status quo."
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -275,31 +231,92 @@ const JoinTheTeam = () => {
               </p>
             </div>
 
-            {/* <Card className="p-8 md:p-12 border border-border bg-card text-center">
-              <div className="space-y-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <Mail className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-sora font-bold text-foreground">
-                  Exciting Opportunities Coming Soon
-                </h3>
-                <p className="text-lg text-muted-foreground font-inter max-w-2xl mx-auto">
-                  We're currently building out our team and will be posting specific roles soon. In the meantime, we'd love to hear from you!
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Button size="lg" asChild>
-                    <a href="mailto:careers@namespacecomm.in">
-                      Send Us Your Resume
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild>
-                    <Link to="/about-us">
-                      Learn More About Us
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </Card> */}
+            <div className="space-y-4">
+              {jobOpenings.length === 0 ? (
+                <Card className="p-8 md:p-12 border border-border bg-card text-center">
+                  <div className="space-y-6">
+                    <h3 className="text-2xl md:text-3xl font-sora font-bold text-foreground">
+                      No Open Positions Currently
+                    </h3>
+                    <p className="text-lg text-muted-foreground font-inter max-w-2xl mx-auto">
+                      We're not actively hiring at the moment, but we'd still love to hear from passionate individuals who want to join our mission.
+                    </p>
+                    <Button size="lg" asChild>
+                      <a href="mailto:careers@namespacecomm.in">
+                        Send Us Your Resume
+                      </a>
+                    </Button>
+                  </div>
+                </Card>
+              ) : (
+                jobOpenings.map((job) => (
+                  <Collapsible key={job.id}>
+                    <Card className="border border-border bg-card overflow-hidden hover:border-primary/50 transition-all">
+                      <CollapsibleTrigger className="w-full">
+                        <div className="p-6 flex items-center justify-between gap-4 text-left hover:bg-muted/50 transition-colors">
+                          <div className="flex-1 space-y-2">
+                            <h3 className="text-xl md:text-2xl font-sora font-bold text-foreground">
+                              {job.title}
+                            </h3>
+                            <Badge variant="secondary" className="font-inter">
+                              {job.vertical}
+                            </Badge>
+                          </div>
+                          <ChevronDown className="w-5 h-5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                        </div>
+                      </CollapsibleTrigger>
+
+                      <CollapsibleContent>
+                        <div className="px-6 pb-6 space-y-6 border-t border-border pt-6">
+                          <div>
+                            <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                              About the Role
+                            </h4>
+                            <p className="text-muted-foreground font-inter leading-relaxed">
+                              {job.description}
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                              What We Expect
+                            </h4>
+                            <ul className="space-y-2">
+                              {job.expectations.map((expectation, index) => (
+                                <li key={index} className="flex items-start gap-3">
+                                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                  <span className="text-muted-foreground font-inter leading-relaxed">
+                                    {expectation}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Calendar className="w-4 h-4" />
+                              <span>Apply by: {new Date(job.applicationDeadline).toLocaleDateString()}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Briefcase className="w-4 h-4" />
+                              <span>Starts: {new Date(job.startDate).toLocaleDateString()}</span>
+                            </div>
+                          </div>
+
+                          <Button size="lg" className="w-full sm:w-auto" asChild>
+                            <a href={job.applicationLink} target="_blank" rel="noopener noreferrer">
+                              Apply Now
+                              <ExternalLink className="w-4 h-4 ml-2" />
+                            </a>
+                          </Button>
+                        </div>
+                      </CollapsibleContent>
+                    </Card>
+                  </Collapsible>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </section>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "Community Manager",
+    "description": "Lead and grow our global tech community through engaging events, content, and programs.",
+    "expectations": [
+      "Build and nurture relationships with community members",
+      "Organize and execute community events and programs",
+      "Create engaging content for various platforms",
+      "Monitor community health and engagement metrics"
+    ],
+    "vertical": "NAMESPACE Community",
+    "applicationDeadline": "2025-12-31",
+    "startDate": "2026-01-15",
+    "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20Community%20Manager"
+  },
+  {
+    "id": "2",
+    "title": "Content Creator",
+    "description": "Create compelling content that showcases our community, events, and impact across all media channels.",
+    "expectations": [
+      "Produce high-quality written and visual content",
+      "Manage social media presence and engagement",
+      "Document events and community stories",
+      "Collaborate with the team on content strategy"
+    ],
+    "vertical": "NAMESPACE Media",
+    "applicationDeadline": "2025-12-31",
+    "startDate": "2026-01-15",
+    "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20Content%20Creator"
+  }
+]
