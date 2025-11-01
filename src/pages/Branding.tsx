@@ -253,13 +253,13 @@ const Branding = () => {
                   <h2 className="text-2xl md:text-3xl font-sora font-bold mb-3">
                     {category.title}
                   </h2>
-                  <p className="text-gray-600">{category.description}</p>
+                  <p className="text-muted-foreground">{category.description}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.logos.map((logo) => (
                     <Card key={logo.id} className="p-6 hover:shadow-lg transition-shadow">
-                      <div className="aspect-video bg-gray-50 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
+                      <div className="aspect-video bg-muted/50 rounded-lg flex items-center justify-center mb-4 overflow-hidden">
                         <img 
                           src={logo.preview}
                           alt={`${category.title} - ${logo.name}`}
@@ -276,7 +276,7 @@ const Branding = () => {
                       <div className="space-y-3">
                         {/* PNG Actions */}
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-600">PNG Format</span>
+                          <span className="text-sm text-muted-foreground">PNG Format</span>
                           <div className="flex space-x-1">
                             <Button
                               size="sm"
@@ -314,7 +314,7 @@ const Branding = () => {
 
                         {/* SVG Actions */}
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-600">SVG Format</span>
+                          <span className="text-sm text-muted-foreground">SVG Format</span>
                           <div className="flex space-x-1">
                             <Button
                               size="sm"
@@ -367,7 +367,7 @@ const Branding = () => {
               <h2 className="text-2xl md:text-3xl font-sora font-bold mb-3">
                 Brand Colors
               </h2>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Official NAMESPACE color palette for consistent brand representation
               </p>
             </div>
@@ -383,15 +383,15 @@ const Branding = () => {
                   <h3 className="font-semibold text-lg mb-4">NAMESPACE Purple</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">HEX:</span>
+                      <span className="text-muted-foreground">HEX:</span>
                       <span className="font-mono">#8100C4</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">RGB:</span>
+                      <span className="text-muted-foreground">RGB:</span>
                       <span className="font-mono">129, 0, 196</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">CMYK:</span>
+                      <span className="text-muted-foreground">CMYK:</span>
                       <span className="font-mono">34, 100, 0, 23</span>
                     </div>
                   </div>
@@ -408,15 +408,15 @@ const Branding = () => {
                   <h3 className="font-semibold text-lg mb-4">NAMESPACE White</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">HEX:</span>
+                      <span className="text-muted-foreground">HEX:</span>
                       <span className="font-mono">#E6E6E6</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">RGB:</span>
+                      <span className="text-muted-foreground">RGB:</span>
                       <span className="font-mono">230, 230, 230</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">CMYK:</span>
+                      <span className="text-muted-foreground">CMYK:</span>
                       <span className="font-mono">0, 0, 0, 10</span>
                     </div>
                   </div>
@@ -433,15 +433,15 @@ const Branding = () => {
                   <h3 className="font-semibold text-lg mb-4">NAMESPACE Black</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">HEX:</span>
+                      <span className="text-muted-foreground">HEX:</span>
                       <span className="font-mono">#2E2E2E</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">RGB:</span>
+                      <span className="text-muted-foreground">RGB:</span>
                       <span className="font-mono">46, 46, 46</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">CMYK:</span>
+                      <span className="text-muted-foreground">CMYK:</span>
                       <span className="font-mono">0, 0, 0, 82</span>
                     </div>
                   </div>
@@ -453,14 +453,14 @@ const Branding = () => {
       </section>
 
       {/* Typography Section */}
-      <section className="py-4 bg-gray-50">
+      <section className="py-4 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 text-center">
               <h2 className="text-2xl md:text-3xl font-sora font-bold mb-3">
                 Typography
               </h2>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Official NAMESPACE font families for consistent brand communication
               </p>
             </div>
@@ -470,43 +470,43 @@ const Branding = () => {
               <Card className="p-8">
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold mb-2">Sora</h3>
-                  <p className="text-sm text-gray-600 mb-4">Primary brand font for headings and emphasis</p>
+                  <p className="text-sm text-muted-foreground mb-4">Primary brand font for headings and emphasis</p>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="font-sora">
                     <div className="text-4xl font-bold mb-1">NAMESPACE</div>
-                    <div className="text-xs text-gray-500">48px / Bold</div>
+                    <div className="text-xs text-muted-foreground/80">48px / Bold</div>
                   </div>
                   
                   <div className="font-sora">
                     <div className="text-2xl font-semibold mb-1">Heading Two</div>
-                    <div className="text-xs text-gray-500">24px / Semibold</div>
+                    <div className="text-xs text-muted-foreground/80">24px / Semibold</div>
                   </div>
                   
                   <div className="font-sora">
                     <div className="text-lg font-medium mb-1">Heading Three</div>
-                    <div className="text-xs text-gray-500">18px / Medium</div>
+                    <div className="text-xs text-muted-foreground/80">18px / Medium</div>
                   </div>
                   
                   <div className="font-sora">
                     <div className="text-base mb-1">Regular Text</div>
-                    <div className="text-xs text-gray-500">16px / Regular</div>
+                    <div className="text-xs text-muted-foreground/80">16px / Regular</div>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-6 border-t border-border">
                   <div className="text-sm space-y-1">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Font Family:</span>
+                      <span className="text-muted-foreground">Font Family:</span>
                       <span className="font-mono">Sora</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Weights:</span>
+                      <span className="text-muted-foreground">Weights:</span>
                       <span>400, 500, 600, 700</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Usage:</span>
+                      <span className="text-muted-foreground">Usage:</span>
                       <span>Headings, Logos, Emphasis</span>
                     </div>
                   </div>
@@ -517,28 +517,28 @@ const Branding = () => {
               <Card className="p-8">
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold mb-2">Inter</h3>
-                  <p className="text-sm text-gray-600 mb-4">Secondary font for body text and UI elements</p>
+                  <p className="text-sm text-muted-foreground mb-4">Secondary font for body text and UI elements</p>
                 </div>
                 
                 <div className="space-y-4 font-inter">
                   <div>
                     <div className="text-lg font-semibold mb-1">Large Body Text</div>
-                    <div className="text-xs text-gray-500">18px / Semibold</div>
+                    <div className="text-xs text-muted-foreground/80">18px / Semibold</div>
                   </div>
                   
                   <div>
                     <div className="text-base mb-1">Regular Body Text</div>
-                    <div className="text-xs text-gray-500">16px / Regular</div>
+                    <div className="text-xs text-muted-foreground/80">16px / Regular</div>
                   </div>
                   
                   <div>
                     <div className="text-sm mb-1">Small Text</div>
-                    <div className="text-xs text-gray-500">14px / Regular</div>
+                    <div className="text-xs text-muted-foreground/80">14px / Regular</div>
                   </div>
                   
                   <div>
                     <div className="text-xs mb-1">Caption Text</div>
-                    <div className="text-xs text-gray-500">12px / Regular</div>
+                    <div className="text-xs text-muted-foreground/80">12px / Regular</div>
                   </div>
                   
                   <div className="mt-4">
@@ -548,18 +548,18 @@ const Branding = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-6 border-t border-border">
                   <div className="text-sm space-y-1">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Font Family:</span>
+                      <span className="text-muted-foreground">Font Family:</span>
                       <span className="font-mono">Inter</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Weights:</span>
+                      <span className="text-muted-foreground">Weights:</span>
                       <span>400, 500, 600, 700</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Usage:</span>
+                      <span className="text-muted-foreground">Usage:</span>
                       <span>Body text, UI, Descriptions</span>
                     </div>
                   </div>
@@ -573,7 +573,7 @@ const Branding = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
                 <div>
                   <h4 className="font-semibold mb-2">Hierarchy</h4>
-                  <ul className="space-y-1 text-gray-600">
+                  <ul className="space-y-1 text-muted-foreground">
                     <li>• Use Sora for all headings and brand elements</li>
                     <li>• Use Inter for body text and UI components</li>
                     <li>• Maintain consistent font sizes across sections</li>
@@ -582,7 +582,7 @@ const Branding = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Best Practices</h4>
-                  <ul className="space-y-1 text-gray-600">
+                  <ul className="space-y-1 text-muted-foreground">
                     <li>• Ensure adequate line spacing for readability</li>
                     <li>• Use appropriate contrast ratios for accessibility</li>
                     <li>• Limit font weights to maintain consistency</li>
@@ -602,7 +602,7 @@ const Branding = () => {
             <h2 className="text-2xl md:text-3xl font-sora font-bold mb-4">
               Need Custom Assets?
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               If you need custom logos, brand materials, or have questions about brand usage, 
               our team is here to help. Contact us at contact@namespacecomm.in
             </p>

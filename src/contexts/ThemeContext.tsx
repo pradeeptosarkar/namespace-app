@@ -12,13 +12,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const FORCED_LIGHT_MODE_ROUTES = [
-  '/privacy-policy',
-  '/terms-of-use',
-  '/branding',
-  '/team',
-  '/about-us',
-];
+const FORCED_LIGHT_MODE_ROUTES: string[] = [];
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
