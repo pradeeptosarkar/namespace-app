@@ -120,7 +120,7 @@ const JoinTheTeam = () => {
       </section>
 
       {/* Why Join Us */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center space-y-8 mb-16">
             <h2 className="text-3xl md:text-5xl font-sora font-bold text-foreground">
@@ -153,10 +153,10 @@ const JoinTheTeam = () => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Values */}
-      <section className="py-20 bg-muted/20">
+      {/* <section className="py-20 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center space-y-8 mb-16">
@@ -183,10 +183,10 @@ const JoinTheTeam = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Life at NAMESPACE */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center space-y-8 mb-16">
@@ -251,7 +251,7 @@ const JoinTheTeam = () => {
                 <div className="w-full h-96 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
                   <Code className="w-32 h-32 text-primary/60" />
                 </div>
-                {/* Floating elements */}
+                
                 <div className="absolute top-8 right-8 w-4 h-4 bg-primary/40 rounded-full animate-ping" />
                 <div className="absolute bottom-12 left-8 w-3 h-3 bg-primary/30 rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
                 <div className="absolute top-24 left-12 w-2 h-2 bg-primary/50 rounded-full animate-bounce" style={{ animationDelay: "2s" }} />
@@ -259,7 +259,7 @@ const JoinTheTeam = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Open Roles */}
       <section id="open-roles" className="py-20 bg-muted/20">
@@ -275,7 +275,7 @@ const JoinTheTeam = () => {
               </p>
             </div>
 
-            <Card className="p-8 md:p-12 border border-border bg-card text-center">
+            {/* <Card className="p-8 md:p-12 border border-border bg-card text-center">
               <div className="space-y-6">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                   <Mail className="w-8 h-8 text-primary" />
@@ -299,7 +299,7 @@ const JoinTheTeam = () => {
                   </Button>
                 </div>
               </div>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
@@ -317,7 +317,7 @@ const JoinTheTeam = () => {
             </h2>
 
             <p className="text-xl text-muted-foreground font-inter max-w-2xl mx-auto">
-              Whether you're a developer, designer, marketer, or community builder—if you're passionate about building the future of tech, we want to hear from you.
+              Whether you're a developer, designer, marketer, or community builder — if you're passionate about building the future of tech, we want to hear from you.
             </p>
 
             <Button size="lg" asChild>
