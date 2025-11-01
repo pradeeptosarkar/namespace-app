@@ -12,6 +12,7 @@
     "vertical": "NAMESPACE Community",
     "applicationDeadline": "2025-12-31",
     "startDate": "2026-01-15",
+    "applicationStatus": "open",
     "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20Community%20Manager"
   },
   {
@@ -27,6 +28,7 @@
     "vertical": "NAMESPACE Media",
     "applicationDeadline": "2025-12-31",
     "startDate": "2026-01-15",
+    "applicationStatus": "closed",
     "applicationLink": "mailto:careers@namespacecomm.in?subject=Application%20for%20Content%20Creator"
   }
 ]

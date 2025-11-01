@@ -304,12 +304,25 @@ const JoinTheTeam = () => {
                             </div>
                           </div>
 
-                          <Button size="lg" className="w-full sm:w-auto" asChild>
-                            <a href={job.applicationLink} target="_blank" rel="noopener noreferrer">
-                              Apply Now
-                              <ExternalLink className="w-4 h-4 ml-2" />
-                            </a>
-                          </Button>
+                          {job.applicationStatus === "open" ? (
+                            <Button size="lg" className="w-full sm:w-auto" asChild>
+                              <a href={job.applicationLink} target="_blank" rel="noopener noreferrer">
+                                Apply Now
+                                <ExternalLink className="w-4 h-4 ml-2" />
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button 
+                              size="lg" 
+                              className="w-full sm:w-auto" 
+                              variant="secondary"
+                              disabled
+                            >
+                              {job.applicationStatus === "closed" 
+                                ? "Currently not accepting applications" 
+                                : "Applications open soon"}
+                            </Button>
+                          )}
                         </div>
                       </CollapsibleContent>
                     </Card>
