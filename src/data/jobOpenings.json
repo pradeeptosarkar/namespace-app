@@ -10,6 +10,14 @@
       "Third key responsibility or expectation",
       "Add more as needed"
     ],
+    "essentialSkills": [
+      "Required skill 1",
+      "Required skill 2"
+    ],
+    "goodToHaveSkills": [
+      "Optional skill 1",
+      "Optional skill 2"
+    ],
     "vertical": "NAMESPACE [Community/Media/Tech/etc.]",
     "applicationDeadline": "YYYY-MM-DD",
     "startDate": "YYYY-MM-DD",
@@ -26,6 +34,8 @@
       "Moderate discussions across Discord, WhatsApp, and Telegram",
       "Maintain a healthy and inclusive community culture"
     ],
+    "essentialSkills": [],
+    "goodToHaveSkills": [],
     "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
@@ -42,6 +52,8 @@
       "Collaborate with content and social teams for visual storytelling",
       "Maintain brand consistency across all design assets"
     ],
+    "essentialSkills": [],
+    "goodToHaveSkills": [],
     "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
@@ -58,6 +70,8 @@
       "Keep up with digital trends, formats, and campaigns",
       "Collaborate with creative and content teams for daily posting"
     ],
+    "essentialSkills": [],
+    "goodToHaveSkills": [],
     "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
@@ -74,6 +88,8 @@
       "Support campaigns and growth initiatives",
       "Coordinate with the central team on outreach strategies"
     ],
+    "essentialSkills": [],
+    "goodToHaveSkills": [],
     "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",
@@ -90,6 +106,8 @@
       "Collaborate with creative and social teams for storytelling",
       "Explore community-led narratives and thought pieces"
     ],
+    "essentialSkills": [],
+    "goodToHaveSkills": [],
     "vertical": "NAMESPACE Community",
     "applicationDeadline": "No deadline - Applications are reviewed on a rolling basis",
     "startDate": "On a rolling basis",

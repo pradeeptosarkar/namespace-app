@@ -295,6 +295,42 @@ const JoinTheTeam = () => {
                             </ul>
                           </div>
 
+                          {job.essentialSkills && job.essentialSkills.length > 0 && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Essential Skills
+                              </h4>
+                              <ul className="space-y-2">
+                                {job.essentialSkills.map((skill, index) => (
+                                  <li key={index} className="flex items-start gap-3">
+                                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                    <span className="text-muted-foreground font-inter leading-relaxed">
+                                      {skill}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          {job.goodToHaveSkills && job.goodToHaveSkills.length > 0 && (
+                            <div>
+                              <h4 className="text-lg font-sora font-semibold text-foreground mb-3">
+                                Good to Have Skills
+                              </h4>
+                              <ul className="space-y-2">
+                                {job.goodToHaveSkills.map((skill, index) => (
+                                  <li key={index} className="flex items-start gap-3">
+                                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                    <span className="text-muted-foreground font-inter leading-relaxed">
+                                      {skill}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
                           <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Calendar className="w-4 h-4" />
